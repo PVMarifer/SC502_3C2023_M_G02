@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+    background-color: #ddd;
+    font-family: 'Segoe UI'
+}
+
+
+/*estilos temporales*/
+header{
+    border-bottom: 1px solid grey;
+    padding: 15px;
+}
+
+
+
+/*estilos del nav*/
+header nav ul li img {
+    width: 150px;
+}
+
+
+
+nav ul{
+    display: flex;
+   
+    justify-content: space-around;
+    list-style: none;
+    align-items: center;
+    margin: 10px;
+
+}
+
+nav a{
+    text-decoration: none;
+    font-size: large;
+}
+
+
+
+/*main*/
+main{
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+
+/*estilos para el aside*/
+#aside_principal{
+    border-right: 1px solid grey;
+    width: 20%;
+    padding: 15px;
+}
+
+#search_box{
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+#search_box input{
+    flex: 1;
+    padding: 5px ;
+    border: 0;
+    width: 80%;
+    outline: 0;
+    font-size: medium;
+    background-color: transparent;
+}
+
+#search_box button{
+    width: 20%;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+aside article{
+    height: 300px;
+}
+
+
+
+
+/*seccion principal*/
+main section{
+    display: flex;
+    width:65% ;
+    padding: 50px 70px;
+    text-align: center;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+
+
+/*imagen del main*/
+#container_main_img{
+    width: 500px;
+    height: 200px;
+    text-align: center;
+}
+#container_main_img img{
+    width: 400px;
+    
+}
+
+/*estilos para las notificaciones*/
+#aside_notificaciones{
+    width: 15%;
+    padding: 15px;
+    border-left: 1px solid grey;
+
+}
+
+
+/*footer*/
+footer{
+    border-top: 1px solid grey;
+    height: 250px;
+    padding: 40px;
+}
