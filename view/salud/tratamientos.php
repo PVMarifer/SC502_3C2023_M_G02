@@ -153,53 +153,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.sidebar -->
 
         <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-               
-                <p>
-                  Enfermedades
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav nav-link ">
-                
-                <p>
-                  Vacunacion
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-                
-                <p>
-                  Tratamientos
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link ">
-                
-                <p class="text-center">
-                  Medicamentos e Injecciones
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-                
-                <p>
-                  Control de Mastitis
-                </p>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <?php
+          include '../fragments/main_aside.php'
+        ?>
         <!-- /.sidebar-menu -->
       </div>
     </aside>
@@ -214,8 +170,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-sm-3">
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Salud</a></li>
-
-
+                <li class="breadcrumb-item active">Tratamientos</li>
               </ol>
             </div><!-- /.col -->
             <div class="col-sm-9">
@@ -224,6 +179,88 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
       </div><!-- /.content-header -->
+
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header border-0">
+                  <h3 class="card-title">Animales con Tratamientos</h3>
+                </div>
+                <div class="card-body table-responsive p-0">
+                  <table class="table table-striped table-valign-middle">
+                    <thead>
+                      <tr>
+                        <th>Número de Arete</th>
+                        <th>Nombre Vaca</th>
+                        <th>Tipo de Tratamiento</th>
+                        <th>Tipo de Aplicación</th>
+                        <th>Medicamento aplicado</th>
+                        <th>Fecha de inicio </th>
+                        <th>Duración del tratamiento</th>
+                        <th>Dosis</th>
+
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          225
+                        </td>
+                        <td>Peluda</td>
+                        <td>
+                          Contra Mastitis
+                        </td>
+                        <td>
+                          Inyectado
+                        </td>
+                        <td>
+                          Penisilina
+                        </td>            
+                        <td>
+                          04/08/23
+                        </td>
+                        <td>
+                          3 días
+                        </td>
+                        <td>
+                          100ml cada 12 horas
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          300
+                        </td>
+                        <td>Blanca</td>
+                        <td>
+                          Contra Anaplasmosis
+                        </td>
+                        <td>
+                          Inyectado
+                        </td>
+                        <td>
+                          Berenil
+                        </td>            
+                        <td>
+                          09/10/23
+                        </td>
+                        <td>
+                          4 días
+                        </td>
+                        <td>
+                          50ml cada 24 horas
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
 

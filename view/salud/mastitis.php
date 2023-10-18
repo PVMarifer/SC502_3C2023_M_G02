@@ -153,53 +153,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.sidebar -->
 
         <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-               
-                <p>
-                  Enfermedades
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav nav-link ">
-                
-                <p>
-                  Vacunacion
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-                
-                <p>
-                  Tratamientos
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link ">
-                
-                <p class="text-center">
-                  Medicamentos e Injecciones
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-                
-                <p>
-                  Control de Mastitis
-                </p>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <?php
+          include '../fragments/main_aside.php'
+        ?>
         <!-- /.sidebar-menu -->
       </div>
     </aside>
@@ -214,6 +170,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-sm-3">
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Salud</a></li>
+                <li class="breadcrumb-item active">Mastitis</li>
+
 
 
               </ol>
@@ -225,18 +183,214 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div><!-- /.container-fluid -->
       </div><!-- /.content-header -->
 
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-6 col-6">
+                  <!-- small box -->
+                  <div class="small-box text-center text-white " style="background-color:#4CAF50;">
+                    <div class="inner">
+                      <p>Vacas con Mastitis</p>
+                      <h3>3</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-6">
+                  <!-- small box -->
+                  <div class="small-box text-center text-white " style="background-color:#4CAF50;">
+                    <div class="inner">
+                      <p>Vacas con Antibiótico</p>
+                      <h3>2</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-6">
+                  <!-- small box -->
+                  <div class="small-box text-center text-white " style="background-color:#4CAF50;">
+                    <div class="inner">
+                      <p>Vacas con Mastitis Parcial</p>
+                      <h3>2</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-6">
+                  <!-- small box -->
+                  <div class="small-box text-center text-white " style="background-color:#4CAF50;">
+                    <div class="inner">
+                      <p>Vacas con Mastitis Total</p>
+                      <h3>1</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4">
+              <div class="card">
+                <div class="card-header border-0">
+                  <h3 class="card-title">Vacas con Mastitis el Ultimo mes</h3>
+                </div>
+
+                <div class="card-body table-responsive p-0">
+                  <table class="table table-striped table-valign-middle">
+                    <thead>
+                      <tr>
+                        <th>Arete</th>
+                        <th>Fecha Diagnóstico</th>
+                        <th>Antibiótico Aplicado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          199
+                        </td>
+                        <td>04/10/23</td>
+                        <td>
+                          Mastijet
+                        </td>
+
+                      </tr>
+                      <tr>
+                        <td>
+                          233
+                        </td>
+                        <td>10/10/23</td>
+                        <td>
+                          Penicilina
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- ./col -->
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="card ">
+                <div class="card-header border-0">
+                  <h3 class="card-title">
+                    Gráfico de mastitis el último mes
+                  </h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <canvas class="chart" id="line-chart"
+                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer bg-transparent">
+                  <div class="row">
+                    <div class="col-4 text-center">
+                      <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
+                        data-fgColor="#39CCCC">
+
+                      <div class="text-white">Mail-Orders</div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-4 text-center">
+                      <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
+                        data-fgColor="#39CCCC">
+
+                      <div class="text-white">Online</div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-4 text-center">
+                      <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
+                        data-fgColor="#39CCCC">
+
+                      <div class="text-white">In-Store</div>
+                    </div>
+                    <!-- ./col -->
+                  </div>
+                  <!-- /.row -->
+                </div>
+                <!-- /.card-footer -->
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Registro de Mastitis</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>Número de Arete</th>
+                        <th>Nombre</th>
+                        <th>Fecha Último Mastitis</th>
+                        <th>Cantidad de mastitis el último mes</th>
+                        <th>Cantidad de mastitis el último año</th>
+                        <th>Cuarto(s) más afectados</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>200</td>
+                        <td>3 años</td>
+                        <td>12/10/23</td>
+                        <td>2</td>
+                        <td>12</td>
+                        <td>Trasero Derecho</td>
+
+                      </tr>
+                      <tr>
+                        <td>230</td>
+                        <td>2 años</td>
+                        <td>12/10/23</td>
+                        <td>4</td>
+                        <td>7</td>
+                        <td>Traseros</td>
+
+                      </tr>
+                    <tfoot>
+                      <tr>
+                        <th>Número de Arete</th>
+                        <th>Nombre</th>
+                        <th>Fecha Último Mastitis</th>
+                        <th>Cantidad de mastitis el último mes</th>
+                        <th>Cantidad de mastitis el último año</th>
+                        <th>Cuarto(s) más afectados</th>
+
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+
+          </div>
+        </div>
+    </div>
+    </section>
 
 
-    </div><!-- ./Content Wrapper-->
+  </div><!-- ./Content Wrapper-->
 
 
 
-    <!-- Main Footer -->
-    <footer class="main-footer">
-      <?php
-      include '../fragments/footer.php'
-        ?>
-    </footer>
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <?php
+    include '../fragments/footer.php'
+      ?>
+  </footer>
 
   </div><!-- ./wrapper -->
 

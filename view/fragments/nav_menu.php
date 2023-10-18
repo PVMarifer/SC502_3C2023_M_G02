@@ -12,7 +12,7 @@
         <a href="#" class="nav-link-menu nav-link">Animales</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="#" class="nav-link-menu nav-link">Salud</a>
+        <a href="../salud/salud.php" class="nav-link-menu nav-link">Salud</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
         <a href="#" class="nav-link-menu nav-link">Produccion</a>

@@ -34,7 +34,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item-menu nav-item d-none d-md-inline-block ">
-          <a href="#" class="nav-link-menu nav-link ">Inicio</a>
+          <a href="../../index.php" class="nav-link-menu nav-link ">Inicio</a>
         </li>
         <li class="nav-item-menu nav-item d-none d-md-inline-block">
           <a href="#" class="nav-link-menu nav-link">Animales</a>
@@ -153,53 +153,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.sidebar -->
 
         <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-
-                <p>
-                  Enfermedades
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav nav-link ">
-
-                <p>
-                  Vacunacion
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-
-                <p>
-                  Tratamientos
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link ">
-
-                <p class="text-center">
-                  Medicamentos e Injecciones
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-
-                <p>
-                  Control de Mastitis
-                </p>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <?php
+          include '../fragments/main_aside.php'
+        ?>
         <!-- /.sidebar-menu -->
       </div>
     </aside>
@@ -230,7 +186,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <!-- Small boxes (Stat box) -->
           <div class="row">
-
+ 
             <div class="col-lg-3 col-6">
               <!-- small box -->
               <div class="small-box text-center text-white " style="background-color:#4CAF50;">

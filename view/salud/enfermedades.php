@@ -17,6 +17,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Theme style -->
+
 
 
 </head>
@@ -153,53 +159,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.sidebar -->
 
         <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-               
-                <p>
-                  Enfermedades
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav nav-link ">
-                
-                <p>
-                  Vacunacion
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-                
-                <p>
-                  Tratamientos
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link ">
-                
-                <p class="text-center">
-                  Medicamentos e Injecciones
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-                
-                <p>
-                  Control de Mastitis
-                </p>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <?php
+          include '../fragments/main_aside.php'
+        ?>
         <!-- /.sidebar-menu -->
       </div>
     </aside>
@@ -211,19 +173,98 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
-            <div class="col-sm-3">
+            <div class="col-sm-6">
               <ol class="breadcrumb float-sm-left">
-                <li class="breadcrumb-item"><a href="#">Salud</a></li>
-
-
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Enfermedades</a></li>
+                <li class="breadcrumb-item active">Animales Enfermos</li>
               </ol>
-            </div><!-- /.col -->
-            <div class="col-sm-9">
+            </div>
+            <div class="col-sm-6">
               <h1 class="m-0"></h1>
             </div><!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
       </div><!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Registro de Aninales Enfermos</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>Número de Arete</th>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Fecha Diagnostico</th>
+                        <th>Nombre Enfermedad</th>
+                        <th>Estado Enfermedad</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>200</td>
+                        <td>Perla</td>
+                        <td>3 años</td>
+                        <td>16/10/23</td>
+                        <td>Mastitis</td>
+                        <td>En Curso</td>
+
+                      </tr>
+                      <tr>
+                        <td>240</td>
+                        <td>Maria</td>
+                        <td>4 años</td>
+                        <td>10/10/23</td>
+                        <td>Mastitis</td>
+                        <td>Recuperada</td>
+
+                      </tr>
+                      <tr>
+                        <td>215</td>
+                        <td>Roja</td>
+                        <td>2años</td>
+                        <td>1/10/23</td>
+                        <td>Leucosis</td>
+                        <td>Fallecida</td>
+
+                      </tr>
+                     
+                    <tfoot>
+                      <tr>
+                      <th>Número de Arete</th>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Fecha Diagnostico</th>
+                        <th>Nombre Enfermedad</th>
+                        <th>Estado Enfermedad</th>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+
+
+
 
 
 
@@ -243,12 +284,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- REQUIRED SCRIPTS -->
 
   <!-- jQuery -->
-  <script src="../plugins/jquery/jquery.min.js"></script>
+  <script src="../../plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
-  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
   <!-- AdminLTE App -->
-  <script src="../dist/js/adminlte.min.js"></script>
+  <script src="../../dist/js/adminlte.min.js"></script>
+  <!-- DataTables  & Plugins -->
+  <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+  <script src="../../plugins/jszip/jszip.min.js"></script>
+  <script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+  <script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+  <script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+  <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+  <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+  
 </body>
+
 <!-- CSS styles -->
 <link rel="stylesheet" href="../css/index.css">
 

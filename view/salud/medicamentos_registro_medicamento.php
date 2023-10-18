@@ -170,7 +170,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Vacunación</li>
+                <li class="breadcrumb-item"><a href="#">Medicamentos</a></li>
+
+                <li class="breadcrumb-item active">Nueva Injeccion/Aplicacion de Medicamento</li>
               </ol>
             </div>
             <div class="col-sm-6">
@@ -183,238 +185,73 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-7">
-              <div class="row">
-                <div class="col-6">
-                  <!-- small box -->
-                  <div class="small-box text-center text-white " style="background-color:#4CAF50;">
-                    <div class="inner">
-                      <p>Animales Vacunados</p>
-                      <h3>100</h3>
-                    </div>
-                  </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-6">
-                  <!-- small box -->
-                  <div class="small-box text-center text-white" style="background-color:#4CAF50;">
-                    <div class="inner">
-                      <p>Animales sin Vacunar</p>
-                      <h3>30</h3>
-                    </div>
-                  </div>
-                </div>
-                <!-- ./col -->
-              </div>
 
-              <div class="col-lg-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">Registro de Aninales sin Vacunar</h3>
+            <!-- /.card -->
+            <div class="col-12">
+              <div class="d-flex justify-content-center">
+                <div class="card col-6" style="background-color: #3f3ae6;">
+                  <div class="card-header text-center">
+                    <h3 class="card-title text-white">Nueva Injeccion/Aplicacion de Medicamento</h3>
                   </div>
                   <!-- /.card-header -->
-                  <div class="card-body">
-                    <table id="example2" class="table table-bordered table-hover">
-                      <thead>
-                        <tr>
-                          <th>Número de Arete</th>
-                          <th>Nombre</th>
-                          <th>Edad</th>
-                          <th>Fecha Nacimiento</th>
-
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>200</td>
-                          <td>Perla</td>
-                          <td>3 años</td>
-                          <td>16/10/23</td>
-
-
-                        </tr>
-                        <tr>
-                          <td>240</td>
-                          <td>Maria</td>
-                          <td>4 años</td>
-                          <td>10/10/23</td>
+                  <!-- form start -->
+                  <form>
+                    <div class="card-body text-white ">
+                      <div class="form-group">
+                        <label for="">Nombre del Medicamento</label>
+                        <input type="text" class="form-control" id="" placeholder="Ingrese el nombre del medicamento">
+                      </div>
+                      <div class="form-group">
+                        <label for="">Número de Arete</label>
+                        <input type="number" class="form-control" id="" placeholder="Ingrese el número de arete">
+                      </div>
+                      <div class="form-group">
+                        <label for="">Tipo de Aplicacion</label>
+                        <input type="text" class="form-control" id="" placeholder="Ingrese el tipo de aplicacion">
+                      </div>
+                      <div class="form-group">
+                        <label for="">Fecha de Aplicacion</label>
+                        <input type="date" class="form-control" id="">
+                      </div>
+                      <div class="form-group">
+                        <label for="">Observaciones</label>
+                        <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
+                      </div>
 
 
-                        </tr>
-                        <tr>
-                          <td>215</td>
-                          <td>Roja</td>
-                          <td>2años</td>
-                          <td>1/10/23</td>
 
+                    </div>
+                    <!-- /.card-body -->
 
-                        </tr>
-
-                      <tfoot>
-                        <tr>
-                          <th>Número de Arete</th>
-                          <th>Nombre</th>
-                          <th>Edad</th>
-                          <th>Fecha de Nacimiento</th>
-
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
-                  <!-- /.card-body -->
+                    <div class="card-footer text-center">
+                      <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                  </form>
                 </div>
                 <!-- /.card -->
               </div>
             </div>
-
-            <div class="col-lg-5 col-6">
-              <div class="card">
-                <div class="card-header border-0">
-                  <h3 class="card-title">Vacunas Registradas</h3>
-                </div>
-                <div class="card-body table-responsive p-0">
-                  <table class="table table-striped table-valign-middle">
-                    <thead>
-                      <tr>
-                        <th>Lote</th>
-                        <th>Nombre Vacuna</th>
-                        <th>Tipo</th>
-                        <th>Cantidad Aplicadas</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          1EX-1212
-                        </td>
-                        <td>Bacterina Triple</td>
-                        <td>
-                          Antidiarréica
-                        </td>
-                        <td>
-                          200
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          1EX-2323
-                        </td>
-                        <td>RB51</td>
-                        <td>
-                          Vacuna de brucelosis bovina
-                        </td>
-                        <td>
-                          120
-                        </td>
-                      </tr>
-
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <!-- ./col -->
+            <!-- /.card -->
           </div>
-          <!-- /.row -->
+        </div>
 
-          <div class="row ">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">Registro de Aninales Vacunadas</h3>
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                      <tr>
-                        <th>Número de Arete</th>
-                        <th>Nombre</th>
-                        <th>Edad</th>
-                        <th>Fecha Nacimiento</th>
-                        <th>Vacunas Aplicadas</th>
-
-
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>200</td>
-                        <td>Perla</td>
-                        <td>3 años</td>
-                        <td>16/10/23</td>
-                        <td>
-                          <ul>
-                            <li>Bacterina Triple</li>
-                            <li>Antrax</li>
-                          </ul>
-                        </td>
-
-
-                      </tr>
-                      <tr>
-                        <td>240</td>
-                        <td>Maria</td>
-                        <td>4 años</td>
-                        <td>10/10/23</td>
-                        <td>
-                          <ul>
-                            <li>Bacterina Triple</li>
-                            <li>Antrax</li>
-                          </ul>
-                        </td>
-
-
-                      </tr>
-                      <tr>
-                        <td>215</td>
-                        <td>Roja</td>
-                        <td>2años</td>
-                        <td>1/10/23</td>
-                        <td>
-                          <ul>
-                            <li>Bacterina Triple</li>
-                            <li>Antrax</li>
-                          </ul>
-                        </td>
-
-
-                      </tr>
-
-                    <tfoot>
-                      <tr>
-                        <th>Número de Arete</th>
-                        <th>Nombre</th>
-                        <th>Edad</th>
-                        <th>Fecha Nacimiento</th>
-                        <th>Vacunas Aplicadas</th>
-
-
-                      </tr>
-                    </tfoot>
-                  </table>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.card -->
-            </div>
-            <!-- /.row -->
-          </div>
-      </section>
+    </div>
+    <!-- /.row -->
+    </section>
 
 
 
 
-    </div><!-- ./Content Wrapper-->
+  </div><!-- ./Content Wrapper-->
 
 
 
-    <!-- Main Footer -->
-    <footer class="main-footer">
-      <?php
-      include '../fragments/footer.php'
-        ?>
-    </footer>
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <?php
+    include '../fragments/footer.php'
+      ?>
+  </footer>
 
   </div><!-- ./wrapper -->
 

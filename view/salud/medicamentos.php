@@ -153,53 +153,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.sidebar -->
 
         <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-               
-                <p>
-                  Enfermedades
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav nav-link ">
-                
-                <p>
-                  Vacunacion
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-                
-                <p>
-                  Tratamientos
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link ">
-                
-                <p class="text-center">
-                  Medicamentos e Injecciones
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-                
-                <p>
-                  Control de Mastitis
-                </p>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <?php
+          include '../fragments/main_aside.php'
+        ?>
         <!-- /.sidebar-menu -->
       </div>
     </aside>
@@ -214,8 +170,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-sm-3">
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Salud</a></li>
-
-
+                <li class="breadcrumb-item active">Medicamentos</li>
               </ol>
             </div><!-- /.col -->
             <div class="col-sm-9">
@@ -224,6 +179,167 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
       </div><!-- /.content-header -->
+
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-lg-4 col-6">
+                  <!-- small box -->
+                  <div class="small-box text-center text-white " style="background-color:#4CAF50;">
+                    <div class="inner">
+                      <p>Animales Injectados el último mes</p>
+                      <h3>10</h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-4 col-6">
+                  <!-- small box -->
+                  <div class="small-box text-center text-white" style="background-color:#4CAF50;">
+                    <div class="inner">
+                      <p>Cantidad de medicinas registradas</p>
+                      <h3>30</h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-4 col-6">
+                  <!-- small box -->
+                  <div class="small-box text-center text-white" style="background-color:#4CAF50;">
+                    <div class="inner">
+                      <p>Medicinas vencidas</p>
+                      <h3>2</h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- ./col -->
+              </div>
+
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Registro de Injecciones o Aplicaciones de Medicinas</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th>Número de Arete</th>
+                          <th>Edad</th>
+                          <th>Fecha Aplicacion/Injeccion</th>
+                          <th>Tipo Aplicacion/Injeccion</th>
+                          <th>Medicina Utilizada</th>
+                          <th>Detalles</th>
+
+
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>200</td>
+                          <td>3 años</td>
+                          <td>12/10/23</td>
+                          <td>Injeccion sucutánea</td>
+                          <td>Penisilina</td>
+                          <td>Se inflamó el área injectada</td>
+
+                        </tr>
+                        <tr>
+                          <td>230</td>
+                          <td>2 años</td>
+                          <td>12/10/23</td>
+                          <td>Injeccion intramuscular</td>
+                          <td>Berenil</td>
+                          <td>Se inflamó el área injectada</td>
+
+                        </tr>
+                      <tfoot>
+                        <tr>
+                          <th>Número de Arete</th>
+                          <th>Edad</th>
+                          <th>Fecha Aplicacion/Injeccion</th>
+                          <th>Tipo Aplicacion/Injeccion</th>
+                          <th>Medicina Utilizada</th>
+                          <th>Detalles</th>
+
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Registro de Medicinas</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>Nombre de la medicina/antibiótico</th>
+                        <th>Tipo de medicamento</th>
+                        <th>Descripción</th>
+                        <th>Fecha Vencimiento</th>
+                        <th>Lote</th>
+                        <th>Presentación</th>
+                        <th>Observaciones</th>
+
+
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Penicilina</td>
+                        <td>Antibiótico</td>
+                        <td>Medicamento contra infecciones bacterianas</td>
+                        <td>16/10/24</td>
+                        <td>EF-122</td>
+                        <td>500ml</td>
+                        <th>Ninguna</th>
+                      </tr>
+                      <tr>
+                        <td>Histaminex</td>
+                        <td>Antiestamínico</td>
+                        <td>Medicamento contra el dolor</td>
+                        <td>16/10/25</td>
+                        <td>DR-1255</td>
+                        <td>500ml</td>
+                        <th>Ninguna</th>
+                      </tr>
+
+                    <tfoot>
+                      <tr>
+                        <th>Nombre de la medicina/antibiótico</th>
+                        <th>Tipo de medicamento</th>
+                        <th>Descripción</th>
+                        <th>Fecha Vencimiento</th>
+                        <th>Lote</th>
+                        <th>Presentación</th>
+                        <th>Observaciones</th>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <!-- /.row -->
+
+
+      </section>
 
 
 
