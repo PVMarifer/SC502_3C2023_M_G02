@@ -42,7 +42,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a href="./view/salud/salud.php" class="nav-link-menu nav-link">Salud</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="#" class="nav-link-menu nav-link">Produccion</a>
+        <a href="./view/produccion/produccion.php" class="nav-link-menu nav-link">Produccion</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
         <a href="#" class="nav-link-menu nav-link">Reproduccion y Control de Celos</a>
