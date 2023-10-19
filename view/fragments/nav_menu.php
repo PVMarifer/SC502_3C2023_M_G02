@@ -1,30 +1,29 @@
-
-
-<!-- Left navbar links -->
+<nav id="main-navbar" class=" main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
     <ul class="nav-main-menu navbar-nav">
       <li class="nav-item-menu nav-item">
         <a class=" nav-link-menu nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="#" class="nav-link-menu nav-link">Inicio</a>
+        <a href="../../index.php" class="nav-link-menu nav-link">Inicio</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="#" class="nav-link-menu nav-link">Animales</a>
+        <a href="../animal/estadoAnimal.php" class="nav-link-menu nav-link">Animales</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
         <a href="../salud/salud.php" class="nav-link-menu nav-link">Salud</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="#" class="nav-link-menu nav-link">Produccion</a>
+        <a href="../produccion/produccion.php" class="nav-link-menu nav-link">Produccion</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="#" class="nav-link-menu nav-link">Reproduccion y Control de Celos</a>
+        <a href="../reproduccion/reproduccion.php" class="nav-link-menu nav-link">Reproduccion y Control de Celos</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="#" class="nav-link-menu nav-link">Control de Secados</a>
+        <a href="../secados/secados.php" class="nav-link-menu nav-link">Control de Secados</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="#" class=" nav-link-menu nav-link">Control de Partos</a>
+        <a href="../partos/partos.php" class=" nav-link-menu nav-link">Control de Partos</a>
       </li>
     </ul>
 <!-- Right navbar links -->
@@ -81,3 +80,4 @@
       </li>
       
     </ul>
+    </nav>

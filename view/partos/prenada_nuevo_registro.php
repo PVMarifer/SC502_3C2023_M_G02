@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Sidebar Menu -->
         <?php
-          include '../fragments/main_aside.php'
+          include '../fragments/main_aside_partos.php'
         ?>
         <!-- /.sidebar-menu -->
       </div>
@@ -87,8 +87,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Enfermedades</a></li>
-                <li class="breadcrumb-item active">Añadir Enfermedad</li>
+                <li class="breadcrumb-item"><a href="#">Preños</a></li>
+                <li class="breadcrumb-item active">Registrar Animal Parto</li>
               </ol>
             </div>
             <div class="col-sm-6">
@@ -106,29 +106,77 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- general form elements -->
             <div class="card " style="background-color: #3f3ae6;">
               <div class="card-header text-center">
-                <h3 class="card-title text-white">Nueva Enfermedad</h3>
+                <h3 class="card-title text-white">Nuevo Parto</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form>
                 <div class="card-body text-white ">
                   <div class="form-group">
-                    <label for="">Nombre de la Enfermedad</label>
-                    <input type="number" class="form-control" id="" placeholder="Ingrese el número de arete">
+                    <label for="">Nombre de la Vaca</label>
+                    <input type="number" class="form-control" id="" placeholder="Ingrese el nombre de la vaca">
                   </div>
                   <div class="form-group">
-                    <label for="">Descripción de la Enfermedad</label>
-                    <input type="text" class="form-control" id="" placeholder="Ingrese la descripción">
+                    <label for="">Número de arete</label>
+                    <input type="text" class="form-control" id="" placeholder="Ingrese el número de arete">
                   </div>
                   <div class="form-group">
-                    <label for="">Síntomas</label>
-                    <input type="text" class="form-control" id="" placeholder="Ingrese los sintomas">
+                    <label for="">Fecha de parto</label>
+                    <input type="text" class="form-control" id="" placeholder="xx/xx/xxxx">
                   </div>
                   <div class="form-group">
-                    <label for="">Tratamiento</label>
-                    <input type="text" class="form-control" id="" placeholder="Ingrese el tratamiento">
+                    <label>Parto difícil o normal</label>
+                    <select class="form-control select2" style="width: 100%;">
+                      <option selected="selected">Dificil</option>
+                      <option>Normal</option>
+                      <option>Dificil</option>
+                     
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Tipo de parto</label>
+                    <select class="form-control select2" style="width: 100%;">
+                      <option selected="selected">Intervenido</option>
+                      <option>Cesarea</option>
+                      <option>Sola</option>
+                     
+
+                     
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Estado de la cría</label>
+                    <select class="form-control select2" style="width: 100%;">
+                      <option selected="selected">Cría</option>
+                      <option>Muerta</option>
+                      <option>Viva</option>
+                      <option>Enferma</option>
+                     
+
+                     
+                    </select>
+                  </div>
+                     
+
+                     
+                    </select>
                   </div>
 
+                  <div class="form-group">
+                    <label for="">Arete de la cría</label>
+                    <input type="text" class="form-control" id="" placeholder="Ingrese el número de arete de la cría">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Sexo de la cría</label>
+                    <select class="form-control select2" style="width: 100%;">
+                      <option selected="selected">Cría</option>
+                      <option>Hembra</option>
+                      <option>Macho</option>
+                     
+
+                     
+                    </select>
 
 
                 </div>

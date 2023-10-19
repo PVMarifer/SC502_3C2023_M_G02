@@ -33,10 +33,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class=" nav-link-menu nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="#" class="nav-link-menu nav-link">Inicio</a>
+        <a href="index.php" class="nav-link-menu nav-link">Inicio</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="#" class="nav-link-menu nav-link">Animales</a>
+        <a href="./view/animal/estadoAnimal.php" class="nav-link-menu nav-link">Animales</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
         <a href="./view/salud/salud.php" class="nav-link-menu nav-link">Salud</a>
@@ -45,13 +45,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a href="./view/produccion/produccion.php" class="nav-link-menu nav-link">Produccion</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="#" class="nav-link-menu nav-link">Reproduccion y Control de Celos</a>
+        <a href="./view/reproduccion/reproduccion.php" class="nav-link-menu nav-link">Reproduccion y Control de Celos</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="#" class="nav-link-menu nav-link">Control de Secados</a>
+        <a href="./view/secados/secados.php" class="nav-link-menu nav-link">Control de Secados</a>
       </li>
       <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="#" class=" nav-link-menu nav-link">Control de Partos</a>
+        <a href="./view/partos/partos.php" class=" nav-link-menu nav-link">Control de Partos</a>
       </li>
     </ul>
 <!-- Right navbar links -->

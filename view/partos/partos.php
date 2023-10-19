@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Sidebar Menu -->
         <?php
-          include '../fragments/main_aside.php'
+          include '../fragments/main_aside_partos.php'
         ?>
         <!-- /.sidebar-menu -->
       </div>
@@ -79,15 +79,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="bg-white content-wrapper">
+    <div class=" content-wrapper">
       <!-- Content Header (Page header) -->
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-3">
               <ol class="breadcrumb float-sm-left">
-                <li class="breadcrumb-item"><a href="#">Salud</a></li>
-                <li class="breadcrumb-item active">Tratamientos</li>
+                <li class="breadcrumb-item"><a href="#" style="color: #0799b6;">Partos</a></li>
+
+
               </ol>
             </div><!-- /.col -->
             <div class="col-sm-9">
@@ -99,84 +100,148 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <section class="content">
         <div class="container-fluid">
+
+          <!-- Small boxes (Stat box) -->
           <div class="row">
-            <div class="col-12">
+ 
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box text-center text-white " style="background-color:#4CAF50;">
+                <div class="inner">
+                  <p>Vacas Preñadas</p>
+                  <h3>3</h3>
+
+
+                </div>
+
+                <a href="./prenadas.php" class="small-box-footer">More info <i
+                    class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+              
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box text-center text-white" style="background-color:#4CAF50;">
+                <div class="inner">
+                  <p>Vacas con abortos</p>
+                  <h3>3</h3>
+                </div>
+
+                <a href="./abortos.php" class="small-box-footer">More info <i
+                    class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            
+            <!-- ./col -->
+          </div>
+          <!-- /.row -->
+        </div> <!-- /.content-fluid -->
+      </section><!-- /section -->
+
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-7">
+              <!-- grafico de vacas prenadas  -->
+              <div class="card ">
+                <div class="card-header border-0">
+                  <h3 class="card-title">
+                    Gráfico de Partos
+                  </h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <canvas class="chart" id="line-chart"
+                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer bg-transparent">
+                  <div class="row">
+                    <div class="col-4 text-center">
+                      <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
+                        data-fgColor="#39CCCC">
+
+                      <div class="text-white">Mail-Orders</div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-4 text-center">
+                      <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
+                        data-fgColor="#39CCCC">
+
+                      <div class="text-white">Online</div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-4 text-center">
+                      <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
+                        data-fgColor="#39CCCC">
+
+                      <div class="text-white">In-Store</div>
+                    </div>
+                    <!-- ./col -->
+                  </div>
+                  <!-- /.row -->
+                </div>
+                <!-- /.card-footer -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!-- tabla de vacas preñadas -->
+            <div class="col-sm-5">
               <div class="card">
                 <div class="card-header border-0">
-                  <h3 class="card-title">Animales con Tratamientos</h3>
+                  <h3 class="card-title">Vacas Preñadas</h3>
                 </div>
+
                 <div class="card-body table-responsive p-0">
                   <table class="table table-striped table-valign-middle">
                     <thead>
                       <tr>
-                        <th>Número de Arete</th>
-                        <th>Nombre Vaca</th>
-                        <th>Tipo de Tratamiento</th>
-                        <th>Tipo de Aplicación</th>
-                        <th>Medicamento aplicado</th>
-                        <th>Fecha de inicio </th>
-                        <th>Duración del tratamiento</th>
-                        <th>Dosis</th>
-
-                        
+                        <th>Arete</th>
+                        <th>Tipo de preño</th>
+                        <th>Fecha de preño</th>
+                        <th>Fecha de parto</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>
-                          225
+                          245
                         </td>
-                        <td>Peluda</td>
+                        <td>Inseminación</td>
                         <td>
-                          Contra Mastitis
-                        </td>
-                        <td>
-                          Inyectado
+                        17/10/23
                         </td>
                         <td>
-                          Penisilina
-                        </td>            
-                        <td>
-                          04/08/23
-                        </td>
-                        <td>
-                          3 días
-                        </td>
-                        <td>
-                          100ml cada 12 horas
+                          25/02/24
                         </td>
                       </tr>
                       <tr>
-                        <td>
-                          300
+                        <td>                        
+                          293    
                         </td>
-                        <td>Blanca</td>
+                        <td>Natural</td>
                         <td>
-                          Contra Anaplasmosis
-                        </td>
-                        <td>
-                          Inyectado
+                          10/11/23
                         </td>
                         <td>
-                          Berenil
-                        </td>            
-                        <td>
-                          09/10/23
-                        </td>
-                        <td>
-                          4 días
-                        </td>
-                        <td>
-                          50ml cada 24 horas
+                          27/03/24
                         </td>
                       </tr>
+
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
+
       </section>
 
 

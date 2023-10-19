@@ -30,6 +30,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     ?>
 
 
+
     <!--  Main Sidebar Container -->
     <aside class="main-sidebar  elevation-4">
       <div class="sidebar">
@@ -70,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Sidebar Menu -->
         <?php
-          include '../fragments/main_aside.php'
+          include '../fragments/main_aside_partos.php'
         ?>
         <!-- /.sidebar-menu -->
       </div>
@@ -83,13 +84,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
-            <div class="col-sm-3">
+            <div class="col-sm-6">
               <ol class="breadcrumb float-sm-left">
-                <li class="breadcrumb-item"><a href="#">Salud</a></li>
-                <li class="breadcrumb-item active">Medicamentos</li>
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Control de Partos</li>
               </ol>
-            </div><!-- /.col -->
-            <div class="col-sm-9">
+            </div>
+            <div class="col-sm-6">
               <h1 class="m-0"></h1>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -99,34 +100,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-7">
               <div class="row">
-                <div class="col-lg-4 col-6">
+                <div class="col-6">
                   <!-- small box -->
                   <div class="small-box text-center text-white " style="background-color:#4CAF50;">
                     <div class="inner">
-                      <p>Animales Injectados el último mes</p>
-                      <h3>10</h3>
+                      <p>Partos realizados</p>
+                      <h3>45</h3>
                     </div>
                   </div>
                 </div>
                 <!-- ./col -->
-                <div class="col-lg-4 col-6">
+                <div class="col-6">
                   <!-- small box -->
                   <div class="small-box text-center text-white" style="background-color:#4CAF50;">
                     <div class="inner">
-                      <p>Cantidad de medicinas registradas</p>
-                      <h3>30</h3>
-                    </div>
-                  </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-4 col-6">
-                  <!-- small box -->
-                  <div class="small-box text-center text-white" style="background-color:#4CAF50;">
-                    <div class="inner">
-                      <p>Medicinas vencidas</p>
-                      <h3>2</h3>
+                      <p>Vacas Preñadas</p>
+                      <h3>5</h3>
                     </div>
                   </div>
                 </div>
@@ -136,7 +127,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="col-lg-12">
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">Registro de Injecciones o Aplicaciones de Medicinas</h3>
+                    <h3 class="card-title">Registro de Animales Preñadas</h3>
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
@@ -144,46 +135,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <thead>
                         <tr>
                           <th>Número de Arete</th>
+                          <th>Nombre</th>
                           <th>Edad</th>
-                          <th>Fecha Aplicacion/Injeccion</th>
-                          <th>Tipo Aplicacion/Injeccion</th>
-                          <th>Medicina Utilizada</th>
-                          <th>Detalles</th>
-
-
+                          <th>Fecha del parto</th>
 
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>200</td>
+                          <td>512</td>
+                          <td>Lucia</td>
                           <td>3 años</td>
-                          <td>12/10/23</td>
-                          <td>Injeccion sucutánea</td>
-                          <td>Penisilina</td>
-                          <td>Se inflamó el área injectada</td>
+                          <td>16/10/23</td>
+
 
                         </tr>
                         <tr>
-                          <td>230</td>
+                          <td>245</td>
+                          <td>Ruby</td>
+                          <td>4 años</td>
+                          <td>10/09/23</td>
+
+
+                        </tr>
+                        <tr>
+                          <td>323</td>
+                          <td>Bluey</td>
                           <td>2 años</td>
-                          <td>12/10/23</td>
-                          <td>Injeccion intramuscular</td>
-                          <td>Berenil</td>
-                          <td>Se inflamó el área injectada</td>
+                          <td>1/02/24</td>
+
 
                         </tr>
+
                       <tfoot>
-                        <tr>
-                          <th>Número de Arete</th>
-                          <th>Edad</th>
-                          <th>Fecha Aplicacion/Injeccion</th>
-                          <th>Tipo Aplicacion/Injeccion</th>
-                          <th>Medicina Utilizada</th>
-                          <th>Detalles</th>
 
-                        </tr>
-                      </tfoot>
                     </table>
                   </div>
                   <!-- /.card-body -->
@@ -192,73 +177,110 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-lg-5 col-6">
               <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">Registro de Medicinas</h3>
+                <div class="card-header border-0">
+                  <h3 class="card-title">Partos Registrados</h3>
                 </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <table id="example2" class="table table-bordered table-hover">
+                <div class="card-body table-responsive p-0">
+                  <table class="table table-striped table-valign-middle">
                     <thead>
                       <tr>
-                        <th>Nombre de la medicina/antibiótico</th>
-                        <th>Tipo de medicamento</th>
-                        <th>Descripción</th>
-                        <th>Fecha Vencimiento</th>
-                        <th>Lote</th>
-                        <th>Presentación</th>
-                        <th>Observaciones</th>
-
-
-
+                        <th>Número de Arete</th>
+                        <th>Nombre Vaca</th>
+                        <th>Número Arete cría</th>
+                        <th>Fecha Nacimiento</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Penicilina</td>
-                        <td>Antibiótico</td>
-                        <td>Medicamento contra infecciones bacterianas</td>
-                        <td>16/10/24</td>
-                        <td>EF-122</td>
-                        <td>500ml</td>
-                        <th>Ninguna</th>
+                        <td>
+                          289
+                        </td>
+                        <td>Arenita</td>
+                        <td>
+                          492
+                        </td>
+                        <td>
+                          15/09/23
+                        </td>
                       </tr>
                       <tr>
-                        <td>Histaminex</td>
-                        <td>Antiestamínico</td>
-                        <td>Medicamento contra el dolor</td>
-                        <td>16/10/25</td>
-                        <td>DR-1255</td>
-                        <td>500ml</td>
-                        <th>Ninguna</th>
+                        <td>
+                          222
+                        </td>
+                        <td>Arlequina</td>
+                        <td>
+                          555
+                        </td>
+                        <td>
+                          12/08/23
+                        </td>
                       </tr>
 
-                    <tfoot>
-                      <tr>
-                        <th>Nombre de la medicina/antibiótico</th>
-                        <th>Tipo de medicamento</th>
-                        <th>Descripción</th>
-                        <th>Fecha Vencimiento</th>
-                        <th>Lote</th>
-                        <th>Presentación</th>
-                        <th>Observaciones</th>
-                      </tr>
-                    </tfoot>
+                    </tbody>
                   </table>
                 </div>
-                <!-- /.card-body -->
               </div>
-              <!-- /.card -->
             </div>
+            <!-- ./col -->
           </div>
           <!-- /.row -->
 
+          <div class="row ">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Registro de Aninales Vacunadas</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th>Número de Arete</th>
+                          <th>Nombre</th>
+                          <th>Edad</th>
+                          <th>Fecha del parto</th>
 
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>512</td>
+                          <td>Lucia</td>
+                          <td>3 años</td>
+                          <td>16/10/23</td>
+
+
+                        </tr>
+                        <tr>
+                          <td>245</td>
+                          <td>Ruby</td>
+                          <td>4 años</td>
+                          <td>10/09/23</td>
+
+
+                        </tr>
+                        <tr>
+                          <td>323</td>
+                          <td>Bluey</td>
+                          <td>2 años</td>
+                          <td>1/02/24</td>
+
+
+                        </tr>
+
+                      <tfoot>
+
+                    </table>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+              </div>
+            </div>
       </section>
-
-
-
     </div><!-- ./Content Wrapper-->
 
 
