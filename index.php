@@ -144,30 +144,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                  Opcion1
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav nav-link active">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                  Opcion 2
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="links-sidebar-nav  nav-link">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                  Opcion 3
-                </p>
-              </a>
-            </li>
+           
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -332,6 +309,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="./view/dist/js/adminlte.min.js"></script>
 </body>
 <!-- CSS styles -->
-<link rel="stylesheet" href="./view/css/index.css">
+<link rel="stylesheet" href="./view/assets/css/index.css">
 
 </html>

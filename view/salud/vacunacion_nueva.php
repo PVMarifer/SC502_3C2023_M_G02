@@ -25,9 +25,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
 
-  <?php
-      include '../fragments/nav_menu.php'
-    ?>
+    <?php
+    include '../fragments/nav_menu.php'
+      ?>
 
 
 
@@ -71,8 +71,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Sidebar Menu -->
         <?php
-          include '../fragments/main_aside.php'
-        ?>
+        include '../fragments/main_aside.php'
+          ?>
         <!-- /.sidebar-menu -->
       </div>
     </aside>
@@ -104,54 +104,54 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row">
             <div class="col-12">
               <div class="d-flex justify-content-center">
-            <div class="card col-6" style="background-color: #3f3ae6;">
-              <div class="card-header text-center">
-                <h3 class="card-title text-white">Nueva Vacuna</h3>
+                <div class="card col-6" style="background-color: #3f3ae6;">
+                  <div class="card-header text-center">
+                    <h3 class="card-title text-white">Nueva Vacuna</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <!-- form start -->
+                  <form>
+                    <div class="card-body text-white ">
+                      <div class="form-group">
+                        <label for="">Número de la Vacuna</label>
+                        <input type="text" class="form-control" id="" placeholder="Ingrese el nombre de la vacuna">
+                      </div>
+                      <div class="form-group">
+                        <label for="">Tipo de Vacuna</label>
+                        <input type="text" class="form-control" id="" placeholder="Ingrese el tipo de vacuna">
+                      </div>
+                      <div class="form-group">
+                        <label for="">Descripción</label>
+                        <input type="text" class="form-control" id="" placeholder="Ingrese la descripcion">
+                      </div>
+                      <div class="form-group">
+                        <label for="">Lote</label>
+                        <input type="text" class="form-control" id="" placeholder="Ingrese el lote">
+                      </div>
+                      <div class="form-group">
+                        <label for="">Fecha de Vencimiento</label>
+                        <input type="text" class="form-control" id="" placeholder="xx/xx/xxxx">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="">Observaciones</label>
+                        <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
+                      </div>
+
+
+
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer text-center">
+                      <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                  </form>
+                </div>
+                <!-- /.card -->
               </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form>
-                <div class="card-body text-white ">
-                  <div class="form-group">
-                    <label for="">Número de la Vacuna</label>
-                    <input type="text" class="form-control" id="" placeholder="Ingrese el nombre de la vacuna">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Tipo de Vacuna</label>
-                    <input type="text" class="form-control" id="" placeholder="Ingrese el tipo de vacuna">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Descripción</label>
-                    <input type="text" class="form-control" id="" placeholder="Ingrese la descripcion">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Lote</label>
-                    <input type="text" class="form-control" id="" placeholder="Ingrese el lote">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Fecha de Vencimiento</label>
-                    <input type="text" class="form-control" id="" placeholder="xx/xx/xxxx">
-                  </div>
-                
-                  <div class="form-group">
-                    <label for="">Observaciones</label>
-                    <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
-                  </div>
-
-
-
-                </div>
-                <!-- /.card-body -->
-
-                <div class="card-footer text-center">
-                  <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-              </form>
             </div>
-            <!-- /.card -->
-            </div>
-            </div>
-            
+
           </div>
           <!-- /.row -->
       </section>

@@ -30,9 +30,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
 
-  <?php
-      include '../fragments/nav_menu.php'
-    ?>
+    <?php
+    include '../fragments/nav_menu.php'
+      ?>
 
 
     <!--  Main Sidebar Container -->
@@ -75,8 +75,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Sidebar Menu -->
         <?php
-          include '../fragments/main_aside.php'
-        ?>
+        include '../fragments/main_aside.php'
+          ?>
         <!-- /.sidebar-menu -->
       </div>
     </aside>
@@ -103,74 +103,208 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div><!-- /.content-header -->
 
       <!-- Main content -->
+
+
+
       <section class="content">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">Registro de Aninales Enfermos</h3>
+
+          <!-- Formulario Agregar-->
+          <div class="row mb-5" id="form-agregar">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <div class="card " style="background-color: grey;">
+                <div class="card-header text-center">
+                  <h3 class="card-title text-white">Nuevo Animal Enfermo</h3>
                 </div>
                 <!-- /.card-header -->
-                <div class="card-body">
-                  <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                      <tr>
-                        <th>Número de Arete</th>
-                        <th>Nombre</th>
-                        <th>Edad</th>
-                        <th>Fecha Diagnostico</th>
-                        <th>Nombre Enfermedad</th>
-                        <th>Estado Enfermedad</th>
+                <!-- form start -->
+                <form>
+                  <div class="card-body text-white ">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Número de Arete</label>
+                          <input type="number" class="form-control" id="" placeholder="Ingrese el número de arete">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Fecha del Diagnóstico</label>
+                          <input type="text" class="form-control" id="" placeholder="XX/XX/XXXX">
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Síntomas</label>
+                          <input type="text" class="form-control" id="" placeholder="Ingrese los sintomas">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label>Enfermedad o Padecimiento</label>
+                          <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">Mastitis</option>
+                            <option>Renquera</option>
+                            <option>Infección Uterina</option>
+                            <option>Indigestación</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label>Estado de la Enfermedad</label>
+                          <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">En Curso</option>
+                            <option>Recuperada</option>
+                            <option>Fallecida</option>
+                            <option>Crónica</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Observaciones</label>
+                          <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
+                        </div>
+                      </div>
+                    </div>
 
-                      </tr>
+
+
+
+
+
+
+
+                  </div>
+                  <!-- /.card-body -->
+
+                  <div class="card-footer text-center">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-2"></div>
+          </div>
+          <!-- /.row -->
+
+          <!-- Formulario Modificar-->
+          <div class="row mb-5" id="form-modificar">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <div class="card " style="background-color: grey;">
+                <div class="card-header text-center">
+                  <h3 class="card-title text-white">Nuevo Animal Enfermo</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form>
+                  <div class="card-body text-white ">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Número de Arete</label>
+                          <input type="number" class="form-control" id="" placeholder="Ingrese el número de arete">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Fecha del Diagnóstico</label>
+                          <input type="text" class="form-control" id="" placeholder="XX/XX/XXXX">
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Síntomas</label>
+                          <input type="text" class="form-control" id="" placeholder="Ingrese los sintomas">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label>Enfermedad o Padecimiento</label>
+                          <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">Mastitis</option>
+                            <option>Renquera</option>
+                            <option>Infección Uterina</option>
+                            <option>Indigestación</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label>Estado de la Enfermedad</label>
+                          <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">En Curso</option>
+                            <option>Recuperada</option>
+                            <option>Fallecida</option>
+                            <option>Crónica</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Observaciones</label>
+                          <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
+                  </div>
+                  <!-- /.card-body -->
+
+                  <div class="card-footer text-center">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-2"></div>
+          </div>
+          <!-- /.row -->
+
+          <!-- Tabla -->
+          <div class="row" id="tabla-vacas-enfermas">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="card card-dark">
+                <div class="card-body p-0">
+                  <table id="tbllistado" class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <th>ID</th>
+                      <th>Email</th>
+                      <th>Nombre</th>
+                      <th>Imagen</th>
+                      <th>Telefono</th>
+                      <th>Estado</th>
+                      <th>Opciones</th>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>200</td>
-                        <td>Perla</td>
-                        <td>3 años</td>
-                        <td>16/10/23</td>
-                        <td>Mastitis</td>
-                        <td>En Curso</td>
-
-                      </tr>
-                      <tr>
-                        <td>240</td>
-                        <td>Maria</td>
-                        <td>4 años</td>
-                        <td>10/10/23</td>
-                        <td>Mastitis</td>
-                        <td>Recuperada</td>
-
-                      </tr>
-                      <tr>
-                        <td>215</td>
-                        <td>Roja</td>
-                        <td>2años</td>
-                        <td>1/10/23</td>
-                        <td>Leucosis</td>
-                        <td>Fallecida</td>
-
-                      </tr>
-                     
-                    <tfoot>
-                      <tr>
-                      <th>Número de Arete</th>
-                        <th>Nombre</th>
-                        <th>Edad</th>
-                        <th>Fecha Diagnostico</th>
-                        <th>Nombre Enfermedad</th>
-                        <th>Estado Enfermedad</th>
-                      </tr>
-                    </tfoot>
+                    </tbody>
+                    <tfooter>
+                      <th>ID</th>
+                      <th>Email</th>
+                      <th>Nombre</th>
+                      <th>Imagen</th>
+                      <th>Telefono</th>
+                      <th>Estado</th>
+                      <th>Opciones</th>
+                    </tfooter>
                   </table>
                 </div>
-                <!-- /.card-body -->
-              </div>
+              </div> 
               <!-- /.card -->
             </div>
-            <!-- /.col -->
+           
+            <div class="col-md-1"></div>
           </div>
           <!-- /.row -->
         </div>
@@ -199,12 +333,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- REQUIRED SCRIPTS -->
 
   <!-- jQuery -->
-  <script src="../../plugins/jquery/jquery.min.js"></script>
+  <script src="../plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
-  <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- AdminLTE App -->
-  <script src="../../dist/js/adminlte.min.js"></script>
   <!-- DataTables  & Plugins -->
   <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -219,10 +351,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
   <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
-  
+
 </body>
 
 <!-- CSS styles -->
-<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../assets/css/index.css">
+
+<!-- JD Scripts -->
+<script src="../assets/js/enfermedades_data.js"></script>
 
 </html>
