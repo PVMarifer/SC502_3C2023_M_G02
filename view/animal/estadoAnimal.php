@@ -72,37 +72,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
             <li class="nav-item">
-              <a href="./ingresarVaca.php" class="links-sidebar-nav nav-link ">
+              <a href="./ingresarAnimal.php" class="links-sidebar-nav nav-link ">
 
                 <p>
-                  Ingresar Vaca
+                  Ingresar Animal
                 </p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="./ingresarToro.php#" class="links-sidebar-nav  nav-link">
-
-                <p>
-                  Ingresar Toro
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./editarAnimal.php" class="links-sidebar-nav  nav-link ">
-
-                <p class="text-center">
-                  Editar animal
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./registroCompleto.php" class="links-sidebar-nav  nav-link">
-
-                <p>
-                  Registro completo
-                </p>
-              </a>
-            </li>
+          
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

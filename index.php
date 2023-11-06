@@ -28,86 +28,88 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Navbar -->
     <nav id="main-navbar" class=" main-header navbar navbar-expand navbar-white navbar-light">
       <!-- Left navbar links -->
-    <ul class="nav-main-menu navbar-nav">
-      <li class="nav-item-menu nav-item">
-        <a class=" nav-link-menu nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="index.php" class="nav-link-menu nav-link">Inicio</a>
-      </li>
-      <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="./view/animal/estadoAnimal.php" class="nav-link-menu nav-link">Animales</a>
-      </li>
-      <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="./view/salud/salud.php" class="nav-link-menu nav-link">Salud</a>
-      </li>
-      <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="./view/produccion/produccion.php" class="nav-link-menu nav-link">Produccion</a>
-      </li>
-      <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="./view/reproduccion/reproduccion.php" class="nav-link-menu nav-link">Reproduccion y Control de Celos</a>
-      </li>
-      <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="./view/secados/secados.php" class="nav-link-menu nav-link">Control de Secados</a>
-      </li>
-      <li class="nav-item-menu nav-item d-none d-md-inline-block">
-        <a href="./view/partos/partos.php" class=" nav-link-menu nav-link">Control de Partos</a>
-      </li>
-    </ul>
-<!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Navbar Search -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
+      <ul class="nav-main-menu navbar-nav">
+        <li class="nav-item-menu nav-item">
+          <a class=" nav-link-menu nav-link" data-widget="pushmenu" href="#" role="button"><i
+              class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item-menu nav-item d-none d-md-inline-block">
+          <a href="index.php" class="nav-link-menu nav-link">Inicio</a>
+        </li>
+        <li class="nav-item-menu nav-item d-none d-md-inline-block">
+          <a href="./view/animal/estadoAnimal.php" class="nav-link-menu nav-link">Animales</a>
+        </li>
+        <li class="nav-item-menu nav-item d-none d-md-inline-block">
+          <a href="./view/salud/salud.php" class="nav-link-menu nav-link">Salud</a>
+        </li>
+        <li class="nav-item-menu nav-item d-none d-md-inline-block">
+          <a href="./view/produccion/produccion.php" class="nav-link-menu nav-link">Produccion</a>
+        </li>
+        <li class="nav-item-menu nav-item d-none d-md-inline-block">
+          <a href="./view/reproduccion/reproduccion.php" class="nav-link-menu nav-link">Reproduccion y Control de
+            Celos</a>
+        </li>
+        <li class="nav-item-menu nav-item d-none d-md-inline-block">
+          <a href="./view/secados/secados.php" class="nav-link-menu nav-link">Control de Secados</a>
+        </li>
+        <li class="nav-item-menu nav-item d-none d-md-inline-block">
+          <a href="./view/partos/partos.php" class=" nav-link-menu nav-link">Control de Partos</a>
+        </li>
+      </ul>
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+        <li class="nav-item">
+          <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+            <i class="fas fa-search"></i>
+          </a>
+          <div class="navbar-search-block">
+            <form class="form-inline">
+              <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-navbar" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
               </div>
-            </div>
-          </form>
-        </div>
-      </li>
+            </form>
+          </div>
+        </li>
 
-     
-      <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-header">15 Notifications</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
+
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-bell"></i>
+            <span class="badge badge-warning navbar-badge">15</span>
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-        </div>
-      </li>
-      
-    </ul>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-header">15 Notifications</span>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-envelope mr-2"></i> 4 new messages
+              <span class="float-right text-muted text-sm">3 mins</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-users mr-2"></i> 8 friend requests
+              <span class="float-right text-muted text-sm">12 hours</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-file mr-2"></i> 3 new reports
+              <span class="float-right text-muted text-sm">2 days</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          </div>
+        </li>
+
+      </ul>
     </nav>
     <!-- /.navbar -->
 
@@ -116,18 +118,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!--  Main Sidebar Container -->
     <aside class="main-sidebar  elevation-4">
       <div class="sidebar">
-        <!--  Fragmento que incluye el logo y la foto del usuario usuario -->
-        <!--  Fragmento que incluye el logo y la foto del usuario usuario -->
-        <!-- Brand Logo -->
+        <!-- Logo -->
         <a href="index3.html" class="brand-link">
-          <img src="./view/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-            style="opacity: .8">
-          <span class="text-white font-weight-bold">Software Ganadero</span>
-        </a>
+          <img src="./view/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+            class="brand-image img-circle elevation-3 mr-3" style="opacity: .8">
+          <span class="text-white font-weight-bold">SG SOFTWARE</span>
+        </a><!-- logo -->
 
-        <!-- Sidebar -->
-
-        <!-- Sidebar user panel (optional) -->
+        <!-- Sidebar user -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
             <img src="./view/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
@@ -135,16 +133,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="info">
             <a href="#" class="d-block text-white">Juanito Mora</a>
           </div>
-        </div>
+        </div><!-- Sidebar user -->
 
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-
-           
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -193,7 +187,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <div class="col-sm-6">
             <div class="mx-auto d-block">
-              <img src="./view/imagenes/GanaderiaDigital.jpg" alt="imagen ganaderia" width="500px">
+              <img src="./view/assets/imagenes/GanaderiaDigital.jpg" alt="imagen ganaderia" width="500px">
             </div>
           </div>
         </div><!-- /.row -->
@@ -220,7 +214,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <div class="col-md-6">
             <div class="mx-auto d-block">
-              <img src="./view/imagenes/GanaderiaInteligente.jpg" alt="imagen ganaderia" width="400px">
+              <img src="./view/assets/imagenes/GanaderiaInteligente.jpg" alt="imagen ganaderia" width="400px">
             </div>
           </div>
         </div><!-- /.row -->
@@ -230,7 +224,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <div class="col-md-5">
             <div class="mx-auto d-block">
-              <img src="./view/imagenes/GanaderiaDatos.jpg" alt="imagen ganaderia" width="400px">
+              <img src="./view/assets/imagenes/GanaderiaDatos.jpg" alt="imagen ganaderia" width="400px">
             </div>
           </div>
           <div class="col-md-6 mt-5 pt-5 pr-5">
@@ -260,7 +254,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <div class="col-md-6">
             <div class="mx-auto d-block">
-              <img src="./view/imagenes/AnalisisDatos.jpg" alt="imagen ganaderia" width="400px">
+              <img src="./view/assets/imagenes/AnalisisDatos.jpg" alt="imagen ganaderia" width="400px">
             </div>
           </div>
         </div><!-- /.row -->
@@ -270,7 +264,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <div class="col-md-5">
             <div class="mx-auto d-block">
-              <img src="./view/imagenes/NotificacionesAlertas.jpg" alt="imagen ganaderia" width="400px">
+              <img src="./view/assets/imagenes/NotificacionesAlertas.jpg" alt="imagen ganaderia" width="400px">
             </div>
           </div>
           <div class="col-md-6 mt-5 pt-5 pr-5">
@@ -302,7 +296,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- REQUIRED SCRIPTS -->
 
   <!-- jQuery -->
-  <script src=".view/plugins/jquery/jquery.min.js"></script>
+  <script src="./view/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="./view/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->

@@ -17,30 +17,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Theme style -->
+
 
 
 </head>
 
 <body class="hold-transition sidebar-mini">
-
-  <!--  Main Page -->
   <div class="wrapper">
 
-    <!--  Main Navbar -->
     <?php
     include '../fragments/nav_menu.php'
-    ?><!--  Main navbar -->
+      ?>
 
 
-
-    <!--  Main Sidebar  -->
+    <!--  Main Sidebar Container -->
     <aside class="main-sidebar  elevation-4">
       <div class="sidebar">
+        <!--  Fragmento que incluye el logo y la foto del usuario usuario -->
         <!--  Fragmento que incluye el logo y la foto del usuario usuario -->
         <?php
           include '../fragments/main_aside.php';
         ?>
-        </div>
 
         <!-- SidebarSearch Form -->
         <div class="form-inline">
@@ -60,15 +62,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Sidebar Menu -->
         <?php
         include '../fragments/main_aside_enfermedades.php'
-          ?><!-- /.sidebar-menu -->
-        
+          ?>
+        <!-- /.sidebar-menu -->
       </div>
-    </aside><!--  Main Sidebar  -->
+    </aside>
 
 
-    <!-- Main Content-->
+    <!-- Content Wrapper. Contains page content -->
     <div class="bg-white content-wrapper">
-
       <!-- Content Header (Page header) -->
       <div class="content-header">
         <div class="container-fluid">
@@ -77,7 +78,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Enfermedades</a></li>
-                <li class="breadcrumb-item active">Añadir Enfermedad</li>
+                <li class="breadcrumb-item active">Animales Enfermos</li>
               </ol>
             </div>
             <div class="col-sm-6">
@@ -87,8 +88,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div><!-- /.container-fluid -->
       </div><!-- /.content-header -->
 
-      <!--  Main section -->
-      <section class="main-content">
+      <!-- Main content -->
+
+
+
+      <section class="content">
         <div class="container-fluid">
 
           <!-- Formulario Agregar-->
@@ -97,24 +101,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-8">
               <div class="card " style="background-color: grey;">
                 <div class="card-header text-center">
-                  <h3 class="card-title text-white">Nueva Enfermedad</h3>
+                  <h3 class="card-title text-white">Nuevo Animal Enfermo</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form>
                   <div class="card-body text-white ">
                     <div class="row">
-                      <div class="col-12">
+                      <div class="col-6">
                         <div class="form-group">
-                          <label for="">Nombre de la Enfermedad</label>
-                          <input type="text" class="form-control" id=""
-                            placeholder="Ingrese el nombre de la enfermedad">
+                          <label for="">Número de Arete</label>
+                          <input type="number" class="form-control" id="" placeholder="Ingrese el número de arete">
                         </div>
                       </div>
-                      <div class="col-12">
+                      <div class="col-6">
                         <div class="form-group">
-                          <label for="">Descripción de la Enfermedad</label>
-                          <input type="text" class="form-control" id="" placeholder="Ingrese la descripcion">
+                          <label for="">Fecha del Diagnóstico</label>
+                          <input type="text" class="form-control" id="" placeholder="XX/XX/XXXX">
                         </div>
                       </div>
                       <div class="col-12">
@@ -123,10 +126,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <input type="text" class="form-control" id="" placeholder="Ingrese los sintomas">
                         </div>
                       </div>
-
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label>Enfermedad o Padecimiento</label>
+                          <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">Mastitis</option>
+                            <option>Renquera</option>
+                            <option>Infección Uterina</option>
+                            <option>Indigestación</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label>Estado de la Enfermedad</label>
+                          <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">En Curso</option>
+                            <option>Recuperada</option>
+                            <option>Fallecida</option>
+                            <option>Crónica</option>
+                          </select>
+                        </div>
+                      </div>
                       <div class="col-12">
                         <div class="form-group">
-                          <label for="">Tratamiento</label>
+                          <label for="">Observaciones</label>
                           <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
                         </div>
                       </div>
@@ -150,7 +174,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
             <div class="col-2"></div>
           </div>
-          <!-- /.fromulario -->
+          <!-- /.row -->
 
           <!-- Formulario Modificar-->
           <div class="row mb-5" id="form-modificar">
@@ -158,17 +182,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-8">
               <div class="card " style="background-color: grey;">
                 <div class="card-header text-center">
-                  <h3 class="card-title text-white">Modificar Enfermedad</h3>
+                  <h3 class="card-title text-white">Nuevo Animal Enfermo</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form>
                   <div class="card-body text-white ">
                     <div class="row">
-                      <div class="col-12">
+                      <div class="col-6">
                         <div class="form-group">
-                          <label for="">Descripción de la Enfermedad</label>
-                          <input type="text" class="form-control" id="" placeholder="Ingrese la descripcion">
+                          <label for="">Número de Arete</label>
+                          <input type="number" class="form-control" id="" placeholder="Ingrese el número de arete">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Fecha del Diagnóstico</label>
+                          <input type="text" class="form-control" id="" placeholder="XX/XX/XXXX">
                         </div>
                       </div>
                       <div class="col-12">
@@ -177,14 +207,41 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <input type="text" class="form-control" id="" placeholder="Ingrese los sintomas">
                         </div>
                       </div>
-
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label>Enfermedad o Padecimiento</label>
+                          <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">Mastitis</option>
+                            <option>Renquera</option>
+                            <option>Infección Uterina</option>
+                            <option>Indigestación</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label>Estado de la Enfermedad</label>
+                          <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">En Curso</option>
+                            <option>Recuperada</option>
+                            <option>Fallecida</option>
+                            <option>Crónica</option>
+                          </select>
+                        </div>
+                      </div>
                       <div class="col-12">
                         <div class="form-group">
-                          <label for="">Tratamiento</label>
+                          <label for="">Observaciones</label>
                           <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
                         </div>
                       </div>
                     </div>
+
+
+
+
+
+
 
 
                   </div>
@@ -198,48 +255,45 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
             <div class="col-2"></div>
           </div>
-          <!-- /.formulario-->
+          <!-- /.row -->
 
           <!-- Tabla -->
-          <div class="row mb-5" id="tabla-enfermedades">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
+          <div class="row mb-5" id="tabla-vacas-enfermas">
+            <div class="col-md-12">
               <div class="card card-dark">
                 <div class="card-body p-0">
                   <table id="tablalistado" class="table table-striped table-bordered table-hover">
                     <thead>
-                      <th>Nombre Enfermedad</th>
-                      <th>Descripción Enfermedades</th>
+                      <th>Número de Arete</th>
+                      <th>Nombre del Animal</th>
+                      <th>Fecha del Diagnóstico</th>
                       <th>Síntomas</th>
-                      <th>Tratamiento</th>
+                      <th>Enfermedad o Padecimiento</th>
+                      <th>Estado de la Enfermedad</th>
+                      <th>Observaciones</th>
                       <th>Opciones</th>
                     </thead>
                     <tbody>
                     </tbody>
-                    <tfooter>
-                      <th>Nombre Enfermedad</th>
-                      <th>Descripción Enfermedades</th>
-                      <th>Síntomas</th>
-                      <th>Tratamiento</th>
-                      <th>Opciones</th>
-                    </tfooter>
+                    
                   </table>
                 </div>
               </div>
               <!-- /.card -->
             </div>
-
-            <div class="col-md-1"></div>
           </div>
-          <!-- /.tabla -->
+          <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
 
-        </div><!-- /.container-fluid --> 
-      </section><!--main section-->
-      
 
 
 
-    </div><!-- ./main contentr-->
+
+
+    </div><!-- ./Content Wrapper-->
 
 
 
@@ -248,24 +302,36 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <?php
       include '../fragments/footer.php'
         ?>
-    </footer><!-- footer -->
+    </footer>
 
-  </div><!-- ./main oage -->
-
-
+  </div><!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPTS -->
+
   <!-- jQuery -->
   <script src="../plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="../dist/js/adminlte.min.js"></script>
+
+  <!-- DataTables  & Plugins -->
+  <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+  <script src="../../plugins/jszip/jszip.min.js"></script>
+  <script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+  <script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+  <script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+  <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+  <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+
 </body>
 
-
 <!-- CSS styles -->
-<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../assets/css/index.css">
 
 <!-- JD Scripts -->
 <script src="../assets/js/enfermedades_data.js"></script>

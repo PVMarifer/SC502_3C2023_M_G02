@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Sidebar Menu -->
         <?php
-        include '../fragments/main_aside.php'
+        include '../fragments/main_aside_enfermedades.php'
           ?>
         <!-- /.sidebar-menu -->
       </div>

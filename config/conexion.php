@@ -15,6 +15,7 @@ class Conexion
             $cn = new PDO("mysql:host=".DB_HOST_MYSQL.";dbname=".DB_NAME_MYSQL.";charset=utf8",DB_USER_MYSQL,DB_PASSWORD_MYSQL);
             $cn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $cn;
+            
         } catch (PDOException $ex) {
             die($ex->getMessage());
         }
@@ -22,7 +23,7 @@ class Conexion
 
 }
 
-#Conexion::conectar();
+//var_Dump(Conexion::conectar());
 /*require_once "global.php";
 $conexion = new mysqli(DB_HOST_MYSQL,DB_USER_MYSQL,DB_PASSWORD_MYSQL,DB_NAME_MYSQL);
 
