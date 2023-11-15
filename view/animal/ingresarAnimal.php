@@ -306,6 +306,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- REQUIRED SCRIPTS -->
   <!--   JQUERY -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery/jquery.min.js"></script>
   <!-- DataTables  & Plugins -->
   <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
   <!-- Bootstrap 4 -->

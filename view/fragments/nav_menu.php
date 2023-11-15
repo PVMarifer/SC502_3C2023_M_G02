@@ -12,7 +12,6 @@
     </li>
     <li class="nav-item-menu nav-item d-none d-md-inline-block">
       <a href="../salud/salud.php" class="nav-link-menu nav-link">Salud</a>
-    </li>
     <li class="nav-item-menu nav-item d-none d-md-inline-block">
       <a href="../produccion/produccion.php" class="nav-link-menu nav-link">Produccion</a>
     </li>

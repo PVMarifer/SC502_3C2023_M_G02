@@ -17,6 +17,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- Datatable CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+  <!-- Toastr -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
 
 </head>
@@ -29,40 +33,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!--  Main Navbar -->
     <?php
     include '../fragments/nav_menu.php'
-    ?><!--  Main navbar -->
+      ?><!--  Main navbar -->
 
 
 
     <!--  Main Sidebar  -->
     <aside class="main-sidebar  elevation-4">
-      <div class="sidebar">
-        <!--  Fragmento que incluye el logo y la foto del usuario usuario -->
-        <?php
-          include '../fragments/main_aside.php';
+      <?php
+      include '../fragments/main_aside_enfermedades.php'
         ?>
-        </div>
-
-        <!-- SidebarSearch Form -->
-        <div class="form-inline">
-          <div class="input-group" data-widget="sidebar-search">
-            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-            <div class="ml-1 bg-white rounded-right input-group-append">
-              <button class="btn btn-sidebar">
-                <i class="fas fa-search fa-fw"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- /.sidebar -->
-
-        <!-- Sidebar Menu -->
-        <?php
-        include '../fragments/main_aside_enfermedades.php'
-          ?><!-- /.sidebar-menu -->
-        
-      </div>
     </aside><!--  Main Sidebar  -->
 
 
@@ -90,6 +69,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!--  Main section -->
       <section class="main-content">
         <div class="container-fluid">
+          <!-- Tabla -->
+          <div class="row mb-5" id="tabla-enfermedades">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="card card-dark">
+                <div class="card-body p-0">
+                  <table id="tablalistado" class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <th>Nombre Enfermedad</th>
+                      <th>Descripción Enfermedades</th>
+                      <th>Síntomas</th>
+                      <th>Tratamiento</th>
+                      <th>Opciones</th>
+
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+
+            <div class="col-md-1"></div> 
+          </div>
+          <!-- /.tabla -->
 
           <!-- Formulario Agregar-->
           <div class="row mb-5" id="form-agregar">
@@ -101,49 +106,47 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form>
+                <form id="formulario-agregar" method="POST">
                   <div class="card-body text-white ">
                     <div class="row">
                       <div class="col-12">
                         <div class="form-group">
                           <label for="">Nombre de la Enfermedad</label>
-                          <input type="text" class="form-control" id=""
+                          <input type="text" class="form-control" name="nombreEnfermedad"
                             placeholder="Ingrese el nombre de la enfermedad">
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-group">
                           <label for="">Descripción de la Enfermedad</label>
-                          <input type="text" class="form-control" id="" placeholder="Ingrese la descripcion">
+                          <input type="text" class="form-control" name="descripcion"
+                            placeholder="Ingrese la descripcion">
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-group">
                           <label for="">Síntomas</label>
-                          <input type="text" class="form-control" id="" placeholder="Ingrese los sintomas">
+                          <input type="text" class="form-control" name="sintomas" placeholder="Ingrese los sintomas">
                         </div>
                       </div>
 
                       <div class="col-12">
                         <div class="form-group">
                           <label for="">Tratamiento</label>
-                          <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
+                          <input type="text" class="form-control" name="tratamiento"
+                            placeholder="Ingrese aquí el tratamiento">
                         </div>
                       </div>
                     </div>
-
-
-
-
-
-
-
-
                   </div>
                   <!-- /.card-body -->
 
                   <div class="card-footer text-center">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <div class="row">
+                       <div class="col-6"><button type="submit" class="btn btn-primary brnRegistrar">Guardar</button></div>
+                       <div class="col-6"><input type="reset" class=" btn btn-info"
+                          value="Limpiar datos" ></div>
+                    </div>
                   </div>
                 </form>
               </div>
@@ -162,26 +165,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form>
+                <form id="formulario-modificar" method="POST" >
                   <div class="card-body text-white ">
                     <div class="row">
                       <div class="col-12">
                         <div class="form-group">
+                          <label for="">Nombre de la Enfermedad</label>
+                          <input type="text" class="form-control" name="nombreEnfermedad"  id="XnombreEnfermedad"
+                            placeholder="Ingrese la descripcion" readonly>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
                           <label for="">Descripción de la Enfermedad</label>
-                          <input type="text" class="form-control" id="" placeholder="Ingrese la descripcion">
+                          <input type="text" class="form-control" name="descripcion" id="Xdescripcion"
+                            placeholder="Ingrese la descripcion"  >
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-group">
                           <label for="">Síntomas</label>
-                          <input type="text" class="form-control" id="" placeholder="Ingrese los sintomas">
+                          <input type="text" class="form-control" name="sintomas" id="Xsintomas" placeholder="Ingrese los sintomas">
                         </div>
                       </div>
 
                       <div class="col-12">
                         <div class="form-group">
                           <label for="">Tratamiento</label>
-                          <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
+                          <input type="text" class="form-control" name="tratamiento" id="Xtratamiento"
+                            placeholder="Ingrese aquí el tratamiento">
                         </div>
                       </div>
                     </div>
@@ -191,7 +203,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- /.card-body -->
 
                   <div class="card-footer text-center">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <div class="row">
+                       <div class="col-6"><button type="submit" class="btn btn-primary">Editar</button></div>
+                       <div class="col-6"><input type="button" class=" btn btn-info"
+                          value="Cancelar" onclick="cancelarForm()"></div>
+                    </div>
+                    
+                    
                   </div>
                 </form>
               </div>
@@ -200,42 +218,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <!-- /.formulario-->
 
-          <!-- Tabla -->
-          <div class="row mb-5" id="tabla-enfermedades">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-              <div class="card card-dark">
-                <div class="card-body p-0">
-                  <table id="tablalistado" class="table table-striped table-bordered table-hover">
-                    <thead>
-                      <th>Nombre Enfermedad</th>
-                      <th>Descripción Enfermedades</th>
-                      <th>Síntomas</th>
-                      <th>Tratamiento</th>
-                      <th>Opciones</th>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                    <tfooter>
-                      <th>Nombre Enfermedad</th>
-                      <th>Descripción Enfermedades</th>
-                      <th>Síntomas</th>
-                      <th>Tratamiento</th>
-                      <th>Opciones</th>
-                    </tfooter>
-                  </table>
-                </div>
-              </div>
-              <!-- /.card -->
-            </div>
 
-            <div class="col-md-1"></div>
-          </div>
-          <!-- /.tabla -->
 
-        </div><!-- /.container-fluid --> 
+        </div><!-- /.container-fluid -->
       </section><!--main section-->
-      
+
 
 
 
@@ -255,19 +242,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
   <!-- REQUIRED SCRIPTS -->
-  <!-- jQuery -->
+  <!--   JQUERY -->
+
   <script src="../plugins/jquery/jquery.min.js"></script>
+  <!-- DataTables  & Plugins -->
+  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
   <!-- Bootstrap 4 -->
   <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="../dist/js/adminlte.min.js"></script>
+    <!-- Bootbox -->
+  <script src="../plugins/bootbox/bootbox.min.js"></script>
+
 </body>
 
-
+<!-- toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- CSS styles -->
-<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../assets/css/index.css">
 
 <!-- JD Scripts -->
-<script src="../assets/js/enfermedades_data.js"></script>
+<script src="../assets/js/enfermedades.js"></script>
+
 
 </html>

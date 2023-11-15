@@ -17,12 +17,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <!-- Theme style -->
-
 
 
 </head>
@@ -34,43 +28,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
     include '../fragments/nav_menu.php'
       ?>
 
-
-    <!--  Main Sidebar Container -->
+    <!--  Main Sidebar  -->
     <aside class="main-sidebar  elevation-4">
-      <div class="sidebar">
-        <!--  Fragmento que incluye el logo y la foto del usuario usuario -->
-        <!--  Fragmento que incluye el logo y la foto del usuario usuario -->
-        <?php
-          include '../fragments/main_aside.php';
+      <?php
+      include '../fragments/main_aside_enfermedades.php'
         ?>
-
-        <!-- SidebarSearch Form -->
-        <div class="form-inline">
-          <div class="input-group" data-widget="sidebar-search">
-            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-            <div class="ml-1 bg-white rounded-right input-group-append">
-              <button class="btn btn-sidebar">
-                <i class="fas fa-search fa-fw"></i>
-              </button>
-            </div>
-          </div>
-        </div>
+    </aside><!--  Main Sidebar  -->
 
 
-        <!-- /.sidebar -->
-
-        <!-- Sidebar Menu -->
-        <?php
-        include '../fragments/main_aside_enfermedades.php'
-          ?>
-        <!-- /.sidebar-menu -->
-      </div>
-    </aside>
-
-
-    <!-- Content Wrapper. Contains page content -->
+    <!-- Main-->
     <div class="bg-white content-wrapper">
-      <!-- Content Header (Page header) -->
+      <!-- Content Header-->
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
@@ -89,11 +57,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div><!-- /.content-header -->
 
       <!-- Main content -->
-
-
-
       <section class="content">
         <div class="container-fluid">
+          <!-- Tabla -->
+          <div class="row mb-5" id="tabla-vacas-enfermas">
+            <div class="col-md-12">
+              <div class="card card-dark">
+                <div class="card-body p-0">
+                  <table id="tablalistado" class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <th>Número de Arete</th>
+                      <th>Nombre del Animal</th>
+                      <th>Fecha del Diagnóstico</th>
+                      <th>Síntomas</th>
+                      <th>Enfermedad o Padecimiento</th>
+                      <th>Estado de la Enfermedad</th>
+                      <th>Observaciones</th>
+                      <th>Opciones</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+
+                  </table>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <!-- /.row -->
 
           <!-- Formulario Agregar-->
           <div class="row mb-5" id="form-agregar">
@@ -257,32 +248,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <!-- /.row -->
 
-          <!-- Tabla -->
-          <div class="row mb-5" id="tabla-vacas-enfermas">
-            <div class="col-md-12">
-              <div class="card card-dark">
-                <div class="card-body p-0">
-                  <table id="tablalistado" class="table table-striped table-bordered table-hover">
-                    <thead>
-                      <th>Número de Arete</th>
-                      <th>Nombre del Animal</th>
-                      <th>Fecha del Diagnóstico</th>
-                      <th>Síntomas</th>
-                      <th>Enfermedad o Padecimiento</th>
-                      <th>Estado de la Enfermedad</th>
-                      <th>Observaciones</th>
-                      <th>Opciones</th>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                    
-                  </table>
-                </div>
-              </div>
-              <!-- /.card -->
-            </div>
-          </div>
-          <!-- /.row -->
         </div>
         <!-- /.container-fluid -->
       </section>
@@ -307,27 +272,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div><!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPTS -->
-
   <!-- jQuery -->
   <script src="../plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- DataTables  & Plugins -->
-  <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-  <script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-  <script src="../../plugins/jszip/jszip.min.js"></script>
-  <script src="../../plugins/pdfmake/pdfmake.min.js"></script>
-  <script src="../../plugins/pdfmake/vfs_fonts.js"></script>
-  <script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-  <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-  <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-
-
+  <!-- AdminLTE App -->
+  <script src="../dist/js/adminlte.min.js"></script>
 </body>
 
 <!-- CSS styles -->

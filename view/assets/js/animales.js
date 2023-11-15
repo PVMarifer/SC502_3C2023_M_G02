@@ -8,7 +8,7 @@ function listarAnimales() {
       dom: 'Bfrtip', //definimos los elementos del control de tabla
       buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdf'],
       ajax: {
-        url: '../../controller/animalController.php?op=listar_tabla',
+        url: '../../controller/animales/animalController.php?op=listar_tabla',
         type: 'get',
         dataType: 'json',
         error: function (e) {

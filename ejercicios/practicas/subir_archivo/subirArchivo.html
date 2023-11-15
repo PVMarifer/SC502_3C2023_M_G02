@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data" id="form">
+        Nombre:<input type="text" placeholder="nombre" name="nombre">
+        <br>
+        Archivo:<input type="file" id="archivo" name="archivo">
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    <div id="mensaje"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+ 
+<script src="./subirArchivo.js"></script>
+</html>

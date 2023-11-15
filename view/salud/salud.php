@@ -25,60 +25,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
 
-  
-    
+
+
     <?php
-      include '../fragments/nav_menu.php'
-    ?>
-    <!-- /.navbar -->
+    include '../fragments/nav_menu.php'
+      ?><!-- /.navbar -->
+    
 
-
-
-    <!--  Main Sidebar Container -->
-    <aside class="main-sidebar  elevation-4">
-      <div class="sidebar">
-        <!--  Fragmento que incluye el logo y la foto del usuario usuario -->
-        <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
-          <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-            style="opacity: .8">
-          <span class="text-white font-weight-bold">Software Ganadero</span>
-        </a>
-
-        <!-- Sidebar -->
-
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
-            <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-          </div>
-          <div class="info">
-            <a href="#" class="d-block text-white">Juanito Mora</a>
-          </div>
-        </div>
-
-        <!-- SidebarSearch Form -->
-        <div class="form-inline">
-          <div class="input-group" data-widget="sidebar-search">
-            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-            <div class="ml-1 bg-white rounded-right input-group-append">
-              <button class="btn btn-sidebar">
-                <i class="fas fa-search fa-fw"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- /.sidebar -->
-
-        <!-- Sidebar Menu -->
+    <!--  Main Sidebar  -->
+    <aside class="main-sidebar  elevation-4">    
         <?php
-          include '../fragments/main_aside_enfermedades.php'
-        ?>
-        <!-- /.sidebar-menu -->
-      </div>
-    </aside>
+        include '../fragments/main_aside_enfermedades.php'
+          ?>
+    </aside><!--  Main Sidebar  -->
 
 
     <!-- Content Wrapper. Contains page content -->
@@ -106,7 +65,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <!-- Small boxes (Stat box) -->
           <div class="row">
- 
+
             <div class="col-lg-3 col-6">
               <!-- small box -->
               <div class="small-box text-center text-white " style="background-color:#4CAF50;">
@@ -252,8 +211,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </td>
                       </tr>
                       <tr>
-                        <td>                        
-                          233    
+                        <td>
+                          233
                         </td>
                         <td>10/10/23</td>
                         <td>

@@ -117,23 +117,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!--  Main Sidebar Container -->
     <aside class="main-sidebar  elevation-4">
-      <div class="sidebar">
-        <!-- Logo -->
-        <a href="index3.html" class="brand-link">
-          <img src="./view/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-            class="brand-image img-circle elevation-3 mr-3" style="opacity: .8">
-          <span class="text-white font-weight-bold">SG SOFTWARE</span>
-        </a><!-- logo -->
 
-        <!-- Sidebar user -->
+      <a href="index3.html" class="brand-link">
+        <img src="./view/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+          style="opacity: .8">
+        <span class="brand-text font-weight-bold">SG SOFTWARE</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
             <img src="./view/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block text-white">Juanito Mora</a>
+            <a href="#" class="d-block">Juanito Mora</a>
           </div>
-        </div><!-- Sidebar user -->
+        </div>
 
 
         <!-- Sidebar Menu -->
@@ -142,7 +143,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
-      </div>
+
     </aside>
 
 
