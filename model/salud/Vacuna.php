@@ -2,7 +2,7 @@
 
 require_once "../../config/conexion.php";
 
-class Enfermedad extends Conexion
+class Vacuna extends Conexion
 {
 
     //Atributos de la clase
@@ -10,15 +10,17 @@ class Enfermedad extends Conexion
 
     private $id =null;
 
-    private $idEnfermedad =null;
+    private $idVacuna =null;
 
-    private $nombreEnfermedad = null;
+    private $nombreVacuna = null;
 
     private $descripcion = null;
 
-    private $sintomas = null;
+    private $fechaVencimiento = null;
 
-    private $tratamiento = null;
+    private $lote = null;
+
+    private $observaciones = null;
 
     //metodos de la clase
 
@@ -28,14 +30,14 @@ class Enfermedad extends Conexion
 
     //getters y setters
 
-    public function getIdEnfermedad()
+    public function getIdVacuna()
     {
-        return $this->idEnfermedad;
+        return $this->idVacuna;
     }
 
-    public function setIdEnfermedad($idEnfermedad)
+    public function setIdVacuna($idVacuna)
     {
-        $this->idEnfermedad = $idEnfermedad;
+        $this->idVacuna = $idVacuna;
     }
 
     public function getId()
@@ -48,14 +50,14 @@ class Enfermedad extends Conexion
         $this->id = $id;
     }
 
-    public function getNombreEnfermedad()
+    public function getNombreVacuna()
     {
-        return $this->nombreEnfermedad;
+        return $this->nombreVacuna;
     }
 
-    public function setNombreEnfermedad($nombreEnfermedad)
+    public function setNombreVacuna($nombreVacuna)
     {
-        $this->nombreEnfermedad = $nombreEnfermedad;
+        $this->nombreVacuna = $nombreVacuna;
     }
 
     public function getDescripcion()
@@ -68,24 +70,34 @@ class Enfermedad extends Conexion
         $this->descripcion = $descripcion;
     }
 
-    public function getSintomas()
+    public function getFechaVencimiento()
     {
-        return $this->sintomas;
+        return $this->fechaVencimiento;
     }
 
-    public function setSintomas($sintomas)
+    public function setFechaVencimiento($fechaVencimientoas)
     {
-        $this->sintomas = $sintomas;
+        $this->fechaVencimiento = $fechaVencimiento;
     }
 
-    public function getTratamiento()
+    public function getLote()
     {
-        return $this->tratamiento;
+        return $this->lote;
     }
 
-    public function setTratamiento($tratamiento)
+    public function setLote($lote)
     {
-        $this->tratamiento = $tratamiento;
+        $this->lote = $lote;
+    }
+
+    public function getObservaciones()
+    {
+        return $this->lote;
+    }
+
+    public function setObservaciones($observaciones)
+    {
+        $this->observaciones = $observaciones;
     }
 
     //metodos de conexion
@@ -105,14 +117,9 @@ class Enfermedad extends Conexion
 
     //metodos para los datos
 
-    public function concatenarID(){
-     
-    }
-
-
     public function listarDB()
     {
-        $query = "SELECT * FROM enfermedad";
+        $query = "SELECT * FROM vacuna";
         $lista = array();
         try {
             self::getConexion();
@@ -120,17 +127,18 @@ class Enfermedad extends Conexion
             $resultado->execute();
             self::desconectar();
             foreach ($resultado->fetchAll() as $encontrado) {
-                $enfermedad = new Enfermedad();
-                $prefijo ="EF";
-                $enfermedad->setId($encontrado["id_enfermedad"]);
-                $id=$enfermedad->getId();
+                $vacuna = new Vacuna();
+                $prefijo ="VC";
+                $vacuna->setId($encontrado["id_vacuna"]);
+                $id=$vacuna->getId();
                 $id_personalizado = $prefijo . str_pad($id, 2, '0', STR_PAD_LEFT);
-                $enfermedad->setIdEnfermedad($id_personalizado);
-                $enfermedad->setnombreEnfermedad($encontrado["nombre_enfermedad"]);
-                $enfermedad->setDescripcion($encontrado["descripcion"]);
-                $enfermedad->setSintomas($encontrado["sintomas"]);
-                $enfermedad->setTratamiento($encontrado["tratamiento"]);
-                $lista[] = $enfermedad;
+                $vacuna->setIdVacuna($id_personalizado);
+                $vacuna->setNombreVacuna($encontrado["nombre_vacuna"]);
+                $vacuna->setDescripcion($encontrado["descripcion"]);
+                $vacuna->setFechaVencimiento($encontrado["fecha_vencimiento"]);
+                $vacuna->setLote($encontrado["lote"]);
+                $vacuna->setObservaciones($encontrado["observaciones"]);
+                $lista[] = $vacuna;
             }
             return $lista;
         } catch (PDOException $Exception) {
@@ -143,20 +151,22 @@ class Enfermedad extends Conexion
 
     public function guardarEnDb()
     {
-        $query = "INSERT INTO `enfermedad`(`nombre_enfermedad`, `descripcion`, `sintomas`, `tratamiento`) VALUES (:nombre_enfermedad,:descripcion,:sintomas,:tratamiento)";
+        $query = "INSERT INTO `vacuna`(`nombre_vacuna`, `descripcion`, `fecha_vencimiento`, `lote`, `observaciones` ) VALUES (:nombre_vacuna,:descripcion,:fecha_vencimiento,:lote, :observaciones)";
         try {
             self::getConexion();
-            $nombre_enfermedad = $this->getNombreEnfermedad();
+            $nombre_vacuna = $this->getNombreVacuna();
             $descripcion = $this->getDescripcion();
-            $sintomas = $this->getSintomas();
-            $tratamiento = $this->getTratamiento();
+            $fecha_vencimiento = $this->getFechaVencimiento();
+            $lote = $this->getLote();
+            $observaciones = $this->getObservaciones();
 
 
             $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":nombre_enfermedad", $nombre_enfermedad, PDO::PARAM_STR);
+            $resultado->bindParam(":nombre_Vacuna", $nombre_vacuna, PDO::PARAM_STR);
             $resultado->bindParam(":descripcion", $descripcion, PDO::PARAM_STR);
-            $resultado->bindParam(":sintomas", $sintomas, PDO::PARAM_STR);
-            $resultado->bindParam(":tratamiento", $tratamiento, PDO::PARAM_STR);
+            $resultado->bindParam(":fecha_vencimiento", $fecha_vencimiento, PDO::PARAM_STR);
+            $resultado->bindParam(":lote", $lote, PDO::PARAM_STR);
+            $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
 
             $resultado->execute();
             self::desconectar();
@@ -169,12 +179,12 @@ class Enfermedad extends Conexion
     }
 
     public function verificarExistenciaDb(){
-            $query = "SELECT * FROM enfermedad where nombre_enfermedad=:nombre_enfermedad";
+            $query = "SELECT * FROM vacuna where nombre_vacuna=:nombre_vacuna";
          try {
              self::getConexion();
                 $resultado = self::$conexion->prepare($query);		
-                $nombreEnfermedad= $this->getNombreEnfermedad();	
-                $resultado->bindParam(":nombre_enfermedad",$nombreEnfermedad,PDO::PARAM_STR);
+                $nombre_vacuna= $this->getNombreVacuna();	
+                $resultado->bindParam(":nombre_vacuna",$nombre_vacuna,PDO::PARAM_STR);
                 $resultado->execute();
                 self::desconectar();
                 $encontrado = false;
@@ -191,12 +201,12 @@ class Enfermedad extends Conexion
 
     public function eliminar()
     {
-        $nombre = $this->getNombreEnfermedad();
-        $query = "DELETE FROM enfermedad WHERE `enfermedad`.`nombre_enfermedad` = :nombre_enfermedad";
+        $nombre = $this->getNombreVacuna();
+        $query = "DELETE FROM vacuna WHERE `vacuna`.`nombre_vacuna` = :nombre_vacuna";
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":nombre_enfermedad", $nombre, PDO::PARAM_STR);
+            $resultado->bindParam(":nombre_vacuna", $nombre, PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
             if (!(self::verificarExistenciaDb())) {
@@ -213,16 +223,16 @@ class Enfermedad extends Conexion
     }
 
 
-    public function actualizarEnfermedad(){
-        $query = "update enfermedad set descripcion=:descripcion,sintomas=:sintomas,tratamiento=:tratamiento where nombre_enfermedad=:nombre_enfermedad";
+    public function actualizarVacuna(){
+        $query = "update vacuna set descripcion=:descripcion,sintomas=:sintomas,tratamiento=:tratamiento where nombre_Vacuna=:nombre_Vacuna";
         try {
             self::getConexion();
-            $nombreEnfermedad = $this->getNombreEnfermedad();
+            $nombreVacuna = $this->getNombreVacuna();
             $descripcion=$this->getDescripcion();
             $sintomas=$this->getSintomas();
             $tratamiento=$this->getTratamiento();
             $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":nombre_enfermedad",$nombreEnfermedad, PDO::PARAM_STR);
+            $resultado->bindParam(":nombre_Vacuna",$nombreVacuna, PDO::PARAM_STR);
             $resultado->bindParam(":descripcion",$descripcion,PDO::PARAM_STR);
             $resultado->bindParam(":sintomas",$sintomas,PDO::PARAM_STR);
             $resultado->bindParam(":tratamiento",$tratamiento,PDO::PARAM_STR);

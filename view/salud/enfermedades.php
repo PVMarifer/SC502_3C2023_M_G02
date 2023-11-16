@@ -77,6 +77,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="card-body p-0">
                   <table id="tablalistado" class="table table-striped table-bordered table-hover">
                     <thead>
+                      <th>Id</th>
                       <th>Nombre Enfermedad</th>
                       <th>Descripción Enfermedades</th>
                       <th>Síntomas</th>

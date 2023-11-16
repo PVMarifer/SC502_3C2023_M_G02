@@ -145,13 +145,13 @@ function eliminar(nombre) {
         function (data, textStatus, xhr) {
           switch (data) {
             case '0':
-              toastr.success('Enfermedad eliminada');
+              toastr.success('Usario eliminado');
               tabla.api().ajax.reload();
               break;
 
             case '1':
               toastr.error(
-                'Error: El dato no se ha podido eliminar..'
+                'Error: El dato no se ha podido eliminar. Consulte con el administrador...'
               );
               break;
 

@@ -9,11 +9,12 @@ switch ($_GET['op']) {
         $datos = array();
         foreach ($enfermedades as $enfermedad) {
             $datos[] = array(
-                "0" => $enfermedad->getNombreEnfermedad(),
-                "1" => $enfermedad->getDescripcion(),
-                "2" => $enfermedad->getSintomas(),
-                "3" => $enfermedad->getTratamiento(),
-                "4" => '<button class="btn btn-success" id="modificarDato">Modificar</button>' . '<button class="btn btn-danger" onclick="eliminar(\'' . $enfermedad->getNombreEnfermedad() . '\')">Eliminar</button>'
+                "0" => $enfermedad->getIdEnfermedad(),
+                "1" => $enfermedad->getNombreEnfermedad(),
+                "2" => $enfermedad->getDescripcion(),
+                "3" => $enfermedad->getSintomas(),
+                "4" => $enfermedad->getTratamiento(),
+                "5" => '<button class="btn btn-success" id="modificarDato">Modificar</button>' . '<button class="btn btn-danger" onclick="eliminar(\'' . $enfermedad->getNombreEnfermedad() . '\')">Eliminar</button>'
             );
         }
         $resultados = array(
