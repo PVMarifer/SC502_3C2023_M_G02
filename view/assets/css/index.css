@@ -23,7 +23,7 @@ main{
 
 /*aside*/
 aside{
-    background-color: #3f3ae6;
+    background-color: #52AA5E;
     
 }
 
@@ -46,3 +46,7 @@ aside{
 .texto-inicio{
     font-size: larger;
 }
+
+.select2-selection__arrow {
+    color: #999; /* Color del indicador deseado */
+  }

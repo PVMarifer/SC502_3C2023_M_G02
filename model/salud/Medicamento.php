@@ -2,19 +2,19 @@
 
 require_once "../../config/conexion.php";
 
-class Vacuna extends Conexion
+class Medicamento extends Conexion
 {
 
     //Atributos de la clase
     protected static $conexion;
 
-    private $idVacuna = null;
+    private $idMedicamento = null;
 
     private $idPrefijo = null;
 
-    private $nombreVacuna = null;
+    private $nombreMedicamento = null;
 
-    private $casaDistribuidora = null;
+    private $tipoMedicamento = null;
 
     private $descripcion = null;
 
@@ -22,7 +22,7 @@ class Vacuna extends Conexion
 
     private $lote = null;
 
-    private $observaciones = null;
+    private $presentacion = null;
 
     //metodos de la clase
 
@@ -32,14 +32,14 @@ class Vacuna extends Conexion
 
     //getters y setters
 
-    public function getIdVacuna()
+    public function getIdMedicamento()
     {
-        return $this->idVacuna;
+        return $this->idMedicamento;
     }
 
-    public function setIdVacuna($idVacuna)
+    public function setIdMedicamento($idMedicamento)
     {
-        $this->idVacuna = $idVacuna;
+        $this->idMedicamento = $idMedicamento;
     }
 
     public function getIdPrefijo()
@@ -52,24 +52,24 @@ class Vacuna extends Conexion
         $this->idPrefijo = $idPrefijo;
     }
 
-    public function getNombreVacuna()
+    public function getNombreMedicamento()
     {
-        return $this->nombreVacuna;
+        return $this->nombreMedicamento;
     }
 
-    public function setNombreVacuna($nombreVacuna)
+    public function setNombreMedicamento($nombreMedicamento)
     {
-        $this->nombreVacuna = $nombreVacuna;
+        $this->nombreMedicamento = $nombreMedicamento;
     }
 
-    public function getCasaDistribuidora()
+    public function getTipoMedicamento()
     {
-        return $this->casaDistribuidora;
+        return $this->tipoMedicamento;
     }
 
-    public function setCasaDistribuidora($casaDistribuidora)
+    public function setTipoMedicamento($tipoMedicamento)
     {
-        $this->casaDistribuidora = $casaDistribuidora;
+        $this->tipoMedicamento = $tipoMedicamento;
     }
 
     public function getDescripcion()
@@ -102,14 +102,14 @@ class Vacuna extends Conexion
         $this->lote = $lote;
     }
 
-    public function getObservaciones()
+    public function getPresentacion()
     {
-        return $this->observaciones;
+        return $this->presentacion;
     }
 
-    public function setObservaciones($observaciones)
+    public function setPresentacion($presentacion)
     {
-        $this->observaciones = $observaciones;
+        $this->presentacion = $presentacion;
     }
 
     //metodos de conexion
@@ -131,7 +131,7 @@ class Vacuna extends Conexion
 
     public function listarDB()
     {
-        $query = "SELECT * FROM vacuna";
+        $query = "SELECT * FROM Medicamento";
         $lista = array();
         try {
             self::getConexion();
@@ -139,18 +139,18 @@ class Vacuna extends Conexion
             $resultado->execute();
             self::desconectar();
             foreach ($resultado->fetchAll() as $encontrado) {
-                $vacuna = new Vacuna();
-                $prefijo = "VA";
-                $vacuna->setIdVacuna($encontrado["id_vacuna"]);
-                $id_personalizado = $prefijo . str_pad($vacuna->getIdVacuna(), 2, '0', STR_PAD_LEFT);
-                $vacuna->setIdPrefijo($id_personalizado);
-                $vacuna->setNombreVacuna($encontrado["nombre_vacuna"]);
-                $vacuna->setCasaDistribuidora($encontrado["casa_distribuidora"]);
-                $vacuna->setDescripcion($encontrado["descripcion"]);
-                $vacuna->setFechaVencimiento($encontrado["fecha_vencimiento"]);
-                $vacuna->setLote($encontrado["lote"]);
-                $vacuna->setObservaciones($encontrado["observaciones"]);
-                $lista[] = $vacuna;
+                $Medicamento = new Medicamento();
+                $prefijo = "ME";
+                $Medicamento->setIdMedicamento($encontrado["id_medicamento"]);
+                $id_personalizado = $prefijo . str_pad($Medicamento->getIdMedicamento(), 2, '0', STR_PAD_LEFT);
+                $Medicamento->setIdPrefijo($id_personalizado);
+                $Medicamento->setNombreMedicamento($encontrado["nombre_medicamento"]);
+                $Medicamento->setTipoMedicamento($encontrado["tipo"]);
+                $Medicamento->setDescripcion($encontrado["descripcion"]);
+                $Medicamento->setFechaVencimiento($encontrado["fecha_vencimiento"]);
+                $Medicamento->setLote($encontrado["lote"]);
+                $Medicamento->setPresentacion($encontrado["presentacion"]);
+                $lista[] = $Medicamento;
             }
             return $lista;
         } catch (PDOException $Exception) {
@@ -163,24 +163,24 @@ class Vacuna extends Conexion
 
     public function guardarEnDb()
     {
-        $query = "INSERT INTO `vacuna`(`nombre_vacuna`, `descripcion`, `fecha_vencimiento`, `lote`, `observaciones`,`casa_distribuidora` ) VALUES (:nombre_vacuna,:descripcion,:fecha_vencimiento,:lote, :observaciones,:casa_distribuidora)";
+        $query = "INSERT INTO `medicamento` (`nombre_medicamento`, `tipo`, `descripcion`, `fecha_vencimiento`, `lote`, `presentacion`) VALUES (:nombre_medicamento, :tipo, :descripcion, :fecha_vencimiento, :lote, :presentacion)";
         try {
             self::getConexion();
-            $nombre_vacuna = $this->getNombreVacuna();
+            $nombre_medicamento = $this->getNombreMedicamento();
             $descripcion = $this->getDescripcion();
-            $casaDistribuidora = $this->getCasaDistribuidora();
+            $tipo = $this->getTipoMedicamento();
             $fecha_vencimiento = $this->getFechaVencimiento();
             $lote = $this->getLote();
-            $observaciones = $this->getObservaciones();
+            $presentacion = $this->getPresentacion();
 
 
             $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":nombre_vacuna", $nombre_vacuna, PDO::PARAM_STR);
+            $resultado->bindParam(":nombre_medicamento", $nombre_medicamento, PDO::PARAM_STR);
             $resultado->bindParam(":descripcion", $descripcion, PDO::PARAM_STR);
-            $resultado->bindParam(":casa_distribuidora", $casaDistribuidora, PDO::PARAM_STR);
+            $resultado->bindParam(":tipo", $tipo, PDO::PARAM_STR);
             $resultado->bindParam(":fecha_vencimiento", $fecha_vencimiento, PDO::PARAM_STR);
             $resultado->bindParam(":lote", $lote, PDO::PARAM_STR);
-            $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
+            $resultado->bindParam(":presentacion", $presentacion, PDO::PARAM_STR);
 
             $resultado->execute();
             self::desconectar();
@@ -194,14 +194,14 @@ class Vacuna extends Conexion
 
     public function verificarExistenciaDb()
     {
-        $query = "SELECT * FROM vacuna where nombre_vacuna=:nombre_vacuna and casa_distribuidora=:casa_distribuidora";
+        $query = "SELECT * FROM Medicamento where nombre_medicamento=:nombre_medicamento and tipo=:tipo";
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
-            $nombre_vacuna = $this->getNombreVacuna();
-            $casa_distribuidora = $this->getCasaDistribuidora();
-            $resultado->bindParam(":nombre_vacuna", $nombre_vacuna, PDO::PARAM_STR);
-            $resultado->bindParam(":casa_distribuidora", $casa_distribuidora, PDO::PARAM_STR);
+            $nombre_medicamento = $this->getNombreMedicamento();
+            $tipo = $this->getTipoMedicamento();
+            $resultado->bindParam(":nombre_medicamento", $nombre_medicamento, PDO::PARAM_STR);
+            $resultado->bindParam(":tipo", $tipo, PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
             $encontrado = false;
@@ -218,12 +218,12 @@ class Vacuna extends Conexion
 
     public function verificarExistenciaId()
     {
-        $query = "SELECT * FROM vacuna where id_vacuna=:id_vacuna";
+        $query = "SELECT * FROM Medicamento where id_medicamento=:id_medicamento";
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
-            $id = (int) substr($this->getIdPrefijo(), 3);
-            $resultado->bindParam(":id_vacuna", $id, PDO::PARAM_STR);
+            $id = $this->getIdMedicamento();
+            $resultado->bindParam(":id_medicamento", $id, PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
             $encontrado = false;
@@ -241,15 +241,15 @@ class Vacuna extends Conexion
 
     public function eliminar()
     {
-        $idVacuna = $this->getIdVacuna();
-        $query = "DELETE FROM vacuna WHERE `vacuna`.`id_vacuna` = :id_vacuna";
+        $idMedicamento = $this->getIdMedicamento();
+        $query = "DELETE FROM Medicamento WHERE `medicamento`.`id_medicamento` = :id_medicamento";
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":id_vacuna", $idVacuna, PDO::PARAM_STR);
+            $resultado->bindParam(":id_medicamento", $idMedicamento, PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
-            if (!(self::verificarExistenciaDb())) {
+            if (!(self::verificarExistenciaId())) {
                 return 0;
             } else {
                 return 1;
@@ -263,34 +263,9 @@ class Vacuna extends Conexion
     }
 
 
-    public function actualizarVacuna()
-    {
-        $query = "UPDATE vacuna set observaciones=:observaciones where nombre_vacuna=:nombre_vacuna and casa_distribuidora=:casa_distribuidora" ;
-        try {
-            self::getConexion();
-            $nombre_vacuna = $this->getNombreVacuna();
-            $cada_distribuidora = $this->getCasaDistribuidora();
-            $observaciones = $this->getObservaciones();
-            $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":nombre_vacuna", $nombre_vacuna, PDO::PARAM_STR);
-            $resultado->bindParam(":casa_distribuidora", $cada_distribuidora, PDO::PARAM_STR);
-            $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
-            self::$conexion->beginTransaction(); //desactiva el autocommit
-            $resultado->execute();
-            self::$conexion->commit(); //realiza el commit y vuelve al modo autocommit
-            self::desconectar();
-            return $resultado->rowCount();
-        } catch (PDOException $Exception) {
-            self::$conexion->rollBack();
-            self::desconectar();
-            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
-            echo $error;
-        }
-    }
 
-
-    public function listarVacunas(){
-        $query = "SELECT id_vacuna, nombre_vacuna FROM vacuna";
+    public function listarMedicamentos(){
+        $query = "SELECT id_Medicamento, nombre_Medicamento FROM Medicamento";
         
         try {
             self::getConexion();

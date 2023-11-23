@@ -17,6 +17,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <!-- Toastr -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+
 
 
 </head>
@@ -25,17 +31,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
 
-  <?php
-      include '../fragments/nav_menu.php'
-    ?>
+    <?php
+    include '../fragments/nav_menu.php'
+      ?>
 
 
-
-   <!--  Main Sidebar  -->
-   <aside class="main-sidebar  elevation-4">    
-        <?php
-        include '../fragments/main_aside_enfermedades.php'
-          ?>
+    <!--  Main Sidebar  -->
+    <aside class="main-sidebar  elevation-4">
+      <?php
+      include '../fragments/main_aside_enfermedades.php'
+        ?>
     </aside><!--  Main Sidebar  -->
 
 
@@ -133,16 +138,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   </div><!-- ./wrapper -->
 
-  <!-- REQUIRED SCRIPTS -->
 
-  <!-- jQuery -->
-  <script src="../plugins/jquery/jquery.min.js"></script>
+</body>
+ <!--   JQUERY -->
+ <script src="../plugins/jquery/jquery.min.js"></script>
+  <!-- DataTables  & Plugins -->
+  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
   <!-- Bootstrap 4 -->
   <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="../dist/js/adminlte.min.js"></script>
-</body>
-<!-- CSS styles -->
-<link rel="stylesheet" href="../css/index.css">
+  <!-- Bootbox -->
+  <script src="../plugins/bootbox/bootbox.min.js"></script>
+  <!-- toastr -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <!-- CSS styles -->
+  <link rel="stylesheet" href="../assets/css/index.css">
+  <!-- Select2 -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 
 </html>

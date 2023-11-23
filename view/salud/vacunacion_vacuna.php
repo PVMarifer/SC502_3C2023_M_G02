@@ -10,13 +10,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Starter</title>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet"
+   <!-- Google Font: Source Sans Pro -->
+   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- Datatable CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+  <!-- Toastr -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
 
 </head>
@@ -46,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item "><a href="#">Vacunacion</a></li>
-                <li class="breadcrumb-item Active"><a href="#">Nueva Vacunacion</a></li>
+                <li class="breadcrumb-item Active"><a href="#">Nueva Vacuna</a></li>
               </ol>
             </div>
             <div class="col-sm-6">
@@ -59,56 +63,145 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
+
+
           <!-- /Fromulario agregar -->
-          <div class="row mb-5">
+          <div class="row mb-5" id="form-agregar">
             <div class="col-12">
-              <div class="d-flex justify-content-center">
-                <div class="card col-6" style="background-color: #3f3ae6;">
-                  <div class="card-header text-center">
-                    <h3 class="card-title text-white">Nueva Vacuna</h3>
-                  </div>
-                  <!-- /.card-header -->
-                  <!-- form start -->
-                  <form>
-                    <div class="card-body text-white ">
-                      <div class="form-group">
-                        <label for="">Número de la Vacuna</label>
-                        <input type="text" class="form-control" id="" placeholder="Ingrese el nombre de la vacuna">
-                      </div>
-                      <div class="form-group">
-                        <label for="">Tipo de Vacuna</label>
-                        <input type="text" class="form-control" id="" placeholder="Ingrese el tipo de vacuna">
-                      </div>
-                      <div class="form-group">
-                        <label for="">Descripción</label>
-                        <input type="text" class="form-control" id="" placeholder="Ingrese la descripcion">
-                      </div>
-                      <div class="form-group">
-                        <label for="">Lote</label>
-                        <input type="text" class="form-control" id="" placeholder="Ingrese el lote">
-                      </div>
-                      <div class="form-group">
-                        <label for="">Fecha de Vencimiento</label>
-                        <input type="text" class="form-control" id="" placeholder="xx/xx/xxxx">
-                      </div>
-
-                      <div class="form-group">
-                        <label for="">Observaciones</label>
-                        <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
-                      </div>
-
-
-
-                    </div>
-                    <!-- /.card-body -->
-
-                    <div class="card-footer text-center">
-                      <button type="submit" class="btn btn-primary">Guardar</button>
-                    </div>
-                  </form>
+              <div class="card " style="background-color: #eee;">
+                <div class="card-header text-center">
+                  <h3 class="card-title ">Nueva Vacuna</h3>
                 </div>
-                <!-- /.card -->
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form id="formulario-agregar" method="POST">
+                  <div class="card-body ">
+                    <div class="row ">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Nombre de la Vacuna</label>
+                          <input type="text" class="form-control" name="nombreVacuna" id="nombreVacuna"
+                            placeholder="Ingrese el nombre de la vacuna" required>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Fecha de Vencimiento</label>
+                          <input type="date" class="form-control" name="fechaVencimiento" id="fechaVencimiento" required>
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <div class="form-group ">
+                          <label for="">Casa Distribuidora</label>
+                          <input type="text" class="form-control" name="casaDistribuidora" id="casaDistribuidora" placeholder="Ingrese la casa de la vacuna" required>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="form-group ">
+                          <label for="">Lote</label>
+                          <input type="text" class="form-control" name="lote" id="lote" placeholder="Ingrese el lote" required>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Descripción</label>
+                          <input type="text" class="form-control" name="descripcion" id="descripcion"
+                            placeholder="Ingrese la descripcion" required>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Observaciones</label>
+                          <input type="text" class="form-control" name="observaciones" id="observaciones"
+                            placeholder="Ingrese aquí sus observaciones" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div> <!-- /.card-body -->
+
+                  <div class="card-footer text-center">
+                    <div class="row">
+                      <div class="col-6"><button type="submit" class="btn btn-primary btnRegistrar">Guardar</button>
+                      </div>
+                      <div class="col-6"><input type="reset" class=" btn btn-info" value="Limpiar datos"></div>
+                    </div>
+                  </div>
+                </form>
               </div>
+              <!-- /.card -->
+            </div>
+
+          </div>
+          <!-- /.row -->
+
+           <!-- /Fromulario modificar -->
+           <div class="row mb-5" id="form-modificar">
+            <div class="col-12">
+              <div class="card " style="background-color: #3f3ae6;">
+                <div class="card-header text-center">
+                  <h3 class="card-title text-white">Modificar Vacuna</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form id="formulario-modificar" method="POST">
+                  <input type="hidden" name="idVacuna" id="XidVacuna">
+                  <div class="card-body text-white ">
+                    <div class="row ">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Nombre de la Vacuna</label>
+                          <input type="text" class="form-control" name="nombreVacuna" id="XnombreVacuna"
+                            placeholder="Ingrese el nombre de la vacuna" readonly >
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Fecha de Vencimiento</label>
+                          <input type="date" class="form-control" name="fechaVencimiento" id="XfechaVencimiento"
+                          >
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group ">
+                          <label for="">Lote</label>
+                          <input type="text" class="form-control" name="lote" id="Xlote"
+                           placeholder="Ingrese el lote" readonly>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group ">
+                          <label for="">Casa Distribuidora</label>
+                          <input type="text" class="form-control" name="casaDistribuidora" id="XcasaDistribuidora" placeholder="Ingrese la casa de la vacuna" readonly>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Descripción</label>
+                          <input type="text" class="form-control" name="descripcion" id="Xdescripcion"
+                            placeholder="Ingrese la descripcion" readonly>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Observaciones</label>
+                          <input type="text" class="form-control" name="observaciones" id="Xobservaciones"
+                            placeholder="Ingrese aquí sus observaciones">
+                        </div>
+                      </div>
+                    </div>
+                  </div> <!-- /.card-body -->
+
+                  <div class="card-footer text-center">
+                    <div class="row">
+                      <div class="col-6"><button type="submit" class="btn btn-primary btnRegistrar">Guardar</button>
+                      </div>
+                      <div class="col-6"><input type="button" class=" btn btn-info" value="Cancelar"
+                          onclick="cancelarForm()"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- /.card -->
             </div>
 
           </div>
@@ -116,17 +209,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <!-- Tabla -->
           <div class="row mb-5" id="tabla-vacunas">
-            <div class="col-md-12">
+            <div class="col-md-12 ">
               <div class="card card-dark">
-                <div class="card-body p-0">
+                <div class="card-body ">
                   <table id="tablalistado" class="table table-striped table-bordered table-hover">
                     <thead>
+                      <th>Id</th>
                       <th>Nombre de la Vacuna</th>
-                      <th>Tipo de Vacuna</th>
+                      <th>Casa Distribuidora</th>
                       <th>Descripcion</th>
                       <th>Lote</th>
                       <th>Fecha de Vencimiento</th>
                       <th>Observaciones</th>
+                      <th>Opciones</th>
                     </thead>
                     <tbody>
                     </tbody>
@@ -144,10 +239,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- /.content -->
 
 
-
-
-
-
     </div><!-- ./Content Wrapper-->
 
 
@@ -161,19 +252,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   </div><!-- ./wrapper -->
 
-  <!-- REQUIRED SCRIPTS -->
-  <!-- jQuery -->
-  <script src="../plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="../dist/js/adminlte.min.js"></script>
+
 </body>
 
+<!--   JQUERY -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- Bootbox -->
+<script src="../plugins/bootbox/bootbox.min.js"></script>
+
+<!-- toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
 
 <!-- JD Scripts -->
-<script src="../assets/js/enfermedades_data.js"></script>
+<script src="../assets/js/vacunas.js"></script>
 
 </html>

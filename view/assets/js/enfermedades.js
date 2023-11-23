@@ -154,7 +154,7 @@ function eliminar(nombre) {
                 'Error: El dato no se ha podido eliminar..'
               );
               break;
-
+ 
             default:
               toastr.error(data);
               break;

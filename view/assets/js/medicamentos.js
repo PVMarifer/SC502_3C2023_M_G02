@@ -1,4 +1,14 @@
 
+//funciones para el modal
+$('#antibiotico').on('click', function(event) {
+  $('#form-agregar-a').show();
+  $('#form-agregar-m').hide();
+});
+$('#medicina').on('click', function(event) {
+  $('#form-agregar-m').show();
+  $('#form-agregar-a').hide();
+});
+
 //funcion para limpiar forms
 function limpiarForms() {
   $('#formulario-agregar').trigger('reset');
@@ -16,14 +26,14 @@ function cancelarForm() {
 }
 
 /*Funcion para cargar el listado en el Datatable*/
-function listarVacunas() {
+function listarMedicamentos() {
   tabla = $('#tablalistado').dataTable({
     aProcessing: true, //actiavmos el procesamiento de datatables
     aServerSide: true, //paginacion y filtrado del lado del serevr ../controller/animalController.php?op=listar_tabla'
     dom: 'Bfrtip', //definimos los elementos del control de tabla
     buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdf'],
     ajax: {
-      url: '../../controller/salud/vacunaController.php?op=listar_tabla',
+      url: '../../controller/salud/medicamentoController.php?op=listar_tabla',
       type: 'get',
       dataType: 'json',
       error: function (e) {
@@ -38,18 +48,22 @@ function listarVacunas() {
 // Funcion principal
 
 $(function () {
-  $('#form-modificar').hide();
-  listarVacunas();
+  $('#form-modificar-a').hide();
+  $('#form-agregar-a').hide();
+  $('#form-modificar-m').hide();
+  $('#form-agregar-m').hide();
+  listarMedicamentos();
+ // listarAntibioticos();
 });
 
 
 // Añadir datos a la db
 $('#formulario-agregar').on('submit', function (event) {
   event.preventDefault();
-  $('#btnRegistar').prop('disabled', true);
+  $('#btnRegistrar').prop('disabled', true);
   var formData = new FormData($('#formulario-agregar')[0]);
   $.ajax({
-    url: '../../controller/salud/vacunaController.php?op=insertar',
+    url: '../../controller/salud/medicamentoController.php?op=insertar',
     type: 'POST',
     data: formData,
     contentType: false,
@@ -58,7 +72,7 @@ $('#formulario-agregar').on('submit', function (event) {
       switch (datos) {
         case '1':
           toastr.success(
-            'Vacuna registrada'
+            'Medicamento registrado'
           );
           $('#formulario-agregar')[0].reset();
           tabla.api().ajax.reload();
@@ -82,78 +96,18 @@ $('#formulario-agregar').on('submit', function (event) {
   });
 });
 
-// funcion para boton modificar
-$('#tablalistado tbody').on(
-  'click',
-  'button[id="modificarDato"]',
-
-  function () {
-    var data = $('#tablalistado').DataTable().row($(this).parents('tr')).data();
-    limpiarForms();
-    $('#form-agregar').hide();
-    $('#form-modificar').show();
-    $('#XidVacuna').val(data[0]);
-    $('#XnombreVacuna').val(data[1]);
-    $('#XcasaDistribuidora').val(data[2]);
-    $('#Xdescripcion').val(data[3]);
-    $('#Xlote').val(data[4]);
-    $('#XfechaVencimiento').val(data[5]);
-    $('#Xobservaciones').val(data[6]);
-    return false;
-  }
-);
-
-/*Funcion para modificacion de datos de la vacuna*/
-$('#formulario-modificar').on('submit', function (event) {
-  event.preventDefault();
-  bootbox.confirm('¿Desea modificar los datos?', function (result) {
-    if (result) {
-      var formData = new FormData($('#formulario-modificar')[0]);
-
-      $.ajax({
-        url: '../../controller/salud/vacunaController.php?op=modificar',
-        type: 'POST',
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function (datos) {
-          //alert(datos);
-          switch (datos) {
-            case '0':
-              toastr.error('Error: No se pudieron actualizar los datos');
-              break;
-            case '1':
-              toastr.success('Vacuna actualizada exitosamente');
-              tabla.api().ajax.reload();
-              limpiarForms();
-              $('#form-modificar').hide();
-              $('#form-agregar').show();
-              break;
-            case '2':
-              toastr.error('Error: no coincide la informacion en la base de datos');
-              break;
-
-            default:
-              toastr.error(datos);
-
-          }
-        },
-      });
-    }
-  });
-});
 
 /*Funcion para eliminar datos*/
 function eliminar(id) {
-  bootbox.confirm('¿Esta seguro de eliminar la enfermedad?', function (result) {
+  bootbox.confirm('¿Esta seguro de eliminar el medicamento?', function (result) {
     if (result) {
       $.post(
-        '../../controller/salud/vacunaController.php?op=eliminar',
-        { idVacuna: id },
+        '../../controller/salud/medicamentoController.php?op=eliminar',
+        { idMedicamento: id },
         function (data, textStatus, xhr) {
           switch (data) {
             case '0':
-              toastr.success('Vacuna eliminada');
+              toastr.success('Medicamento eliminado');
               tabla.api().ajax.reload();
               break;
 

@@ -4,15 +4,15 @@ CREATE SCHEMA SG_SOFTWARE;
 use SG_SOFTWARE;
 
 create table Animal(
-	id_animal int  not null,
+	id_animal int  not null auto_increment,
     nombre varchar(50) not null,
     fecha_nacimiento date not null,
     raza varchar(50) not null,
     peso float not null,
     numero_arete int unique not null ,
     colores_caracteristicas text,
-    id_madre int not null,
-    id_padre int not null,
+    id_madre int ,
+    id_padre int ,
     observaciones text,
 	PRIMARY KEY (id_animal)
     /*foreign key fk_animal_vaca (id_madre) references Vaca(id_vaca),
@@ -81,13 +81,12 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
 
-CREATE TABLE Animal_Enfermedad (
+CREATE TABLE Enfermedad_Animal (
     id_animal_enfermedad INT AUTO_INCREMENT PRIMARY KEY not null,
     id_enfermedad INT not null,
     id_animal int not null,
     estado_enfermedad enum('en curso', 'recuperada','cronica','fallecida') not null,
     sintomas_animal text not null,
-    tratamiento_utilizado text not null,
     fecha_diagnostico date not null,
     observaciones text not null,
     foreign key fk_animal_enfermedad_enfermedad (id_enfermedad) references Enfermedad(id_enfermedad),
@@ -103,7 +102,8 @@ CREATE TABLE Vacuna (
     descripcion text not null,
 	fecha_vencimiento date not null,
     lote varchar(30) not null,
-    observaciones text not null
+    observaciones text not null,
+    casa_distribuidora varchar(100)
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
@@ -111,14 +111,21 @@ DEFAULT CHARACTER SET = utf8mb4;
 CREATE TABLE Vacunacion (
     id_vacunacion INT AUTO_INCREMENT PRIMARY KEY not null,
 	id_vacuna INT not null,
-    id_animal INT  not null,
     lugar_aplicación varchar(50)  not null,
     dosis_aplicada varchar(50) not null,
 	fecha_vacunacion date not null,
-    persona_encargada varchar(80) not null,
-    observaciones text not null,
-    foreign key fk_vacunacion_vacuna (id_vacuna) references Vacuna(id_vacuna),
-    foreign key fk_vacunacion_animal (id_animal) references Animal(id_animal)
+    cantidad_animales int not null,
+    foreign key fk_vacunacion_vacuna (id_vacuna) references Vacuna(id_vacuna)
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
+
+CREATE TABLE Vacunacion_Animal (
+    id_vacunacion_animal INT AUTO_INCREMENT PRIMARY KEY not null,
+	id_vacunacion INT not null,
+    id_animal INT not null,
+    foreign key fk_vacunacion_animal_vacunacion (id_vacunacion) references Vacunacion(id_vacunacion),
+    foreign key fk_vacunacion_animal_animal (id_animal) references Animal(id_animal)
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
@@ -137,31 +144,31 @@ CREATE TABLE Antibiotico (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
-CREATE TABLE Medicina (
-    id_medicina INT AUTO_INCREMENT PRIMARY KEY not null,
-    nombre_medicina varchar(80) not null,
+CREATE TABLE Medicamento (
+    id_medicamento INT AUTO_INCREMENT PRIMARY KEY not null,
+    nombre_medicamento varchar(80) not null,
     tipo varchar(50) not null,
     descripcion text not null,
 	fecha_vencimiento date not null,
     lote varchar(30) not null,
-    observaciones text not null
+    presentacion varchar(30) not null
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
 CREATE TABLE Injeccion (
     id_injeccion INT AUTO_INCREMENT PRIMARY KEY not null,
-	id_medicina_antibiotico INT not null,
+	id_medicamento_antibiotico INT not null,
     id_animal INT  not null,
     id_enfermedad int not null,
     tipo_injeccion enum('antibiotico', 'medicina'),
-    lugar_aplicación varchar(50)  not null,
+    lugar_aplicacion varchar(50)  not null,
     dosis_aplicada varchar(50) not null,
 	fecha_injeccion date not null,
     persona_encargada varchar(80) not null,
     observaciones text not null,
-    foreign key fk_injeccion_antibiotico (id_medicina_antibiotico) references Antibiotico(id_antibiotico),
-	foreign key fk_injeccion_medicina (id_medicina_antibiotico) references Medicina(id_medicina),
+    foreign key fk_injeccion_antibiotico (id_medicamento_antibiotico) references Antibiotico(id_antibiotico),
+	foreign key fk_injeccion_medicina (id_medicina_antibiotico) references medicina(id_medicina),
     foreign key fk_injeccion_animal (id_animal) references Animal(id_animal),
     foreign key fk_injeccion_enfermedad (id_enfermedad) references Enfermedad(id_enfermedad)
 )
@@ -171,7 +178,7 @@ DEFAULT CHARACTER SET = utf8mb4;
 
 CREATE TABLE Tratamiento (
     id_tratamiento INT AUTO_INCREMENT PRIMARY KEY not null,
-	id_medicina_antibiotico INT not null,
+	id_medicamento_antibiotico INT not null,
     id_animal INT  not null,
     id_enfermedad int not null,
     tipo_injeccion enum('antibiotico', 'medicina'),
@@ -179,10 +186,8 @@ CREATE TABLE Tratamiento (
     dosis_aplicada varchar(50) not null,
 	fecha_inicio date not null,
     fecha_fin date not null,
-    persona_encargada varchar(80) not null,
-    observaciones text not null,
-    foreign key fk_tratamiento_antibiotico (id_medicina_antibiotico) references Antibiotico(id_antibiotico),
-	foreign key fk_tratamiento_medicina (id_medicina_antibiotico) references Medicina(id_medicina),
+    foreign key fk_tratamiento_antibiotico (id_medicamento_antibiotico) references Antibiotico(id_antibiotico),
+	foreign key fk_tratamiento_medicamento (id_medicamento_antibiotico) references medicamento(id_medicamento),
     foreign key fk_tratamiento_animal (id_animal) references Animal(id_animal),
     foreign key fk_tratamiento_enfermedad (id_enfermedad) references Enfermedad(id_enfermedad)
 )
@@ -205,7 +210,7 @@ CREATE TABLE Mastitis (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
-CREATE TABLE Abortos (
+CREATE TABLE Aborto (
     id_aborto INT AUTO_INCREMENT PRIMARY KEY not null,
     id_vaca int not null,
 	fecha_aborto date not null,

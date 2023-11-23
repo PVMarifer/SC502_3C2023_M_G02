@@ -8,9 +8,9 @@ class Enfermedad extends Conexion
     //Atributos de la clase
     protected static $conexion;
 
-    private $id =null;
-
     private $idEnfermedad =null;
+
+    private $idPrefijo =null;
 
     private $nombreEnfermedad = null;
 
@@ -28,6 +28,16 @@ class Enfermedad extends Conexion
 
     //getters y setters
 
+    public function getIdPrefijo()
+    {
+        return $this->idPrefijo;
+    }
+
+    public function setIdPrefijo($idPrefijo)
+    {
+        $this->idPrefijo = $idPrefijo;
+    }
+
     public function getIdEnfermedad()
     {
         return $this->idEnfermedad;
@@ -36,16 +46,6 @@ class Enfermedad extends Conexion
     public function setIdEnfermedad($idEnfermedad)
     {
         $this->idEnfermedad = $idEnfermedad;
-    }
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function setId($id)
-    {
-        $this->id = $id;
     }
 
     public function getNombreEnfermedad()
@@ -122,10 +122,9 @@ class Enfermedad extends Conexion
             foreach ($resultado->fetchAll() as $encontrado) {
                 $enfermedad = new Enfermedad();
                 $prefijo ="EF";
-                $enfermedad->setId($encontrado["id_enfermedad"]);
-                $id=$enfermedad->getId();
-                $id_personalizado = $prefijo . str_pad($id, 2, '0', STR_PAD_LEFT);
-                $enfermedad->setIdEnfermedad($id_personalizado);
+                $enfermedad->setIdEnfermedad($encontrado["id_enfermedad"]);
+                $id_personalizado = $prefijo . str_pad($enfermedad->getIdEnfermedad(), 2, '0', STR_PAD_LEFT);
+                $enfermedad->setIdPrefijo($id_personalizado);
                 $enfermedad->setnombreEnfermedad($encontrado["nombre_enfermedad"]);
                 $enfermedad->setDescripcion($encontrado["descripcion"]);
                 $enfermedad->setSintomas($encontrado["sintomas"]);
@@ -170,7 +169,8 @@ class Enfermedad extends Conexion
 
     public function verificarExistenciaDb(){
             $query = "SELECT * FROM enfermedad where nombre_enfermedad=:nombre_enfermedad";
-         try {
+            
+            try {
              self::getConexion();
                 $resultado = self::$conexion->prepare($query);		
                 $nombreEnfermedad= $this->getNombreEnfermedad();	
@@ -186,7 +186,7 @@ class Enfermedad extends Conexion
                    self::desconectar();
                    $error = "Error ".$Exception->getCode().": ".$Exception->getMessage();
                  return $error;
-               }
+               } 
         }
 
     public function eliminar()
@@ -236,6 +236,20 @@ class Enfermedad extends Conexion
             self::desconectar();
             $error = "Error ".$Exception->getCode().": ".$Exception->getMessage();
             echo $error;
+        }
+    }
+
+    public function listarEnfermedades(){
+        $query = "SELECT id_enfermedad, nombre_enfermedad FROM enfermedad";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;
+            return json_encode($error);
         }
     }
 

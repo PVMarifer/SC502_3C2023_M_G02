@@ -9,7 +9,7 @@ switch ($_GET['op']) {
         $datos = array();
         foreach ($enfermedades as $enfermedad) {
             $datos[] = array(
-                "0" => $enfermedad->getIdEnfermedad(),
+                "0" => $enfermedad->getIdPrefijo(),
                 "1" => $enfermedad->getNombreEnfermedad(),
                 "2" => $enfermedad->getDescripcion(),
                 "3" => $enfermedad->getSintomas(),
@@ -31,6 +31,7 @@ switch ($_GET['op']) {
 
     case 'insertar':
         $nombreEnfermedad = isset($_POST["nombreEnfermedad"]) ? trim($_POST["nombreEnfermedad"]) : "";
+        echo $nombreEnfermedad;
         $descripcion = isset($_POST["descripcion"]) ? trim($_POST["descripcion"]) : "";
         $sintomas = isset($_POST["sintomas"]) ? trim($_POST["sintomas"]) : "";
         $tratamiento = isset($_POST["tratamiento"]) ? trim($_POST["tratamiento"]) : "";
@@ -86,6 +87,14 @@ switch ($_GET['op']) {
               echo 2;	
             }
       break;
+
+      
+    case 'obtener_enfermedades':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerEnfermedades'])) {
+            $enfermedadModel = new Enfermedad();
+            $enfermedades = $enfermedadModel->listarEnfermedades();
+            echo json_encode($enfermedades);
+        }
 
 
 

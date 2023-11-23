@@ -17,6 +17,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <!-- Datatable CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+  <!-- Toastr -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+  <!-- Bootstrap4 Duallistbox -->
+  <link rel="stylesheet" href="../plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
 
 
 </head>
@@ -57,67 +65,131 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div><!-- /.content-header -->
 
       <!-- Main content -->
-      <section class="content">
+      <section class="content mb-5">
         <div class="container-fluid">
-          <div class="row">
+
+          
+        <!-- form agregar -->
+          <div class="row mb-5">
 
             <!-- /.card -->
-            <div class="col-12">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <form id="formulario-agregar" method="POST">
+                <div class="card" style="background-color: grey;">
+                  <div class="card-header text-center">
+                    <h3 class="card-title text-white">Nueva Vacunación</h3>
+                  </div>
+                  <!-- /.card-header -->
 
-              <div class="card-header text-center">
-                <h3 class="card-title text-white">Nueva Vacunación</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form>
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Número de Arete</th>
-                      <th>Nombre de la Vacuna</th>
-                      <th>Fecha de Caducidad</th>
-                      <th>Fecha de Aplicación</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input type="text" name="arete[]" class="form-control" placeholder="Número de Arete">
-                      </td>
-                      <td>
-                        <input type="text" name="nombre_vacuna[]" class="form-control"
-                          placeholder="Nombre de la Vacuna">
-                      </td>
-                      <td>
-                        <input type="date" name="fecha_caducidad[]" class="form-control">
-                      </td>
-                      <td>
-                        <input type="date" name="fecha_aplicacion[]" class="form-control">
-                      </td>
-                    </tr>
-                    <!-- Puedes duplicar esta fila para agregar más registros -->
-                  </tbody>
-                </table>
-                <div class="form-group">
-                  <label for="num_arete">Números de Arete de Vacas Vacunadas</label>
-                  <input type="text" name="num_arete_vacas" class="form-control" placeholder="Separados por comas">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="form-group">
+                          <label for="">Vacuna</label>
+
+                          <select id="selectVacunas" name="idVacuna" class="form-control select2 select2-selection"
+                            style="width: 100%; padding: 15px;" required>
+                          </select>
+                        </div>
+
+                      </div>
+                      <div class="col-4">
+                        <div class="form-group">
+                          <label for="">Lugar de Aplicacion</label>
+
+                          <input type="text" id="lugarAplicacion" name="lugarAplicacion" class="form-control"
+                            placeholder="Lugar de Aplicación" required>
+                        </div>
+
+                      </div>
+                      <div class="col-4">
+                        <div class="form-group">
+                          <label for="">Fecha de Aplicacion</label>
+                          <input type="date" id="fechaAplicacion" name="fechaAplicacion" class="form-control" required>
+
+                        </div>
+
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Dosis</label>
+                          <input type="text" id="dosis" name="dosis" class="form-control" required>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
-                <button class="btn btn-primary" type="submit">Guardar</button>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label>Vacas Vacunadas</label>
+                          <select id="selectAnimales" name="animalesVacunados[]" class="duallistbox"
+                            multiple="multiple" required>
+                          </select>
+                        </div>
+                        <!-- /.form-group -->
+                      </div>
+                      <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+
+                <div class="card-footer text-center">
+                  <div class="row">
+                    <div class="col-6"><button type="submit" class="btn btn-primary btnRegistrar">Guardar</button>
+                    </div>
+                    <div class="col-6"><input type="reset" class=" btn btn-info" value="Limpiar datos"></div>
+                  </div>
+                </div>
+ 
               </form>
             </div>
-            <!-- /.card -->
+            <div class="col-1"></div>
           </div>
+
+          <!-- Tabla -->
+          <div class="row mb-5" id="tabla-vacas-enfermas">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="card card-dark" style="overflow-x:scroll;">
+                <div class="card-body p-3">
+                  <table id="tablalistado" class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <th>Id</th>
+                      <th>Nombre Vacuna</th>
+                      <th>Lugar de Aplicacion</th>
+                      <th>Fecha Aplicacion</th>
+                      <th>Dosis</th> 
+                      <th>Animales Vacunados</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+            <div class="col-md-1"></div>
+
+          </div>
+          <!-- /.row -->
+
+
+
+
+
         </div>
 
-
-        <!-- /.row -->
       </section>
       <!-- /.content -->
-
-
-
-
-
 
     </div><!-- ./Content Wrapper-->
 
@@ -132,19 +204,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   </div><!-- ./wrapper -->
 
-  <!-- REQUIRED SCRIPTS -->
-  <!-- jQuery -->
-  <script src="../plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="../dist/js/adminlte.min.js"></script>
-</body>
 
+</body>
+<!--   JQUERY -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- Bootbox -->
+<script src="../plugins/bootbox/bootbox.min.js"></script>
+<!-- toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
+<!-- Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="../plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+
 
 <!-- JD Scripts -->
-<script src="../assets/js/enfermedades_data.js"></script>
+
+<script src="../assets/js/vacunacion.js"></script>
+
+
 
 </html>

@@ -17,7 +17,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-
+  <!-- Datatable CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+  <!-- Toastr -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
 </head>
 
@@ -65,14 +68,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row mb-5">
             <div class="col-1"></div>
             <div class="col-10">
-              <div class="card " style="background-color: #3f3ae6;">
+              <div class="card ">
                 <div class="card-header text-center">
-                  <h3 class="card-title text-white">Nuevo Tratamiento</h3>
+                  <h3 class="card-title ">Nuevo Tratamiento</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form>
-                  <div class="card-body text-white ">
+                  <div class="card-body  ">
                     <div class="row">
                       <div class="col-6">
                         <div class="form-group">
@@ -117,24 +120,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                       </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
                   </div>
                   <!-- /.card-body -->
 
                   <div class="card-footer text-center">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                  <div class="row">
+                      <div class="col-6"><button type="submit" class="btn btn-primary brnRegistrar">Guardar</button>
+                      </div>
+                      <div class="col-6"><input type="reset" class=" btn btn-info" value="Limpiar datos"></div>
+                    </div>
                   </div>
                 </form>
               </div>
@@ -148,14 +142,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row mb-5">
             <div class="col-1"></div>
             <div class="col-10">
-              <div class="card " style="background-color: #3f3ae6;">
+              <div class="card ">
                 <div class="card-header text-center">
-                  <h3 class="card-title text-white">Nuevo Tratamiento</h3>
+                  <h3 class="card-title ">Nuevo Tratamiento</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form>
-                  <div class="card-body text-white ">
+                  <div class="card-body ">
                     <div class="row">
                       <div class="col-6">
                         <div class="form-group">
@@ -309,15 +303,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   </div><!-- ./wrapper -->
 
-  <!-- REQUIRED SCRIPTS -->
 
-  <!-- jQuery -->
-  <script src="../plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="../dist/js/adminlte.min.js"></script>
 </body>
+<!-- CSS styles -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!--   JQUERY -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- Bootbox -->
+<script src="../plugins/bootbox/bootbox.min.js"></script>
+
+<!-- toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
 

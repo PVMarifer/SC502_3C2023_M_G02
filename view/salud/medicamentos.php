@@ -25,16 +25,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
 
-  <?php
-      include '../fragments/nav_menu.php'
-    ?>
+    <?php
+    include '../fragments/nav_menu.php'
+      ?>
 
 
-   <!--  Main Sidebar  -->
-   <aside class="main-sidebar  elevation-4">    
-        <?php
-        include '../fragments/main_aside_enfermedades.php'
-          ?>
+    <!--  Main Sidebar  -->
+    <aside class="main-sidebar  elevation-4">
+      <?php
+      include '../fragments/main_aside_enfermedades.php'
+        ?>
     </aside><!--  Main Sidebar  -->
 
 
@@ -59,6 +59,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <section class="content">
         <div class="container-fluid">
+          
           <div class="row">
             <div class="col-lg-12">
               <div class="row">
@@ -152,7 +153,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- /.card -->
               </div>
             </div>
-
+          </div>
+          <div class="row">
             <div class="col-12">
               <div class="card">
                 <div class="card-header">

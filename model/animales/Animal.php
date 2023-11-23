@@ -7,6 +7,8 @@ class Animal extends Conexion
     //Atributos
     protected static $conexion;
 
+    private $idAnimal =null;
+
     private $nombre = null;
 
     private $numeroArete = null;
@@ -31,6 +33,15 @@ class Animal extends Conexion
     }
 
     //Getter y setters
+
+    public function getIdAnimal()
+    {
+        return $this->idAnimal;
+    }
+    public function setIdAnimal($idAnimal)
+    {
+        $this->idAnimal = $idAnimal;
+    }
 
     public function getNombre()
     {
@@ -132,6 +143,7 @@ class Animal extends Conexion
             self::desconectar();
             foreach ($resultado->fetchAll() as $encontrado) {
                 $animal = new Animal();
+
                 $animal ->setNumeroArete($encontrado["numero_arete"]);
                 $animal ->setNombre($encontrado["nombre"]);
                 $animal ->setFechaNacimiento($encontrado["fecha_nacimiento"]);
@@ -143,6 +155,19 @@ class Animal extends Conexion
                 $lista[] = $animal;
             }
             return $lista;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;
+            return json_encode($error);
+        }
+    }
+    public function listarAnimales(){
+        $query = "SELECT id_animal, numero_arete FROM animal";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $Exception) {
             self::desconectar();
             $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;

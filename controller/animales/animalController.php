@@ -31,7 +31,12 @@ switch ($_GET['op']) {
         echo json_encode($resultados);
         break;
 
-
+    case 'listar_animales':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerAnimales'])) {
+            $animalModel = new Animal();
+            $animales = $animalModel->listarAnimales();
+            echo json_encode($animales);
+        }
 }
 
 ?>
