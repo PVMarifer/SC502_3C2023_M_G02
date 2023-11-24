@@ -109,6 +109,18 @@ switch ($_GET['op']) {
         }
         break;
 
+    case 'listar_animales_enfermos' :
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerAnimalesEnfermos'])) {
+            $enfermedadesModel = new EnfermedadAnimal();
+            $enfermedades = $enfermedadesModel->listarDB();
+            $contador = 0;
+            $datos = array();
+            foreach ($enfermedades as $registro) {
+                $contador += 1;
+            }
+            echo ($contador); 
+        }
+
 
 
 }

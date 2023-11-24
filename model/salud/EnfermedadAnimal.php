@@ -275,7 +275,7 @@ class EnfermedadAnimal extends Conexion
     {
         $query = "SELECT * FROM enfermedad_animal WHERE enfermedad_animal.id_enfermedad = ( SELECT id_enfermedad FROM enfermedad WHERE nombre_enfermedad = :nombre_enfermedad) AND enfermedad_animal.id_animal = ( SELECT id_animal FROM animal WHERE numero_arete = :numero_arete ) AND fecha_diagnostico = :fecha_diagnostico";
         try {
-            self::getConexion();
+            self::getConexion(); 
             $resultado = self::$conexion->prepare($query);
             $nombreEnfermedad = $this->getNombreEnfermedad();
             $areteAnimal = $this->getAreteAnimal();

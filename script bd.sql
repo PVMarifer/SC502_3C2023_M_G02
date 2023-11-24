@@ -80,10 +80,10 @@ DEFAULT CHARACTER SET = utf8mb4;
 
 
 CREATE TABLE Enfermedad_Animal (
-    id_animal_enfermedad INT AUTO_INCREMENT PRIMARY KEY not null,
+    id_enfermedad_animal INT AUTO_INCREMENT PRIMARY KEY not null,
     id_enfermedad INT not null,
     id_animal int not null,
-    estado_enfermedad enum('en curso', 'recuperada','cronica','fallecida') not null,
+    estado_animal enum('en curso', 'recuperada','cronica','fallecida') not null,
     sintomas_animal text not null,
     fecha_diagnostico date not null,
     observaciones text not null,
@@ -153,41 +153,33 @@ CREATE TABLE Medicamento (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
-CREATE TABLE Inyeccion (
-    id_inyeccion INT AUTO_INCREMENT PRIMARY KEY not null,
-	id_medicamento_antibiotico INT not null,
+CREATE TABLE Inyeccion_Medicamento (
+    id_inyeccion_medicamento INT AUTO_INCREMENT PRIMARY KEY not null,
+	id_medicamento INT not null,
     id_animal INT  not null,
-    id_enfermedad int not null,
-    tipo_injeccion enum('antibiotico', 'medicina'),
     lugar_aplicacion varchar(50)  not null,
     dosis_aplicada varchar(50) not null,
-	fecha_injeccion date not null,
-    foreign key fk_injeccion_antibiotico (id_medicamento_antibiotico) references Antibiotico(id_antibiotico),
-	foreign key fk_injeccion_medicina (id_medicamento_antibiotico) references Medicamento(id_medicamento),
-    foreign key fk_injeccion_animal (id_animal) references Animal(id_animal),
-    foreign key fk_injeccion_enfermedad (id_enfermedad) references Enfermedad(id_enfermedad)
+	fecha_inyeccion date not null,
+	foreign key fk_inyeccion_medicamento_medicamento (id_medicamento) references Medicamento(id_medicamento),
+    foreign key fk_inyeccion_medicamento_animal (id_animal) references Animal(id_animal)
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
-
-CREATE TABLE Tratamiento (
-    id_tratamiento INT AUTO_INCREMENT PRIMARY KEY not null,
-	id_medicamento_antibiotico INT not null,
+CREATE TABLE Inyeccion_Antibiotico (
+    id_inyeccion_antibiotico INT AUTO_INCREMENT PRIMARY KEY not null,
+	id_antibiotico INT not null,
     id_animal INT  not null,
-    id_enfermedad int not null,
-    tipo_injeccion enum('antibiotico', 'medicina'),
-    tipo_tratamiento varchar(80) not null,
+    lugar_aplicacion varchar(50)  not null,
     dosis_aplicada varchar(50) not null,
-	fecha_inicio date not null,
-    fecha_fin date not null,
-    foreign key fk_tratamiento_antibiotico (id_medicamento_antibiotico) references Antibiotico(id_antibiotico),
-	foreign key fk_tratamiento_medicamento (id_medicamento_antibiotico) references medicamento(id_medicamento),
-    foreign key fk_tratamiento_animal (id_animal) references Animal(id_animal),
-    foreign key fk_tratamiento_enfermedad (id_enfermedad) references Enfermedad(id_enfermedad)
+	fecha_inyeccion date not null,
+    foreign key fk_inyeccion_antibiotico_antibiotico (id_antibiotico) references Antibiotico(id_antibiotico),
+    foreign key fk_inyeccion_antibiotico_animal (id_animal) references Animal(id_animal)
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
+
+
 
 
 CREATE TABLE Mastitis (

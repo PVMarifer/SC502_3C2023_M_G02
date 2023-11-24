@@ -67,7 +67,7 @@ switch ($_GET['op']) {
         break;
 
 
-    case 'obtener_Antibioticos':
+    case 'obtener_antibioticos':
 
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerAntibioticos'])) {
             $AntibioticoModel = new Antibiotico();

@@ -61,32 +61,45 @@ switch ($_GET['op']) {
         echo $respuesta;
         break;
 
-        case 'modificar':
-            $idAnimal = isset($_POST["idAnimal"]) ? trim($_POST["idAnimal"]) : "";
-            $tipoTratamiento = isset($_POST["tipoTratamiento"]) ? trim($_POST["tipoTratamiento"]) : "";
-            $cuartosAfectados = isset($_POST["cuartosAfectados"]) ? trim($_POST["cuartosAfectados"]) : "";
-            $fechaDiagnostico = isset($_POST["fechaDiagnostico"]) ? trim($_POST["fechaDiagnostico"]) : "";
-            $Mastitis = new Mastitis();
+    case 'modificar':
+        $idAnimal = isset($_POST["idAnimal"]) ? trim($_POST["idAnimal"]) : "";
+        $tipoTratamiento = isset($_POST["tipoTratamiento"]) ? trim($_POST["tipoTratamiento"]) : "";
+        $cuartosAfectados = isset($_POST["cuartosAfectados"]) ? trim($_POST["cuartosAfectados"]) : "";
+        $fechaDiagnostico = isset($_POST["fechaDiagnostico"]) ? trim($_POST["fechaDiagnostico"]) : "";
+        $Mastitis = new Mastitis();
         $Mastitis->setIdAnimal($idAnimal);
         $Mastitis->setFechaDiagnostico($fechaDiagnostico);
         $encontrado = $Mastitis->verificarExistenciaModificar();
-            if ($encontrado == 1) {
+        if ($encontrado == 1) {
             //$usuario->llenarCampos($id); 
-              //$modulo->setNombre($nombreModif);
-              $Mastitis->setTipoTratamiento($tipoTratamiento);
-              $Mastitis->setCuartosAfectados($cuartosAfectados);
-              $modificados = $Mastitis->actualizarMastitis();
-              if ($modificados > 0) {
+            //$modulo->setNombre($nombreModif);
+            $Mastitis->setTipoTratamiento($tipoTratamiento);
+            $Mastitis->setCuartosAfectados($cuartosAfectados);
+            $modificados = $Mastitis->actualizarMastitis();
+            if ($modificados > 0) {
                 echo 1;
-              } else {
+            } else {
                 echo 0;
-              }
-            }else{
-              echo 2;	
             }
-      break;
+        } else {
+            echo 2;
+        }
+        break;
 
-    
+    case 'listar_animales_mastitis':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerAnimalesMastitis'])) {
+            $mastitisModel = new Mastitis();
+            $mastitis = $mastitisModel->listarDB();
+            $contador = 0;
+            $datos = array();
+            foreach ($mastitis as $registro) {
+                $contador += 1;
+            }
+            echo ($contador);
+        }
+
+
+
 
 
 
