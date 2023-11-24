@@ -19,22 +19,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   <!-- Datatable CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
-  <!-- Select2 -->
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   <!-- Toastr -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-
 
 
 </head>
 
 <body class="hold-transition sidebar-mini">
+
+  <!--  Main Page -->
   <div class="wrapper">
 
-
+    <!--  Main Navbar -->
     <?php
     include '../fragments/nav_menu.php'
-      ?>
+      ?><!--  Main navbar -->
 
 
 
@@ -46,23 +45,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </aside><!--  Main Sidebar  -->
 
 
-    <!-- Content Wrapper. Contains page content -->
+    <!-- Main Content-->
     <div class="bg-white content-wrapper">
+
       <!-- Content Header (Page header) -->
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-left">
-                <li class="breadcrumb-item"><a href="#">Salud</a></li>
-                <li class="breadcrumb-item"><a href="#">Mastitis</a></li>
-
-                <li class="breadcrumb-item active">Nuevo Registro de Mastitis</li>
-
-
-
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Secados</a></li>
+                <li class="breadcrumb-item active"></li>
               </ol>
-            </div><!-- /.col -->
+            </div>
             <div class="col-sm-6">
               <h1 class="m-0"></h1>
             </div><!-- /.col -->
@@ -70,10 +66,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div><!-- /.container-fluid -->
       </div><!-- /.content-header -->
 
-      <section class="content">
+      <!--  Main section -->
+      <section class="main-content">
         <div class="container-fluid">
           <!-- Tabla -->
-          <div class="row mb-5" id="tabla-mastitis">
+          <div class="row mb-5" id="tabla-SEC">
             <div class="col-md-1"></div>
             <div class="col-md-10">
               <div class="card card-dark">
@@ -81,11 +78,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <table id="tablalistado" class="table table-striped table-bordered table-hover">
                     <thead>
                       <th>Id</th>
-                      <th>Numero Arete</th>
-                      <th>Tipo Tratamiento</th>
-                      <th>Cuartos Afectados</th>
-                      <th>Fecha Diagnóstico</th>
+                      <th>Nombre Enfermedad</th>
+                      <th>Descripción Enfermedades</th>
+                      <th>Síntomas</th>
+                      <th>Tratamiento</th>
                       <th>Opciones</th>
+
                     </thead>
                     <tbody>
                     </tbody>
@@ -105,7 +103,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-8">
               <div class="card " style="background-color: grey;">
                 <div class="card-header text-center">
-                  <h3 class="card-title text-white">Nueva Mastitis</h3>
+                  <h3 class="card-title text-white">Nueva Enfermedad</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
@@ -114,37 +112,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="row">
                       <div class="col-12">
                         <div class="form-group">
-                          <label>Número de Arete</label>
-                          <select id="selectAnimales" name="idAnimal" class="form-control select2"
-                            style="width: 100%; padding: 15px;" required>
-                            <option selected="selected">Seleccione un número de arete</option>
-
-                          </select>
-                        </div>
-                        <!-- /.form-group -->
-                      </div>
-                      <div class="col-12">
-                        <div class="form-group">
-                          <label for="">Tipo de Tratamiento</label>
-                          <select name="tipoTratamiento" id="tipoTratamiento" class="form-control select2" required>
-                            <option value="Inyecccion">Inyecccion</option>
-                            <option value="Antibiotico en la Teta">Antibiotico en la Teta</option>
-                          </select>
+                          <label for="">Nombre de la Enfermedad</label>
+                          <input type="text" class="form-control" name="nombreEnfermedad"
+                            placeholder="Ingrese el nombre de la enfermedad" required>
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-group">
-                          <label for="">Cuartos Afectados</label>
-                          <input type="text" class="form-control" name="cuartosAfectados" id="cuartosAfectados"
-                            placeholder="Ingrese los cuartos afectados" required>
+                          <label for="">Descripción de la Enfermedad</label>
+                          <input type="text" class="form-control" name="descripcion"
+                            placeholder="Ingrese la descripcion" required>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Síntomas</label>
+                          <input type="text" class="form-control" name="sintomas" placeholder="Ingrese los sintomas" required>
                         </div>
                       </div>
 
                       <div class="col-12">
                         <div class="form-group">
-                          <label for="">Fecha de Diagnostico</label>
-                          <input type="date" class="form-control" name="fechaDiagnostico" id="fechaDiagnostico"
-                            required>
+                          <label for="">Tratamiento</label>
+                          <input type="text" class="form-control" name="tratamiento"
+                            placeholder="Ingrese aquí el tratamiento" required>
                         </div>
                       </div>
                     </div>
@@ -171,7 +162,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-8">
               <div class="card " style="background-color: grey;">
                 <div class="card-header text-center">
-                  <h3 class="card-title text-white">Modificar Mastitis</h3>
+                  <h3 class="card-title text-white">Modificar Enfermedad</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
@@ -180,33 +171,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="row">
                       <div class="col-12">
                         <div class="form-group">
-                          <label for="">Numero Arete</label>
-                          <input type="text" class="form-control" name="idAnimal" id="XidAnimal"
-                            placeholder="Ingrese el numero de arete" readonly>
+                          <label for="">Nombre de la Enfermedad</label>
+                          <input type="text" class="form-control" name="nombreEnfermedad" id="XnombreEnfermedad"
+                            placeholder="Ingrese la descripcion" readonly>
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-group">
-                          <label for="">Tipo de Tratamiento</label>
-                          <select name="tipoTratamiento" id="XtipoTratamiento" class="form-control select2">
-                            <option value="Inyecccion">Inyecccion</option>
-                            <option value="Antibiotico en la Teta">Antibiotico en la Teta</option>
-                          </select>
+                          <label for="">Descripción de la Enfermedad</label>
+                          <input type="text" class="form-control" name="descripcion" id="Xdescripcion"
+                            placeholder="Ingrese la descripcion">
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-group">
-                          <label for="">Cuartos Afectados</label>
-                          <input type="text" class="form-control" name="cuartosAfectados" id="XcuartosAfectados"
-                            placeholder="Ingrese los cuartos afectados" required>
+                          <label for="">Síntomas</label>
+                          <input type="text" class="form-control" name="sintomas" id="Xsintomas"
+                            placeholder="Ingrese los sintomas">
                         </div>
                       </div>
 
                       <div class="col-12">
-                      <div class="form-group">
-                          <label for="">Fecha de Diagnostico</label>
-                          <input type="date" class="form-control" name="fechaDiagnostico" id="XfechaDiagnostico"
-                            readonly>
+                        <div class="form-group">
+                          <label for="">Tratamiento</label>
+                          <input type="text" class="form-control" name="tratamiento" id="Xtratamiento"
+                            placeholder="Ingrese aquí el tratamiento">
                         </div>
                       </div>
                     </div>
@@ -230,12 +219,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-2"></div>
           </div>
           <!-- /.formulario-->
-        </div>
-
-      </section>
 
 
-    </div><!-- ./Content Wrapper-->
+
+        </div><!-- /.container-fluid -->
+      </section><!--main section-->
+
+
+
+
+    </div><!-- ./main contentr-->
 
 
 
@@ -244,15 +237,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <?php
       include '../fragments/footer.php'
         ?>
-    </footer>
+    </footer><!-- footer -->
 
-  </div><!-- ./wrapper -->
+  </div><!-- ./main oage -->
+
+
 
 
 
 </body>
-<!-- REQUIRED SCRIPTS -->
 
+<!-- REQUIRED SCRIPTS -->
 
 <!--   JQUERY -->
 <script src="../plugins/jquery/jquery.min.js"></script>
@@ -264,15 +259,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="../dist/js/adminlte.min.js"></script>
 <!-- Bootbox -->
 <script src="../plugins/bootbox/bootbox.min.js"></script>
+
 <!-- toastr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
-<!-- Select2 -->
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <!-- JD Scripts -->
-<script src="../assets/js/mastitis.js"></script>
+<script src="../assets/js/enfermedades.js"></script>
 
 
 </html>

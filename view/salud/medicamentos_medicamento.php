@@ -21,6 +21,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
   <!-- Toastr -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <!-- Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 
 </head>
@@ -75,7 +77,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <h3 class="card-title ">Medicamentos</h3>
                 </div>
                 <div class="card-body p-3">
-                  <table id="tablalistado" class="table table-striped table-bordered table-hover">
+                  <table id="tablalistadomedicamento" class="table table-striped table-bordered table-hover">
                     <thead>
                       <th>Id</th>
                       <th>Nombre Enfermedad</th>
@@ -84,6 +86,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <th>Lote</th>
                       <th>Descripcion</th>
                       <th>Presentacion</th>
+                      <th>Opciones</th>
+
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+
+            <div class="col-md-1"></div>
+          </div>
+          <!-- /.tabla -->
+
+          <!-- Tabla -->
+          <div class="row mb-5" id="tabla-antibioticos">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="card " style="overflow-y: scroll;">
+                <div class="card-header text-center">
+                  <h3 class="card-title ">Antibioticos</h3>
+                </div>
+                <div class="card-body p-3">
+                  <table id="tablalistadoantibiotico" class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <th>Id</th>
+                      <th>Nombre Antibiotico</th>
+                      <th>Tipo de Antibiotico</th>
+                      <th>Fecha de Vencimiento</th>
+                      <th>Lote</th>
+                      <th>Descripcion</th>
+                      <th>Dias de Retiro de Leche</th>
                       <th>Opciones</th>
 
                     </thead>
@@ -133,7 +168,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <!-- /.antibiotico -->
           <!-- /.form agregar -->
-          <div class="row " id="form-agregar-a">
+          <div class="row " id="form-agregar-antibiotico">
             <div class="col-1"></div>
 
             <div class="col-10">
@@ -143,22 +178,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form>
+                <form id="formulario-agregar-antibiotico">
 
                   <div class="card-body ">
                     <div class="row">
                       <div class="col-6">
                         <div class="form-group">
                           <label for="">Nombre del Antibiotico</label>
-                          <input type="text" class="form-control" name="nombreMedicamento" id="nombreMedicamento"
+                          <input type="text" class="form-control" name="nombreAntibiotico" id="nombreAntibiotico"
                             placeholder="Ingrese el nombre de la vacuna">
                         </div>
                       </div>
                       <div class="col-6">
                         <div class="form-group">
-                          <label for="">Tipo de Medicamento</label>
-                          <input type="text" class="form-control" name="tipoMedicamento" id="tipoMedicamento"
-                            placeholder="Ingrese el tipo de vacuna">
+                        <label for="">Tipo de Antibiotico</label>
+                            <select name="tipoAntibiotico" id="tipoAntibiotico" class="form-control select2">
+                              <option value="Penicilinas">Penicilinas</option>
+                              <option value="Cefalosporinas">Cefalosporinas</option>
+                              <option value="Tetraciclinas">Tetraciclinas</option>
+                              <option value="Aminoglucósidos">Aminoglucósidos</option>
+                              <option value="Sulfonamidas y trimetoprim">Sulfonamidas y trimetoprim</option>
+                            </select>
                         </div>
                       </div>
                       <div class="col-6">
@@ -183,22 +223,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       </div>
                       <div class="col-12">
                         <div class="form-group">
-                          <label for="">Presentación</label>
-                          <input type="text" class="form-control" name="presentacion" id="presentacion"
-                            placeholder="Ingrese la presentación">
+                          <label for="">Dias Retiro</label>
+                          <input type="number" class="form-control" name="diasRetiro" id="diasRetiro"
+                            placeholder="Ingrese los dias de retiro de la leche">
                         </div>
                       </div>
-
-
-
-
-
                     </div>
                   </div>
                   <!-- /.card-body -->
 
                   <div class="card-footer text-center">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <div class="row">
+                      <div class="col-6"><button type="submit" class="btn btn-primary btnRegistrarAntibiotico">Guardar</button>
+                      </div>
+                      <div class="col-6"><input type="reset" class=" btn btn-info" value="Limpiar datos"></div>
+                    </div>
                   </div>
                 </form>
               </div>
@@ -213,7 +252,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <!-- /.medicamento -->
           <!-- /.form agregar -->
-          <div class="row " id="form-agregar-m">
+          <div class="row " id="form-agregar-medicamento">
             <div class="col-1"></div>
 
             <div class="col-10">
@@ -223,7 +262,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form id="formulario-agregar" method="POST">
+                <form id="formulario-agregar-medicamento" method="POST">
 
                   <div class="card-body ">
                     <div class="row">
@@ -231,21 +270,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="form-group">
                           <label for="">Nombre del Medicamento</label>
                           <input type="text" class="form-control" name="nombreMedicamento" id="nombreMedicamento"
-                            placeholder="Ingrese el nombre de la vacuna">
+                            placeholder="Ingrese el nombre del medicamento">
                         </div>
                       </div>
                       <div class="col-6">
                         <div class="form-group">
                           <label for="">Tipo de Medicamento</label>
                           <input type="text" class="form-control" name="tipoMedicamento" id="tipoMedicamento"
-                            placeholder="Ingrese el tipo de vacuna">
+                            placeholder="Ingrese el tipo de medicamento">
                         </div>
                       </div>
                       <div class="col-6">
                         <div class="form-group">
                           <label for="">Fecha de Vencimiento</label>
-                          <input type="date" class="form-control" name="fechaVencimiento" id="fechaVencimiento"
-                            placeholder="xx/xx/xxxx">
+                          <input type="date" class="form-control" name="fechaVencimiento" id="fechaVencimiento">
                         </div>
                       </div>
                       <div class="col-6">
@@ -279,7 +317,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                   <div class="card-footer text-center">
                     <div class="row">
-                      <div class="col-6"><button type="submit" class="btn btn-primary btnRegistrar">Guardar</button>
+                      <div class="col-6"><button type="submit" class="btn btn-primary btnRegistrarMedicamento">Guardar</button>
                       </div>
                       <div class="col-6"><input type="reset" class=" btn btn-info" value="Limpiar datos"></div>
                     </div>
@@ -332,6 +370,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- toastr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<!-- Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
 
