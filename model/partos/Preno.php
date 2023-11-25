@@ -8,19 +8,19 @@ class Preno extends Conexion
     //Atributos de la clase
     protected static $conexion;
 
-    private $idPreno = null;
+    private $IdParto = null;
 
     private $idPrefijo = null;
 
     private $nombreVaca = null;
 
-    private $fechaPreño = null;
+    private $fecha_parto = null;
 
     private $numeroArete = null;
 
-    private $tipoPreño = null;
+    private $tipo_parto = null;
 
-    private $descripcionEstado = null;
+    private $estado_vaca = null;
 
     private $observaciones = null;
 
@@ -32,14 +32,14 @@ class Preno extends Conexion
 
     //getters y setters
 
-    public function getIdPreno()
+    public function getIdParto()
     {
-        return $this->IdPreno;
+        return $this->IdParto;
     }
 
-    public function setIdVacuna($idPreno)
+    public function setIdVacuna($IdParto)
     {
-        $this->idPreno = $idPreno;
+        $this->IdParto = $IdParto;
     }
 
     public function getIdPrefijo()
@@ -62,14 +62,14 @@ class Preno extends Conexion
         $this->nombreVaca = $nombreVaca;
     }
 
-    public function getFechaPreño()
+    public function getFechaParto()
     {
-        return $this->fechaPreño;
+        return $this->fecha_parto;
     }
 
-    public function setFechaPreño($fechaPreño)
+    public function setFechaParto($fecha_parto)
     {
-        $this->fechaPreño = $fechaPreño;
+        $this->fecha_parto = $fecha_parto;
     }
 
     public function getNumeroArete()
@@ -82,24 +82,24 @@ class Preno extends Conexion
         $this->numeroArete = $numeroArete;
     }
 
-    public function getTipoPreño()
+    public function getTipoParto()
     {
-        return $this->tipoPreño;
+        return $this->tipo_parto;
     }
 
-    public function setTipoPreño($tipoPreño)
+    public function setTipoParto($tipo_parto)
     {
-        $this->tipoPreño = $tipoPreño;
+        $this->tipo_parto = $tipo_parto;
     }
 
-    public function getDescripcionEstado()
+    public function getEstadoVaca()
     {
-        return $this->descripcionEstado;
+        return $this->estado_vaca;
     }
 
-    public function setDescripcionEstado($descripcionEstado)
+    public function setEstadoVaca($estado_vaca)
     {
-        $this->descripcionEstado = $descripcionEstado;
+        $this->estado_vaca = $estado_vaca;
     }
 
     public function getObservaciones()
@@ -141,14 +141,14 @@ class Preno extends Conexion
             foreach ($resultado->fetchAll() as $encontrado) {
                 $preno = new Preno();
                 $prefijo = "PR";
-                $preno->setIdPreno($encontrado["id_preno"]);
-                $id_personalizado = $prefijo . str_pad($preno->getIdPreno(), 2, '0', STR_PAD_LEFT);
+                $preno->setIdParto($encontrado["id_vaca"]);
+                $id_personalizado = $prefijo . str_pad($preno->getIdParto(), 2, '0', STR_PAD_LEFT);
                 $preno->setIdPrefijo($id_personalizado);
                 $preno->setNombreVaca($encontrado["nombre_vaca"]);
-                $preno->setFechaPreño($encontrado["fecha_preño"]);
+                $preno->setFechaParto($encontrado["fecha_parto"]);
                 $preno->setNumeroArete($encontrado["numero_arete"]);
-                $preno->setTipoPreño($encontrado["tipo_preño"]);
-                $preno->setDescripcionEstado($encontrado["Descripcion_Estado"]);
+                $preno->setTipoParto($encontrado["tipo_preño"]);
+                $preno->setEstadoVaca($encontrado["Descripcion_Estado"]);
                 $preno->setObservaciones($encontrado["observaciones"]);
                 $lista[] = $preno;
             }
@@ -163,23 +163,23 @@ class Preno extends Conexion
 
     public function guardarEnDb()
     {
-        $query = "INSERT INTO `preno`(`nombre_vaca`, `Descripcion_Estado`, `fecha_preño`, `tipo_preño`, `observaciones`,`numero_arete` ) VALUES (:nombre_vaca,:Descripcion_Estado,:fecha_preño,:tipo_preño, :observaciones,:numero_arete)";
+        $query = "INSERT INTO `preno`(`nombre_vaca`, `Descripcion_Estado`, `fecha_parto`, `tipo_preño`, `observaciones`,`numero_arete` ) VALUES (:nombre_vaca,:Descripcion_Estado,:fecha_parto,:tipo_preño, :observaciones,:numero_arete)";
         try {
             self::getConexion();
             $nombre_vaca = $this->getNombreVaca();
-            $descripcionEstado = $this->getDescripcionEstado();
+            $estado_vaca = $this->getEstadoVaca();
             $numeroArete = $this->getNumeroArete();
-            $fecha_preño = $this->getFechaPreno();
-            $tipoPreño = $this->getTipoPreño();
+            $fecha_parto = $this->getFechaPreno();
+            $tipo_parto = $this->getTipoParto();
             $observaciones = $this->getObservaciones();
 
 
             $resultado = self::$conexion->prepare($query);
             $resultado->bindParam(":nombre_vaca", $nombre_vaca, PDO::PARAM_STR);
-            $resultado->bindParam(":descripcionEstado", $descripcionEstado, PDO::PARAM_STR);
+            $resultado->bindParam(":estado_vaca", $estado_vaca, PDO::PARAM_STR);
             $resultado->bindParam(":numero_arete", $numeroArete, PDO::PARAM_STR);
-            $resultado->bindParam(":fecha_preño", $fecha_preño, PDO::PARAM_STR);
-            $resultado->bindParam(":tipoPreño", $tipoPreño, PDO::PARAM_STR);
+            $resultado->bindParam(":fecha_parto", $fecha_parto, PDO::PARAM_STR);
+            $resultado->bindParam(":tipo_parto", $tipo_parto, PDO::PARAM_STR);
             $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
 
             $resultado->execute();
@@ -218,12 +218,12 @@ class Preno extends Conexion
 
     public function verificarExistenciaId()
     {
-        $query = "SELECT * FROM preno where id_preno=:id_preno";
+        $query = "SELECT * FROM preno where id_vaca=:id_vaca";
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
             $id = (int) substr($this->getIdPrefijo(), 3);
-            $resultado->bindParam(":id_preno", $id, PDO::PARAM_STR);
+            $resultado->bindParam(":id_vaca", $id, PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
             $encontrado = false;
@@ -241,12 +241,12 @@ class Preno extends Conexion
 
     public function eliminar()
     {
-        $idVacuna = $this->getIdPreno();
-        $query = "DELETE FROM preno WHERE `preno`.`id_preno` = :id_preno";
+        $idVacuna = $this->getIdParto();
+        $query = "DELETE FROM preno WHERE `preno`.`id_vaca` = :id_vaca";
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":id_preno", $idVacuna, PDO::PARAM_STR);
+            $resultado->bindParam(":id_vaca", $idVacuna, PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
             if (!(self::verificarExistenciaDb())) {
@@ -290,7 +290,7 @@ class Preno extends Conexion
 
 
     public function listarPreños(){
-        $query = "SELECT id_preno, nombre_vaca FROM preno";
+        $query = "SELECT id_vaca, nombre_vaca FROM preno";
         
         try {
             self::getConexion();
