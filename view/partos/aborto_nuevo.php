@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SG GANADERIA| NUEVO PREÑO</title>
+  <title>SG GANADERIA| NUEVO ABORTO</title>
 
    <!-- Google Font: Source Sans Pro -->
    <link rel="stylesheet"
@@ -50,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item "><a href="#">Control de Partos</a></li>
-                <li class="breadcrumb-item Active"><a href="#">Añadir Preño</a></li>
+                <li class="breadcrumb-item Active"><a href="#">Añadir aborto</a></li>
               </ol>
             </div>
             <div class="col-sm-6">
@@ -70,7 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-12">
               <div class="card " style="background-color: #eee;">
                 <div class="card-header text-center">
-                  <h3 class="card-title ">Nuevo registro de Preño</h3>
+                  <h3 class="card-title ">Nuevo registro de Aborto</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
@@ -81,13 +81,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="form-group">
                           <label for="">Nombre de la Vaca</label>
                           <input type="text" class="form-control" name="nombreVaca" id="nombreVaca"
-                            placeholder="Ingrese el nombre de la vaca" required>
+                            placeholder="Ingrese el nombre de la vacuna" required>
                         </div>
                       </div>
                       <div class="col-6">
                         <div class="form-group">
-                          <label for="">Fecha de preño</label>
-                          <input type="date" class="form-control" name="fechaPreño" id="fechaPreño" required>
+                          <label for="">Fecha de aborto</label>
+                          <input type="date" class="form-control" name="fechaAborto" id="fechaAborto" required>
                         </div>
                       </div>
                       <div class="col-8">
@@ -98,8 +98,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       </div>
                       <div class="col-4">
                         <div class="form-group ">
-                          <label for="">Tipo de preño</label>
-                          <input type="text" class="form-control" name="tipoPreño" id="tipoPreño" placeholder="Ingrese el Tipo de Preño" required>
+                          <label for="">Tipo de aborto</label>
+                          <input type="text" class="form-control" name="tipoAborto" id="tipoAborto" placeholder="Ingrese el Tipo de Aborto" required>
                         </div>
                       </div>
                       <div class="col-12">
@@ -156,22 +156,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       </div>
                       <div class="col-6">
                         <div class="form-group">
-                          <label for="">Fecha de Preño</label>
-                          <input type="date" class="form-control" name="fechaPreño" id="XfechaPreño"
+                          <label for="">Fecha del aborto</label>
+                          <input type="date" class="form-control" name="fechaAborto" id="XfechaAborto"
                           >
                         </div>
                       </div>
                       <div class="col-6">
                         <div class="form-group ">
                           <label for="">Número Arete</label>
-                          <input type="number" class="form-control" name="numeroArete" id="XnumeroArete"
+                          <input type="number" class="form-control" name="numeroAborto" id="XnumeroAborto"
                            placeholder="Ingrese el número de arete" readonly>
                         </div>
                       </div>
                       <div class="col-6">
                         <div class="form-group ">
-                          <label for="">Tipo de Preño</label>
-                          <input type="text" class="form-control" name="tipoPreño" id="XtipoPreño" placeholder="Ingrese el tipo de preño" readonly>
+                          <label for="">Tipo de Aborto</label>
+                          <input type="text" class="form-control" name="tipoAborto" id="XtipoAborto" placeholder="Ingrese el tipo de Aborto" readonly>
                         </div>
                       </div>
                       <div class="col-12">
@@ -216,7 +216,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <thead>
                       <th>Id</th>
                       <th>Nombre de la Vaca</th>
-                      <th>Fecha de preño</th>
+                      <th>Fecha del Aborto</th>
                       <th>Numero de arete</th>
                       <th>Descripcion Estado</th>
                       <th>Observaciones</th>

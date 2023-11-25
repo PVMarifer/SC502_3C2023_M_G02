@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <title>Document</title>
+  <title>Registro</title>
 
 
   <!-- Google Font: Source Sans Pro -->
@@ -25,13 +25,13 @@
 <body class="login-page" style="min-height: 496.781px;">
 <div class="login-box">
 <div class="login-logo"> 
-<a href="../../index.html"><b>SG GANADERIA</b></a>  
+<a href="index.php"><b>SG GANADERIA</b></a>  
 </div>
 
 <div class="card">
 <div class="card-body register-card-body">
 <p class="login-box-msg">Registrate</p>
-<form action="../../index.html" method="post">
+<form action="index.php" method="post">
 <div class="input-group mb-3">
 <input type="text" class="form-control" placeholder="Nombre">
 <div class="input-group-append">
@@ -86,7 +86,7 @@ Estoy de acuerdo con los <a href="#">terminos de privacidad</a>
 Inscribirse con Google
 </a>
 </div>
-<a href="login.html" class="text-center">Tengo una cuenta activa ¡Inicia Sesion!</a>
+<a href="login.php" class="text-center">Tengo una cuenta activa ¡Inicia Sesion!</a>
 </div>
 
 <script src="../../plugins/jquery/jquery.min.js"></script>
