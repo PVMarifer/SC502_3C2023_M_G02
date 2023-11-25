@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SG GANADERIA| PREÑOS</title>
+  <title>SG GANADERIA| ABORTOS</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -45,7 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="partos.php">Home</a></li>
-                <li class="breadcrumb-item active">Control de Partos</li>
+                <li class="breadcrumb-item active">Control de Abortos</li>
               </ol>
             </div>
             <div class="col-sm-6">
@@ -64,7 +64,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- small box -->
                   <div class="small-box text-center text-white " style="background-color:#4CAF50;">
                     <div class="inner">
-                      <p>Partos realizados</p>
+                      <p>Abortos realizados</p>
                       <h3>45</h3>
                     </div>
                   </div>
@@ -74,7 +74,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- small box -->
                   <div class="small-box text-center text-white" style="background-color:#4CAF50;">
                     <div class="inner">
-                      <p>Vacas Preñadas</p>
+                      <p>Vacas Abortadas</p>
                       <h3>5</h3>
                     </div>
                   </div>
@@ -85,7 +85,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="col-lg-12">
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">Registro de Animales Preñadas</h3>
+                    <h3 class="card-title">Registro de Abortos</h3>
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
@@ -95,7 +95,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <th>Número de Arete</th>
                           <th>Nombre</th>
                           <th>Edad</th>
-                          <th>Fecha del parto</th>
+                          <th>Fecha del Aborto</th>
 
                         </tr>
                       </thead>
@@ -138,7 +138,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-lg-5 col-6">
               <div class="card">
                 <div class="card-header border-0">
-                  <h3 class="card-title">Partos Registrados</h3>
+                  <h3 class="card-title">Abortos Registrados</h3>
                 </div>
                 <div class="card-body table-responsive p-0">
                   <table class="table table-striped table-valign-middle">
@@ -147,7 +147,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <th>Número de Arete</th>
                         <th>Nombre Vaca</th>
                         <th>Número Arete cría</th>
-                        <th>Fecha Nacimiento</th>
+                        <th>Fecha del Aborto</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -189,7 +189,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-12">
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">Registro de Aninales preñadas</h3>
+                  <h3 class="card-title">Registro de Abortos</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -199,7 +199,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <th>Número de Arete</th>
                           <th>Nombre</th>
                           <th>Edad</th>
-                          <th>Fecha del parto</th>
+                          <th>Fecha del Aborto</th>
 
                         </tr>
                       </thead>

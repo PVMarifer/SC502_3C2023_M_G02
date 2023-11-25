@@ -148,7 +148,6 @@ $(document).ready(function() {
       limpiarForms();
       $('#form-agregar').hide();
       $('#form-modificar').show();
-      console.log(data)
       $('#XnumeroArete').val(data[1]);
       $('#XfechaDiagnostico').val(data[4]);
       $('#Xsintomas').val(data[5]);

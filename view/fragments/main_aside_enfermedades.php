@@ -74,13 +74,6 @@
         </ul>
       </li>
       <li class="nav-item ">
-        <a href="./tratamientos.php" class="nav-link links-sidebar-nav">
-          <p>
-            Tratamientos
-          </p>
-        </a>
-      </li>
-      <li class="nav-item ">
         <a href="./medicamentos.php" class="nav-link links-sidebar-nav">
           <p>
             Medicamentos e Injecciones
@@ -125,7 +118,7 @@
           <li class="nav-item">
             <a href="./mastitis_nuevo.php" class="nav-link bg-white">
               <i class="far fa-circle nav-icon"></i>
-              <p>Nuevo Registro de Mastitis</p>
+              <p>Nuevo Mastitis</p>
             </a>
           </li>
         </ul>

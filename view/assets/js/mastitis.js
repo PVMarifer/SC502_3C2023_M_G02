@@ -1,4 +1,37 @@
 
+//funcion para insertar animales
+$(document).ready(function() {
+  $('.select2').select2();
+  // Función para obtener los animales y llenar el select
+  function obtenerAnimales() {
+      $.ajax({ 
+          url: '../../controller/animales/AnimalController.php?op=listar_animales',
+          type: "GET",
+          data: { obtenerAnimales: true },
+          dataType: "json",
+          success: function(data) {
+              if (data) {
+                  // Llenar el select con las vacas obtenidas
+                  $.each(data, function(index, animal) {
+                      $('#selectAnimales').append('<option value="' + animal.id_animal + '">' + animal.numero_arete + '</option>');
+                  });
+              } else {
+                  console.log("No se encontraron animales.");
+              }
+          },
+          error: function(xhr, status, error) {
+              console.error(error);
+          }
+      });
+  }
+
+  // Llamar a la función para obtener las vacas cuando el documento esté listo
+  obtenerAnimales();
+});
+
+
+
+
 //funcion para limpiar forms
 function limpiarForms() {
   $('#formulario-agregar').trigger('reset');
@@ -16,14 +49,14 @@ function cancelarForm() {
 }
 
 /*Funcion para cargar el listado en el Datatable*/
-function listarVacunas() {
+function listarMastitis() {
   tabla = $('#tablalistado').dataTable({
     aProcessing: true, //actiavmos el procesamiento de datatables
     aServerSide: true, //paginacion y filtrado del lado del serevr ../controller/animalController.php?op=listar_tabla'
     dom: 'Bfrtip', //definimos los elementos del control de tabla
     buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdf'],
     ajax: {
-      url: '../../controller/salud/vacunaController.php?op=listar_tabla',
+      url: '../../controller/salud/mastitisController.php?op=listar_tabla',
       type: 'get',
       dataType: 'json',
       error: function (e) {
@@ -39,7 +72,7 @@ function listarVacunas() {
 
 $(function () {
   $('#form-modificar').hide();
-  listarVacunas();
+  listarMastitis();
 });
 
 
@@ -49,16 +82,16 @@ $('#formulario-agregar').on('submit', function (event) {
   $('#btnRegistar').prop('disabled', true);
   var formData = new FormData($('#formulario-agregar')[0]);
   $.ajax({
-    url: '../../controller/salud/vacunaController.php?op=insertar',
+    url: '../../controller/salud/mastitisController.php?op=insertar',
     type: 'POST',
     data: formData,
-    contentType: false,  
+    contentType: false,
     processData: false,
     success: function (datos) {
       switch (datos) {
         case '1':
           toastr.success(
-            'Vacuna registrada'
+            'Mastitis registrada'
           );
           $('#formulario-agregar')[0].reset();
           tabla.api().ajax.reload();
@@ -87,31 +120,28 @@ $('#tablalistado tbody').on(
   'click',
   'button[id="modificarDato"]',
 
-  function () {
-    var data = $('#tablalistado').DataTable().row($(this).parents('tr')).data();
-    limpiarForms();
-    $('#form-agregar').hide();
-    $('#form-modificar').show();
-    $('#XidVacuna').val(data[0]);
-    $('#XnombreVacuna').val(data[1]);
-    $('#XcasaDistribuidora').val(data[2]);
-    $('#Xdescripcion').val(data[3]);
-    $('#Xlote').val(data[4]);
-    $('#XfechaVencimiento').val(data[5]);
-    $('#Xobservaciones').val(data[6]);
-    return false;
-  }
+      function () {
+        var data = $('#tablalistado').DataTable().row($(this).parents('tr')).data();
+        limpiarForms();
+        console.log(data)
+        $('#form-agregar').hide();
+        $('#form-modificar').show();
+        $('#XidAnimal').val(data[1]);
+        $('#XtipoTratamiento').val(data[2]);
+        $('#XcuartosAfectados').val(data[3]);
+        $('#XfechaDiagnostico').val(data[4]);
+        return false;
+      }
 );
 
-/*Funcion para modificacion de datos de la vacuna*/
-$('#formulario-modificar').on('submit', function (event) {
+ /*Funcion para modificacion de datos de usuario*/
+ $('#formulario-modificar').on('submit', function (event) {
   event.preventDefault();
   bootbox.confirm('¿Desea modificar los datos?', function (result) {
     if (result) {
       var formData = new FormData($('#formulario-modificar')[0]);
-
       $.ajax({
-        url: '../../controller/salud/vacunaController.php?op=modificar',
+        url: '../../controller/salud/mastitisController.php?op=modificar',
         type: 'POST',
         data: formData,
         contentType: false,
@@ -123,19 +153,18 @@ $('#formulario-modificar').on('submit', function (event) {
               toastr.error('Error: No se pudieron actualizar los datos');
               break;
             case '1':
-              toastr.success('Vacuna actualizada exitosamente');
+              toastr.success('Mastitis actualizada exitosamente');
               tabla.api().ajax.reload();
               limpiarForms();
               $('#form-modificar').hide();
               $('#form-agregar').show();
               break;
             case '2':
-              toastr.error('Error: no coincide la informacion en la base de datos');
+              toastr.error('Error al guardar los datos');
               break;
 
             default:
-              toastr.error(datos);
-
+              console.log(datos)
           }
         },
       });
@@ -145,24 +174,24 @@ $('#formulario-modificar').on('submit', function (event) {
 
 /*Funcion para eliminar datos*/
 function eliminar(id) {
-  bootbox.confirm('¿Esta seguro de eliminar la enfermedad?', function (result) {
+  bootbox.confirm('¿Esta seguro de eliminar la mastitis?', function (result) {
     if (result) {
       $.post(
-        '../../controller/salud/vacunaController.php?op=eliminar',
-        { idVacuna: id },
+        '../../controller/salud/mastitisController.php?op=eliminar',
+        { idMastitis: id },
         function (data, textStatus, xhr) {
           switch (data) {
             case '0':
-              toastr.success('Vacuna eliminada');
+              toastr.success('Mastitis eliminada');
               tabla.api().ajax.reload();
               break;
 
             case '1':
               toastr.error(
-                'Error: El dato no se ha podido eliminar.'
+                'Error: El dato no se ha podido eliminar..'
               );
               break;
-
+ 
             default:
               toastr.error(data);
               break;

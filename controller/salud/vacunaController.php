@@ -45,7 +45,7 @@ switch ($_GET['op']) {
         $encontrado = $vacuna->verificarExistenciaDb();
         if ($encontrado == false) {
             $vacuna->setDescripcion($descripcion);
-            $vacuna->setLote($lote);
+            $vacuna->setLote($lote); 
             $vacuna->setFechaVencimiento($fechaVencimiento);
             $vacuna->setObservaciones($observaciones);
             $vacuna->guardarEnDb();

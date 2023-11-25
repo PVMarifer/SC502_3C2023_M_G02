@@ -67,95 +67,248 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <section class="content">
         <div class="container-fluid">
-          <div class="row">
+          <!-- Formulario Agregar-->
+          <div class="row mb-5" id="form-agregar">
+            <div class="col-md-1"></div>
 
-            <!-- /.card -->
-            <div class="col-12">
-              <div class="d-flex justify-content-center">
-                <div class="card col-6" style="background-color: #3f3ae6;">
-                  <div class="card-header text-center">
-                    <h3 class="card-title text-white">Nueva Injeccion/Aplicacion de Medicamento</h3>
-                  </div>
-                  <!-- /.card-header -->
-                  <!-- form start -->
-                  <form>
-                    <div class="card-body text-white ">
-                      <div class="form-group">
-                        <label for="">Nombre del Medicamento</label>
-                        <input type="text" class="form-control" id="" placeholder="Ingrese el nombre del medicamento">
-                      </div>
-                      <div class="form-group">
-                        <label for="">Número de Arete</label>
-                        <input type="number" class="form-control" id="" placeholder="Ingrese el número de arete">
-                      </div>
-                      <div class="form-group">
-                        <label for="">Tipo de Aplicacion</label>
-                        <input type="text" class="form-control" id="" placeholder="Ingrese el tipo de aplicacion">
-                      </div>
-                      <div class="form-group">
-                        <label for="">Fecha de Aplicacion</label>
-                        <input type="date" class="form-control" id="">
-                      </div>
-                      <div class="form-group">
-                        <label for="">Observaciones</label>
-                        <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
-                      </div>
-
-
-
-                    </div>
-                    <!-- /.card-body -->
-
-                    <div class="card-footer text-center">
-                      <button type="submit" class="btn btn-primary">Guardar</button>
-                    </div>
-                  </form>
+            <div class="col-10">
+              <div class="card " style="background-color: grey;">
+                <div class="card-header text-center">
+                  <h3 class="card-title text-white">Nuevo Animal Enfermo</h3>
                 </div>
-                <!-- /.card -->
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form id="formulario-agregar" method="POST">
+                  <div class="card-body text-white ">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="form-group">
+                          <label>Número de Arete</label>
+                          <select id="selectAnimales" name="idAnimal" class="form-control select2"
+                            style="width: 100%; padding: 15px;" required>
+                            <option selected="selected">Seleccione un número de arete</option>
+
+                          </select>
+                        </div>
+                        <!-- /.form-group -->
+                      </div>
+                      <div class="col-4">
+                        <div class="form-group">
+                          <label>Estado de la Enfermedad</label>
+                          <select class="form-control select2" id="estadoEnfermedad" name="estadoEnfermedad"
+                            style="width: 100%;" required>
+                            <option selected="selected">En Curso</option>
+                            <option>Recuperada</option>
+                            <option>Fallecida</option>
+                            <option>Crónica</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-4">
+
+                        <div class="form-group">
+                          <label>Enfermedad</label>
+                          <select id="selectEnfermedades" name="idEnfermedad" class="form-control select2"
+                            style="width: 100%; padding: 15px;" required>
+                            <option selected="selected">Seleccione una enfermedad</option>
+
+                          </select>
+                        </div>
+                        <!-- /.form-group -->
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Síntomas</label>
+                          <input type="text" class="form-control" id="sintomas" name="sintomas"
+                            placeholder="Ingrese los sintomas" required>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Fecha del Diagnóstico</label>
+                          <input type="date" class="form-control" id="fechaDiagnostico" name="fechaDiagnostico"
+                            required>
+                        </div>
+
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Observaciones</label>
+                          <input type="text" class="form-control" id="observaciones" name="observaciones"
+                            placeholder="Ingrese aquí sus observaciones" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+
+                  <div class="card-footer text-center">
+                    <div class="row">
+                      <div class="col-6"><button type="submit" class="btn btn-primary btnRegistrar">Guardar</button>
+                      </div>
+                      <div class="col-6"><input type="reset" class=" btn btn-info" value="Limpiar datos"></div>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
-            <!-- /.card -->
+            <div class="col-md-1"></div>
+
+
           </div>
+
+
+          <!-- /.row -->
+
+
+          <!-- Formulario Modificar-->
+          <div class="row mb-5" id="form-modificar">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <div class="card " style="background-color: grey;">
+                <div class="card-header text-center">
+                  <h3 class="card-title text-white">Modificar Animal Enfermo</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form id="formulario-modificar" method="POST">
+                  <div class="card-body text-white ">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Numero Arete</label>
+                          <input type="text" class="form-control" id="XnumeroArete" name="areteAnimal" readonly>
+                        </div>
+                        <!-- /.form-group -->
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Fecha del Diagnóstico</label>
+                          <input type="date" class="form-control" id="XfechaDiagnostico" name="fechaDiagnostico"
+                            readonly>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Síntomas</label>
+                          <input type="text" class="form-control" id="Xsintomas" name="sintomas"
+                            placeholder="Ingrese los sintomas">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label>Enfermedad</label>
+                          <input type="text" class="form-control" id="Xenfermedad" name="nombreEnfermedad" readonly>
+                        </div>
+                        <!-- /.form-group -->
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label>Estado de la Enfermedad</label>
+                          <select class="form-control select2" id="XestadoEnfermedad" name="estadoEnfermedad"
+                            style="width: 100%;">
+                            <option selected="selected">Seleccione una opcion</option>
+                            <option>En Curso</option>
+                            <option>Recuperada</option>
+                            <option>Fallecida</option>
+                            <option>Crónica</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Observaciones</label>
+                          <input type="text" class="form-control" id="Xobservaciones" name="observaciones"
+                            placeholder="Ingrese aquí sus observaciones">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer text-center">
+                    <div class="row">
+                      <div class="col-6"><button type="submit" class="btn btn-primary">Editar</button></div>
+                      <div class="col-6"><input type="button" class=" btn btn-info" value="Cancelar"
+                          onclick="cancelarForm()"></div>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+            <div class="col-2"></div>
+          </div>
+          <!-- /.row -->
+
+          <!-- Tabla -->
+          <div class="row mb-5" id="tabla-vacas-enfermas">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="card card-dark" style="overflow-x:scroll;">
+                <div class="card-body p-3">
+                  <table id="tablalistado" class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <th>Id</th>
+                      <th>Número de Arete</th>
+                      <th>Nombre del Animal</th>
+                      <th>Enfermedad o Padecimiento</th>
+                      <th>Fecha del Diagnóstico</th>
+                      <th>Síntomas</th>
+                      <th>Estado del Animal</th>
+                      <th>Tratamiento Recomendado</th>
+                      <th>Observaciones</th>
+                      <th>Opciones</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+            <div class="col-md-1"></div>
+
+          </div>
+          <!-- /.row -->
+
         </div>
-
-    </div>
-    <!-- /.row -->
-    </section>
+        <!-- /.row -->
+      </section>
 
 
 
 
-  </div><!-- ./Content Wrapper-->
+    </div><!-- ./Content Wrapper-->
 
 
 
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <?php
-    include '../fragments/footer.php'
-      ?>
-  </footer>
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <?php
+      include '../fragments/footer.php'
+        ?>
+    </footer>
 
   </div><!-- ./wrapper -->
 
 
 </body>
- <!--   JQUERY -->
- <script src="../plugins/jquery/jquery.min.js"></script>
-  <!-- DataTables  & Plugins -->
-  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="../dist/js/adminlte.min.js"></script>
-  <!-- Bootbox -->
-  <script src="../plugins/bootbox/bootbox.min.js"></script>
-  <!-- toastr -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-  <!-- CSS styles -->
-  <link rel="stylesheet" href="../assets/css/index.css">
-  <!-- Select2 -->
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<!--   JQUERY -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- Bootbox -->
+<script src="../plugins/bootbox/bootbox.min.js"></script>
+<!-- toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<!-- CSS styles -->
+<link rel="stylesheet" href="../assets/css/index.css">
+<!-- Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 
 </html>
