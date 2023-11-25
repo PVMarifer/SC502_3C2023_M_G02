@@ -13,7 +13,7 @@ create table Animal(
     colores_caracteristicas text,
 
     observaciones text,
-	PRIMARY KEY (id_animal)
+	PRIMARY KEY (id_animal);
 
 )
 ENGINE = InnoDB
@@ -207,9 +207,9 @@ DEFAULT CHARACTER SET = utf8mb4;
 CREATE TABLE Parto (
     id_parto INT AUTO_INCREMENT PRIMARY KEY not null,
     id_vaca int not null,
+    numero_arete int not null,
 	fecha_parto date not null,
     estado_vaca varchar(80) not null,
-    estado_cria varchar(80) not null,
     tipo_parto enum ('natural','intervenido','cesarea'),
     observaciones text not null,
     foreign key fk_parto_vaca (id_vaca) references Vaca(id_vaca)

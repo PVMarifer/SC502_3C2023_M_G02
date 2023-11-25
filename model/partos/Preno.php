@@ -1,7 +1,7 @@
 <?php 
 require_once '../../config/conexion.php';
 
-class Animal extends Conexion
+class Preno extends Conexion
 {
 
     //Atributos

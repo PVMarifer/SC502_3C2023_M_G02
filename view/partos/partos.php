@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Starter</title>
+  <title>SG GANADERIA | CONTROL DE PARTOS</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -25,57 +25,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
 
-  <?php
-      include '../fragments/nav_menu.php'
-    ?>
 
 
+    <?php
+    include '../fragments/nav_menu.php'
+      ?><!-- /.navbar -->
+    
 
-    <!--  Main Sidebar Container -->
-    <aside class="main-sidebar  elevation-4">
-      <div class="sidebar">
-        <!--  Fragmento que incluye el logo y la foto del usuario usuario -->
-        <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
-          <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-            style="opacity: .8">
-          <span class="text-white font-weight-bold">Software Ganadero</span>
-        </a>
-
-        <!-- Sidebar -->
-
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
-            <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-          </div>
-          <div class="info">
-            <a href="#" class="d-block text-white">Juanito Mora</a>
-          </div>
-        </div>
-
-        <!-- SidebarSearch Form -->
-        <div class="form-inline">
-          <div class="input-group" data-widget="sidebar-search">
-            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-            <div class="ml-1 bg-white rounded-right input-group-append">
-              <button class="btn btn-sidebar">
-                <i class="fas fa-search fa-fw"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- /.sidebar -->
-
-        <!-- Sidebar Menu -->
+    <!--  Main Sidebar  -->
+    <aside class="main-sidebar  elevation-4">    
         <?php
-          include '../fragments/main_aside_partos.php'
-        ?>
-        <!-- /.sidebar-menu -->
-      </div>
-    </aside>
+        include '../fragments/main_aside_partos.php'
+          ?>
+    </aside><!--  Main Sidebar  -->
 
 
     <!-- Content Wrapper. Contains page content -->
@@ -86,7 +48,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row mb-2">
             <div class="col-sm-3">
               <ol class="breadcrumb float-sm-left">
-                <li class="breadcrumb-item"><a href="#" style="color: #0799b6;">Partos</a></li>
+                <li class="breadcrumb-item"><a href="#" style="color: #0799b6;">Control de Partos y Abortos</a></li>
 
 
               </ol>
@@ -103,13 +65,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <!-- Small boxes (Stat box) -->
           <div class="row">
- 
-            <div class="col-lg-3 col-6">
+
+            <div class="col-lg-6 col-6">
               <!-- small box -->
               <div class="small-box text-center text-white " style="background-color:#4CAF50;">
                 <div class="inner">
                   <p>Vacas Preñadas</p>
-                  <h3>3</h3>
+                  <h3>5</h3>
 
 
                 </div>
@@ -119,12 +81,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
             </div>
             <!-- ./col -->
-              
-            <div class="col-lg-3 col-6">
+
+
+            <div class="col-lg-6 col-6">
               <!-- small box -->
               <div class="small-box text-center text-white" style="background-color:#4CAF50;">
                 <div class="inner">
-                  <p>Vacas con abortos</p>
+                  <p>Vacas con Abortos</p>
                   <h3>3</h3>
                 </div>
 
@@ -132,8 +95,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
-            
             <!-- ./col -->
+    
           </div>
           <!-- /.row -->
         </div> <!-- /.content-fluid -->
@@ -143,11 +106,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-7">
-              <!-- grafico de vacas prenadas  -->
+              <!-- grafico de vacas enfermas  -->
               <div class="card ">
                 <div class="card-header border-0">
                   <h3 class="card-title">
-                    Gráfico de Partos
+                    Gráfico de PARTOS
                   </h3>
                   <div class="card-tools">
                     <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
@@ -190,7 +153,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <!-- /.card -->
             </div>
-            <!-- tabla de vacas preñadas -->
+            <!-- tabla de vacas inyectadas -->
             <div class="col-sm-5">
               <div class="card">
                 <div class="card-header border-0">
@@ -202,9 +165,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <thead>
                       <tr>
                         <th>Arete</th>
-                        <th>Tipo de preño</th>
-                        <th>Fecha de preño</th>
-                        <th>Fecha de parto</th>
+                        <th>Tipo de Preño</th>
+                        <th>Fecha de Preño</th>
+                        <th>Fecha de Parto</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -214,22 +177,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </td>
                         <td>Inseminación</td>
                         <td>
-                        17/10/23
+                         17/10/2023
                         </td>
                         <td>
-                          25/02/24
+                          24/02/2024
                         </td>
                       </tr>
                       <tr>
-                        <td>                        
-                          293    
+                        <td>
+                          293
                         </td>
                         <td>Natural</td>
                         <td>
-                          10/11/23
+                         10/11/2023
                         </td>
                         <td>
-                          27/03/24
+                          27/03/2024
                         </td>
                       </tr>
 
@@ -269,6 +232,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="../dist/js/adminlte.min.js"></script>
 </body>
 <!-- CSS styles -->
-<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../assets/css/index.css">
 
 </html>
