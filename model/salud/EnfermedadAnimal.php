@@ -367,6 +367,29 @@ class EnfermedadAnimal extends Conexion
     }
 
 
+    public function listarEnfermedadesGrafica()
+    {
+        $query = "SELECT MONTH(fecha_diagnostico) AS mes, COUNT(*) AS cantidad_enfermedades
+        FROM Enfermedad_Animal
+        GROUP BY MONTH(fecha_diagnostico)";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
+    }
+    
+
+
+
+
 }
 
 

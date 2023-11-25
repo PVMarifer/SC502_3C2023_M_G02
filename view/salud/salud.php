@@ -123,7 +123,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- grafico de vacas enfermas  -->
               <div class="card card-info">
                 <div class="card-header">
-                  <h3 class="card-title">Line Chart</h3>
+                  <h3 class="card-title">Vacas Enfermas por Mes</h3>
 
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -147,47 +147,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- tabla de vacas inyectadas -->
             <div class="col-sm-6">
-              <div class="card">
+              <div class="card p-2" >
                 <div class="card-header border-0">
                   <h3 class="card-title">Vacas Injectadas</h3>
                 </div>
 
-                <div class="card-body table-responsive p-0">
-                  <table class="table table-striped table-valign-middle">
+                <div class="card-body table-responsive p-0" style="height: 280px">
+                  <table class="table table-striped table-valign-middle" id="tablainyecciones" style="; overflow-y: scroll;">
                     <thead>
                       <tr>
                         <th>Arete</th>
                         <th>Fecha</th>
-                        <th>Tipo de Injectable</th>
                         <th>Nombre Injectable</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>
-                          199
-                        </td>
-                        <td>04/10/23</td>
-                        <td>
-                          Antiestamínico
-                        </td>
-                        <td>
-                          Histaminex
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          233
-                        </td>
-                        <td>10/10/23</td>
-                        <td>
-                          Antibiótico
-                        </td>
-                        <td>
-                          Penisilina
-                        </td>
-                      </tr>
-
                     </tbody>
                   </table>
                 </div>
@@ -236,7 +210,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Select2 -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <!-- Chart js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js" integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
 
 <script src="../assets/js/salud.js"></script>
 

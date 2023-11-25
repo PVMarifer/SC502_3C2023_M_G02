@@ -47,7 +47,7 @@ CREATE TABLE Produccion (
     id_vaca INT not null, 
     litros FLOAT,
     observaciones TEXT,
-    foreign key fk_produccion_vaca (id_Vaca) references Vaca(id_vaca)                                                   
+    foreign key fk_produccion_animal (id_vaca) references Animal(id_animal)                                                   
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;

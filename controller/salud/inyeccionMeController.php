@@ -38,7 +38,7 @@ switch ($_GET['op']) {
         $idMedicamento = isset($_POST["idMedicamento"]) ? trim($_POST["idMedicamento"]) : "";
         $dosisAplicada = isset($_POST["dosisAplicada"]) ? trim($_POST["dosisAplicada"]) : "";
 
-    
+
 
         $inyeccionMedicamento = new InyeccionMedicamento();
         $inyeccionMedicamento->setIdMedicamento($idMedicamento);
@@ -62,9 +62,32 @@ switch ($_GET['op']) {
 
     case "eliminar":
         $inyeccionMedicamento = new InyeccionMedicamento();
-        $inyeccionMedicamento -> setIdInyeccionMedicamento(trim($_POST["idRegistro"]));
+        $inyeccionMedicamento->setIdInyeccionMedicamento(trim($_POST["idRegistro"]));
         $respuesta = $inyeccionMedicamento->eliminar();
         echo $respuesta;
+        break;
+
+    case 'listar_inyecciones':
+        $inyeccion_me_db = new InyeccionMedicamento();
+        $registros = $inyeccion_me_db->listarDb();
+        $datos = array();
+        foreach ($registros as $registro) {
+            $datos[] = array(
+                "0" => $registro->getNumeroArete(),
+                "1" => $registro->getFechaAplicacion(),
+                "2" => $registro->getNombreMedicamento()
+            );
+        }
+        $resultados = array(
+            "sEcho" => 1,
+            ##informacion para datatables
+            "iTotalRecords" => count($datos),
+            ## total de registros al datatable
+            "iTotalDisplayRecords" => count($datos),
+            ## enviamos el total de registros a visualizar
+            "aaData" => $datos
+        );
+        echo json_encode($resultados);
         break;
 
 

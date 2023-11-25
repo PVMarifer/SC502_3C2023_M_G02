@@ -64,33 +64,82 @@ $(document).ready(function () {
     });
   }
 
+  function obtenerEnfermedadesGrafica() {
+    $.ajax({
+      url: '../../controller/salud/enfermedadAnimalController.php?op=listar_enfermedades_grafica',
+      type: "GET",
+      data: { obtenerEnfermedadesGrafica: true },
+      dataType: "json",
+      success: function (data) {
+        console.log(data)
+        if (data) {
+
+          const ctx = document.getElementById('graficoEnfermas');
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: data.meses, // Meses obtenidos de PHP
+              datasets: [{
+                  label: 'Cantidad de Vacas Enfermas por Mes',
+                  data: data.cantidadEnfermedades, // Cantidad de enfermedades obtenidas de PHP
+                  backgroundColor: 'rgba(54, 162, 235, 0.5)', // Color del gráfico
+                  borderColor: 'rgba(54, 162, 235, 1)', // Borde del gráfico
+                  borderWidth: 1
+              }]
+          },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+          });
+        
+
+
+        } else {
+          console.log("No se encontraron enfermedades");
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
+    });
+  }
+
+  /*Funcion para cargar el listado en el Datatable*/
+function listarInyecciones() {
+  tabla = $('#tablainyecciones').dataTable({
+    aProcessing: true, //actiavmos el procesamiento de datatables
+    aServerSide: true, //paginacion y filtrado del lado del serevr ../controller/animalController.php?op=listar_tabla'
+    dom: 'Bfrtip', //definimos los elementos del control de tabla
+    buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdf'],
+    ajax: {
+      url: '../../controller/salud/inyeccionMeController.php?op=listar_inyecciones',
+      type: 'get',
+      dataType: 'json',
+      error: function (e) {
+        console.log(e.responseText);
+      }
+    },
+    bDestroy: true,
+    iDisplayLength: 5
+  });
+}
+
+  
 
  
   obtenerAnimalesEnfermos();
   obtenerAnimalesAntibiotico();
   obtenerAnimalesMastitis();
+  obtenerEnfermedadesGrafica();
+  listarInyecciones();
 
 });
 
-const ctx = document.getElementById('myChart');
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
+
 
 
 
