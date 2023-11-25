@@ -88,7 +88,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="small-box text-center text-white" style="background-color:#4CAF50;">
                 <div class="inner">
                   <p>Vacas con Abortos</p>
-                  <h3>3</h3>
+                  <h3>33</h3>
                 </div>
 
                 <a href="./abortos.php" class="small-box-footer">More info <i

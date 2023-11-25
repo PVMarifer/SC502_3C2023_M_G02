@@ -1,22 +1,20 @@
 <?php
 
-require_once '../../model/animales/Animal.php';
+require_once '../../model/partos/Preno.php';
 
 switch ($_GET['op']) {
     case 'listar_tabla':
-        $animal_db = new Animal();
-        $animales = $animal_db->listarDb();
+        $preno_db = new Preno();
+        $partos = $preno_db->listarDb();
         $datos = array();
-        foreach ($animales as $animal) {
+        foreach ($partos as $preno) {
             $datos[] = array(
-                "0" => $animal->getNombre(),
-                "1" => $animal->getNumeroArete(),
-                "2" => $animal->getFechaNacimiento(),
-                "3" => $animal->getRaza(),
-                "4" => $animal->getPeso(),
-                "5" => $animal->getCaracteristicas(),
-                "6" => $animal->getAreteMadre(),
-                "7" => $animal->getAretePadre(),
+                "0" => $preno->getIdVaca(),
+                "1" => $preno->getNumeroArete(),
+                "2" => $preno->getFechaParto(),
+                "3" => $preno->getEstadoVaca(),
+                "4" => $preno->getTipoParto(),
+                "5" => $preno->getObservaciones()
             );
         }
         $resultados = array(
@@ -31,11 +29,11 @@ switch ($_GET['op']) {
         echo json_encode($resultados);
         break;
 
-    case 'listar_animales':
-        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerAnimales'])) {
-            $animalModel = new Animal();
-            $animales = $animalModel->listarAnimales();
-            echo json_encode($animales);
+    case 'listar_preno':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerPrenos'])) {
+            $prenoModel = new preno();
+            $partos = $prenoModel->listarPreno();
+            echo json_encode($partos);
         }
 }
 

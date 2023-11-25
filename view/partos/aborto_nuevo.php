@@ -49,8 +49,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item "><a href="#">Control de Partos</a></li>
-                <li class="breadcrumb-item Active"><a href="#">Añadir aborto</a></li>
+                <li class="breadcrumb-item "><a href="#">Control de Abortos</a></li>
+                <li class="breadcrumb-item Active"><a href="#">Añadir Aborto</a></li>
               </ol>
             </div>
             <div class="col-sm-6">
@@ -60,165 +60,126 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div><!-- /.container-fluid -->
       </div><!-- /.content-header -->
 
+  
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
 
-
-          <!-- /Fromulario agregar -->
+          <!-- Formulario Agregar-->
           <div class="row mb-5" id="form-agregar">
-            <div class="col-12">
-              <div class="card " style="background-color: #eee;">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <div class="card " style="background-color: #52AA5E;">
                 <div class="card-header text-center">
-                  <h3 class="card-title ">Nuevo registro de Aborto</h3>
+                  <h3 class="card-title text-white">Nuevo Aborto</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form id="formulario-agregar" method="POST">
-                  <div class="card-body ">
-                    <div class="row ">
-                      <div class="col-6">
-                        <div class="form-group">
-                          <label for="">Nombre de la Vaca</label>
-                          <input type="text" class="form-control" name="nombreVaca" id="nombreVaca"
-                            placeholder="Ingrese el nombre de la vacuna" required>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <label for="">Fecha de aborto</label>
-                          <input type="date" class="form-control" name="fechaAborto" id="fechaAborto" required>
-                        </div>
-                      </div>
-                      <div class="col-8">
-                        <div class="form-group ">
-                          <label for="">Número de arete</label>
-                          <input type="number" class="form-control" name="numeroArete" id="numeroArete" placeholder="Ingrese el Número de Arete" required>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="form-group ">
-                          <label for="">Tipo de aborto</label>
-                          <input type="text" class="form-control" name="tipoAborto" id="tipoAborto" placeholder="Ingrese el Tipo de Aborto" required>
-                        </div>
-                      </div>
+                <form>
+                  <div class="card-body text-white ">
+                    <div class="row">
                       <div class="col-12">
                         <div class="form-group">
-                          <label for="">Descripción Estado de la Vaca</label>
-                          <input type="text" class="form-control" name="descripcionEstado" id="descripcionEstado"
-                            placeholder="Ingrese el estado de la vaca" required>
+                          <label for="">ID de la Vaca</label>
+                          <input type="number" class="form-control" id="" placeholder="Ingrese el id de la vaca">
+                        </div>
+                      </div>
+      
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Fecha del Aborto</label>
+                          <input type="number" class="form-control" id="" placeholder="Ingrese la fecha del aborto de la vaca">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="fecha_nacimiento">Estado de la Vaca</label>
+                          <input type="date" class="form-control" id="" placeholder="Ingrese el estado de la vaca">
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-group">
                           <label for="">Observaciones</label>
-                          <input type="text" class="form-control" name="observaciones" id="observaciones"
-                            placeholder="Ingrese aquí sus observaciones" required>
+                          <input type="text" class="form-control" id=""
+                            placeholder="Ingrese las observaciones correspondientes">
                         </div>
                       </div>
                     </div>
-                  </div> <!-- /.card-body -->
+                  </div>
+                  <!-- /.card-body -->
 
                   <div class="card-footer text-center">
-                    <div class="row">
-                      <div class="col-6"><button type="submit" class="btn btn-primary btnRegistrar">Guardar</button>
-                      </div>
-                      <div class="col-6"><input type="reset" class=" btn btn-info" value="Limpiar datos"></div>
-                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
                   </div>
                 </form>
               </div>
-              <!-- /.card -->
             </div>
-
+            <div class="col-2"></div>
           </div>
           <!-- /.row -->
 
-           <!-- /Fromulario modificar -->
-           <div class="row mb-5" id="form-modificar">
-            <div class="col-12">
-              <div class="card " style="background-color: #3f3ae6;">
+          <!-- Formulario Modificar-->
+          <div class="row mb-5" id="form-modificar">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <div class="card " style="background-color: grey;">
                 <div class="card-header text-center">
-                  <h3 class="card-title text-white">Modificar entrada</h3>
+                  <h3 class="card-title text-white">Nuevo Aborto</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form id="formulario-modificar" method="POST">
-                  <input type="hidden" name="idPreño" id="XidPreño">
+                <form>
                   <div class="card-body text-white ">
-                    <div class="row ">
+                    <div class="row">
                       <div class="col-6">
                         <div class="form-group">
-                          <label for="">Nombre de la Vaca</label>
-                          <input type="text" class="form-control" name="nombreVaca" id="XnombreVaca"
-                            placeholder="Ingrese el nombre de la vaca" readonly >
+                          <label for="">ID de la vaca</label>
+                          <input type="number" class="form-control" id="" placeholder="Ingrese el número de ID">
                         </div>
                       </div>
                       <div class="col-6">
                         <div class="form-group">
-                          <label for="">Fecha del aborto</label>
-                          <input type="date" class="form-control" name="fechaAborto" id="XfechaAborto"
-                          >
+                          <label>fecha del aborto</label>
+                          <input type="number" class="form-control" id="" placeholder="Ingrese el fecha del aborto de la vaca">
                         </div>
                       </div>
                       <div class="col-6">
-                        <div class="form-group ">
-                          <label for="">Número Arete</label>
-                          <input type="number" class="form-control" name="numeroAborto" id="XnumeroAborto"
-                           placeholder="Ingrese el número de arete" readonly>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group ">
-                          <label for="">Tipo de Aborto</label>
-                          <input type="text" class="form-control" name="tipoAborto" id="XtipoAborto" placeholder="Ingrese el tipo de Aborto" readonly>
-                        </div>
-                      </div>
-                      <div class="col-12">
                         <div class="form-group">
-                          <label for="">Descripción Estado de la Vaca</label>
-                          <input type="text" class="form-control" name="descripcionEstado" id="XdescripcionEstado"
-                            placeholder="Ingrese la descripcion del estado de la vaca" readonly>
+                          <label for="">Estado de la Vaca</label>
+                          <input type="text" class="form-control" id="" placeholder="Ingrese el estado de la vaca">
                         </div>
                       </div>
-                      <div class="col-12">
+                        <div class="col-12">
                         <div class="form-group">
                           <label for="">Observaciones</label>
-                          <input type="text" class="form-control" name="observaciones" id="Xobservaciones"
-                            placeholder="Ingrese aquí sus observaciones">
+                          <input type="text" class="form-control" id=""
+                            placeholder="Ingrese las observaciones correspondientes">
                         </div>
                       </div>
                     </div>
-                  </div> <!-- /.card-body -->
+                  </div>
+                  <!-- /.card-body -->
 
                   <div class="card-footer text-center">
-                    <div class="row">
-                      <div class="col-6"><button type="submit" class="btn btn-primary btnRegistrar">Guardar</button>
-                      </div>
-                      <div class="col-6"><input type="button" class=" btn btn-info" value="Cancelar"
-                          onclick="cancelarForm()"></div>
-                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
                   </div>
                 </form>
               </div>
-              <!-- /.card -->
             </div>
-
+            <div class="col-2"></div>
           </div>
           <!-- /.row -->
 
           <!-- Tabla -->
-          <div class="row mb-5" id="tabla-vacunas">
-            <div class="col-md-12 ">
+          <div class="row mb-5" id="tabla-vacas">
+            <div class="col-md-12">
               <div class="card card-dark">
-                <div class="card-body ">
+                <div class="card-body p-0">
                   <table id="tablalistado" class="table table-striped table-bordered table-hover">
                     <thead>
-                      <th>Id</th>
-                      <th>Nombre de la Vaca</th>
-                      <th>Fecha del Aborto</th>
-                      <th>Numero de arete</th>
-                      <th>Descripcion Estado</th>
+                      <th>ID de la Vaca</th>
+                      <th>fecha del aborto</th>
+                      <th>Estado de la Vaca</th>
                       <th>Observaciones</th>
                     </thead>
                     <tbody>
@@ -231,10 +192,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
           </div>
           <!-- /.row -->
-
         </div>
+        <!-- /.container-fluid -->
       </section>
       <!-- /.content -->
+
+
 
 
     </div><!-- ./Content Wrapper-->

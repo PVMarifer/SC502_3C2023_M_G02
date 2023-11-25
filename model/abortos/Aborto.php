@@ -1,7 +1,7 @@
 <?php 
 require_once '../../config/conexion.php';
 
-class Preno extends Conexion
+class Aborto extends Conexion
 {
 
     //Atributos
@@ -9,13 +9,12 @@ class Preno extends Conexion
 
     private $idVaca =null;
 
-    private $numeroArete = null;
+    private $fechaAborto = null;
 
-    private $fechaDeParto = null;
-
-    private $tipoParto = null;
+    private $estadoVaca = null;
 
     private $observaciones = null;
+
 
     //constructores
     public function __construct()
@@ -33,29 +32,21 @@ class Preno extends Conexion
         $this->idVaca = $idVaca;
     }
 
-    public function getNumeroArete()
+    public function getFechaAborto()
     {
-        return $this->numeroArete;
+        return $this->fechaAborto;
     }
-    public function setNumeroArete($numeroArete)
+    public function setFechaAborto($fechaAborto)
     {
-        $this->numeroArete = $numeroArete;
+        $this->fechaAborto = $fechaAborto;
     }
-    public function getFechaDeParto()
+    public function getEstadoVaca()
     {
-        return $this-> fechaDeParto;
+        return $this-> estadoVaca;
     }
-    public function setFechaDeParto($fechaDeParto)
+    public function setEstadoVaca($estadoVaca)
     {
-        $this->fechaDeParto = $fechaDeParto;
-    }
-    public function getTipoParto()
-    {
-        return $this->tipoParto;
-    }
-    public function setTipoParto($tipoParto)
-    {
-        $this->tipoParto = $tipoParto;
+        $this->estadoVaca = $estadoVaca;
     }
     public function getObservaciones()
     {
@@ -64,10 +55,7 @@ class Preno extends Conexion
     public function setObservaciones($observaciones)
     {
         $this->observaciones = $observaciones;
-   
     }
-
-
 
     //Metodos de la clase
 
@@ -85,7 +73,7 @@ class Preno extends Conexion
 
     //funcion para sacar a todos los de la db
     public function listarDB(){
-        $query = "SELECT * FROM preno";
+        $query = "SELECT * FROM aborto";
         $lista = array();
         try {
             self::getConexion();
@@ -93,14 +81,12 @@ class Preno extends Conexion
             $resultado->execute();
             self::desconectar();
             foreach ($resultado->fetchAll() as $encontrado) {
-                $preno = new Preno();
-                $preno ->setIdVaca($encontrado["id_vaca"]);
-                $preno ->setNumeroArete($encontrado["numero_arete"]);
-                $preno ->setFechaParto($encontrado["fecha_parto"]);
-                $preno ->setTipoParto($encontrado["tipo_parto"]);
-                $preno ->setObservaciones($encontrado["observaciones"]);
-            
-                $lista[] = $preno;
+                $aborto = new aborto();
+
+                $aborto ->setEstadoVaca($encontrado["estado_vaca"]);
+                $aborto ->setFechaAborto($encontrado["fecha_aborto"]);
+                $aborto ->setObservaciones($encontrado["observaciones"]);
+                $lista[] = $aborto;
             }
             return $lista;
         } catch (PDOException $Exception) {
@@ -109,8 +95,8 @@ class Preno extends Conexion
             return json_encode($error);
         }
     }
-    public function listarPreno(){
-        $query = "SELECT id_vaca, numero_arete FROM preno";
+    public function listarAbortos(){
+        $query = "SELECT id_vaca, estado_vaca FROM aborto";
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);

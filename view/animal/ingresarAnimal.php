@@ -111,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row mb-5" id="form-agregar">
             <div class="col-2"></div>
             <div class="col-8">
-              <div class="card " style="background-color: grey;">
+              <div class="card " style="background-color:#52AA5E;">
                 <div class="card-header text-center">
                   <h3 class="card-title text-white">Nuevo Animal</h3>
                 </div>
@@ -195,7 +195,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row mb-5" id="form-modificar">
             <div class="col-2"></div>
             <div class="col-8">
-              <div class="card " style="background-color: grey;">
+              <div class="card " style="background-color: #52AA5E;">
                 <div class="card-header text-center">
                   <h3 class="card-title text-white">Nuevo Animal</h3>
                 </div>
