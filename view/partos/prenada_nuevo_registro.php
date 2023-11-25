@@ -79,7 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="row ">
                       <div class="col-6">
                         <div class="form-group">
-                          <label for="">Nombre de la Vaca</label>
+                          <label for="">Id de la vaca</label>
                           <input type="text" class="form-control" name="nombreVaca" id="nombreVaca"
                             placeholder="Ingrese el nombre de la vaca" required>
                         </div>
@@ -149,8 +149,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="row ">
                       <div class="col-6">
                         <div class="form-group">
-                          <label for="">Nombre de la Vaca</label>
-                          <input type="text" class="form-control" name="nombreVaca" id="XnombreVaca"
+                          <label for="">Id de la vaca</label>
+                          <input type="text" class="form-control" name="id_vaca" id="Xid_vaca"
                             placeholder="Ingrese el nombre de la vaca" readonly >
                         </div>
                       </div>
@@ -215,7 +215,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <table id="tablalistado" class="table table-striped table-bordered table-hover">
                     <thead>
                       <th>Id</th>
-                      <th>Nombre de la Vaca</th>
+                      <th>Id de la vaca</th>
                       <th>Fecha de preño</th>
                       <th>Numero de arete</th>
                       <th>Descripcion Estado</th>

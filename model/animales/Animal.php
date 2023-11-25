@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once '../../config/conexion.php';
 
 class Animal extends Conexion

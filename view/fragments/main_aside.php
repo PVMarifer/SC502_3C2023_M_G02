@@ -1,5 +1,5 @@
 <!-- Logo -->
-<a href="index3.html" class="brand-link">
+<a href="LandPage.php" class="brand-link">
     <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3 mr-3"
         style="opacity: .8">
     <span class="text-white font-weight-bold">SG Ganaderia</span>
