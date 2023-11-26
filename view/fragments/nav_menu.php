@@ -22,7 +22,7 @@
       <a href="../secados/secados.php" class="nav-link-menu nav-link">Control de Secados</a>
     </li>
     <li class="nav-item-menu nav-item d-none d-md-inline-block">
-      <a href="../partos/partos.php" class=" nav-link-menu nav-link">Control de Partos</a>
+      <a href="../partos/controlPartos.php" class=" nav-link-menu nav-link">Control de Partos</a>
     </li>
   </ul>
   <!-- Right navbar links -->

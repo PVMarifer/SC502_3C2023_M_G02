@@ -7,13 +7,11 @@ class Preno extends Conexion
     //Atributos
     protected static $conexion;
 
-    private $idVaca =null;
+    private $idVacaPrenada =null;
 
-    private $numeroArete = null;
+    private $detallesGestacion = null;
 
-    private $fechaDeParto = null;
-
-    private $tipoParto = null;
+    private $idServicio = null;
 
     private $observaciones = null;
 
@@ -24,38 +22,30 @@ class Preno extends Conexion
 
     //Getter y setters
 
-    public function getIdVaca()
+    public function getIdVacaPrenada()
     {
-        return $this->idVaca;
+        return $this->idVacaPrenada;
     }
-    public function setIdVaca($idVaca)
+    public function setIdVacaPrenada($idVacaPrenada)
     {
-        $this->idVaca = $idVaca;
+        $this->idVacaPrenada = $idVacaPrenada;
     }
 
-    public function getNumeroArete()
+    public function getDetallesGestacion()
     {
-        return $this->numeroArete;
+        return $this->detallesGestacion;
     }
-    public function setNumeroArete($numeroArete)
+    public function setDetallesGestacion($detallesGestacion)
     {
-        $this->numeroArete = $numeroArete;
+        $this->detallesGestacion = $detallesGestacion;
     }
-    public function getFechaDeParto()
+    public function getIdServicio()
     {
-        return $this-> fechaDeParto;
+        return $this-> idServicio;
     }
-    public function setFechaDeParto($fechaDeParto)
+    public function setIdServicio($idServicio)
     {
-        $this->fechaDeParto = $fechaDeParto;
-    }
-    public function getTipoParto()
-    {
-        return $this->tipoParto;
-    }
-    public function setTipoParto($tipoParto)
-    {
-        $this->tipoParto = $tipoParto;
+        $this->idServicio = $idServicio;
     }
     public function getObservaciones()
     {
@@ -85,7 +75,7 @@ class Preno extends Conexion
 
     //funcion para sacar a todos los de la db
     public function listarDB(){
-        $query = "SELECT * FROM preno";
+        $query = "SELECT * FROM Preno";
         $lista = array();
         try {
             self::getConexion();
@@ -93,14 +83,13 @@ class Preno extends Conexion
             $resultado->execute();
             self::desconectar();
             foreach ($resultado->fetchAll() as $encontrado) {
-                $preno = new Preno();
-                $preno ->setIdVaca($encontrado["id_vaca"]);
-                $preno ->setNumeroArete($encontrado["numero_arete"]);
-                $preno ->setFechaParto($encontrado["fecha_parto"]);
-                $preno ->setTipoParto($encontrado["tipo_parto"]);
-                $preno ->setObservaciones($encontrado["observaciones"]);
+                $Parto = new Parto();
+                $Parto ->setIdVacaPrenada($encontrado["id_vaca_prenada"]);
+                $Parto ->setDetalles_gestacion($encontrado["detalles_gestiacion"]);
+                $Parto ->setIdServicio($encontrado["id_servicio"]);
+                $Parto ->setObservaciones($encontrado["observaciones"]);
             
-                $lista[] = $preno;
+                $lista[] = $Preno;
             }
             return $lista;
         } catch (PDOException $Exception) {
@@ -110,7 +99,7 @@ class Preno extends Conexion
         }
     }
     public function listarPreno(){
-        $query = "SELECT id_vaca, numero_arete FROM preno";
+        $query = "SELECT id_vaca_prenada, id_servicio FROM Preno";
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
