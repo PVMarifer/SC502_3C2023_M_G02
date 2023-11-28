@@ -8,7 +8,7 @@ class produccion extends Conexion
     //Atributos de la clase
     protected static $conexion;
 
-    private $id_produccion_semanal = null;
+    private $areteAnimal = null;
 
     private $idProduccion = null;
 
@@ -32,42 +32,54 @@ class produccion extends Conexion
 
     //getters y setters
 
-    public function getId_Produccion_Semanal ()
+    public function getIdAnimal ()
     {
-        return $this->id_produccion_semanal ;
+        return $this->idAnimal ;
     }
 
-    public function setId_Produccion_Semanal ($id_produccion_semanal)
+    public function setIdAnimal ($idAnimal )
     {
         $this->idAnimal  = $idAnimal ;
-    } 
-    
+    }
     public function getIdProduccion ()
     {
-        return $this->getIdProduccion; 
-    
+        return $this->idProduccion ;
     }
 
     public function setIdProduccion ($idProduccion )
-    {  
-        $this->getIdProduccion  = $IdProduccion ;
-    } 
+    {
+        $this->idProduccion  = $idProduccion ;
+    }
 
 
     public function getFechaProduccion ()
     {
-        return $this->setFechaProduccion;
+        return $this->fechaProduccion ;
     }
 
     public function setFechaProduccion ($fechaProduccion )
     {
-        $this->getFechaProduccion  = $fecha_Produccion;
+        $this->fechaProduccion  = $fechaProduccion ;
     }
 
-     
-    public function getLitros ()
+    public function getKilosProducidos ()
     {
-        return $this->litros ;
+        return $this->kilosProducidos ;
+    }
+
+    public function setKilosProducidos ($kilosProducidos )
+    {
+        $this->kilosProducidos  = $kilosProducidos ;
+    }
+
+    public function getAreteAnimal()
+    {
+        return $this->areteAnimal;
+    }
+
+    public function setAreteAnimal($areteAnimal)
+    {
+        $this->areteAnimal = $areteAnimal;
     }
 
     public function getIdPrefijo()
