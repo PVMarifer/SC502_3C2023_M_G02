@@ -2,17 +2,17 @@ $(document).ready(function () {
   // Función para obtener los animales y llenar el select
   function obtenerAnimalesVacunados() {
     $.ajax({
-      url: '../../controller/salud/enfermedadAnimalController.php?op=listar_animales_enfermos',
+      url: '../../controller/salud/vacunacionController.php?op=listar_animales_vacunados',
       type: "GET",
-      data: { obtenerAnimalesEnfermos: true },
+      data: { obtenerAnimalesVacunados: true },
       dataType: "text",
       success: function (data) {
         console.log(data)
         if (data) {
           // Llenar el select con la cantidad de vacas
-          $('#card-animales-enfermos').text(data);
+          $('#card-animales-vacunados').text(data);
         } else {
-          console.log("No se encontraron animales enfermos");
+          console.log("No se encontraron animales vacunados");
         }
       },
       error: function (xhr, status, error) {
@@ -21,13 +21,72 @@ $(document).ready(function () {
     });
   }
 
+  
 
- 
-  obtenerAnimalesEnfermos();
-  obtenerAnimalesAntibiotico();
-  obtenerAnimalesMastitis();
-  obtenerEnfermedadesGrafica();
-  listarInyecciones();
+  function listarAnimalesNoVacunados() {
+    tabla = $('#tablasinvacunar').dataTable({
+      aProcessing: true, //actiavmos el procesamiento de datatables
+      aServerSide: true, //paginacion y filtrado del lado del serevr ../controller/animalController.php?op=listar_tabla'
+      dom: 'Bfrtip', //definimos los elementos del control de tabla
+      buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdf'],
+      ajax: {
+        url: '../../controller/animales/animalController.php?op=listar_animales_no_vacunados',
+        type: 'get',
+        dataType: 'json',
+        error: function (e) {
+          console.log(e.responseText);
+        }
+      },
+      bDestroy: true,
+      iDisplayLength: 5
+    });
+  }
+
+/*Funcion para cargar el listado en el Datatable*/
+function listarVacunas() {
+  tabla = $('#tablavacunas').dataTable({
+    aProcessing: true, //actiavmos el procesamiento de datatables
+    aServerSide: true, //paginacion y filtrado del lado del serevr ../controller/animalController.php?op=listar_tabla'
+    dom: 'Bfrtip', //definimos los elementos del control de tabla
+    buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdf'],
+    ajax: {
+      url: '../../controller/salud/vacunaController.php?op=listar_vacunas',
+      type: 'get',
+      dataType: 'json',
+      error: function (e) {
+        console.log(e.responseText);
+      }
+    },
+    bDestroy: true,
+    iDisplayLength: 5
+  });
+}
+
+function obtenerCantidadVacunas() {
+  $.ajax({
+    url: '../../controller/salud/vacunacionController.php?op=obtener_vacunas_puestas',
+    type: "GET",
+    data: { obtenerVacunasPuestas: true },
+    dataType: "text",
+    success: function (data) {
+      console.log(data)
+      if (data) {
+        // Llenar el select con la cantidad de vacas
+        $('#card-vacunas-aplicadas').text(data);
+      } else {
+        console.log("No se encontraron animales vacunados");
+      }
+    },
+    error: function (xhr, status, error) {
+      console.error(error);
+    }
+  });
+}
+
+  obtenerAnimalesVacunados();
+  listarAnimalesNoVacunados();
+  listarVacunas();
+  obtenerCantidadVacunas()
 
 });
 

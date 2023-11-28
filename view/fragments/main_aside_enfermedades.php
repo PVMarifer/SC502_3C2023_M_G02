@@ -82,12 +82,6 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="./medicamentos.php" class="nav-link bg-white">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Control de Medicamentos</p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="./medicamentos_registro_medicamento.php" class="nav-link bg-white">
               <i class="far fa-circle nav-icon"></i>
               <p>Nueva Injeccion o Aplicacion de Medicamentos</p>

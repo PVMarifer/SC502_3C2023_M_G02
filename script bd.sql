@@ -109,7 +109,7 @@ DEFAULT CHARACTER SET = utf8mb4;
 CREATE TABLE Vacunacion (
     id_vacunacion INT AUTO_INCREMENT PRIMARY KEY not null,
 	id_vacuna INT not null,
-    lugar_aplicación varchar(50)  not null,
+    lugar_aplicacion varchar(50)  not null,
     dosis_aplicada varchar(50) not null,
 	fecha_vacunacion date not null,
     cantidad_animales int not null,

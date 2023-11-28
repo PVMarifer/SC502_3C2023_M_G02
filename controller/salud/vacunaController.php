@@ -45,7 +45,7 @@ switch ($_GET['op']) {
         $encontrado = $vacuna->verificarExistenciaDb();
         if ($encontrado == false) {
             $vacuna->setDescripcion($descripcion);
-            $vacuna->setLote($lote); 
+            $vacuna->setLote($lote);
             $vacuna->setFechaVencimiento($fechaVencimiento);
             $vacuna->setObservaciones($observaciones);
             $vacuna->guardarEnDb();
@@ -71,15 +71,15 @@ switch ($_GET['op']) {
         $nombreVacuna = isset($_POST["nombreVacuna"]) ? trim($_POST["nombreVacuna"]) : "";
         $descripcion = isset($_POST["descripcion"]) ? trim($_POST["descripcion"]) : "";
         $fechaVencimiento = isset($_POST["fechaVencimiento"]) ? trim($_POST["fechaVencimiento"]) : "";
-        $lote = isset($_POST["lote"]) ? trim($_POST["lote"]) : "";   
-        $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";  
-        $casaDistribuidora = isset($_POST["casaDistribuidora"]) ? trim($_POST["casaDistribuidora"]) : ""; 
+        $lote = isset($_POST["lote"]) ? trim($_POST["lote"]) : "";
+        $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";
+        $casaDistribuidora = isset($_POST["casaDistribuidora"]) ? trim($_POST["casaDistribuidora"]) : "";
         $vacuna = new Vacuna();
         $vacuna->setNombreVacuna($nombreVacuna);
         $vacuna->setCasaDistribuidora($casaDistribuidora);
         $encontrado = $vacuna->verificarExistenciaDb();
         if ($encontrado == true) {
-            
+
             //$usuario->llenarCampos($id); 
             //$modulo->setNombre($nombreModif);
             $vacuna->setNombreVacuna($nombreVacuna);
@@ -99,13 +99,39 @@ switch ($_GET['op']) {
         }
         break;
 
-        case 'obtener_vacunas':
-            
-            if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacunas'])) {
-                $vacunaModel = new Vacuna();
-                $vacunas = $vacunaModel->listarVacunas();
-                echo json_encode($vacunas);
-            }
+    case 'obtener_vacunas':
+
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacunas'])) {
+            $vacunaModel = new Vacuna();
+            $vacunas = $vacunaModel->listarVacunas();
+            echo json_encode($vacunas);
+        }
+
+    case 'listar_vacunas':
+        $vacuna_db = new Vacuna();
+        $vacunas = $vacuna_db->listarDb();
+        $datos = array();
+        foreach ($vacunas as $vacuna) {
+            $datos[] = array(
+                "0" => $vacuna->getLote(),
+                "1" => $vacuna->getNombrevacuna(),
+                "2" => $vacuna->getDescripcion(),
+                "3" => $vacuna->getFechaVencimiento(),
+          );
+        }
+        $resultados = array(
+            "sEcho" => 1,
+            ##informacion para datatables
+            "iTotalRecords" => count($datos),
+            ## total de registros al datatable
+            "iTotalDisplayRecords" => count($datos),
+            ## enviamos el total de registros a visualizar
+            "aaData" => $datos
+        );
+        echo json_encode($resultados);
+        break;
+
+
 
 
 

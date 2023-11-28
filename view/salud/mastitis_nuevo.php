@@ -127,8 +127,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="form-group">
                           <label for="">Tipo de Tratamiento</label>
                           <select name="tipoTratamiento" id="tipoTratamiento" class="form-control select2" required>
-                            <option value="Inyecccion">Inyecccion</option>
-                            <option value="Antibiotico en la Teta">Antibiotico en la Teta</option>
+                            <option value="Inyeccion">Inyeccion</option>
+                            <option value="Antibiotico directo en la teta">Antibiotico Directo en la Teta</option>
                           </select>
                         </div>
                       </div>
@@ -189,8 +189,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="form-group">
                           <label for="">Tipo de Tratamiento</label>
                           <select name="tipoTratamiento" id="XtipoTratamiento" class="form-control select2">
-                            <option value="Inyecccion">Inyecccion</option>
-                            <option value="Antibiotico en la Teta">Antibiotico en la Teta</option>
+                            <option value="Inyeccion">Inyeccion</option>
+                            <option value="Antibiotico directo en la teta">Antibiotico directo a la teta</option>
                           </select>
                         </div>
                       </div>

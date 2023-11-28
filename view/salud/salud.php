@@ -103,7 +103,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="small-box text-center text-white" style="background-color:#4CAF50;">
                 <div class="inner">
                   <p>Vacas con Mastitis</p>
-                  <h3 id="card-animales-mastitis"></h3>
+                  <h3 id="card-vacas-mastitis"></h3>
                 </div>
 
                 <a href="./mastitis.php" class="small-box-footer">More info <i
@@ -129,9 +129,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                       <i class="fas fa-minus"></i>
                     </button>
-                    <button type="button" class="btn btn-tool" data-card-widget="remove">
-                      <i class="fas fa-times"></i>
-                    </button>
+                
                   </div>
                 </div>
                 <div class="card-body">

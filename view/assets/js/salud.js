@@ -43,19 +43,19 @@ $(document).ready(function () {
     });
   }
 
-  function obtenerAnimalesMastitis() {
+  function obtenerVacasMastitis() {
     $.ajax({
-      url: '../../controller/salud/mastitisController.php?op=listar_animales_mastitis',
+      url: '../../controller/salud/mastitisController.php?op=listar_vacas_mastitis',
       type: "GET",
-      data: { obtenerAnimalesMastitis: true },
+      data: { obtenerVacasMastitis: true },
       dataType: "text",
       success: function (data) {
-        console.log(data)
+        console.log(data) 
         if (data) {
           // Llenar el select con la cantidad de vacas
-          $('#card-animales-mastitis').text(data);
+          $('#card-vacas-mastitis').text(data);
         } else {
-          console.log("No se encontraron animales con mastitis");
+          console.log("No se encontraron vacas con mastitis");
         }
       },
       error: function (xhr, status, error) {
@@ -133,7 +133,7 @@ function listarInyecciones() {
  
   obtenerAnimalesEnfermos();
   obtenerAnimalesAntibiotico();
-  obtenerAnimalesMastitis();
+  obtenerVacasMastitis();
   obtenerEnfermedadesGrafica();
   listarInyecciones();
 
