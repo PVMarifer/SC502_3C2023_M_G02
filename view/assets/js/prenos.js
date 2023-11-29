@@ -1,5 +1,5 @@
 /*Funcion para cargar el listado en el Datatable*/
-function listarPartos() {
+function listarPreno() {
   tabla = $('#tablalistado').dataTable({
     aProcessing: true, //actiavmos el procesamiento de datatables
     aServerSide: true, //paginacion y filtrado del lado del serevr ../controller/animalController.php?op=listar_tabla'
@@ -22,5 +22,5 @@ function listarPartos() {
 
 $(function(){
   $('#form-modificar').hide();
-  listarPartos();
+  listarPreno();
 });

@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SG GANADERIA| NUEVO PREÑO</title>
+  <title>SG GANADERIA| NUEVO Parto</title>
 
    <!-- Google Font: Source Sans Pro -->
    <link rel="stylesheet"
@@ -50,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item "><a href="#">Control de Partos</a></li>
-                <li class="breadcrumb-item Active"><a href="#">Añadir Preño</a></li>
+                <li class="breadcrumb-item Active"><a href="#">Añadir Parto</a></li>
               </ol>
             </div>
             <div class="col-sm-6">
@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-8">
               <div class="card " style="background-color: #52AA5E;">
                 <div class="card-header text-center">
-                  <h3 class="card-title text-white">Nuevo Preño</h3>
+                  <h3 class="card-title text-white">Nuevo Parto</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
@@ -80,23 +80,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="row">
                       <div class="col-12">
                         <div class="form-group">
-                          <label for="">ID de la Vaca Preñada</label>
-                          <input type="number" class="form-control" id="" placeholder="Ingrese el id de la vaca preñada">
+                          <label for="">ID de la Vaca</label>
+                          <input type="number" class="form-control" id="" placeholder="Ingrese el id de la vaca">
                         </div>
                       </div>
       
                       <div class="col-12">
                         <div class="form-group">
-                          <label for="">Detalles de la Gestación</label>
-                          <input type="text" class="form-control" id="" placeholder="Ingrese los detalles correspondientes de la gestación">
+                          <label for="">Numero de Arete</label>
+                          <input type="number" class="form-control" id="" placeholder="Ingrese el número de arete de la vaca">
                         </div>
                       </div>
-                      <div class="col-12">
+                      <div class="col-6">
                         <div class="form-group">
-                          <label for="fecha_nacimiento">ID de servicio</label>
-                          <input type="number" class="form-control" id="" placeholder="Ingrese el ID de servicio">
+                          <label for="fecha_nacimiento">Fecha de parto</label>
+                          <input type="date" class="form-control" id="" placeholder="Ingrese la fecha de parto de la vaca">
                         </div>
                       </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label>Tipo de parto</label>
+                          <select class="form-control select2">
+                            <option selected="selected">Natural</option>
+                            <option>Intervenido</option>
+                            <option>Cesárea</option>
+                          </select>
+                        </div>
+                        </div>
                       <div class="col-12">
                         <div class="form-group">
                           <label for="">Observaciones</label>
@@ -127,30 +137,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <h3 class="card-title text-white">Nuevo Parto</h3>
                 </div>
                 <!-- /.card-header -->
-                 <!-- form start -->
-                 <form>
+                <!-- form start -->
+                <form>
                   <div class="card-body text-white ">
                     <div class="row">
-                      <div class="col-12">
+                      <div class="col-6">
                         <div class="form-group">
-                          <label for="">ID de la Vaca Preñada</label>
-                          <input type="number" class="form-control" id="" placeholder="Ingrese el id de la vaca preñada">
+                          <label for="">ID de la vaca</label>
+                          <input type="number" class="form-control" id="" placeholder="Ingrese el número de ID">
                         </div>
                       </div>
-      
-                      <div class="col-12">
+                      <div class="col-6">
                         <div class="form-group">
-                          <label for="">Detalles de la Gestación</label>
-                          <input type="text" class="form-control" id="" placeholder="Ingrese los detalles correspondientes de la gestación">
+                          <label>Número de Arete</label>
+                          <input type="number" class="form-control" id="" placeholder="Ingrese el número de arete de la vaca">
                         </div>
                       </div>
-                      <div class="col-12">
+                      <div class="col-6">
                         <div class="form-group">
-                          <label for="fecha_nacimiento">ID de servicio</label>
-                          <input type="number" class="form-control" id="" placeholder="Ingrese el ID de servicio">
+                          <label for="">Fecha de Parto</label>
+                          <input type="text" class="form-control" id="" placeholder="Ingrese la fecha de parto">
                         </div>
                       </div>
-                      <div class="col-12">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label>Tipo de parto</label>
+                          <select class="form-control select2">
+                            <option selected="selected">Natural</option>
+                            <option>Intervenido</option>
+                            <option>Cesárea</option>
+                          </select>
+                        </div>
+                        </div>
+                        <div class="col-12">
                         <div class="form-group">
                           <label for="">Observaciones</label>
                           <input type="text" class="form-control" id=""
@@ -178,9 +197,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="card-body p-0">
                   <table id="tablalistado" class="table table-striped table-bordered table-hover">
                     <thead>
-                      <th>ID de la Vaca preñada</th>
-                      <th>Detalles de la gestación</th>
-                      <th>ID del servicio</th>
+                      <th>ID de la Vaca</th>
+                      <th>Número de Arete</th>
+                      <th>Fecha del parto</th>
+                      <th>Tipo de parto</th>
                       <th>Observaciones</th>
                     </thead>
                     <tbody>

@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../model/abortos/Aborto.php';
+require_once '../../model/partos/Preno.php';
 
 switch ($_GET['op']) {
     case 'listar_tabla':
@@ -10,9 +10,11 @@ switch ($_GET['op']) {
         foreach ($partos as $preno) {
             $datos[] = array(
                 "0" => $preno->getIdVaca(),
-                "1" => $preno->getFechaAborto(),
-                "2" => $preno->getEstadoVaca(),
-                "3" => $preno->getObservaciones()
+                "1" => $preno->getNumeroArete(),
+                "2" => $preno->getFechaParto(),
+                "3" => $preno->getEstadoVaca(),
+                "4" => $preno->getTipoParto(),
+                "5" => $preno->getObservaciones()
             );
         }
         $resultados = array(
@@ -27,10 +29,10 @@ switch ($_GET['op']) {
         echo json_encode($resultados);
         break;
 
-    case 'listar_abortos':
-        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerAbortos'])) {
+    case 'listar_preno':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerPrenos'])) {
             $prenoModel = new preno();
-            $abortos = $abortoModel->listarAbortos();
+            $partos = $prenoModel->listarPreno();
             echo json_encode($partos);
         }
 }

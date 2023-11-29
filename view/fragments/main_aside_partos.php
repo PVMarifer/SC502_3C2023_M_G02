@@ -25,21 +25,21 @@
       <li class="nav-item ">
         <a href="#" class="nav-link links-sidebar-nav">
           <p>
-            Preños
+            Partos
             <i class="right fas fa-angle-left"></i>
           </p>
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="./prenadas.php" class="nav-link bg-white">
+            <a href="./partos.php" class="nav-link bg-white">
               <i class="far fa-circle nav-icon"></i>
-              <p>Vacas Preñadas</p>
+              <p>Vacas con Partos</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="./prenada_nuevo_registro.php" class="nav-link bg-white">
+            <a href="./parto_nuevo_registro.php" class="nav-link bg-white">
               <i class="far fa-circle nav-icon"></i>
-              <p>Añadir Preño</p>
+              <p>Añadir Parto</p>
             </a>
           </li>
         </ul>
@@ -67,5 +67,28 @@
           </li>
         </ul>
       </li>
+      <li class="nav-item ">
+        <a href="#" class="nav-link links-sidebar-nav">
+          <p>
+            Preños
+            <i class="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="./prenadas.php" class="nav-link bg-white">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Vacas Preñadas</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./prenada_nuevo_registro.php" class="nav-link bg-white">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Añadir Preño</p>
+            </a>
+          </li>
+        </ul>
+      </li>
+
     </ul>
   </nav>
