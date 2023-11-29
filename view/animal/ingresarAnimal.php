@@ -348,8 +348,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
+<
 <!--   JQUERY -->
 <script src="../plugins/jquery/jquery.min.js"></script>
+
 <!-- DataTables  & Plugins -->
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 <!-- Bootstrap 4 -->
@@ -369,6 +371,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- JS SCRIPTS -->
 <script src="../assets/js/animales.js"></script>
+
 
 
 </html>

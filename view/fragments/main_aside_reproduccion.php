@@ -16,6 +16,11 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="./ingresar_servicio.php" class="nav-link bg-white">
+                <p>Ingresar Servicio</p>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="./control_celos.php" class="nav-link bg-white">
 
                 <p>Control de celos</p>

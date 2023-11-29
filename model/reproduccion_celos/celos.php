@@ -222,7 +222,7 @@ class celos extends Conexion
 
     public function eliminar()
     {
-        $id_celo = $this->getIdCelo();
+        $id_celo = $this->getIdCelo(); 
         $query = "DELETE FROM celo WHERE `celo`.`id_celo` = :id_celo";
         try {
             self::getConexion();

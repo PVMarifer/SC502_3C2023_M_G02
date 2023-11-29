@@ -268,9 +268,9 @@ add foreign key (id_padre) references Toro(id_Toro);*/
 
 /*foreneas de servicio*/
 alter table servicio 
-add foreign key (id_vaca) references Vaca(id_vaca);
-alter table servicio 
-add foreign key (id_toro) references Toro(id_Toro);
+add foreign key (id_animal) references animal(id_animal);
+alter table servicio
+add foreign key (id_animal) references animal(id_animal);
 
 /*foreneas de Vaca_Prenada*/
 alter table Vaca_Prenada 

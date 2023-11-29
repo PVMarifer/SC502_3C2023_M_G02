@@ -62,30 +62,6 @@ $('#formulario-agregar').on('submit', function (event) {
     },
   });
 });
-
-  // Función para obtener las enfermedades y llenar el select
-  function obtenerEnfermedades() {
-    $.ajax({ 
-        url: '../../controller/salud/enfermedadController.php?op=obtener_enfermedades',
-        type: "GET",
-        data: { obtenerEnfermedades: true },
-        dataType: "json",
-        success: function(data) {
-            if (data) {
-                // Llenar el select con las enfermedades obtenidas
-                $.each(data, function(index, enfermedad) {
-                    $('#selectEnfermedades').append('<option value="' + enfermedad.id_enfermedad + '">' + enfermedad.nombre_enfermedad + '.' + enfermedad.id_enfermedad + '</option>');
-                });
-            } else {
-                console.log("No se encontraron enfermedades.");
-            }
-        },
-        error: function(xhr, status, error) {
-            console.error(error);
-        }
-    });
-}
-
   // Llamar a la función para obtener las vacas cuando el documento esté listo
 //obtenerAnimales();
 //obtenerEnfermedades();
@@ -107,33 +83,14 @@ $('#formulario-agregar').on('submit', function (event) {
 
   }
 
-  /*Funcion para cargar el listado en el Datatable*/
-  function listarAnimalesEnfermos() {
-    tabla = $('#tablalistado').dataTable({
-      aProcessing: true, //actiavmos el procesamiento de datatables
-      aServerSide: true, //paginacion y filtrado del lado del serevr ../controller/animalController.php?op=listar_tabla'
-      dom: 'Bfrtip', //definimos los elementos del control de tabla
-      buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdf'],
-      ajax: {
-        url: '../../controller/salud/enfermedadAnimalController.php?op=listar_tabla',
-        type: 'get',
-        dataType: 'json',
-        error: function (e) {
-          console.log(e.responseText);
-        }
-      },
-      bDestroy: true,
-      iDisplayLength: 5
-    });
-  }
-
+ 
 
 
   // Funcion principal
 
   $(function () {
     $('#form-modificar').hide();
-    listarAnimalesEnfermos();
+    listarAnimales();
   });
 
 
@@ -205,7 +162,7 @@ $('#formulario-agregar').on('submit', function (event) {
       if (result) {
         var formData = new FormData($('#formulario-modificar')[0]);
         $.ajax({
-          url: '../../controller/salud/enfermedadAnimalController.php?op=modificar',
+          url: '../../controller/animal/animalController.php?op=modificar',
           type: 'POST',
           data: formData,
           contentType: false,
@@ -235,11 +192,11 @@ $('#formulario-agregar').on('submit', function (event) {
 
   /*Funcion para eliminar datos*/
   function eliminar(id) {
-    bootbox.confirm('¿Esta seguro de eliminar la enfermedad?', function (result) {
+    bootbox.confirm('¿Esta seguro de eliminar el animal?', function (result) {
       if (result) {
         $.post(
-          '../../controller/salud/enfermedadAnimalController.php?op=eliminar',
-          { idRegistro: id },
+          '../../controller/animal/animalController.php?op=eliminar',
+          { id_animal: id },
           function (data, textStatus, xhr) {
             switch (data) {
               case '0':

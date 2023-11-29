@@ -220,6 +220,68 @@ class Animal extends Conexion
             return json_encode($error);
         }
     }
+    public function eliminar()
+    {
+        $id_animal = $this->getIdAnimal();
+        $query = "DELETE FROM animal WHERE `animal`.`id_animal` = :id_animal";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->bindParam(":id_celo", $id_celo, PDO::PARAM_STR);
+            $resultado->execute();
+            self::desconectar();
+            if (!(self::verificarExistenciaDb())) {
+                return 0;
+            } else {
+                return 1;
+            }
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            return $error;
+        }
+
+    }
+
+    public function actualizarAnimal()
+    {
+        $query = "UPDATE tu_tabla SET 
+            nombre = :nombre,
+            fecha_nacimiento = :fecha_nacimiento,
+            raza = :raza,
+            peso = :peso,
+            numero_arete = :numero_arete,
+            colores_caracteristicas = :colores_caracteristicas,
+            observaciones = :observaciones
+        WHERE id_animal = :id_animal";
+
+        try {
+            $this->getConexion(); // Assuming you have a method to establish a database connection
+            $resultado = $this->conexion->prepare($query);
+            $resultado->bindParam(":nombre", $nombre, PDO::PARAM_STR);
+            $resultado->bindParam(":fecha_nacimiento", $fecha_nacimiento, PDO::PARAM_STR);
+            $resultado->bindParam(":raza", $raza, PDO::PARAM_STR);
+            $resultado->bindParam(":peso", $peso, PDO::PARAM_STR);
+            $resultado->bindParam(":numero_arete", $numero_arete, PDO::PARAM_STR);
+            $resultado->bindParam(":colores_caracteristicas", $colores_caracteristicas, PDO::PARAM_STR);
+            $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
+
+            $this->conexion->beginTransaction();
+            $resultado->execute();
+            $this->conexion->commit();
+            $this->desconectar();
+            
+            return $resultado->rowCount(); // Return the number of affected rows
+        } catch (PDOException $Exception) {
+            $this->conexion->rollBack();
+            $this->desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            echo $error;
+            return false; // Return false to indicate an error
+        }
+    }
 }
+
+
 
 ?>
