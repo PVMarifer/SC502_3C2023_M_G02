@@ -9,10 +9,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <title>SG GANADERIA | Index</title>
 =======
   <title>AdminLTE 3 | Starter</title>
 >>>>>>> bryan
+=======
+  <title>AdminLTE 3 | Starter</title>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -122,6 +126,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!--  Main Sidebar Container -->
     <aside class="main-sidebar  elevation-4">
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       <a href="LandPage.php" class="brand-link">
         <img src="./view/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -133,6 +138,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
       <div class="sidebar">
         <!-- Logo -->
         <a href="index3.html" class="brand-link">
@@ -142,12 +149,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </a><!-- logo -->
 
         <!-- Sidebar user -->
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
             <img src="./view/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
+<<<<<<< HEAD
 <<<<<<< HEAD
             <a href="#" class="d-block">Juanito Mena Mora</a>
           </div>
@@ -157,6 +168,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
         </div><!-- Sidebar user -->
 >>>>>>> bryan
+=======
+            <a href="#" class="d-block text-white">Juanito Mora</a>
+          </div>
+        </div><!-- Sidebar user -->
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
         <!-- Sidebar Menu -->
@@ -166,10 +182,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </nav>
         <!-- /.sidebar-menu -->
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
       </div>
 >>>>>>> bryan
+=======
+      </div>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
     </aside>
 
 
@@ -181,12 +201,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row mb-2">
             <div class="col-sm-3">
 <<<<<<< HEAD
+<<<<<<< HEAD
           
 =======
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Inicio</a></li>
               </ol>
 >>>>>>> bryan
+=======
+              <ol class="breadcrumb float-sm-left">
+                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+              </ol>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             </div><!-- /.col -->
             <div class="col-sm-9">
               <h1 class="m-0"></h1>
@@ -203,10 +229,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-sm-12">
             <h1 class="text-center font-weight-bold">
 <<<<<<< HEAD
+<<<<<<< HEAD
               Bienvenido a SG Ganaderia
 =======
               Bienvenido a [nombre del software]
 >>>>>>> bryan
+=======
+              Bienvenido a [nombre del software]
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             </h1>
           </div>
         </div><!-- /.row -->
@@ -214,6 +244,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-sm-6 pt-5 mt-5">
             <div class="narrow-paragraph float-sm-right">
               <p class="texto-inicio text-center">
+<<<<<<< HEAD
 <<<<<<< HEAD
                 En SG Ganaderia, hemos creado una solución de vanguardia diseñada específicamente para la
                 gestión eficiente de tu finca de ganado lechero. Nuestra plataforma integra las últimas tecnologías
@@ -225,6 +256,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 gestión eficiente de tu finca de ganado lechero. Nuestra plataforma integra las últimas tecnologías
                 para brindarte un control total sobre tus operaciones lecheras y maximizar la productividad.
 >>>>>>> bryan
+=======
+                En [Nombre de tu Software], hemos creado una solución de vanguardia diseñada específicamente para la
+                gestión eficiente de tu finca de ganado lechero. Nuestra plataforma integra las últimas tecnologías
+                para brindarte un control total sobre tus operaciones lecheras y maximizar la productividad.
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
               </p>
             </div>
           </div>
@@ -235,9 +271,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
         </div><!-- /.row -->
 <<<<<<< HEAD
+<<<<<<< HEAD
        
         
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
         <div class="row mb-1 pt-2">
           <div class="col-sm-12">
             <h2 class="text-center">
@@ -325,7 +364,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
           </div>
         </div><!-- /.row -->
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
       </div><!-- /.content -->
 
     </div><!-- ./Content Wrapper-->

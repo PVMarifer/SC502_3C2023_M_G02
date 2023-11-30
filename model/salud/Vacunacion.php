@@ -284,6 +284,7 @@ class Vacunacion extends Conexion
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function listarVacunasPuestas()
     {
         $query = "SELECT SUM(cantidad_animales) AS total_vacunas_puestas
@@ -309,6 +310,8 @@ class Vacunacion extends Conexion
 
 =======
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 

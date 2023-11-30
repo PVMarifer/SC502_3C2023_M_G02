@@ -149,9 +149,13 @@ $(document).ready(function() {
       $('#form-agregar').hide();
       $('#form-modificar').show();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       console.log(data)
 >>>>>>> bryan
+=======
+      console.log(data)
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
       $('#XnumeroArete').val(data[1]);
       $('#XfechaDiagnostico').val(data[4]);
       $('#Xsintomas').val(data[5]);

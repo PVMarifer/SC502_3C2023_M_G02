@@ -276,10 +276,14 @@ class EnfermedadAnimal extends Conexion
         $query = "SELECT * FROM enfermedad_animal WHERE enfermedad_animal.id_enfermedad = ( SELECT id_enfermedad FROM enfermedad WHERE nombre_enfermedad = :nombre_enfermedad) AND enfermedad_animal.id_animal = ( SELECT id_animal FROM animal WHERE numero_arete = :numero_arete ) AND fecha_diagnostico = :fecha_diagnostico";
         try {
 <<<<<<< HEAD
+<<<<<<< HEAD
             self::getConexion(); 
 =======
             self::getConexion();
 >>>>>>> bryan
+=======
+            self::getConexion();
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             $resultado = self::$conexion->prepare($query);
             $nombreEnfermedad = $this->getNombreEnfermedad();
             $areteAnimal = $this->getAreteAnimal();
@@ -372,6 +376,7 @@ class EnfermedadAnimal extends Conexion
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function listarEnfermedadesGrafica()
     {
         $query = "SELECT MONTH(fecha_diagnostico) AS mes, COUNT(*) AS cantidad_enfermedades
@@ -397,6 +402,8 @@ class EnfermedadAnimal extends Conexion
 
 =======
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 }
 
 

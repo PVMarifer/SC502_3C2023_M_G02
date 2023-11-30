@@ -378,6 +378,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- REQUIRED SCRIPTS -->
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 </body>
 <!-- CSS styles -->
 
@@ -410,6 +411,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
     <!-- jQuery -->
     <script src="../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -419,6 +422,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </body>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../css/index.css">
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 </html>

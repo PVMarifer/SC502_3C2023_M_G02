@@ -25,6 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
         include '../fragments/nav_menu.php'
             ?>
 
@@ -37,6 +38,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 ?>
         </aside><!--  Main Sidebar  -->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
       include '../fragments/nav_menu.php'
     ?>
 
@@ -88,7 +91,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- /.sidebar-menu -->
             </div>
         </aside>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
         <!-- Content Wrapper. Contains page content -->
@@ -322,10 +328,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <h3 class="card-title">
                                         <i class="far fa-chart-bar"></i>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         Grafico Animales
 =======
                                         Grafico Animales 
 >>>>>>> bryan
+=======
+                                        Grafico Animales 
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                                     </h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -370,15 +380,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         x="1" y="78.5" class="flot-tick-label tickLabel"
                                                         style="position: absolute; text-align: right;">15</text></g>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                             </svg>
                                         </div>
 =======
                                             </svg></div>
 >>>>>>> bryan
+=======
+                                            </svg></div>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                                     </div>
                                 </div>
 
                             </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
                         </div>
                     </div>
@@ -387,6 +402,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 =======
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 
@@ -401,16 +418,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <footer class="main-footer">
             <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
             include '../fragments/footer.php'
                 ?>
 =======
       include '../fragments/footer.php'
         ?>
 >>>>>>> bryan
+=======
+      include '../fragments/footer.php'
+        ?>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
         </footer>
 
     </div><!-- ./wrapper -->
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 </body>
@@ -446,6 +469,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
     <!-- REQUIRED SCRIPTS -->
 
     <!-- jQuery -->
@@ -457,6 +482,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </body>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../css/index.css">
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 </html>

@@ -70,6 +70,7 @@ switch ($_GET['op']) {
     case 'obtener_medicamentos':
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerMedicamentos'])) {
             $medicamentoModel = new Medicamento();
             $medicamentos = $medicamentoModel->listarMedicamentos();
@@ -78,6 +79,11 @@ switch ($_GET['op']) {
             $medicamentoModel = new medicamento();
             $medicamentos = $medicamentoModel->listarmedicamentos();
 >>>>>>> bryan
+=======
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenermedicamentos'])) {
+            $medicamentoModel = new medicamento();
+            $medicamentos = $medicamentoModel->listarmedicamentos();
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             echo json_encode($medicamentos);
         }
 

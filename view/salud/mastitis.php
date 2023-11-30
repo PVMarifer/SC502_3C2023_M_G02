@@ -9,10 +9,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <title>SG GANADERIA| MASTITIS</title>
 =======
   <title>AdminLTE 3 | Starter</title>
 >>>>>>> bryan
+=======
+  <title>AdminLTE 3 | Starter</title>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -22,6 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <!-- Datatable CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
   <!-- Toastr -->
@@ -29,6 +34,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 =======
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 </head>
@@ -37,6 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     <?php
     include '../fragments/nav_menu.php'
@@ -51,6 +59,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         ?>
     </aside><!--  Main Sidebar  -->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
   <?php
       include '../fragments/nav_menu.php'
     ?>
@@ -102,7 +112,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.sidebar-menu -->
       </div>
     </aside>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
     <!-- Content Wrapper. Contains page content -->
@@ -131,6 +144,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container-fluid">
           <div class="row">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div class="col-lg-12">
               <div class="row">
                 <div class="col-lg-4 col-6">
@@ -139,10 +153,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="row">
                 <div class="col-lg-6 col-6">
 >>>>>>> bryan
+=======
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-6 col-6">
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                   <!-- small box -->
                   <div class="small-box text-center text-white " style="background-color:#4CAF50;">
                     <div class="inner">
                       <p>Vacas con Mastitis</p>
+<<<<<<< HEAD
 <<<<<<< HEAD
                       <h3 id="card-vacas-mastitis"></h3>
                     </div>
@@ -173,6 +193,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-lg-12">
               <div class="card p-2" style="overflow-x: scroll;">
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                       <h3>3</h3>
                     </div>
                   </div>
@@ -209,11 +231,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
             <div class="col-lg-4">
               <div class="card">
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                 <div class="card-header border-0">
                   <h3 class="card-title">Vacas con Mastitis el Ultimo mes</h3>
                 </div>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <div class="card-body  p-0">
                   <table class="table table-striped table-valign-middle" id="tablamastitis">
@@ -221,10 +247,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="card-body table-responsive p-0">
                   <table class="table table-striped table-valign-middle">
 >>>>>>> bryan
+=======
+                <div class="card-body table-responsive p-0">
+                  <table class="table table-striped table-valign-middle">
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                     <thead>
                       <tr>
                         <th>Arete</th>
                         <th>Fecha Diagnóstico</th>
+<<<<<<< HEAD
 <<<<<<< HEAD
                         <th>Tipo Tratamiento</th>
                       </tr>
@@ -232,6 +263,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <tbody>
 
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                         <th>Antibiótico Aplicado</th>
                       </tr>
                     </thead>
@@ -255,7 +288,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           Penicilina
                         </td>
                       </tr>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
                     </tbody>
                   </table>
@@ -279,12 +315,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <div class="card-body">
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <canvas class="chart" id="grafico-mastitis"
                     style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
                 <!-- /.card-body -->
 
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                   <canvas class="chart" id="line-chart"
                     style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
@@ -316,11 +355,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- /.row -->
                 </div>
                 <!-- /.card-footer -->
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
               </div>
             </div>
 
           </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         </div>
@@ -377,6 +420,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="../assets/js/mastitis_main.js"></script>
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
           <div class="row">
             <div class="col-12">
               <div class="card">
@@ -463,6 +508,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </body>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 </html>

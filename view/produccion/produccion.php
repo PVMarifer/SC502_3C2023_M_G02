@@ -9,10 +9,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <title>SG GANADERIA | PRODUCCION</title>
 =======
   <title>AdminLTE 3 | Starter</title>
 >>>>>>> bryan
+=======
+  <title>AdminLTE 3 | Starter</title>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -44,10 +48,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
 <<<<<<< HEAD
+<<<<<<< HEAD
           <span class="text-white font-weight-bold">SG GANADERIA</span>
 =======
           <span class="text-white font-weight-bold">Software Ganadero</span>
 >>>>>>> bryan
+=======
+          <span class="text-white font-weight-bold">Software Ganadero</span>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
         </a>
 
         <!-- Sidebar -->
@@ -59,10 +67,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <div class="info">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <a href="#" class="d-block text-white">Juanito Mena Mora</a>
 =======
             <a href="#" class="d-block text-white">Juanito Mora</a>
 >>>>>>> bryan
+=======
+            <a href="#" class="d-block text-white">Juanito Mora</a>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
           </div>
         </div>
 
@@ -406,6 +418,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- REQUIRED SCRIPTS -->
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 </body>
 <!-- CSS styles -->
 
@@ -438,6 +451,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
   <!-- jQuery -->
   <script src="../plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
@@ -447,6 +462,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </body>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../css/index.css">
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 </html>

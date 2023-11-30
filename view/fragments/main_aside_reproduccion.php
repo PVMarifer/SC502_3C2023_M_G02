@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <a href="LandPage.php" class="brand-link">
   <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
     style="opacity: .8">
@@ -19,6 +20,8 @@
   <!-- /.sidebar -->
 =======
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 <!-- /.sidebar menu -->
 <nav class="mt-2">
     <ul class=" nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -27,8 +30,11 @@
         <li class="nav-item">
             <a href="./estado_reproduccion.php" class="nav-link bg-white">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <p>Control de Reproduccion</p>
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                 <p>Estado de Reproduccion</p>
             </a>
         </li>
@@ -37,16 +43,23 @@
             <a href="./Reproduccion.php" class="nav-link bg-white">
 
                 <p>Reproduccion</p>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             </a>
         </li>
         <li class="nav-item">
             <a href="./ingresar_servicio.php" class="nav-link bg-white">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <p>Control de Servicios</p>
 =======
                 <p>Ingresar Servicio</p>
 >>>>>>> bryan
+=======
+                <p>Ingresar Servicio</p>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             </a>
         </li>
         <li class="nav-item">

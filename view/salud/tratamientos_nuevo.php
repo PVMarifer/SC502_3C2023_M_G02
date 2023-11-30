@@ -9,10 +9,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <title>SG GANADERIA | NUEVO TRATAMIENTO</title>
 =======
   <title>AdminLTE 3 | Starter</title>
 >>>>>>> bryan
+=======
+  <title>AdminLTE 3 | Starter</title>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -23,9 +27,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> bryan
+=======
+
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -39,6 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    <!--  Main Sidebar  -->
    <aside class="main-sidebar  elevation-4">    
         <?php
@@ -46,6 +55,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           ?>
     </aside><!--  Main Sidebar  -->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
     <!--  Main Sidebar Container -->
     <aside class="main-sidebar  elevation-4">
       <div class="sidebar">
@@ -91,7 +102,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.sidebar-menu -->
       </div>
     </aside>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
     <!-- Content Wrapper. Contains page content -->

@@ -9,10 +9,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <title>SG GANADERIA | ENFERMEDADES</title>
 =======
   <title>AdminLTE 3 | Starter</title>
 >>>>>>> bryan
+=======
+  <title>AdminLTE 3 | Starter</title>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -21,6 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+<<<<<<< HEAD
 <<<<<<< HEAD
   <!-- Datatable CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
@@ -32,6 +37,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 =======
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 </head>
@@ -45,20 +52,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <?php
     include '../fragments/nav_menu.php'
 <<<<<<< HEAD
+<<<<<<< HEAD
       ?><!--  Main navbar -->
 =======
     ?><!--  Main navbar -->
 >>>>>>> bryan
+=======
+    ?><!--  Main navbar -->
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 
     <!--  Main Sidebar  -->
     <aside class="main-sidebar  elevation-4">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <?php
       include '../fragments/main_aside_enfermedades.php'
         ?>
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
       <div class="sidebar">
         <!--  Fragmento que incluye el logo y la foto del usuario usuario -->
         <?php
@@ -87,7 +101,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
           ?><!-- /.sidebar-menu -->
         
       </div>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
     </aside><!--  Main Sidebar  -->
 
 
@@ -115,6 +132,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!--  Main section -->
       <section class="main-content">
         <div class="container-fluid">
+<<<<<<< HEAD
 <<<<<<< HEAD
           <!-- Tabla -->
           <div class="row mb-5" id="tabla-enfermedades">
@@ -145,6 +163,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- /.tabla -->
 =======
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
           <!-- Formulario Agregar-->
           <div class="row mb-5" id="form-agregar">
@@ -157,15 +177,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- /.card-header -->
                 <!-- form start -->
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <form id="formulario-agregar" method="POST">
 =======
                 <form>
 >>>>>>> bryan
+=======
+                <form>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                   <div class="card-body text-white ">
                     <div class="row">
                       <div class="col-12">
                         <div class="form-group">
                           <label for="">Nombre de la Enfermedad</label>
+<<<<<<< HEAD
 <<<<<<< HEAD
                           <input type="text" class="form-control" name="nombreEnfermedad"
                             placeholder="Ingrese el nombre de la enfermedad" required>
@@ -173,27 +198,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <input type="text" class="form-control" id=""
                             placeholder="Ingrese el nombre de la enfermedad">
 >>>>>>> bryan
+=======
+                          <input type="text" class="form-control" id=""
+                            placeholder="Ingrese el nombre de la enfermedad">
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-group">
                           <label for="">Descripción de la Enfermedad</label>
 <<<<<<< HEAD
+<<<<<<< HEAD
                           <input type="text" class="form-control" name="descripcion"
                             placeholder="Ingrese la descripcion" required>
 =======
                           <input type="text" class="form-control" id="" placeholder="Ingrese la descripcion">
 >>>>>>> bryan
+=======
+                          <input type="text" class="form-control" id="" placeholder="Ingrese la descripcion">
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-group">
                           <label for="">Síntomas</label>
 <<<<<<< HEAD
+<<<<<<< HEAD
                           <input type="text" class="form-control" name="sintomas" placeholder="Ingrese los sintomas" required>
 =======
                           <input type="text" class="form-control" id="" placeholder="Ingrese los sintomas">
 >>>>>>> bryan
+=======
+                          <input type="text" class="form-control" id="" placeholder="Ingrese los sintomas">
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                         </div>
                       </div>
 
@@ -201,12 +238,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="form-group">
                           <label for="">Tratamiento</label>
 <<<<<<< HEAD
+<<<<<<< HEAD
                           <input type="text" class="form-control" name="tratamiento"
                             placeholder="Ingrese aquí el tratamiento" required>
                         </div>
                       </div>
                     </div>
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                           <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
                         </div>
                       </div>
@@ -219,11 +259,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                   </div>
                   <!-- /.card-body -->
 
                   <div class="card-footer text-center">
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <div class="row">
                       <div class="col-6"><button type="submit" class="btn btn-primary btnRegistrar">Guardar</button>
@@ -233,6 +277,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 =======
                     <button type="submit" class="btn btn-primary">Guardar</button>
 >>>>>>> bryan
+=======
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                   </div>
                 </form>
               </div>
@@ -252,14 +299,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- /.card-header -->
                 <!-- form start -->
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <form id="formulario-modificar" method="POST">
 =======
                 <form>
 >>>>>>> bryan
+=======
+                <form>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                   <div class="card-body text-white ">
                     <div class="row">
                       <div class="col-12">
                         <div class="form-group">
+<<<<<<< HEAD
 <<<<<<< HEAD
                           <label for="">Nombre de la Enfermedad</label>
                           <input type="text" class="form-control" name="nombreEnfermedad" id="XnombreEnfermedad"
@@ -275,17 +327,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <label for="">Descripción de la Enfermedad</label>
                           <input type="text" class="form-control" id="" placeholder="Ingrese la descripcion">
 >>>>>>> bryan
+=======
+                          <label for="">Descripción de la Enfermedad</label>
+                          <input type="text" class="form-control" id="" placeholder="Ingrese la descripcion">
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-group">
                           <label for="">Síntomas</label>
 <<<<<<< HEAD
+<<<<<<< HEAD
                           <input type="text" class="form-control" name="sintomas" id="Xsintomas"
                             placeholder="Ingrese los sintomas">
 =======
                           <input type="text" class="form-control" id="" placeholder="Ingrese los sintomas">
 >>>>>>> bryan
+=======
+                          <input type="text" class="form-control" id="" placeholder="Ingrese los sintomas">
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                         </div>
                       </div>
 
@@ -293,11 +353,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="form-group">
                           <label for="">Tratamiento</label>
 <<<<<<< HEAD
+<<<<<<< HEAD
                           <input type="text" class="form-control" name="tratamiento" id="Xtratamiento"
                             placeholder="Ingrese aquí el tratamiento">
 =======
                           <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
 >>>>>>> bryan
+=======
+                          <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                         </div>
                       </div>
                     </div>
@@ -307,6 +371,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- /.card-body -->
 
                   <div class="card-footer text-center">
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <div class="row">
                       <div class="col-6"><button type="submit" class="btn btn-primary">Editar</button></div>
@@ -318,6 +383,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 =======
                     <button type="submit" class="btn btn-primary">Guardar</button>
 >>>>>>> bryan
+=======
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                   </div>
                 </form>
               </div>
@@ -327,12 +395,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- /.formulario-->
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
         </div><!-- /.container-fluid -->
       </section><!--main section-->
 
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
           <!-- Tabla -->
           <div class="row mb-5" id="tabla-enfermedades">
             <div class="col-md-1"></div>
@@ -369,7 +440,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div><!-- /.container-fluid --> 
       </section><!--main section-->
       
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 
@@ -388,6 +462,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -428,6 +503,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="../assets/js/enfermedades.js"></script>
 
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
   <!-- REQUIRED SCRIPTS -->
   <!-- jQuery -->
   <script src="../plugins/jquery/jquery.min.js"></script>
@@ -443,6 +520,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- JD Scripts -->
 <script src="../assets/js/enfermedades_data.js"></script>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 </html>

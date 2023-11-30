@@ -9,10 +9,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <title>SG GANADERIA| NUEVO MASTITIS</title>
 =======
   <title>AdminLTE 3 | Starter</title>
 >>>>>>> bryan
+=======
+  <title>AdminLTE 3 | Starter</title>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -21,6 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+<<<<<<< HEAD
 <<<<<<< HEAD
   <!-- Datatable CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
@@ -31,6 +36,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 =======
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 </head>
@@ -39,6 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     <?php
     include '../fragments/nav_menu.php'
@@ -53,6 +61,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         ?>
     </aside><!--  Main Sidebar  -->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
   <?php
       include '../fragments/nav_menu.php'
     ?>
@@ -104,7 +114,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.sidebar-menu -->
       </div>
     </aside>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
     <!-- Content Wrapper. Contains page content -->
@@ -133,6 +146,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <section class="content">
         <div class="container-fluid">
+<<<<<<< HEAD
 <<<<<<< HEAD
           <!-- Tabla -->
           <div class="row mb-5" id="tabla-mastitis">
@@ -273,6 +287,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       </div>
                     </div>
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
           <div class="row">
             <div class="col-12">
               <div class="card " style="background-color: #3f3ae6;">
@@ -311,13 +327,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <input type="text" class="form-control" id="" placeholder="Ingrese aquí sus observaciones">
                     </div>
 
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
                   </div>
                   <!-- /.card-body -->
 
                   <div class="card-footer text-center">
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <div class="row">
                       <div class="col-6"><button type="submit" class="btn btn-primary">Editar</button></div>
@@ -378,6 +398,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="../assets/js/mastitis.js"></script>
 
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                     <button type="submit" class="btn btn-primary">Guardar</button>
                   </div>
                 </form>
@@ -414,6 +436,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </body>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../css/index.css">
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 </html>

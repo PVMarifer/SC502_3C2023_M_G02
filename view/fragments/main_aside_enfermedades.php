@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <a href="LandPage.php" class="brand-link">
   <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
     style="opacity: .8">
@@ -122,6 +123,8 @@
     </ul>
   </nav>
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 <!-- /.sidebar menu -->
 <nav class="mt-2">
@@ -253,5 +256,9 @@
     </li>
     
   </ul>
+<<<<<<< HEAD
 </nav>
 >>>>>>> bryan
+=======
+</nav>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd

@@ -9,10 +9,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <title>SG GANADERIA | REGISTRO MEDICAMENTO</title>
 =======
   <title>AdminLTE 3 | Starter</title>
 >>>>>>> bryan
+=======
+  <title>AdminLTE 3 | Starter</title>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -21,6 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+<<<<<<< HEAD
 <<<<<<< HEAD
   <!-- Select2 -->
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -32,6 +37,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 =======
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 </head>
@@ -40,6 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     <?php
     include '../fragments/nav_menu.php'
@@ -53,6 +61,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         ?>
     </aside><!--  Main Sidebar  -->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
   <?php
       include '../fragments/nav_menu.php'
     ?>
@@ -104,7 +114,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.sidebar-menu -->
       </div>
     </aside>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
     <!-- Content Wrapper. Contains page content -->
@@ -130,6 +143,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <section class="content">
         <div class="container-fluid">
+<<<<<<< HEAD
 <<<<<<< HEAD
 
           <!-- Tabla -->
@@ -377,6 +391,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <!-- /.row -->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
           <div class="row">
 
             <!-- /.card -->
@@ -431,11 +447,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
     <!-- /.row -->
     </section>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
       </section>
 
@@ -480,6 +500,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
   </div><!-- ./Content Wrapper-->
 
 
@@ -504,6 +526,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </body>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../css/index.css">
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 </html>

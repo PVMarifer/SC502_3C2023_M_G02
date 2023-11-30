@@ -156,9 +156,13 @@ class servicio extends Conexion
                 $servicio->setIdPrefijo($id_personalizado);
                 $servicio->setIdAnimalVaca($encontrado["id_animal"]);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 $servicio->setIdAnimalToro($encontrado["id_animal"]);
 >>>>>>> bryan
+=======
+                $servicio->setIdAnimalToro($encontrado["id_animal"]);
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                 $servicio->setFechaDiagnostico($encontrado["fecha_servicio"]);
                 $servicio->setTipoServicio($encontrado["tipo_servicio"]);
                 $servicio->setIdCelo($encontrado["id_celo"]);
@@ -182,9 +186,13 @@ class servicio extends Conexion
         self::getConexion();
         $id_vaca = $this->getIdAnimalVaca();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         $id_toro = $this->getIdAnimalToro();
 >>>>>>> bryan
+=======
+        $id_toro = $this->getIdAnimalToro();
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
         $fecha_servicio = $this->getFechaDiagnostico();
         $tipo_servicio = $this->getTipoServicio();
         $id_celo = $this->getIdCelo();
@@ -194,9 +202,13 @@ class servicio extends Conexion
         $resultado->bindParam(":id_celo", $id_vaca, PDO::PARAM_STR);
         $resultado->bindParam(":id_animal", $id_vaca, PDO::PARAM_STR);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         $resultado->bindParam(":id_animal", $id_toro, PDO::PARAM_STR);
 >>>>>>> bryan
+=======
+        $resultado->bindParam(":id_animal", $id_toro, PDO::PARAM_STR);
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
         $resultado->bindParam(":fecha_servicio", $fecha_servicio, PDO::PARAM_STR);
         $resultado->bindParam(":tipo_servicio", $tipo_servicio, PDO::PARAM_STR);
         $resultado->bindParam(":id_celo", $id_celo, PDO::PARAM_STR);
@@ -219,9 +231,13 @@ class servicio extends Conexion
             $resultado = self::$conexion->prepare($query);
             $idAnimalVaca = $this->getIdAnimalVaca();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             $idAnimalToro = $this->getIdAnimalToro();
 >>>>>>> bryan
+=======
+            $idAnimalToro = $this->getIdAnimalToro();
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             $fechaDiagnostico = $this->getFechaDiagnostico();
             $resultado->bindParam(":id_animal", $idAnimalVaca, PDO::PARAM_STR);
             $resultado->bindParam(":id_animal", $idAnimalToro, PDO::PARAM_STR);

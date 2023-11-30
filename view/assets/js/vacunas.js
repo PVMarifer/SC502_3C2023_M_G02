@@ -53,10 +53,14 @@ $('#formulario-agregar').on('submit', function (event) {
     type: 'POST',
     data: formData,
 <<<<<<< HEAD
+<<<<<<< HEAD
     contentType: false,  
 =======
     contentType: false,
 >>>>>>> bryan
+=======
+    contentType: false,
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
     processData: false,
     success: function (datos) {
       switch (datos) {

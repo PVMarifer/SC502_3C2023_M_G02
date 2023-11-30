@@ -40,16 +40,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
         include '../fragments/nav_menu.php'
             ?>
 =======
     include '../fragments/nav_menu.php'
       ?>
 >>>>>>> bryan
+=======
+    include '../fragments/nav_menu.php'
+      ?>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
         <!--  Main Sidebar  -->
         <aside class="main-sidebar  elevation-4">
             <?php
+<<<<<<< HEAD
 <<<<<<< HEAD
             include '../fragments/main_aside_reproduccion.php'
                 ?>
@@ -57,6 +63,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
       include '../fragments/main_aside_reproduccion.php'
         ?>
 >>>>>>> bryan
+=======
+      include '../fragments/main_aside_reproduccion.php'
+        ?>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
         </aside><!--  Main Sidebar  -->
 
 
@@ -114,8 +124,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <!-- /.form-group -->
                                             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label for="">Numero toro</label>
@@ -128,7 +141,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 </div>
                                                 <!-- /.form-group -->
                                             </div>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label for="">Fecha de servicio</label>
@@ -148,8 +164,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 </div>
                                             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label for="">Numero toro</label>
@@ -162,7 +181,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 </div>
                                                 <!-- /.form-group -->
                                             </div>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="">Observaciones</label>
@@ -173,6 +195,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             </div>
                                         </div>
                                     </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
                                     <div class="card-footer text-center">
                                         <div class="row">
@@ -242,6 +265,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 ?>
         </footer>
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -308,7 +333,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
       include '../fragments/footer.php'
         ?>
     </footer>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
     </div><!-- ./wrapper -->
 

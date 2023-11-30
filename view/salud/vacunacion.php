@@ -9,10 +9,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <title>SG GANADERIA| GANADERIA</title>
 =======
   <title>AdminLTE 3 | Starter</title>
 >>>>>>> bryan
+=======
+  <title>AdminLTE 3 | Starter</title>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -21,6 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+<<<<<<< HEAD
 <<<<<<< HEAD
   <!-- Datatable CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
@@ -31,6 +36,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 =======
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 </head>
@@ -38,6 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     <?php
     include '../fragments/nav_menu.php'
@@ -55,6 +63,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="bg-white content-wrapper">
       <!-- Content Header-->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
   <?php
       include '../fragments/nav_menu.php'
@@ -112,7 +122,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Wrapper. Contains page content -->
     <div class="bg-white content-wrapper">
       <!-- Content Header (Page header) -->
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
@@ -120,10 +133,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <li class="breadcrumb-item Active"><a href="#">Vacunacion</a></li>
 =======
                 <li class="breadcrumb-item active">Vacunación</li>
 >>>>>>> bryan
+=======
+                <li class="breadcrumb-item active">Vacunación</li>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
               </ol>
             </div>
             <div class="col-sm-6">
@@ -134,22 +151,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div><!-- /.content-header -->
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-5">
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
       <section class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-7">
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
               <div class="row">
                 <div class="col-6">
                   <!-- small box -->
                   <div class="small-box text-center text-white " style="background-color:#4CAF50;">
                     <div class="inner">
+<<<<<<< HEAD
 <<<<<<< HEAD
                       <p>Animales <br>
                         Vacunados</p>
@@ -158,6 +182,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <p>Animales Vacunados</p>
                       <h3>100</h3>
 >>>>>>> bryan
+=======
+                      <p>Animales Vacunados</p>
+                      <h3>100</h3>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                     </div>
                   </div>
                 </div>
@@ -167,12 +195,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="small-box text-center text-white" style="background-color:#4CAF50;">
                     <div class="inner">
 <<<<<<< HEAD
+<<<<<<< HEAD
                       <p>Total de Vacunas Aplicadas</p>
                       <h3 id="card-vacunas-aplicadas"></h3>
 =======
                       <p>Animales sin Vacunar</p>
                       <h3>30</h3>
 >>>>>>> bryan
+=======
+                      <p>Animales sin Vacunar</p>
+                      <h3>30</h3>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                     </div>
                   </div>
                 </div>
@@ -180,6 +213,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
 
               <div class="col-lg-12">
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <div class="card p-2" style="height: 370px; overflow-y:scroll ;">
                   <div class="card-header border-0">
@@ -201,6 +235,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </table>
                   </div>
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                 <div class="card">
                   <div class="card-header">
                     <h3 class="card-title">Registro de Aninales sin Vacunar</h3>
@@ -255,12 +291,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </table>
                   </div>
                   <!-- /.card-body -->
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                 </div>
                 <!-- /.card -->
               </div>
             </div>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
             <div class="col-lg-7 col-6">
 
@@ -284,6 +324,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <!-- /.card-body -->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             <div class="col-lg-5 col-6">
               <div class="card">
                 <div class="card-header border-0">
@@ -328,7 +370,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </tbody>
                   </table>
                 </div>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
               </div>
             </div>
             <!-- ./col -->
@@ -336,12 +381,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- /.row -->
 
 <<<<<<< HEAD
+<<<<<<< HEAD
           
       </section>
       <!-- /.content -->
 
 
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
           <div class="row ">
             <div class="col-12">
               <div class="card">
@@ -426,7 +474,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- /.row -->
           </div>
       </section>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 
@@ -444,6 +495,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   </div><!-- ./wrapper -->
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 </body>
@@ -471,6 +523,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- JD Scripts -->
 <script src="../assets/js/vacunas_main.js"></script>
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
   <!-- REQUIRED SCRIPTS -->
 
   <!-- jQuery -->
@@ -482,6 +536,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </body>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../css/assets/index.css">
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 </html>

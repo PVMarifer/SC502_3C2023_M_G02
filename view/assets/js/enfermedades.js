@@ -127,10 +127,14 @@ $('#tablalistado tbody').on(
               break;
             case '2':
 <<<<<<< HEAD
+<<<<<<< HEAD
               toastr.error('Error al guardar los datos');
 =======
               toastr.error('Error: Correo no pertenece al usuario.');
 >>>>>>> bryan
+=======
+              toastr.error('Error: Correo no pertenece al usuario.');
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
               break;
           }
         },

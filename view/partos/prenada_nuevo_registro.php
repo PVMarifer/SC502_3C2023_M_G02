@@ -9,21 +9,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <title>SG GANADERIA| NUEVO PREÑO</title>
 
    <!-- Google Font: Source Sans Pro -->
    <link rel="stylesheet"
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
   <title>AdminLTE 3 | Starter</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+<<<<<<< HEAD
 <<<<<<< HEAD
   <!-- Datatable CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
@@ -31,6 +38,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 =======
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 </head>
@@ -38,6 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     <?php
     include '../fragments/nav_menu.php'
@@ -55,6 +65,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="bg-white content-wrapper">
       <!-- Content Header-->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
   <?php
       include '../fragments/nav_menu.php'
@@ -112,7 +124,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Wrapper. Contains page content -->
     <div class="bg-white content-wrapper">
       <!-- Content Header (Page header) -->
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
@@ -120,12 +135,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <li class="breadcrumb-item "><a href="#">Control de Partos</a></li>
                 <li class="breadcrumb-item Active"><a href="#">Añadir Preño</a></li>
 =======
                 <li class="breadcrumb-item"><a href="#">Preños</a></li>
                 <li class="breadcrumb-item active">Registrar Animal Parto</li>
 >>>>>>> bryan
+=======
+                <li class="breadcrumb-item"><a href="#">Preños</a></li>
+                <li class="breadcrumb-item active">Registrar Animal Parto</li>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
               </ol>
             </div>
             <div class="col-sm-6">
@@ -135,6 +155,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div><!-- /.container-fluid -->
       </div><!-- /.content-header -->
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   
       <!-- Main content -->
@@ -274,6 +295,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </section>
       <!-- /.content -->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
       <section class="content">
         <div class="container-fluid">
 
@@ -373,7 +396,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         </div>
       </section>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 
@@ -391,6 +417,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   </div><!-- ./wrapper -->
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 </body>
@@ -414,6 +441,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- JD Scripts -->
 <script src="../assets/js/vacunas.js"></script>
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
   <!-- REQUIRED SCRIPTS -->
 
   <!-- jQuery -->
@@ -425,6 +454,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </body>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../css/index.css">
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 </html>

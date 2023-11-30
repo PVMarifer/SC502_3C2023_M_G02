@@ -9,10 +9,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <title>SG GANADERIA | TRATAMIENTOS</title>
 =======
   <title>AdminLTE 3 | Starter</title>
 >>>>>>> bryan
+=======
+  <title>AdminLTE 3 | Starter</title>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -22,6 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <!-- Datatable CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
   <!-- Toastr -->
@@ -29,6 +34,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 =======
 
 >>>>>>> bryan
+=======
+
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 </head>
 
@@ -36,6 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     <?php
     include '../fragments/nav_menu.php'
@@ -53,6 +62,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Main content-->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
   <?php
       include '../fragments/nav_menu.php'
     ?>
@@ -107,7 +118,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
     <!-- Content Wrapper. Contains page content -->
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
     <div class="bg-white content-wrapper">
       <!-- Content Header (Page header) -->
       <div class="content-header">
@@ -128,6 +142,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <section class="content">
         <div class="container-fluid">
+<<<<<<< HEAD
 <<<<<<< HEAD
 
           <!-- /.Formulario agregar-->
@@ -278,6 +293,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 =======
           <div class="row">
 >>>>>>> bryan
+=======
+          <div class="row">
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             <div class="col-12">
               <div class="card">
                 <div class="card-header border-0">
@@ -297,10 +315,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <th>Dosis</th>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
                         
 >>>>>>> bryan
+=======
+                        
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                       </tr>
                     </thead>
                     <tbody>
@@ -318,10 +340,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <td>
                           Penisilina
 <<<<<<< HEAD
+<<<<<<< HEAD
                         </td>
 =======
                         </td>            
 >>>>>>> bryan
+=======
+                        </td>            
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                         <td>
                           04/08/23
                         </td>
@@ -346,10 +372,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <td>
                           Berenil
 <<<<<<< HEAD
+<<<<<<< HEAD
                         </td>
 =======
                         </td>            
 >>>>>>> bryan
+=======
+                        </td>            
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                         <td>
                           09/10/23
                         </td>
@@ -366,6 +396,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
           </div><!-- /row -->
 
 
@@ -374,6 +405,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </section>
     </div><!-- ./main content-->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
           </div>
         </div>
       </section>
@@ -381,7 +414,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
     </div><!-- ./Content Wrapper-->
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 
@@ -394,6 +430,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   </div><!-- ./wrapper -->
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 </body>
@@ -416,6 +453,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- CSS styles -->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
   <!-- REQUIRED SCRIPTS -->
 
   <!-- jQuery -->
@@ -426,7 +465,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="../dist/js/adminlte.min.js"></script>
 </body>
 <!-- CSS styles -->
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 <link rel="stylesheet" href="../assets/css/index.css">
 
 </html>

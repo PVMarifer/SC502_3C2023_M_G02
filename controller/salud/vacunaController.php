@@ -72,6 +72,7 @@ switch ($_GET['op']) {
         $descripcion = isset($_POST["descripcion"]) ? trim($_POST["descripcion"]) : "";
         $fechaVencimiento = isset($_POST["fechaVencimiento"]) ? trim($_POST["fechaVencimiento"]) : "";
 <<<<<<< HEAD
+<<<<<<< HEAD
         $lote = isset($_POST["lote"]) ? trim($_POST["lote"]) : "";
         $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";
         $casaDistribuidora = isset($_POST["casaDistribuidora"]) ? trim($_POST["casaDistribuidora"]) : "";
@@ -80,16 +81,25 @@ switch ($_GET['op']) {
         $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";  
         $casaDistribuidora = isset($_POST["casaDistribuidora"]) ? trim($_POST["casaDistribuidora"]) : ""; 
 >>>>>>> bryan
+=======
+        $lote = isset($_POST["lote"]) ? trim($_POST["lote"]) : "";   
+        $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";  
+        $casaDistribuidora = isset($_POST["casaDistribuidora"]) ? trim($_POST["casaDistribuidora"]) : ""; 
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
         $vacuna = new Vacuna();
         $vacuna->setNombreVacuna($nombreVacuna);
         $vacuna->setCasaDistribuidora($casaDistribuidora);
         $encontrado = $vacuna->verificarExistenciaDb();
         if ($encontrado == true) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
 >>>>>>> bryan
+=======
+            
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             //$usuario->llenarCampos($id); 
             //$modulo->setNombre($nombreModif);
             $vacuna->setNombreVacuna($nombreVacuna);
@@ -109,6 +119,7 @@ switch ($_GET['op']) {
         }
         break;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     case 'obtener_vacunas':
 
@@ -144,6 +155,8 @@ switch ($_GET['op']) {
 
 
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
         case 'obtener_vacunas':
             
             if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacunas'])) {
@@ -151,7 +164,10 @@ switch ($_GET['op']) {
                 $vacunas = $vacunaModel->listarVacunas();
                 echo json_encode($vacunas);
             }
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 

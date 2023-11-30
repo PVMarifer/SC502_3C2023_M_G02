@@ -32,9 +32,13 @@ switch ($_GET['op']) {
     case 'insertar':
         $nombreEnfermedad = isset($_POST["nombreEnfermedad"]) ? trim($_POST["nombreEnfermedad"]) : "";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         echo $nombreEnfermedad;
 >>>>>>> bryan
+=======
+        echo $nombreEnfermedad;
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
         $descripcion = isset($_POST["descripcion"]) ? trim($_POST["descripcion"]) : "";
         $sintomas = isset($_POST["sintomas"]) ? trim($_POST["sintomas"]) : "";
         $tratamiento = isset($_POST["tratamiento"]) ? trim($_POST["tratamiento"]) : "";

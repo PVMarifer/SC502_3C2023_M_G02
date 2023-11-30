@@ -17,10 +17,14 @@ switch ($_GET['op']) {
                 "4" => $vacunacion->getDosisAplicada(),
                 "5" => $vacunacion->getCantidadAnimales(),
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
                
 >>>>>>> bryan
+=======
+               
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             );
         }
         $resultados = array(
@@ -45,6 +49,7 @@ switch ($_GET['op']) {
 
         //obtenemos la cantidad de animales
 <<<<<<< HEAD
+<<<<<<< HEAD
         $contador = 0;
         foreach ($animalesVacunados as $animal) {
 
@@ -52,13 +57,18 @@ switch ($_GET['op']) {
         }
 
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
         $contador =0;
         foreach($animalesVacunados as $animal){
            
             $contador++;
         }
      
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
         $cantidadAnimales = $contador;
 
 
@@ -73,6 +83,7 @@ switch ($_GET['op']) {
         if ($vacunacion->verificarExistenciaDb()) {
             //obtener id de lo que acabamos de insertar en al db
 <<<<<<< HEAD
+<<<<<<< HEAD
             $idVacunacion = $vacunacion->obtenerId();
             $vacunacion->setIdVacunacion($idVacunacion);
             foreach ($animalesVacunados as $animal) {
@@ -81,6 +92,8 @@ switch ($_GET['op']) {
 
 
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             $idVacunacion=$vacunacion->obtenerId();
             $vacunacion->setIdVacunacion($idVacunacion);
             foreach($animalesVacunados as $animal){
@@ -88,7 +101,10 @@ switch ($_GET['op']) {
             }
          
             
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             echo 1; // se guardo exitosamente
         } else {
             echo 2; //problema con guardar
@@ -96,6 +112,7 @@ switch ($_GET['op']) {
 
         break;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     case 'listar_animales_vacunados':
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerAnimalesVacunados'])) {
@@ -122,6 +139,9 @@ switch ($_GET['op']) {
 =======
  
 >>>>>>> bryan
+=======
+ 
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 

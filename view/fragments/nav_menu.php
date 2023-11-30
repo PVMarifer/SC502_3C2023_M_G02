@@ -13,9 +13,13 @@
     <li class="nav-item-menu nav-item d-none d-md-inline-block">
       <a href="../salud/salud.php" class="nav-link-menu nav-link">Salud</a>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     </li>
 >>>>>>> bryan
+=======
+    </li>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
     <li class="nav-item-menu nav-item d-none d-md-inline-block">
       <a href="../produccion/produccion.php" class="nav-link-menu nav-link">Produccion</a>
     </li>
@@ -27,16 +31,23 @@
     </li>
     <li class="nav-item-menu nav-item d-none d-md-inline-block">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <a href="../partos/controlPartos.php" class=" nav-link-menu nav-link">Control de Partos</a>
 =======
       <a href="../partos/partos.php" class=" nav-link-menu nav-link">Control de Partos</a>
 >>>>>>> bryan
+=======
+      <a href="../partos/partos.php" class=" nav-link-menu nav-link">Control de Partos</a>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
     </li>
   </ul>
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
     <!-- Navbar Search -->
     <li class="nav-item">
       <a class="nav-link" data-widget="navbar-search" href="#" role="button">
@@ -58,7 +69,10 @@
         </form>
       </div>
     </li>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
     <!-- Notifications Dropdown Menu -->

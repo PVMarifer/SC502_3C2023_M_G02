@@ -9,10 +9,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <title>SG GANADERIA| MEDICAMENTOS</title>
 =======
   <title>AdminLTE 3 | Starter</title>
 >>>>>>> bryan
+=======
+  <title>AdminLTE 3 | Starter</title>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -30,6 +34,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     <?php
     include '../fragments/nav_menu.php'
       ?>
@@ -42,6 +47,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         ?>
     </aside><!--  Main Sidebar  -->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
   <?php
       include '../fragments/nav_menu.php'
     ?>
@@ -92,7 +99,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.sidebar-menu -->
       </div>
     </aside>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
     <!-- Content Wrapper. Contains page content -->
@@ -117,9 +127,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <section class="content">
         <div class="container-fluid">
 <<<<<<< HEAD
+<<<<<<< HEAD
           
 =======
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
           <div class="row">
             <div class="col-lg-12">
               <div class="row">
@@ -214,11 +227,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
           </div>
           <div class="row">
 =======
 
 >>>>>>> bryan
+=======
+
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             <div class="col-12">
               <div class="card">
                 <div class="card-header">

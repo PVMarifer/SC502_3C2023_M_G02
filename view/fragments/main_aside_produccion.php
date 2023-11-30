@@ -1,8 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 <!-- /.sidebar menu -->
 <nav class="mt-2">
   <ul class=" nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -31,7 +34,11 @@
 
   </ul>
 <<<<<<< HEAD
+<<<<<<< HEAD
 </nav>
 =======
 </nav>
 >>>>>>> bryan
+=======
+</nav>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd

@@ -12,19 +12,25 @@ switch ($_GET['op']) {
                 "0" => $registro->getIdPrefijo(),
                 "1" => $registro->getIdAnimalVaca(),
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "2" => $registro->getFechaDiagnostico(),
                 "3" => $registro->getTipoServicio(),
                 "4" => $registro->getIdCelo(),
                 "5" => $registro->getObservaciones(),
                 "6" =>'<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdServicio() . '\')">Eliminar</button>'
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                 "2" => $registro->getIdAnimalToro(),
                 "3" => $registro->getFechaDiagnostico(),
                 "4" => $registro->getTipoServicio(),
                 "6" => $registro->getIdCelo(),
                 "7" => $registro->getObservaciones(),
                 "8" =>'<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdServicio() . '\')">Eliminar</button>'
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
             );
         }
         $resultados = array(
@@ -42,10 +48,15 @@ switch ($_GET['op']) {
     case 'insert':
         $idAnimalVaca = isset($_POST["id_animal"]) ? trim($_POST["id_animal"]) : "";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         $idAnimalToro = isset($_POST["id_animal"]) ? trim($_POST["id_animal"]) : "";
 
 >>>>>>> bryan
+=======
+        $idAnimalToro = isset($_POST["id_animal"]) ? trim($_POST["id_animal"]) : "";
+
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
         $fechaDiagnostico = isset($_POST["fecha_servicio"]) ? trim($_POST["fecha_servicio"]) : "";
         $tipoServicio = isset($_POST["tipo_servicio"]) ? trim($_POST["tipo_servicio"]) : "";
         $idCelo = isset($_POST["id_celo"]) ? trim($_POST["id_celo"]) : "";
@@ -54,10 +65,15 @@ switch ($_GET['op']) {
         $servio = new servicio();
         $servicio->setIdAnimalVaca($idAnimalVaca);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         $servicio->setIdAnimalToro($idAnimalToro);
 
 >>>>>>> bryan
+=======
+        $servicio->setIdAnimalToro($idAnimalToro);
+
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
         $servicio->setFechaDiagnostico($fechaDiagnostico);
         $encontrado = $servicio->verificarExistenciaDb();
         if ($encontrado == false) {

@@ -9,10 +9,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <title>SG GANADERIA| PREÑOS</title>
 =======
   <title>AdminLTE 3 | Starter</title>
 >>>>>>> bryan
+=======
+  <title>AdminLTE 3 | Starter</title>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -33,6 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       include '../fragments/nav_menu.php'
     ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!--  Main Sidebar  -->
 <aside class="main-sidebar  elevation-4">    
         <?php
@@ -40,6 +45,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           ?>
     </aside><!--  Main Sidebar  -->
 =======
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
 
@@ -88,7 +95,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.sidebar-menu -->
       </div>
     </aside>
+<<<<<<< HEAD
 >>>>>>> bryan
+=======
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 
     <!-- Content Wrapper. Contains page content -->
@@ -100,12 +110,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-left">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <li class="breadcrumb-item"><a href="partos.php">Home</a></li>
                 <li class="breadcrumb-item active">Control de Preños</li>
 =======
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item active">Control de Partos</li>
 >>>>>>> bryan
+=======
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Control de Partos</li>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
               </ol>
             </div>
             <div class="col-sm-6">
@@ -125,12 +140,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="small-box text-center text-white " style="background-color:#4CAF50;">
                     <div class="inner">
 <<<<<<< HEAD
+<<<<<<< HEAD
                       <p>Preños realizados</p>
                       <h3>5</h3>
 =======
                       <p>Partos realizados</p>
                       <h3>45</h3>
 >>>>>>> bryan
+=======
+                      <p>Partos realizados</p>
+                      <h3>45</h3>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                     </div>
                   </div>
                 </div>
@@ -204,10 +224,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="card">
                 <div class="card-header border-0">
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <h3 class="card-title">Preños Registrados</h3>
 =======
                   <h3 class="card-title">Partos Registrados</h3>
 >>>>>>> bryan
+=======
+                  <h3 class="card-title">Partos Registrados</h3>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                 </div>
                 <div class="card-body table-responsive p-0">
                   <table class="table table-striped table-valign-middle">
@@ -217,10 +241,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <th>Nombre Vaca</th>
                         <th>Número Arete cría</th>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <th>Fecha preño</th>
 =======
                         <th>Fecha Nacimiento</th>
 >>>>>>> bryan
+=======
+                        <th>Fecha Nacimiento</th>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                       </tr>
                     </thead>
                     <tbody>
@@ -263,10 +291,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="card">
                 <div class="card-header">
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <h3 class="card-title">Registro de Aninales preñadas</h3>
 =======
                   <h3 class="card-title">Registro de Aninales Vacunadas</h3>
 >>>>>>> bryan
+=======
+                  <h3 class="card-title">Registro de Aninales Vacunadas</h3>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -277,10 +309,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <th>Nombre</th>
                           <th>Edad</th>
 <<<<<<< HEAD
+<<<<<<< HEAD
                           <th>Fecha del preño</th>
 =======
                           <th>Fecha del parto</th>
 >>>>>>> bryan
+=======
+                          <th>Fecha del parto</th>
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
                         </tr>
                       </thead>
@@ -344,9 +380,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </body>
 <!-- CSS styles -->
 <<<<<<< HEAD
+<<<<<<< HEAD
 <link rel="stylesheet" href="../assets/css/index.css">="stylesheet" href="../css/index.css">
 =======
 <link rel="stylesheet" href="../css/index.css">
 >>>>>>> bryan
+=======
+<link rel="stylesheet" href="../css/index.css">
+>>>>>>> 1fc1d5a0a69493ab3dabdd5eb1dd35d35ab236fd
 
 </html>
