@@ -23,19 +23,12 @@
                with font-awesome or any other icon font library -->
         <li class="nav-item">
             <a href="./estado_reproduccion.php" class="nav-link bg-white">
-                <p>Estado de Reproduccion</p>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a href="./Reproduccion.php" class="nav-link bg-white">
-
-                <p>Reproduccion</p>
+                <p>Control de Reproduccion</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="./ingresar_servicio.php" class="nav-link bg-white">
-                <p>Ingresar Servicio</p>
+                <p>Control de Servicios</p>
             </a>
         </li>
         <li class="nav-item">
