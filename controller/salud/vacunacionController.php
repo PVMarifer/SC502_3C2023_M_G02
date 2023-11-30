@@ -16,7 +16,7 @@ switch ($_GET['op']) {
                 "3" => $vacunacion->getFechaVacunacion(),
                 "4" => $vacunacion->getDosisAplicada(),
                 "5" => $vacunacion->getCantidadAnimales(),
-               
+
             );
         }
         $resultados = array(
@@ -40,12 +40,12 @@ switch ($_GET['op']) {
         $animalesVacunados = isset($_POST["animalesVacunados"]) ? $_POST["animalesVacunados"] : "";
 
         //obtenemos la cantidad de animales
-        $contador =0;
-        foreach($animalesVacunados as $animal){
-           
+        $contador = 0;
+        foreach ($animalesVacunados as $animal) {
+
             $contador++;
         }
-     
+
         $cantidadAnimales = $contador;
 
 
@@ -59,13 +59,13 @@ switch ($_GET['op']) {
         $vacunacion->guardarEnDb();
         if ($vacunacion->verificarExistenciaDb()) {
             //obtener id de lo que acabamos de insertar en al db
-            $idVacunacion=$vacunacion->obtenerId();
+            $idVacunacion = $vacunacion->obtenerId();
             $vacunacion->setIdVacunacion($idVacunacion);
-            foreach($animalesVacunados as $animal){
+            foreach ($animalesVacunados as $animal) {
                 $vacunacion->guardarVacunacionAnimal($animal);
             }
-         
-            
+
+
             echo 1; // se guardo exitosamente
         } else {
             echo 2; //problema con guardar
@@ -73,7 +73,28 @@ switch ($_GET['op']) {
 
         break;
 
- 
+    case 'listar_animales_vacunados':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerAnimalesVacunados'])) {
+            $vacunacion = new Vacunacion();
+            $vacunaciones = $vacunacion->listarDB();
+            $contador = 0;
+            $datos = array();
+            foreach ($vacunaciones as $registro) {
+                $contador += 1;
+            }
+            echo ($contador);
+        }
+
+    case 'obtener_vacunas_puestas':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacunasPuestas'])) {
+            $vacunacion = new Vacunacion();
+            $vacunaciones = $vacunacion->listarVacunasPuestas();
+           
+         
+            echo ($vacunaciones);
+        }
+
+
 
 
 

@@ -7,7 +7,7 @@ class Animal extends Conexion
     //Atributos
     protected static $conexion;
 
-    private $idAnimal =null;
+    private $idAnimal = null;
 
     private $nombre = null;
 
@@ -26,6 +26,8 @@ class Animal extends Conexion
     private $aretePadre = null;
 
     private $estado = null;
+
+    private $vacunasAplicadas = array();
 
     //constructores
     public function __construct()
@@ -53,7 +55,7 @@ class Animal extends Conexion
     }
     public function getNumeroArete()
     {
-        return $this-> numeroArete;
+        return $this->numeroArete;
     }
     public function setNumeroArete($numeroArete)
     {
@@ -117,6 +119,15 @@ class Animal extends Conexion
     }
 
 
+    public function getVacunasAplicadas()
+    {
+        return $this->vacunasAplicadas;
+    }
+    public function setVacunasAplicadas($vacunasAplicadas)
+    {
+        $this->vacunasAplicadas = $vacunasAplicadas;
+    }
+
 
     //Metodos de la clase
 
@@ -133,7 +144,8 @@ class Animal extends Conexion
 
 
     //funcion para sacar a todos los de la db
-    public function listarDB(){
+    public function listarDB()
+    {
         $query = "SELECT * FROM animal";
         $lista = array();
         try {
@@ -144,24 +156,26 @@ class Animal extends Conexion
             foreach ($resultado->fetchAll() as $encontrado) {
                 $animal = new Animal();
 
-                $animal ->setNumeroArete($encontrado["numero_arete"]);
-                $animal ->setNombre($encontrado["nombre"]);
-                $animal ->setFechaNacimiento($encontrado["fecha_nacimiento"]);
-                $animal ->setRaza($encontrado["raza"]);
-                $animal ->setPeso($encontrado["peso"]);
-                $animal ->setCaracteristicas($encontrado["colores_caracteristicas"]);
-                $animal ->setAreteMadre($encontrado["id_madre"]);
-                $animal ->setAretePadre($encontrado["id_padre"]);
+                $animal->setNumeroArete($encontrado["numero_arete"]);
+                $animal->setNombre($encontrado["nombre"]);
+                $animal->setFechaNacimiento($encontrado["fecha_nacimiento"]);
+                $animal->setRaza($encontrado["raza"]);
+                $animal->setPeso($encontrado["peso"]);
+                $animal->setCaracteristicas($encontrado["colores_caracteristicas"]);
+                $animal->setAreteMadre($encontrado["id_madre"]);
+                $animal->setAretePadre($encontrado["id_padre"]);
                 $lista[] = $animal;
             }
             return $lista;
         } catch (PDOException $Exception) {
             self::desconectar();
-            $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
             return json_encode($error);
         }
     }
-    public function listarAnimales(){
+    public function listarAnimales()
+    {
         $query = "SELECT id_animal, numero_arete FROM animal";
         try {
             self::getConexion();
@@ -170,7 +184,36 @@ class Animal extends Conexion
             return $resultado->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $Exception) {
             self::desconectar();
-            $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
+    }
+
+    public function listarNoVacunados()
+    {
+        $query = "SELECT a.*
+        FROM animal a
+        LEFT JOIN vacunacion_animal v ON a.id_animal = v.id_animal
+        WHERE v.id_vacunacion IS NULL";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            foreach ($resultado->fetchAll() as $encontrado) {
+                $animal = new Animal();
+                $animal->setNumeroArete($encontrado["numero_arete"]);
+                $animal->setNombre($encontrado["nombre"]);
+                $animal->setFechaNacimiento($encontrado["fecha_nacimiento"]);
+                $animal->setPeso($encontrado["peso"]);
+                $lista[] = $animal;
+            }
+            return $lista;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
             return json_encode($error);
         }
     }

@@ -37,6 +37,34 @@ switch ($_GET['op']) {
             $animales = $animalModel->listarAnimales();
             echo json_encode($animales);
         }
+        break;
+
+    case 'listar_animales_no_vacunados':
+        $animal_db = new Animal();
+        $animales = $animal_db->listarNoVacunados();
+        $datos = array();
+        foreach ($animales as $animal) {
+            $datos[] = array(
+                "0" => $animal->getNumeroArete(),
+                "1" => $animal->getNombre(),
+                "2" => $animal->getPeso(),
+                "3" => $animal->getFechaNacimiento()
+            );
+        }
+        $resultados = array(
+            "sEcho" => 1,
+            ##informacion para datatables
+            "iTotalRecords" => count($datos),
+            ## total de registros al datatable
+            "iTotalDisplayRecords" => count($datos),
+            ## enviamos el total de registros a visualizar
+            "aaData" => $datos
+        );
+        echo json_encode($resultados);
+        break;
+
+   
+
 }
 
 ?>

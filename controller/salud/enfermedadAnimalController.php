@@ -69,10 +69,10 @@ switch ($_GET['op']) {
         $areteAnimal = isset($_POST["areteAnimal"]) ? trim($_POST["areteAnimal"]) : "";
         $fechaDiagnostico = isset($_POST["fechaDiagnostico"]) ? trim($_POST["fechaDiagnostico"]) : "";
 
-        $enfermedadAnimal -> setAreteAnimal($areteAnimal);
-        $enfermedadAnimal -> setNombreEnfermedad($nombreEnfermedad);
-        $enfermedadAnimal -> setFechaDiagnostico($fechaDiagnostico);
-        $enfermedadAnimal -> setIdEnfermedadAnimal(trim($_POST["idRegistro"]));
+        $enfermedadAnimal->setAreteAnimal($areteAnimal);
+        $enfermedadAnimal->setNombreEnfermedad($nombreEnfermedad);
+        $enfermedadAnimal->setFechaDiagnostico($fechaDiagnostico);
+        $enfermedadAnimal->setIdEnfermedadAnimal(trim($_POST["idRegistro"]));
         $respuesta = $enfermedadAnimal->eliminar();
         echo $respuesta;
         break;
@@ -108,6 +108,80 @@ switch ($_GET['op']) {
             echo 2;
         }
         break;
+
+    case 'listar_animales_enfermos':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerAnimalesEnfermos'])) {
+            $enfermedadesModel = new EnfermedadAnimal();
+            $enfermedades = $enfermedadesModel->listarDB();
+            $contador = 0;
+            $datos = array();
+            foreach ($enfermedades as $registro) {
+                $contador += 1;
+            }
+            echo ($contador);
+        }
+
+    case 'listar_mastitis_grafica':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerEnfermedadesGrafica'])) {
+            $enfermedadesModel = new EnfermedadAnimal();
+            $enfermedades = $enfermedadesModel->listarEnfermedadesGrafica();
+
+            $meses = [];
+            $cantidadEnfermedades = [];
+            $data = null;
+            foreach ($enfermedades as $row) {
+                $mes = '';
+                switch ($row['mes']) {
+                    case 1:
+                        $mes = 'Enero';
+                        break;
+                    case 2:
+                        $mes = 'Febrero';
+                        break;
+                    case 3:
+                        $mes = 'Marzo';
+                        break;
+                    case 4:
+                        $mes = 'Abril';
+                        break;
+                    case 5:
+                        $mes = 'Mayo';
+                        break;
+                    case 6:
+                        $mes = '';
+                        break;
+                    case 7:
+                        $mes = 'Julio';
+                        break;
+                    case 8:
+                        $mes = 'Agosto';
+                        break;
+                    case 9:
+                        $mes = 'Septiembre';
+                        break;
+                    case 10:
+                        $mes = 'Octubre';
+                        break;
+                    case 11:
+                        $mes = 'Noviembre';
+                        break;
+                    case 12:
+                        $mes = 'Diciembre';
+                        break;
+                }
+
+                $meses[] = $mes;
+                $cantidadEnfermedades[] = $row['cantidad_enfermedades'];
+            }
+            $data_json = json_encode(
+                array(
+                    'meses' => $meses,
+                    'cantidadEnfermedades' => $cantidadEnfermedades
+                )
+            );
+
+            echo ($data_json);
+        }
 
 
 

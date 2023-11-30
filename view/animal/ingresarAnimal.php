@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Starter</title>
+  <title>SG GANADERIA | INGRESAR ANIMAL</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -34,7 +34,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <a href="index3.html" class="brand-link">
         <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
           style="opacity: .8">
-        <span class="brand-text font-weight-light">Software Ganadero</span>
+        <span class="brand-text font-weight-light">SG Ganaderia</span>
       </a>
 
       <!-- Sidebar -->
@@ -45,7 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Juanito Mora</a>
+            <a href="#" class="d-block">Juanito Mena Mora</a>
           </div>
         </div>
 
@@ -111,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row mb-5" id="form-agregar">
             <div class="col-2"></div>
             <div class="col-8">
-              <div class="card " style="background-color: grey;">
+              <div class="card " style="background-color:#52AA5E;">
                 <div class="card-header text-center">
                   <h3 class="card-title text-white">Nuevo Animal</h3>
                 </div>
@@ -195,7 +195,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row mb-5" id="form-modificar">
             <div class="col-2"></div>
             <div class="col-8">
-              <div class="card " style="background-color: grey;">
+              <div class="card " style="background-color: #52AA5E;">
                 <div class="card-header text-center">
                   <h3 class="card-title text-white">Nuevo Animal</h3>
                 </div>
