@@ -39,14 +39,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!--  Main nav-menu  -->
 
         <?php
+<<<<<<< HEAD
         include '../fragments/nav_menu.php'
             ?>
+=======
+    include '../fragments/nav_menu.php'
+      ?>
+>>>>>>> bryan
 
         <!--  Main Sidebar  -->
         <aside class="main-sidebar  elevation-4">
             <?php
+<<<<<<< HEAD
             include '../fragments/main_aside_reproduccion.php'
                 ?>
+=======
+      include '../fragments/main_aside_reproduccion.php'
+        ?>
+>>>>>>> bryan
         </aside><!--  Main Sidebar  -->
 
 
@@ -128,6 +138,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 </div>
                                             </div>
                                         </div>
+<<<<<<< HEAD
 
                                     </div>
 
@@ -196,6 +207,75 @@ scratch. This page gets rid of all links and provides the needed markup only.
             include '../fragments/footer.php'
                 ?>
         </footer>
+=======
+                                    </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer text-center">
+                            <div class="row">
+                                <div class="col-6"><button type="submit"
+                                        class="btn btn-primary btnRegistrar">Guardar</button>
+                                </div>
+                                <div class="col-6"><input type="reset" class=" btn btn-info" value="Limpiar datos">
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+
+
+        </div>
+
+
+        <!-- /.row -->
+
+
+
+        <!-- Tabla -->
+        <div class="row mb-5" id="tabla-celos">
+            <div class="col-md-12">
+                <div class="card card-dark">
+                    <div class="card-body p-0">
+                        <table id="tablalistado" class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <th>Id</th>
+                                <th>Numero de Arete</th>
+                                <th>Fecha de Celo</th>
+                                <th>Detalle de celos</th>
+                                <th>Observaciones</th>
+                                <th>Opciones</th>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+
+
+    </div><!-- ./Content Wrapper-->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <?php
+      include '../fragments/footer.php'
+        ?>
+    </footer>
+>>>>>>> bryan
 
     </div><!-- ./wrapper -->
 

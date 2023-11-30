@@ -148,6 +148,10 @@ $(document).ready(function() {
       limpiarForms();
       $('#form-agregar').hide();
       $('#form-modificar').show();
+<<<<<<< HEAD
+=======
+      console.log(data)
+>>>>>>> bryan
       $('#XnumeroArete').val(data[1]);
       $('#XfechaDiagnostico').val(data[4]);
       $('#Xsintomas').val(data[5]);

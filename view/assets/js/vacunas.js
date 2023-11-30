@@ -52,7 +52,11 @@ $('#formulario-agregar').on('submit', function (event) {
     url: '../../controller/salud/vacunaController.php?op=insertar',
     type: 'POST',
     data: formData,
+<<<<<<< HEAD
     contentType: false,  
+=======
+    contentType: false,
+>>>>>>> bryan
     processData: false,
     success: function (datos) {
       switch (datos) {

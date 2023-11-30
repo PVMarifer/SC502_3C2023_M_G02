@@ -348,7 +348,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
+<<<<<<< HEAD
 
+=======
+<
+>>>>>>> bryan
 <!--   JQUERY -->
 <script src="../plugins/jquery/jquery.min.js"></script>
 

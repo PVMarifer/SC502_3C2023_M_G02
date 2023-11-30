@@ -8,7 +8,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
   <title>SG GANADERIA| NUEVA PRODUCCION</title>
+=======
+  <title>AdminLTE 3 | Starter</title>
+>>>>>>> bryan
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -39,7 +43,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a href="index3.html" class="brand-link">
           <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
+<<<<<<< HEAD
           <span class="text-white font-weight-bold">SG GANADERIA</span>
+=======
+          <span class="text-white font-weight-bold">Software Ganadero</span>
+>>>>>>> bryan
         </a>
 
         <!-- Sidebar -->
@@ -50,7 +58,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
+<<<<<<< HEAD
             <a href="#" class="d-block text-white">Juanito Mena Mora</a>
+=======
+            <a href="#" class="d-block text-white">Juanito Mora</a>
+>>>>>>> bryan
           </div>
         </div>
 
@@ -173,6 +185,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   </div><!-- ./wrapper -->
 
+<<<<<<< HEAD
  
 </body>
 <!-- CSS styles -->
@@ -205,5 +218,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
+=======
+  <!-- REQUIRED SCRIPTS -->
+
+  <!-- jQuery -->
+  <script src="../plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../dist/js/adminlte.min.js"></script>
+</body>
+<!-- CSS styles -->
+<link rel="stylesheet" href="../css/index.css">
+>>>>>>> bryan
 
 </html>

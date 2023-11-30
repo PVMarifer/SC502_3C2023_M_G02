@@ -11,11 +11,20 @@ switch ($_GET['op']) {
             $datos[] = array(
                 "0" => $registro->getIdPrefijo(),
                 "1" => $registro->getIdAnimalVaca(),
+<<<<<<< HEAD
                 "2" => $registro->getFechaDiagnostico(),
                 "3" => $registro->getTipoServicio(),
                 "4" => $registro->getIdCelo(),
                 "5" => $registro->getObservaciones(),
                 "6" =>'<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdServicio() . '\')">Eliminar</button>'
+=======
+                "2" => $registro->getIdAnimalToro(),
+                "3" => $registro->getFechaDiagnostico(),
+                "4" => $registro->getTipoServicio(),
+                "6" => $registro->getIdCelo(),
+                "7" => $registro->getObservaciones(),
+                "8" =>'<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdServicio() . '\')">Eliminar</button>'
+>>>>>>> bryan
             );
         }
         $resultados = array(
@@ -32,6 +41,11 @@ switch ($_GET['op']) {
 
     case 'insert':
         $idAnimalVaca = isset($_POST["id_animal"]) ? trim($_POST["id_animal"]) : "";
+<<<<<<< HEAD
+=======
+        $idAnimalToro = isset($_POST["id_animal"]) ? trim($_POST["id_animal"]) : "";
+
+>>>>>>> bryan
         $fechaDiagnostico = isset($_POST["fecha_servicio"]) ? trim($_POST["fecha_servicio"]) : "";
         $tipoServicio = isset($_POST["tipo_servicio"]) ? trim($_POST["tipo_servicio"]) : "";
         $idCelo = isset($_POST["id_celo"]) ? trim($_POST["id_celo"]) : "";
@@ -39,6 +53,11 @@ switch ($_GET['op']) {
 
         $servio = new servicio();
         $servicio->setIdAnimalVaca($idAnimalVaca);
+<<<<<<< HEAD
+=======
+        $servicio->setIdAnimalToro($idAnimalToro);
+
+>>>>>>> bryan
         $servicio->setFechaDiagnostico($fechaDiagnostico);
         $encontrado = $servicio->verificarExistenciaDb();
         if ($encontrado == false) {

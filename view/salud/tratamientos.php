@@ -8,7 +8,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
   <title>SG GANADERIA | TRATAMIENTOS</title>
+=======
+  <title>AdminLTE 3 | Starter</title>
+>>>>>>> bryan
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -17,10 +21,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+<<<<<<< HEAD
   <!-- Datatable CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
   <!-- Toastr -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+=======
+
+>>>>>>> bryan
 
 </head>
 
@@ -28,6 +36,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
 
+<<<<<<< HEAD
     <?php
     include '../fragments/nav_menu.php'
       ?>
@@ -43,6 +52,62 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
     <!-- Main content-->
+=======
+  <?php
+      include '../fragments/nav_menu.php'
+    ?>
+
+
+
+    <!--  Main Sidebar Container -->
+    <aside class="main-sidebar  elevation-4">
+      <div class="sidebar">
+        <!--  Fragmento que incluye el logo y la foto del usuario usuario -->
+        <!-- Brand Logo -->
+        <a href="index3.html" class="brand-link">
+          <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8">
+          <span class="text-white font-weight-bold">Software Ganadero</span>
+        </a>
+
+        <!-- Sidebar -->
+
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="#" class="d-block text-white">Juanito Mora</a>
+          </div>
+        </div>
+
+        <!-- SidebarSearch Form -->
+        <div class="form-inline">
+          <div class="input-group" data-widget="sidebar-search">
+            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+            <div class="ml-1 bg-white rounded-right input-group-append">
+              <button class="btn btn-sidebar">
+                <i class="fas fa-search fa-fw"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- /.sidebar -->
+
+        <!-- Sidebar Menu -->
+        <?php
+          include '../fragments/main_aside_enfermedades.php'
+        ?>
+        <!-- /.sidebar-menu -->
+      </div>
+    </aside>
+
+
+    <!-- Content Wrapper. Contains page content -->
+>>>>>>> bryan
     <div class="bg-white content-wrapper">
       <!-- Content Header (Page header) -->
       <div class="content-header">
@@ -63,6 +128,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <section class="content">
         <div class="container-fluid">
+<<<<<<< HEAD
 
           <!-- /.Formulario agregar-->
           <div class="row mb-5">
@@ -209,6 +275,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <!-- /.Tabla tratamientos-->
           <div class="row mb-5">
+=======
+          <div class="row">
+>>>>>>> bryan
             <div class="col-12">
               <div class="card">
                 <div class="card-header border-0">
@@ -227,7 +296,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <th>Duración del tratamiento</th>
                         <th>Dosis</th>
 
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> bryan
                       </tr>
                     </thead>
                     <tbody>
@@ -244,7 +317,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </td>
                         <td>
                           Penisilina
+<<<<<<< HEAD
                         </td>
+=======
+                        </td>            
+>>>>>>> bryan
                         <td>
                           04/08/23
                         </td>
@@ -268,7 +345,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </td>
                         <td>
                           Berenil
+<<<<<<< HEAD
                         </td>
+=======
+                        </td>            
+>>>>>>> bryan
                         <td>
                           09/10/23
                         </td>
@@ -284,6 +365,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
           </div><!-- /row -->
 
 
@@ -291,6 +373,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
       </section>
     </div><!-- ./main content-->
+=======
+          </div>
+        </div>
+      </section>
+
+
+
+    </div><!-- ./Content Wrapper-->
+>>>>>>> bryan
 
 
 
@@ -303,6 +394,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   </div><!-- ./wrapper -->
 
+<<<<<<< HEAD
 
 </body>
 <!-- CSS styles -->
@@ -323,6 +415,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- toastr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- CSS styles -->
+=======
+  <!-- REQUIRED SCRIPTS -->
+
+  <!-- jQuery -->
+  <script src="../plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../dist/js/adminlte.min.js"></script>
+</body>
+<!-- CSS styles -->
+>>>>>>> bryan
 <link rel="stylesheet" href="../assets/css/index.css">
 
 </html>

@@ -265,7 +265,11 @@ class Antibiotico extends Conexion
 
 
     public function listarAntibioticos(){
+<<<<<<< HEAD
         $query = "SELECT id_antibiotico, nombre_antibiotico FROM antibiotico";
+=======
+        $query = "SELECT id_Antibiotico, nombre_Antibiotico FROM Antibiotico";
+>>>>>>> bryan
         
         try {
             self::getConexion();
@@ -279,8 +283,11 @@ class Antibiotico extends Conexion
         }
     }
 
+<<<<<<< HEAD
     
 
+=======
+>>>>>>> bryan
 }
 
 

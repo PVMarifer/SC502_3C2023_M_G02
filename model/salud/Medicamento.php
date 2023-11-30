@@ -265,7 +265,11 @@ class Medicamento extends Conexion
 
 
     public function listarMedicamentos(){
+<<<<<<< HEAD
         $query = "SELECT id_medicamento, nombre_medicamento FROM medicamento";
+=======
+        $query = "SELECT id_Medicamento, nombre_Medicamento FROM Medicamento";
+>>>>>>> bryan
         
         try {
             self::getConexion();

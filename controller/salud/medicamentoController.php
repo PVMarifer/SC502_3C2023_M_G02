@@ -69,9 +69,15 @@ switch ($_GET['op']) {
 
     case 'obtener_medicamentos':
 
+<<<<<<< HEAD
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerMedicamentos'])) {
             $medicamentoModel = new Medicamento();
             $medicamentos = $medicamentoModel->listarMedicamentos();
+=======
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenermedicamentos'])) {
+            $medicamentoModel = new medicamento();
+            $medicamentos = $medicamentoModel->listarmedicamentos();
+>>>>>>> bryan
             echo json_encode($medicamentos);
         }
 

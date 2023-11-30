@@ -71,15 +71,25 @@ switch ($_GET['op']) {
         $nombreVacuna = isset($_POST["nombreVacuna"]) ? trim($_POST["nombreVacuna"]) : "";
         $descripcion = isset($_POST["descripcion"]) ? trim($_POST["descripcion"]) : "";
         $fechaVencimiento = isset($_POST["fechaVencimiento"]) ? trim($_POST["fechaVencimiento"]) : "";
+<<<<<<< HEAD
         $lote = isset($_POST["lote"]) ? trim($_POST["lote"]) : "";
         $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";
         $casaDistribuidora = isset($_POST["casaDistribuidora"]) ? trim($_POST["casaDistribuidora"]) : "";
+=======
+        $lote = isset($_POST["lote"]) ? trim($_POST["lote"]) : "";   
+        $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";  
+        $casaDistribuidora = isset($_POST["casaDistribuidora"]) ? trim($_POST["casaDistribuidora"]) : ""; 
+>>>>>>> bryan
         $vacuna = new Vacuna();
         $vacuna->setNombreVacuna($nombreVacuna);
         $vacuna->setCasaDistribuidora($casaDistribuidora);
         $encontrado = $vacuna->verificarExistenciaDb();
         if ($encontrado == true) {
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> bryan
             //$usuario->llenarCampos($id); 
             //$modulo->setNombre($nombreModif);
             $vacuna->setNombreVacuna($nombreVacuna);
@@ -99,6 +109,7 @@ switch ($_GET['op']) {
         }
         break;
 
+<<<<<<< HEAD
     case 'obtener_vacunas':
 
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacunas'])) {
@@ -132,6 +143,15 @@ switch ($_GET['op']) {
         break;
 
 
+=======
+        case 'obtener_vacunas':
+            
+            if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacunas'])) {
+                $vacunaModel = new Vacuna();
+                $vacunas = $vacunaModel->listarVacunas();
+                echo json_encode($vacunas);
+            }
+>>>>>>> bryan
 
 
 

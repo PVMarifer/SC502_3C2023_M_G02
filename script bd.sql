@@ -11,9 +11,16 @@ create table Animal(
     peso float not null,
     numero_arete int unique not null ,
     colores_caracteristicas text,
+<<<<<<< HEAD
 
     observaciones text,
 	PRIMARY KEY (id_animal)
+=======
+    observaciones text,
+	PRIMARY KEY (id_animal)
+    /*foreign key fk_animal_vaca (id_madre) references Vaca(id_vaca),
+    foreign key fk_animal_toto (id_padre) references Toro(id_toro)*/
+>>>>>>> bryan
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
@@ -46,7 +53,11 @@ CREATE TABLE Produccion (
     id_vaca INT not null, 
     litros FLOAT,
     observaciones TEXT,
+<<<<<<< HEAD
     foreign key fk_produccion_animal (id_vaca) references Animal(id_animal)                                                   
+=======
+    foreign key fk_produccion_vaca (id_Vaca) references Vaca(id_vaca)                                                   
+>>>>>>> bryan
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
@@ -79,10 +90,17 @@ DEFAULT CHARACTER SET = utf8mb4;
 
 
 CREATE TABLE Enfermedad_Animal (
+<<<<<<< HEAD
     id_enfermedad_animal INT AUTO_INCREMENT PRIMARY KEY not null,
     id_enfermedad INT not null,
     id_animal int not null,
     estado_animal enum('en curso', 'recuperada','cronica','fallecida') not null,
+=======
+    id_animal_enfermedad INT AUTO_INCREMENT PRIMARY KEY not null,
+    id_enfermedad INT not null,
+    id_animal int not null,
+    estado_enfermedad enum('en curso', 'recuperada','cronica','fallecida') not null,
+>>>>>>> bryan
     sintomas_animal text not null,
     fecha_diagnostico date not null,
     observaciones text not null,
@@ -108,7 +126,11 @@ DEFAULT CHARACTER SET = utf8mb4;
 CREATE TABLE Vacunacion (
     id_vacunacion INT AUTO_INCREMENT PRIMARY KEY not null,
 	id_vacuna INT not null,
+<<<<<<< HEAD
     lugar_aplicacion varchar(50)  not null,
+=======
+    lugar_aplicación varchar(50)  not null,
+>>>>>>> bryan
     dosis_aplicada varchar(50) not null,
 	fecha_vacunacion date not null,
     cantidad_animales int not null,
@@ -152,6 +174,7 @@ CREATE TABLE Medicamento (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
+<<<<<<< HEAD
 CREATE TABLE Inyeccion_Medicamento (
     id_inyeccion_medicamento INT AUTO_INCREMENT PRIMARY KEY not null,
 	id_medicamento INT not null,
@@ -174,20 +197,54 @@ CREATE TABLE Inyeccion_Antibiotico (
 	fecha_inyeccion date not null,
     foreign key fk_inyeccion_antibiotico_antibiotico (id_antibiotico) references Antibiotico(id_antibiotico),
     foreign key fk_inyeccion_antibiotico_animal (id_animal) references Animal(id_animal)
+=======
+/*
+
+CREATE TABLE Tratamiento (
+    id_tratamiento INT AUTO_INCREMENT PRIMARY KEY not null,
+	id_medicamento_antibiotico INT not null,
+    id_animal INT  not null,
+    id_enfermedad int not null,
+    tipo_injeccion enum('antibiotico', 'medicina'),
+    tipo_tratamiento varchar(80) not null,
+    dosis_aplicada varchar(50) not null,
+	fecha_inicio date not null,
+    fecha_fin date not null,
+    foreign key fk_tratamiento_antibiotico (id_medicamento_antibiotico) references Antibiotico(id_antibiotico),
+	foreign key fk_tratamiento_medicamento (id_medicamento_antibiotico) references medicamento(id_medicamento),
+    foreign key fk_tratamiento_animal (id_animal) references Animal(id_animal),
+    foreign key fk_tratamiento_enfermedad (id_enfermedad) references Enfermedad(id_enfermedad)
+>>>>>>> bryan
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
+<<<<<<< HEAD
+=======
+*/
+>>>>>>> bryan
 
 
 
 CREATE TABLE Mastitis (
     id_mastitis INT AUTO_INCREMENT PRIMARY KEY not null,
+<<<<<<< HEAD
     id_animal int not null,
     tipo_tratamiento varchar(50) not null,
     cuartos_afectados varchar(50) not null,
 	fecha_diagnostico date not null,
     foreign key fk_mastitis_animal (id_animal) references Animal(id_animal)
+=======
+    id_antibiotico int not null,
+    id_vaca int not null,
+    tipo_tratamiento varchar(50) not null,
+    cuartos_afectados varchar(50) not null,
+	fecha_diagnostico date not null,
+    persona_encargada varchar(50) not null,
+    observaciones text not null,
+    foreign key fk_mastitis_vaca (id_vaca) references Vaca(id_vaca),
+    foreign key fk_mastitis_antibiotico(id_antibiotico) references Antibiotico(id_antibiotico)
+>>>>>>> bryan
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
@@ -206,9 +263,15 @@ DEFAULT CHARACTER SET = utf8mb4;
 CREATE TABLE Parto (
     id_parto INT AUTO_INCREMENT PRIMARY KEY not null,
     id_vaca int not null,
+<<<<<<< HEAD
     numero_arete int not null,
 	fecha_parto date not null,
     estado_vaca varchar(80) not null,
+=======
+	fecha_parto date not null,
+    estado_vaca varchar(80) not null,
+    estado_cria varchar(80) not null,
+>>>>>>> bryan
     tipo_parto enum ('natural','intervenido','cesarea'),
     observaciones text not null,
     foreign key fk_parto_vaca (id_vaca) references Vaca(id_vaca)
@@ -229,14 +292,23 @@ DEFAULT CHARACTER SET = utf8mb4;
 
 CREATE TABLE Servicio (
     id_servicio INT AUTO_INCREMENT PRIMARY KEY not null,
+<<<<<<< HEAD
     id_animal int not null,
 	fecha_servicio date not null,
     tipo_servicio varchar (30) not null,
+=======
+    id_vaca int not null,
+    id_toro int not null,
+	fecha_servicio date not null,
+    tipo_servicio enum ('monta','enseminacion') not null,
+    id_celo int not null,
+>>>>>>> bryan
     observaciones text not null
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
+<<<<<<< HEAD
 CREATE TABLE Secado (
     id_secado INT AUTO_INCREMENT PRIMARY KEY not null,
     id_animal int not null,
@@ -247,6 +319,8 @@ CREATE TABLE Secado (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
+=======
+>>>>>>> bryan
 CREATE TABLE Vaca_Prenada (
     id_vaca_prenada INT AUTO_INCREMENT PRIMARY KEY not null,
     detalles_gestacion varchar(80) not null,
@@ -268,6 +342,7 @@ CREATE TABLE Intervencion (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
+<<<<<<< HEAD
 
 
 /*foreneas de servicio*/
@@ -275,6 +350,19 @@ alter table servicio
 add foreign key (id_animal) references Animal(id_animal);
 alter table servicio 
 add foreign key (id_animal) references Animal(id_animal);
+=======
+/*foreneas de animal*/
+/*alter table animal 
+add foreign key (id_madre) references Vaca(id_vaca);
+alter table animal 
+add foreign key (id_padre) references Toro(id_Toro);*/
+
+/*foreneas de servicio*/
+alter table servicio 
+add foreign key (id_animal) references animal(id_animal);
+alter table servicio
+add foreign key (id_animal) references animal(id_animal);
+>>>>>>> bryan
 
 /*foreneas de Vaca_Prenada*/
 alter table Vaca_Prenada 

@@ -12,6 +12,10 @@
     </li>
     <li class="nav-item-menu nav-item d-none d-md-inline-block">
       <a href="../salud/salud.php" class="nav-link-menu nav-link">Salud</a>
+<<<<<<< HEAD
+=======
+    </li>
+>>>>>>> bryan
     <li class="nav-item-menu nav-item d-none d-md-inline-block">
       <a href="../produccion/produccion.php" class="nav-link-menu nav-link">Produccion</a>
     </li>
@@ -22,11 +26,39 @@
       <a href="../secados/secados.php" class="nav-link-menu nav-link">Control de Secados</a>
     </li>
     <li class="nav-item-menu nav-item d-none d-md-inline-block">
+<<<<<<< HEAD
       <a href="../partos/controlPartos.php" class=" nav-link-menu nav-link">Control de Partos</a>
+=======
+      <a href="../partos/partos.php" class=" nav-link-menu nav-link">Control de Partos</a>
+>>>>>>> bryan
     </li>
   </ul>
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
+<<<<<<< HEAD
+=======
+    <!-- Navbar Search -->
+    <li class="nav-item">
+      <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+        <i class="fas fa-search"></i>
+      </a>
+      <div class="navbar-search-block">
+        <form class="form-inline">
+          <div class="input-group input-group-sm">
+            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-navbar" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+              <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </li>
+>>>>>>> bryan
 
 
     <!-- Notifications Dropdown Menu -->

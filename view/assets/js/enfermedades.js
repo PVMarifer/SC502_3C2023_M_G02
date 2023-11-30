@@ -126,7 +126,11 @@ $('#tablalistado tbody').on(
               $('#form-agregar').show();
               break;
             case '2':
+<<<<<<< HEAD
               toastr.error('Error al guardar los datos');
+=======
+              toastr.error('Error: Correo no pertenece al usuario.');
+>>>>>>> bryan
               break;
           }
         },

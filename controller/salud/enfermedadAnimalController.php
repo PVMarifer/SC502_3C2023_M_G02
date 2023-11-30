@@ -1,16 +1,26 @@
 <?php
 
+<<<<<<< HEAD
 require_once '../../model/salud/EnfermedadAnimal.php';
 
 switch ($_GET['op']) {
     case 'listar_tabla':
         $enfermedad_animal_db = new EnfermedadAnimal();
         $registros = $enfermedad_animal_db->listarDb();
+=======
+require_once '../../model/reproduccion_celos/celos.php';
+
+switch ($_GET['op']) {
+    case 'listar_tabla':
+        $celosdb = new celos();
+        $registros = $celosdb->listarDb();
+>>>>>>> bryan
         $datos = array();
         foreach ($registros as $registro) {
             $datos[] = array(
                 "0" => $registro->getIdPrefijo(),
                 "1" => $registro->getAreteAnimal(),
+<<<<<<< HEAD
                 "2" => $registro->getNombreAnimal(),
                 "3" => $registro->getNombreEnfermedad(),
                 "4" => $registro->getFechaDiagnostico(),
@@ -19,6 +29,13 @@ switch ($_GET['op']) {
                 "7" => $registro->getTratamiento(),
                 "8" => $registro->getObservaciones(),
                 "9" => '<button class="btn btn-success" id="modificarDato">Modificar</button>' . '<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdEnfermedadAnimal() . '\')">Eliminar</button>'
+=======
+                "2" => $registro->getFechaDiagnostico(),
+                "3" => $registro->getDetallesCelos(),
+                "4" => $registro->getServicio(),
+                "5" => $registro->getObservaciones(),
+                "6" => '<button class="btn btn-success" id="modificarDato">Modificar</button>' . '<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdEnfermedadAnimal() . '\')">Eliminar</button>'
+>>>>>>> bryan
             );
         }
         $resultados = array(
@@ -69,10 +86,17 @@ switch ($_GET['op']) {
         $areteAnimal = isset($_POST["areteAnimal"]) ? trim($_POST["areteAnimal"]) : "";
         $fechaDiagnostico = isset($_POST["fechaDiagnostico"]) ? trim($_POST["fechaDiagnostico"]) : "";
 
+<<<<<<< HEAD
         $enfermedadAnimal->setAreteAnimal($areteAnimal);
         $enfermedadAnimal->setNombreEnfermedad($nombreEnfermedad);
         $enfermedadAnimal->setFechaDiagnostico($fechaDiagnostico);
         $enfermedadAnimal->setIdEnfermedadAnimal(trim($_POST["idRegistro"]));
+=======
+        $enfermedadAnimal -> setAreteAnimal($areteAnimal);
+        $enfermedadAnimal -> setNombreEnfermedad($nombreEnfermedad);
+        $enfermedadAnimal -> setFechaDiagnostico($fechaDiagnostico);
+        $enfermedadAnimal -> setIdEnfermedadAnimal(trim($_POST["idRegistro"]));
+>>>>>>> bryan
         $respuesta = $enfermedadAnimal->eliminar();
         echo $respuesta;
         break;
@@ -109,6 +133,7 @@ switch ($_GET['op']) {
         }
         break;
 
+<<<<<<< HEAD
     case 'listar_animales_enfermos':
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerAnimalesEnfermos'])) {
             $enfermedadesModel = new EnfermedadAnimal();
@@ -183,6 +208,8 @@ switch ($_GET['op']) {
             echo ($data_json);
         }
 
+=======
+>>>>>>> bryan
 
 
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <a href="LandPage.php" class="brand-link">
   <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
     style="opacity: .8">
@@ -16,6 +17,8 @@
     </div>
   </div>
   <!-- /.sidebar -->
+=======
+>>>>>>> bryan
 <!-- /.sidebar menu -->
 <nav class="mt-2">
     <ul class=" nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -23,12 +26,27 @@
                with font-awesome or any other icon font library -->
         <li class="nav-item">
             <a href="./estado_reproduccion.php" class="nav-link bg-white">
+<<<<<<< HEAD
                 <p>Control de Reproduccion</p>
+=======
+                <p>Estado de Reproduccion</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="./Reproduccion.php" class="nav-link bg-white">
+
+                <p>Reproduccion</p>
+>>>>>>> bryan
             </a>
         </li>
         <li class="nav-item">
             <a href="./ingresar_servicio.php" class="nav-link bg-white">
+<<<<<<< HEAD
                 <p>Control de Servicios</p>
+=======
+                <p>Ingresar Servicio</p>
+>>>>>>> bryan
             </a>
         </li>
         <li class="nav-item">

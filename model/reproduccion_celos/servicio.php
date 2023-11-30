@@ -155,6 +155,10 @@ class servicio extends Conexion
                 $id_personalizado = $prefijo . str_pad($servicio->getIdservicio(), 2, '0', STR_PAD_LEFT);
                 $servicio->setIdPrefijo($id_personalizado);
                 $servicio->setIdAnimalVaca($encontrado["id_animal"]);
+<<<<<<< HEAD
+=======
+                $servicio->setIdAnimalToro($encontrado["id_animal"]);
+>>>>>>> bryan
                 $servicio->setFechaDiagnostico($encontrado["fecha_servicio"]);
                 $servicio->setTipoServicio($encontrado["tipo_servicio"]);
                 $servicio->setIdCelo($encontrado["id_celo"]);
@@ -177,6 +181,10 @@ class servicio extends Conexion
     try {
         self::getConexion();
         $id_vaca = $this->getIdAnimalVaca();
+<<<<<<< HEAD
+=======
+        $id_toro = $this->getIdAnimalToro();
+>>>>>>> bryan
         $fecha_servicio = $this->getFechaDiagnostico();
         $tipo_servicio = $this->getTipoServicio();
         $id_celo = $this->getIdCelo();
@@ -185,6 +193,10 @@ class servicio extends Conexion
         $resultado = self::$conexion->prepare($query);
         $resultado->bindParam(":id_celo", $id_vaca, PDO::PARAM_STR);
         $resultado->bindParam(":id_animal", $id_vaca, PDO::PARAM_STR);
+<<<<<<< HEAD
+=======
+        $resultado->bindParam(":id_animal", $id_toro, PDO::PARAM_STR);
+>>>>>>> bryan
         $resultado->bindParam(":fecha_servicio", $fecha_servicio, PDO::PARAM_STR);
         $resultado->bindParam(":tipo_servicio", $tipo_servicio, PDO::PARAM_STR);
         $resultado->bindParam(":id_celo", $id_celo, PDO::PARAM_STR);
@@ -206,6 +218,10 @@ class servicio extends Conexion
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
             $idAnimalVaca = $this->getIdAnimalVaca();
+<<<<<<< HEAD
+=======
+            $idAnimalToro = $this->getIdAnimalToro();
+>>>>>>> bryan
             $fechaDiagnostico = $this->getFechaDiagnostico();
             $resultado->bindParam(":id_animal", $idAnimalVaca, PDO::PARAM_STR);
             $resultado->bindParam(":id_animal", $idAnimalToro, PDO::PARAM_STR);
