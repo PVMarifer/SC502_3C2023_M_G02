@@ -8,7 +8,7 @@ class produccion extends Conexion
     //Atributos de la clase
     protected static $conexion;
 
-    private $id_produccion_semanal = null;
+    private $areteAnimal = null;
 
     private $idProduccion = null;
 
@@ -32,12 +32,12 @@ class produccion extends Conexion
 
     //getters y setters
 
-    public function getId_Produccion_Semanal ()
+    public function getId_Animal ()
     {
-        return $this->id_produccion_semanal ;
+        return $this->id_animal ;
     }
 
-    public function setId_Produccion_Semanal ($id_produccion_semanal)
+    public function setId_animal ($id_animal)
     {
         $this->idAnimal  = $idAnimal ;
     } 
