@@ -13,8 +13,7 @@ create table Animal(
     colores_caracteristicas text,
 
     observaciones text,
-	PRIMARY KEY (id_animal);
-
+	PRIMARY KEY (id_animal)
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
@@ -219,23 +218,20 @@ DEFAULT CHARACTER SET = utf8mb4;
 
 CREATE TABLE Celo (
     id_celo INT AUTO_INCREMENT PRIMARY KEY not null,
-    id_vaca int not null,
+    id_animal int not null,
 	fecha_celo date not null,
     detalles_celo varchar(80) not null,
-    servicio boolean,
     observaciones text not null,
-    foreign key fk_celo_vaca (id_vaca) references Vaca(id_vaca)
+    foreign key fk_celo_animal (id_animal) references animal(id_animal)
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
 CREATE TABLE Servicio (
     id_servicio INT AUTO_INCREMENT PRIMARY KEY not null,
-    id_vaca int not null,
-    id_toro int not null,
+    id_animal int not null,
 	fecha_servicio date not null,
-    tipo_servicio enum ('monta','enseminacion') not null,
-    id_celo int not null,
+    tipo_servicio varchar (30) not null,
     observaciones text not null
 )
 ENGINE = InnoDB
@@ -276,9 +272,9 @@ DEFAULT CHARACTER SET = utf8mb4;
 
 /*foreneas de servicio*/
 alter table servicio 
-add foreign key (id_vaca) references Vaca(id_vaca);
+add foreign key (id_animal) references Animal(id_animal);
 alter table servicio 
-add foreign key (id_toro) references Toro(id_Toro);
+add foreign key (id_animal) references Animal(id_animal);
 
 /*foreneas de Vaca_Prenada*/
 alter table Vaca_Prenada 

@@ -16,7 +16,7 @@
       <a href="../produccion/produccion.php" class="nav-link-menu nav-link">Produccion</a>
     </li>
     <li class="nav-item-menu nav-item d-none d-md-inline-block">
-      <a href="../reproduccion/reproduccion.php" class="nav-link-menu nav-link">Reproduccion y Control de Celos</a>
+      <a href="../reproduccion/estado_reproduccion.php" class="nav-link-menu nav-link">Reproduccion y Control de Celos</a>
     </li>
     <li class="nav-item-menu nav-item d-none d-md-inline-block">
       <a href="../secados/secados.php" class="nav-link-menu nav-link">Control de Secados</a>

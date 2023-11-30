@@ -24,57 +24,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
         <?php
-      include '../fragments/nav_menu.php'
-    ?>
+        include '../fragments/nav_menu.php'
+            ?>
 
 
 
-        <!--  Main Sidebar Container -->
+        <!--  Main Sidebar  -->
         <aside class="main-sidebar  elevation-4">
-            <div class="sidebar">
-                <!--  Fragmento que incluye el logo y la foto del usuario usuario -->
-                <!-- Brand Logo -->
-                <a href="index3.html" class="brand-link">
-                    <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-                        class="brand-image img-circle elevation-3" style="opacity: .8">
-                    <span class="text-white font-weight-bold">Software Ganadero</span>
-                </a>
-
-                <!-- Sidebar -->
-
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="#" class="d-block text-white">Juanito Mora</a>
-                    </div>
-                </div>
-
-                <!-- SidebarSearch Form -->
-                <div class="form-inline">
-                    <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                            aria-label="Search">
-                        <div class="ml-1 bg-white rounded-right input-group-append">
-                            <button class="btn btn-sidebar">
-                                <i class="fas fa-search fa-fw"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- /.sidebar -->
-
-                <!-- Sidebar Menu -->
-                <?php
-        include '../fragments/main_aside_Animales.php'
-          ?>
-                <!-- /.sidebar-menu -->
-            </div>
-        </aside>
+            <?php
+            include '../fragments/main_aside_reproduccion.php'
+                ?>
+        </aside><!--  Main Sidebar  -->
 
 
         <!-- Content Wrapper. Contains page content -->
@@ -106,7 +66,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="card ">
                                 <div class="card-header border-0">
                                     <h3 class="card-title">
-                                        Carrusel vacas
+                                        Carrusel Reproducción
                                     </h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
@@ -163,7 +123,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="card ">
                                 <div class="card-header border-0">
                                     <h3 class="card-title">
-                                        Carrusel Toros
+                                        Carrusel Celos
                                     </h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
@@ -307,7 +267,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="card-header">
                                     <h3 class="card-title">
                                         <i class="far fa-chart-bar"></i>
-                                        Grafico Animales 
+                                        Grafico Animales
                                     </h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -351,11 +311,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         style="position: absolute; text-align: right;">10</text><text
                                                         x="1" y="78.5" class="flot-tick-label tickLabel"
                                                         style="position: absolute; text-align: right;">15</text></g>
-                                            </svg></div>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
 
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
 
 
@@ -369,16 +335,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main Footer -->
         <footer class="main-footer">
             <?php
-      include '../fragments/footer.php'
-        ?>
+            include '../fragments/footer.php'
+                ?>
         </footer>
 
     </div><!-- ./wrapper -->
 
-    <!-- REQUIRED SCRIPTS -->
 
 </body>
 <!-- CSS styles -->
+<!-- REQUIRED SCRIPTS -->
 
 <!--   JQUERY -->
 <script src="../plugins/jquery/jquery.min.js"></script>

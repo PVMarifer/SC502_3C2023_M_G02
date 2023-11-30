@@ -46,7 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <a href="./view/produccion/produccion.php" class="nav-link-menu nav-link">Produccion</a>
         </li>
         <li class="nav-item-menu nav-item d-none d-md-inline-block">
-          <a href="./view/reproduccion/reproduccion.php" class="nav-link-menu nav-link">Reproduccion y Control de
+          <a href="./view/reproduccion/estado_reproduccion.php" class="nav-link-menu nav-link">Reproduccion y Control de
             Celos</a>
         </li>
         <li class="nav-item-menu nav-item d-none d-md-inline-block">
