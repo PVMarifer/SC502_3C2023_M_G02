@@ -115,6 +115,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </tbody>
                   </table>
                 </div>
+                <!-- /.card-footer -->
               </div>
               <!-- /.card -->
             </div>
