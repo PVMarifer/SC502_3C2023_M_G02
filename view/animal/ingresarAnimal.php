@@ -116,18 +116,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <form id="formulario-agregar" method="POST">
                                     <div class="card-body text-white ">
                                         <div class="row">
-                                            <div class="col-6">
+                                            <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="">Nombre</label>
                                                     <input type="text" class="form-control" id="nombre" name="nombre"
                                                         placeholder="Ingrese el nombre " required>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-4 input-group-lg">
+                                                <div class="form-group">
+                                                    <label for="">Imagen</label>
+                                                    <input type="file" class="form-control" id="images" name="images"
+                                                        placeholder="Ingrese el nombre " required>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="">Numero Arete</label>
                                                     <input type="number" class="form-control" id="numero_arete"
-                                                        name="numero_arete" placeholder="Ingrese el peso" required>
+                                                        name="numero_arete" placeholder="Ingrese numero arete" required>
                                                 </div>
                                             </div>
                                             <div class="col-4">
@@ -213,6 +220,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         placeholder="Ingrese el nombre " required>
                                                 </div>
                                             </div>
+                                            
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label for="">Numero Arete</label>
@@ -298,7 +306,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <th>Raza</th>
                                             <th>Peso</th>
                                             <th>Características</th>
-                                            <th>Descripcion</th>
+                                            <th>Observaciones</th>
                                             <th>Opciones</th>
                                         </thead>
                                         <tbody>

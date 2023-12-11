@@ -14,11 +14,11 @@
           <a class="navbar-brand" href="LandPage.php" class="nav-link-menu nav-link" LandPage style="font-color">SG GANADERIA</a>
           <ul class="nav nav-pills">
                 <ul class="navbar-nav me-auto ">
-                <button  class="btn btn-primary"  href="login.php" type="submit">Iniciar Sesión</button>
+                <button  class="btn btn-primary"  href="/login.php" type="submit">Iniciar Sesión</button>
                 </ul>
         
                 <ul class="navbar-nav me-auto ">
-                <button class="btn btn-success"  href="Registrarse.php" type="submit">Registrarse</button>
+                <button class="btn btn-success"  href="/Registrarse.php" type="submit">Registrarse</button>
                </ul>
          
         </nav>

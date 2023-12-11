@@ -58,13 +58,13 @@ $('#formulario-agregar').on('submit', function (event) {
           toastr.error(datos);
           break;
       }
-      $('#btnRegistrar').removeAttr('disabled'); // Asegúrate de que el ID del botón sea correcto
+      $('#btnRegistrar').removeAttr('disabled');
     },
   });
 });
   // Llamar a la función para obtener las vacas cuando el documento esté listo
 //obtenerAnimales();
-//obtenerEnfermedades();
+//obtener();
 
 
   //funcion para limpiar forms
@@ -162,7 +162,7 @@ $('#formulario-agregar').on('submit', function (event) {
       if (result) {
         var formData = new FormData($('#formulario-modificar')[0]);
         $.ajax({
-          url: '../../controller/animal/animalController.php?op=modificar',
+          url: '../../controller/animales/animalController.php?op=modificar',
           type: 'POST',
           data: formData,
           contentType: false,
@@ -195,8 +195,8 @@ $('#formulario-agregar').on('submit', function (event) {
     bootbox.confirm('¿Esta seguro de eliminar el animal?', function (result) {
       if (result) {
         $.post(
-          '../../controller/animal/animalController.php?op=eliminar',
-          { id_animal: id },
+          '../../controller/animales/animalController.php?op=eliminar',
+          { idRegistro: id },
           function (data, textStatus, xhr) {
             switch (data) {
               case '0':

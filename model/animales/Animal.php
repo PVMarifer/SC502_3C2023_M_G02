@@ -11,6 +11,8 @@ class Animal extends Conexion
 
     private $nombre = null;
 
+    private $images = null;
+
     private $numero_arete = null;
 
     private $fecha_nacimiento = null;
@@ -48,6 +50,14 @@ class Animal extends Conexion
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
+    }
+    public function getImages()
+    {
+        return $this->images;
+    }
+    public function setImages($images)
+    {
+        $this->images = $images;
     }
     public function getNumero_arete()
     {
@@ -155,10 +165,11 @@ class Animal extends Conexion
     }
     
     public function guardarEnDb() {
-            $query = "INSERT INTO `animal` ( `nombre`, `fecha_nacimiento`, `raza`, `peso`, `numero_arete`, `colores_caracteristicas`, `observaciones`) VALUES (:nombre,:fecha_nacimiento,:raza,:peso,:numero_arete, :colores_caracteristicas, :observaciones)";
+            $query = "INSERT INTO `animal` ( `nombre`, `fecha_nacimiento`, `raza`, `peso`, `numero_arete`, `colores_caracteristicas`, `observaciones`,`images`) VALUES (:nombre,:fecha_nacimiento,:raza,:peso,:numero_arete, :colores_caracteristicas, :observaciones,:images)";
             try {
                 self::getConexion();
                 $nombre = $this->getNombre();
+                $image = $this->getImages();
                 $fechaNacimiento = $this->getFecha_nacimiento();
                 $raza = $this->getRaza();
                 $peso = $this->getPeso();
@@ -166,8 +177,6 @@ class Animal extends Conexion
                 $coloresCaracteristicas = $this->getColores_caracteristicas();
                 $observaciones = $this->getObservaciones();
 
-
-                
                 $resultado = self::$conexion->prepare($query);
                 $resultado->bindParam(':nombre', $nombre, PDO::PARAM_STR);
                 $resultado->bindParam(':fecha_nacimiento', $fechaNacimiento, PDO::PARAM_STR);
@@ -176,6 +185,7 @@ class Animal extends Conexion
                 $resultado->bindParam(':numero_arete', $numeroArete, PDO::PARAM_STR);
                 $resultado->bindParam(':colores_caracteristicas', $coloresCaracteristicas, PDO::PARAM_STR);
                 $resultado->bindParam(':observaciones', $observaciones, PDO::PARAM_STR);
+                $resultado->bindParam(':images', $image, PDO::PARAM_STR);
                 
             $resultado->execute();
             self::desconectar();
@@ -227,7 +237,7 @@ class Animal extends Conexion
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":id_celo", $id_celo, PDO::PARAM_STR);
+            $resultado->bindParam(":id_animal", $id_animal, PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
             if (!(self::verificarExistenciaDb())) {
@@ -245,7 +255,7 @@ class Animal extends Conexion
 
     public function actualizarAnimal()
     {
-        $query = "UPDATE tu_tabla SET 
+        $query = "UPDATE animal SET 
             nombre = :nombre,
             fecha_nacimiento = :fecha_nacimiento,
             raza = :raza,
@@ -256,7 +266,16 @@ class Animal extends Conexion
         WHERE id_animal = :id_animal";
 
         try {
-            $this->getConexion(); // Assuming you have a method to establish a database connection
+            self::getConexion(); // Assuming you have a method to establish a database connection
+            $nombre = $this->getNombre();
+            $fecha_nacimiento = $this->getFecha_nacimiento();
+            $raza = $this->getRaza();
+            $peso = $this->getPeso();
+            $numero_arete = $this->getNumero_arete();
+            $colores_caracteristicas = $this->getColores_caracteristicas();
+            $observaciones = $this->getObservaciones();
+            
+            
             $resultado = $this->conexion->prepare($query);
             $resultado->bindParam(":nombre", $nombre, PDO::PARAM_STR);
             $resultado->bindParam(":fecha_nacimiento", $fecha_nacimiento, PDO::PARAM_STR);
@@ -278,6 +297,43 @@ class Animal extends Conexion
             $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
             echo $error;
             return false; // Return false to indicate an error
+        }
+    }
+
+    public function listarAnimalesGrafica()
+    {
+        $query = "SELECT MONTH(fecha_nacimiento) AS mes, COUNT(*) AS cantidad_animales
+        FROM animal
+        GROUP BY MONTH(fecha_nacimiento)";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
+    }
+
+    public function listarImage()
+    {
+        $query = "SELECT images
+        FROM animal";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
         }
     }
 
