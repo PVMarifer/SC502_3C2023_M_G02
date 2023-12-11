@@ -13,8 +13,7 @@ switch ($_GET['op']) {
                 "1" => $registro->getAreteAnimal(),
                 "2" => $registro->getFechaDiagnostico(),
                 "3" => $registro->getDetallesCelos(),
-                "4" => $registro->getObservaciones(),
-                "5" => '<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdCelo() . '\')">Eliminar</button>'
+                "4" => '<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdCelo() . '\')">Eliminar</button>'
             );
         }
         $resultados = array(
@@ -34,7 +33,7 @@ switch ($_GET['op']) {
 
         $fechaDiagnostico = isset($_POST["fecha_celo"]) ? trim($_POST["fecha_celo"]) : "";
         $detalles = isset($_POST["detalles_celos"]) ? trim($_POST["detalles_celos"]) : "";
-        $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";
+     
 
         $celo = new celos();
         $celo->setIdAnimal($idAnimal);
@@ -42,7 +41,7 @@ switch ($_GET['op']) {
         $encontrado = $celo->verificarExistenciaDb();
         if ($encontrado == false) {
             $celo->setDetallesCelo($detalles);
-            $celo->setObservaciones($observaciones);
+
             $celo->guardarEnDb();
             if ($celo->verificarExistenciaDb()) {
                 echo 1; // se guardo exitosamente

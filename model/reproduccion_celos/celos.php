@@ -131,7 +131,7 @@ class celos extends Conexion
                 $celo->setAreteAnimal($encontrado["numero_arete"]);
                 $celo->setFechaDiagnostico($encontrado["fecha_celo"]);
                 $celo->setDetallesCelo($encontrado["detalles_celo"]);
-                $celo->setObservaciones($encontrado["observaciones"]);
+           
                 $lista[] = $celo;
             }
             return $lista;
@@ -153,7 +153,7 @@ class celos extends Conexion
            
             $fecha_diagnostico = $this->getFechaDiagnostico();
             $detalles_celo = $this->getDetallesCelos();
-            $observaciones = $this->getObservaciones();
+         
 
 
             $resultado = self::$conexion->prepare($query);
@@ -161,7 +161,7 @@ class celos extends Conexion
             $resultado->bindParam(":id_animal", $id_animal, PDO::PARAM_STR);
             $resultado->bindParam(":fecha_celo", $fecha_diagnostico, PDO::PARAM_STR);
             $resultado->bindParam(":detalles_celo", $detalles_celo, PDO::PARAM_STR);
-            $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
+ 
 
             $resultado->execute();
             self::desconectar();

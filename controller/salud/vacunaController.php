@@ -16,7 +16,7 @@ switch ($_GET['op']) {
                 "4" => $vacuna->getLote(),
                 "5" => $vacuna->getFechaVencimiento(),
                 "6" => $vacuna->getObservaciones(),
-                "7" =>'<button class="btn btn-danger" onclick="eliminar(\'' . $vacuna->getIdVacuna() . '\')">Eliminar</button>'
+                "7" => '<button class="btn btn-danger" onclick="eliminar(\'' . $vacuna->getIdVacuna() . '\')">Eliminar</button>'
             );
         }
         $resultados = array(
@@ -66,14 +66,23 @@ switch ($_GET['op']) {
         echo $respuesta;
         break;
 
- 
+
 
     case 'obtener_vacunas':
-            if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacunas'])) {
-                $vacunaModel = new Vacuna();
-                $vacunas = $vacunaModel->listarVacunas();
-                echo json_encode($vacunas);
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacunas'])) {
+            $Model = new Vacuna();
+            $vacunas = $Model->listarVacunas();
+            $data = array();
+            foreach ($vacunas as $row) {
+                $data[]=[
+                    'id' => $row['id_vacuna'],
+                    'nombre' => $row['nombre_vacuna']
+                ];
             }
+
+            echo json_encode($data);
+        }
+        break;
 
     case 'listar_vacunas':
         $vacuna_db = new Vacuna();
@@ -85,7 +94,7 @@ switch ($_GET['op']) {
                 "1" => $vacuna->getNombrevacuna(),
                 "2" => $vacuna->getDescripcion(),
                 "3" => $vacuna->getFechaVencimiento(),
-          );
+            );
         }
         $resultados = array(
             "sEcho" => 1,

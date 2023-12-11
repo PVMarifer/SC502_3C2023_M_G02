@@ -110,17 +110,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label>Estado de Celo</label>
-                                                    <select class="form-control select2" id="estado_celos"
-                                                        name="detalles_celos" style="width: 100%;">
-                                                        <option selected="selected">Seleccione una opcion</option>
-                                                        <option selected="selected">En Curso</option>
-                                                        <option>Saliendo</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-group">
                                                     <label for="">Observaciones</label>
                                                     <input type="text" class="form-control" id="observaciones"
                                                         name="observaciones"
@@ -167,7 +156,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <th>Numero de Arete</th>
                                             <th>Fecha de Celo</th>
                                             <th>Detalle de celos</th>
-                                            <th>Observaciones</th>
+                             
                                             <th>Opciones</th>
                                         </thead>
                                         <tbody>

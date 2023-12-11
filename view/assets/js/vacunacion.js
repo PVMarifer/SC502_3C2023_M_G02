@@ -2,7 +2,6 @@
 $(document).ready(function () {
   $('.duallistbox').bootstrapDualListbox()
   $('.select2').select2({
-    height:'50px'
   });
   // Función para obtener los animales y llenar el select
   function obtenerAnimales() {
@@ -33,7 +32,7 @@ $(document).ready(function () {
     });
   }
 
-  // Función para obtener las vacunas y llenar el select
+  // Función para obtener las enfermedades y llenar el select
   function obtenerVacunas() {
     $.ajax({ 
         url: '../../controller/salud/vacunaController.php?op=obtener_vacunas',
@@ -41,10 +40,11 @@ $(document).ready(function () {
         data: { obtenerVacunas: true },
         dataType: "json",
         success: function(data) {
+          console.log(data)
             if (data) {
-                // Llenar el select con las vacas obtenidas
+                // Llenar el select con las enfermedades obtenidas
                 $.each(data, function(index, vacuna) {
-                    $('#selectVacunas').append('<option value="' + vacuna.id_vacuna + '">' + vacuna.nombre_vacuna + '</option>');
+                    $('#selectVacunas').append('<option value="' + vacuna.id + '">' + vacuna.nombre +  '</option>');
                 });
             } else {
                 console.log("No se encontraron vacunas.");
@@ -71,17 +71,10 @@ function limpiarForms() {
 }
 
 
-//cancelar formulario de modificacion
 
-function cancelarForm() {
-  limpiarForms();
-  $('#form-agregar').show();
-  $('#form-modificar').hide();
-
-}
 
 /*Funcion para cargar el listado en el Datatable*/
-function listarVacunas() {
+function listarVacunacion() {
   tabla = $('#tablalistado').dataTable({
     aProcessing: true, //actiavmos el procesamiento de datatables
     aServerSide: true, //paginacion y filtrado del lado del serevr ../controller/animalController.php?op=listar_tabla'
@@ -104,7 +97,7 @@ function listarVacunas() {
 
 $(function () {
   $('#form-modificar').hide();
-  listarVacunas();
+  listarVacunacion();
 });
 
 
@@ -113,7 +106,7 @@ $('#formulario-agregar').on('submit', function (event) {
   event.preventDefault();
   $('#btnRegistrar').prop('disabled', true);
   var formData = new FormData($('#formulario-agregar')[0]);
-  console.log('aqui llega')
+
   $.ajax({
     url: '../../controller/salud/vacunacionController.php?op=insertar',
     type: 'POST',

@@ -271,12 +271,12 @@ class Vacuna extends Conexion
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
             $resultado->execute();
-            $vacunas = $resultado->fetchAll(PDO::FETCH_ASSOC);
-            echo json_encode($vacunas);
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $Exception) {
             self::desconectar();
-            $error = array('error' => "Error ".$Exception->getCode().": ".$Exception->getMessage());
-            echo json_encode($error);
+            $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;
+            return json_encode($error);
         }
     }
 

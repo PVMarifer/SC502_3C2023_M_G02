@@ -94,11 +94,12 @@ $('#formulario-agregar-medicamento').on('submit', function (event) {
     success: function (datos) {
       switch (datos) {
         case '1':
+          $('#tablalistadomedicamento').DataTable().ajax.reload();
           toastr.success(
             'Antibiotico registrado'
           );
           $('#formulario-agregar-medicamento')[0].reset();
-          tabla.api().ajax.reload();
+          
           break;
 
         case '2':

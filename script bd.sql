@@ -219,7 +219,6 @@ CREATE TABLE Celo (
     id_animal int not null,
 	fecha_celo date not null,
     detalles_celo varchar(80) not null,
-    observaciones text not null,
     foreign key fk_celo_animal (id_animal) references animal(id_animal)
 )
 ENGINE = InnoDB
