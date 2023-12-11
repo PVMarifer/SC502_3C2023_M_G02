@@ -165,71 +165,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <!-- /.fromulario -->
 
-          <!-- Formulario Modificar-->
-          <div class="row mb-5" id="form-modificar">
-            <div class="col-2"></div>
-            <div class="col-8">
-              <div class="card " style="background-color: grey;">
-                <div class="card-header text-center">
-                  <h3 class="card-title text-white">Modificar Mastitis</h3>
-                </div>
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form id="formulario-modificar" method="POST">
-                  <div class="card-body text-white ">
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="form-group">
-                          <label for="">Numero Arete</label>
-                          <input type="text" class="form-control" name="idAnimal" id="XidAnimal"
-                            placeholder="Ingrese el numero de arete" readonly>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-group">
-                          <label for="">Tipo de Tratamiento</label>
-                          <select name="tipoTratamiento" id="XtipoTratamiento" class="form-control select2">
-                            <option value="Inyeccion">Inyeccion</option>
-                            <option value="Antibiotico directo en la teta">Antibiotico directo a la teta</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-group">
-                          <label for="">Cuartos Afectados</label>
-                          <input type="text" class="form-control" name="cuartosAfectados" id="XcuartosAfectados"
-                            placeholder="Ingrese los cuartos afectados" required>
-                        </div>
-                      </div>
-
-                      <div class="col-12">
-                      <div class="form-group">
-                          <label for="">Fecha de Diagnostico</label>
-                          <input type="date" class="form-control" name="fechaDiagnostico" id="XfechaDiagnostico"
-                            readonly>
-                        </div>
-                      </div>
-                    </div>
-
-
-                  </div>
-                  <!-- /.card-body -->
-
-                  <div class="card-footer text-center">
-                    <div class="row">
-                      <div class="col-6"><button type="submit" class="btn btn-primary">Editar</button></div>
-                      <div class="col-6"><input type="button" class=" btn btn-info" value="Cancelar"
-                          onclick="cancelarForm()"></div>
-                    </div>
-
-
-                  </div>
-                </form>
-              </div>
-            </div>
-            <div class="col-2"></div>
-          </div>
-          <!-- /.formulario-->
+          
         </div>
 
       </section>

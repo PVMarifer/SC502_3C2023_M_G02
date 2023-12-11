@@ -1,21 +1,30 @@
+//funcion para insertar animales
+$(document).ready(function() {
+  $('.select2').select2();
+  // Función para obtener los animales y llenar el select
+  function obtenerAnimales() {
+      $.ajax({ 
+          url: '../../controller/animales/AnimalController.php?op=listar_animales',
+          type: "GET",
+          data: { obtenerAnimales: true },
+          dataType: "json",
+          success: function(data) {
+              if (data) {
+                  // Llenar el select con las vacas obtenidas
+                  $.each(data, function(index, animal) {
+                      $('#selectAnimales').append('<option value="' + animal.id_animal + '">' + animal.numero_arete + '</option>');
+                  });
+              } else {
+                  console.log("No se encontraron animales.");
+              }
+          },
+          error: function(xhr, status, error) {
+              console.error(error);
+          }
+      });
+  }
 
-//funcion para limpiar forms
-function limpiarForms() {
-  $('#formulario-agregar').trigger('reset');
-  $('#formulario-modificar').trigger('reset');
-}
 
-
-//cancelar formulario de modificacion
-
-function cancelarForm() {
-  limpiarForms();
-  $('#form-agregar').show();
-  $('#form-modificar').hide();
-
-}
-
-$(document).ready(function () {
   $('#calendario').fullCalendar({
     initialView: 'dayGridMonth',
     header: {
@@ -32,22 +41,29 @@ $(document).ready(function () {
   
   });
 
-});
-function obtener() {
-  $.ajax({
-    url: '../../controller/partos/partoController.php?op=obtener_partos',
-    type: "GET",
-    dataType: "json",
-    success: function (data) {
 
-      console.log(data)
-    },
-    error: function (xhr, status, error) {
-      console.error(error);
-    }
-  });
+
+  // Llamar a la función para obtener las vacas cuando el documento esté listo
+  obtenerAnimales();
+ 
+});
+//funcion para limpiar forms
+function limpiarForms() {
+  $('#formulario-agregar').trigger('reset');
+  $('#formulario-modificar').trigger('reset');
 }
-obtener()
+
+
+//cancelar formulario de modificacion
+
+function cancelarForm() {
+  limpiarForms();
+  $('#form-agregar').show();
+  $('#form-modificar').hide();
+
+}
+
+
 
 /*Funcion para cargar el listado en el Datatable*/
 function listarParto() {
@@ -116,66 +132,15 @@ $('#formulario-agregar').on('submit', function (event) {
   });
 });
 
-// funcion para boton modificar
-$('#tablalistado tbody').on(
-  'click',
-  'button[id="modificarDato"]',
 
-      function () {
-        var data = $('#tablalistado').DataTable().row($(this).parents('tr')).data();
-        limpiarForms();
-        $('#form-agregar').hide();
-        $('#form-modificar').show();
-        $('#XnumeroArete').val(data[0]);
-        $('#XfechaParto').val(data[1]);
-        $('#XTipoParto').val(data[2]);
-        $('#Xobservaciones').val(data[3]);
-        return false;
-      }
-);
-
- /*Funcion para modificacion de datos de usuario*/
- $('#formulario-modificar').on('submit', function (event) {
-  event.preventDefault();
-  bootbox.confirm('¿Desea modificar los datos?', function (result) {
-    if (result) {
-      var formData = new FormData($('#formulario-modificar')[0]);
-      $.ajax({
-        url: '../../controller/partos/partoController.php?op=modificar',
-        type: 'POST',
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function (datos) {
-          //alert(datos);
-          switch (datos) {
-            case '0':
-              toastr.error('Error: No se pudieron actualizar los datos');
-              break;
-            case '1':
-              toastr.success('Enfermedad actualizada exitosamente');
-              tabla.api().ajax.reload();
-              limpiarForms();
-              $('#form-modificar').hide();
-              $('#form-agregar').show();
-              break;
-            case '2':
-              toastr.error('Error al guardar los datos');
-              break;
-          }
-        },
-      });
-    }
-  });
-});
 
 /*Funcion para eliminar datos*/
-function eliminar(nombre) {
+function eliminar(id) {
   bootbox.confirm('¿Esta seguro de eliminar el parto?', function (result) {
     if (result) {
       $.post(
         '../../controller/partos/partoController.php?op=eliminar',
-        { numeroArete: nombre },
+        { idRegistro: id },
         function (data, textStatus, xhr) {
           switch (data) {
             case '0':

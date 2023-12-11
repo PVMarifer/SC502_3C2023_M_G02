@@ -90,12 +90,13 @@ $('#tablalistado tbody').on(
       function () {
         var data = $('#tablalistado').DataTable().row($(this).parents('tr')).data();
         limpiarForms();
+        console.log(data)
         $('#form-agregar').hide();
         $('#form-modificar').show();
-        $('#XnombreEnfermedad').val(data[0]);
-        $('#Xdescripcion').val(data[1]);
-        $('#Xsintomas').val(data[2]);
-        $('#Xtratamiento').val(data[3]);
+        $('#XnombreEnfermedad').val(data[1]);
+        $('#Xdescripcion').val(data[2]);
+        $('#Xsintomas').val(data[3]);
+        $('#Xtratamiento').val(data[4]);
         return false;
       }
 );

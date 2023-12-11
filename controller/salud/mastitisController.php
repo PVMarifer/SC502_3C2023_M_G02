@@ -14,7 +14,7 @@ switch ($_GET['op']) {
                 "2" => $fila->getTipoTratamiento(),
                 "3" => $fila->getCuartosAfectados(),
                 "4" => $fila->getFechaDiagnostico(),
-                "5" => '<button class="btn btn-success" id="modificarDato">Modificar</button>' . '<button class="btn btn-danger" onclick="eliminar(\'' . $fila->getIdMastitis() . '\')">Eliminar</button>'
+                "5" => '<button class="btn btn-danger" onclick="eliminar(\'' . $fila->getIdMastitis() . '\')">Eliminar</button>'
             );
         }
         $resultados = array(
@@ -61,30 +61,7 @@ switch ($_GET['op']) {
         echo $respuesta;
         break;
 
-    case 'modificar':
-        $idAnimal = isset($_POST["idAnimal"]) ? trim($_POST["idAnimal"]) : "";
-        $tipoTratamiento = isset($_POST["tipoTratamiento"]) ? trim($_POST["tipoTratamiento"]) : "";
-        $cuartosAfectados = isset($_POST["cuartosAfectados"]) ? trim($_POST["cuartosAfectados"]) : "";
-        $fechaDiagnostico = isset($_POST["fechaDiagnostico"]) ? trim($_POST["fechaDiagnostico"]) : "";
-        $Mastitis = new Mastitis();
-        $Mastitis->setIdAnimal($idAnimal);
-        $Mastitis->setFechaDiagnostico($fechaDiagnostico);
-        $encontrado = $Mastitis->verificarExistenciaModificar();
-        if ($encontrado == 1) {
-            //$usuario->llenarCampos($id); 
-            //$modulo->setNombre($nombreModif);
-            $Mastitis->setTipoTratamiento($tipoTratamiento);
-            $Mastitis->setCuartosAfectados($cuartosAfectados);
-            $modificados = $Mastitis->actualizarMastitis();
-            if ($modificados > 0) {
-                echo 1;
-            } else {
-                echo 0;
-            }
-        } else {
-            echo 2;
-        }
-        break;
+ 
 
     case 'listar_vacas_mastitis':
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacasMastitis'])) {

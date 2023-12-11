@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../model/partos/Parto.php'; 
+require_once '../../model/partos/Parto.php';
 
 switch ($_GET['op']) {
     case 'listar_tabla':
@@ -10,11 +10,11 @@ switch ($_GET['op']) {
         foreach ($partos as $parto) {
             $datos[] = array(
                 "0" => $parto->getIdPrefijo(),
-                "1" => $parto>getFechaParto(),
-                "2" => $parto->getTipoParto(),
-                "3" => $parto->getObservaciones(),
-        
-                "5" => '<button class="btn btn-success" id="modificarDato">Modificar</button>' . '<button class="btn btn-danger" onclick="eliminar(\'' . $parto->getFechaParto() . '\')">Eliminar</button>'
+                "1" => $parto->getNumeroArete(),
+                "2" => $parto->getFechaParto(),
+                "3" => $parto->getTipoParto(),
+                "4" => $parto->getObservaciones(),
+                "5" => '<button class="btn btn-danger" onclick="eliminar(\'' . $parto->getIdParto() . '\')">Eliminar</button>'
             );
         }
         $resultados = array(
@@ -30,18 +30,19 @@ switch ($_GET['op']) {
         break;
 
     case 'insertar':
-        $fecha_Parto = isset($_POST["fechaParto"]) ? trim($_POST["fechaParto"]) : "";
+        $idAnimal = isset($_POST["idAnimal"]) ? trim($_POST["idAnimal"]) : "";
+        $fecha_parto = isset($_POST["fechaParto"]) ? trim($_POST["fechaParto"]) : "";
         $tipo_parto = isset($_POST["tipoParto"]) ? trim($_POST["tipoParto"]) : "";
         $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";
-      
+
 
         $parto = new Parto();
-        $parto->setFechaParto($fecha_Parto);
-        $parto = $parto->verificarExistenciaDb();
+        $parto->setIdVaca($idAnimal);
+        $parto->setFechaParto($fecha_parto);
+        $encontrado = $parto->verificarExistenciaDb();
         if ($encontrado == false) {
-            $parto->setTipoParto($tipo_Parto);
+            $parto->setTipoParto($tipo_parto);
             $parto->setObservaciones($observaciones);
-
             $parto->guardarEnDb();
             if ($parto->verificarExistenciaDb()) {
                 echo 1; // se guardo exitosamente
@@ -50,43 +51,19 @@ switch ($_GET['op']) {
             }
         } else {
 
-            echo 2; // ya existe
+            echo 2; // ya existte
         }
         break;
 
     case "eliminar":
         $parto = new Parto();
-        $parto->setFechaParto(trim($_POST["fechaParto"]));
+        $parto->setIdParto(trim($_POST["idRegistro"]));
         $respuesta = $parto->eliminar();
         echo $respuesta;
         break;
 
-        case 'modificar':
-            $fechaParto = isset($_POST["fechaParto"]) ? trim($_POST["fechaParto"]) : "";
-            $tipoParto = isset($_POST["tipoParto"]) ? trim($_POST["dtipoParto"]) : "";
-            $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";
-            $parto = new Parto();
-            $parto->setFechaParto($fechaParto);
-            $encontrado = $parto->verificarExistenciaDb();
-            if ($encontrado == 1) {
-            //$usuario->llenarCampos($id); 
-              //$modulo->setNombre($nombreModif);
-            $parto->setFechaParto($fechaParto);
-            $parto->setTipoParto($tipoParto);
-            $parto->setObservaciones($observaciones);
+    
 
-              $modificados = $parto->actualizarparto();
-              if ($modificados > 0) {
-                echo 1;
-              } else {
-                echo 0;
-              }
-            }else{
-              echo 2;	
-            }
-      break;
-
-      
     case 'obtener_parto':
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerParto'])) {
             $partoModel = new Parto();

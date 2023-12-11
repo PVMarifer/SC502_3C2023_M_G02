@@ -263,30 +263,6 @@ class Vacuna extends Conexion
     }
 
 
-    public function actualizarVacuna()
-    {
-        $query = "UPDATE vacuna set observaciones=:observaciones where nombre_vacuna=:nombre_vacuna and casa_distribuidora=:casa_distribuidora" ;
-        try {
-            self::getConexion();
-            $nombre_vacuna = $this->getNombreVacuna();
-            $cada_distribuidora = $this->getCasaDistribuidora();
-            $observaciones = $this->getObservaciones();
-            $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":nombre_vacuna", $nombre_vacuna, PDO::PARAM_STR);
-            $resultado->bindParam(":casa_distribuidora", $cada_distribuidora, PDO::PARAM_STR);
-            $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
-            self::$conexion->beginTransaction(); //desactiva el autocommit
-            $resultado->execute();
-            self::$conexion->commit(); //realiza el commit y vuelve al modo autocommit
-            self::desconectar();
-            return $resultado->rowCount();
-        } catch (PDOException $Exception) {
-            self::$conexion->rollBack();
-            self::desconectar();
-            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
-            echo $error;
-        }
-    }
 
 
     public function listarVacunas(){

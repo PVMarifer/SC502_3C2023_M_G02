@@ -207,8 +207,7 @@ CREATE TABLE Parto (
     id_parto INT AUTO_INCREMENT PRIMARY KEY not null,
     id_vaca int not null,
 	fecha_parto date not null,
-    estado_vaca varchar(80) not null,
-    tipo_parto enum ('natural','intervenido','cesarea'),
+    tipo_parto varchar(30),
     observaciones text not null,
     foreign key fk_parto_vaca (id_vaca) references Animal(id_animal)
 )
