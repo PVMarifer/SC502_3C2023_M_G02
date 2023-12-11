@@ -80,7 +80,7 @@ Recuerdame
 
 </div>
 </div>
-
+</body>
 
 <script src="../../plugins/jquery/jquery.min.js"></script>
 
@@ -88,7 +88,4 @@ Recuerdame
 
 <script src="../../dist/js/adminlte.min.js?v=3.2.0"></script>
 
-
-</body>
-</body>
 </html>
