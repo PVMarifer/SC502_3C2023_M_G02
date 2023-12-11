@@ -1,3 +1,38 @@
+
+$(document).ready(function () {
+  $('#calendario').fullCalendar({
+    initialView: 'dayGridMonth',
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month'
+    },
+    events:'../../controller/partos/partoController.php?op=obtener_partos',
+    editable: false, 
+    eventRender: function (event, element) {
+        element.css('background-color', '#52AA5E'); 
+
+    }
+  
+  });
+
+});
+function obtener() {
+  $.ajax({
+    url: '../../controller/partos/partoController.php?op=obtener_partos',
+    type: "GET",
+    dataType: "json",
+    success: function (data) {
+
+      console.log(data)
+    },
+    error: function (xhr, status, error) {
+      console.error(error);
+    }
+  });
+}
+obtener()
+
 /*Funcion para cargar el listado en el Datatable*/
 function listarPartos() {
   tabla = $('#tablalistado').dataTable({
@@ -21,6 +56,6 @@ function listarPartos() {
 // Funcion principal
 
 $(function(){
-  $('#form-modificar').hide();
+
   listarPartos();
 });

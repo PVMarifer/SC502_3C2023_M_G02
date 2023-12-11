@@ -120,6 +120,45 @@ class Parto extends Conexion
             self::desconectar();
             $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;
             return json_encode($error);
+        } 
+    }
+
+    public function listarPartosGrafica()
+    {
+        $query = "SELECT MONTH(fecha_parto) AS mes, COUNT(*) AS cantidad_partos
+        FROM parto
+        GROUP BY MONTH(fecha_parto)";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        } 
+    }
+
+    public function obtenerPartos()
+    {
+        $query = "SELECT *
+                  FROM parto 
+                  INNER JOIN Animal ON parto.id_vaca = Animal.id_animal";
+
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
         }
     }
 }

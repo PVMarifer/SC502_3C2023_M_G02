@@ -35,28 +35,26 @@ $(document).ready(function () {
 
   // Función para obtener las vacunas y llenar el select
   function obtenerVacunas() {
-    $.ajax({
-      url: '../../controller/salud/vacunaController.php?op=obtener_vacunas',
-      type: "GET",
-      data: { obtenerVacunas: true },
-      dataType: "json",
-      success: function (data) {
-        if (data) {
-       
-
-          // Llenar el select con las enfermedades obtenidas
-          $.each(data, function (index, vacuna) {
-            $('#selectVacunas').append('<option value="' + vacuna.id_vacuna + '">' + vacuna.nombre_vacuna +'</option>');
-          });
-        } else {
-          console.log("No se encontraron vacunas.");
+    $.ajax({ 
+        url: '../../controller/salud/vacunaController.php?op=obtener_vacunas',
+        type: "GET",
+        data: { obtenerVacunas: true },
+        dataType: "json",
+        success: function(data) {
+            if (data) {
+                // Llenar el select con las vacas obtenidas
+                $.each(data, function(index, vacuna) {
+                    $('#selectVacunas').append('<option value="' + vacuna.id_vacuna + '">' + vacuna.nombre_vacuna + '</option>');
+                });
+            } else {
+                console.log("No se encontraron vacunas.");
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
         }
-      },
-      error: function (xhr, status, error) {
-        console.error(error);
-      }
     });
-  }
+}
 
   // Llamar a la función para obtener las vacas cuando el documento esté listo
   obtenerAnimales();

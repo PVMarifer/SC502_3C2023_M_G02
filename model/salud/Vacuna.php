@@ -291,18 +291,20 @@ class Vacuna extends Conexion
 
     public function listarVacunas(){
         $query = "SELECT id_vacuna, nombre_vacuna FROM vacuna";
-        
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
             $resultado->execute();
-            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+            $vacunas = $resultado->fetchAll(PDO::FETCH_ASSOC);
+            echo json_encode($vacunas);
         } catch (PDOException $Exception) {
             self::desconectar();
-            $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;
-            return json_encode($error);
+            $error = array('error' => "Error ".$Exception->getCode().": ".$Exception->getMessage());
+            echo json_encode($error);
         }
     }
+
+   
 
 }
 

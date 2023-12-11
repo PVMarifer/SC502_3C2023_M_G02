@@ -68,7 +68,7 @@ $(document).ready(function () {
     $.ajax({
       url: '../../controller/salud/enfermedadAnimalController.php?op=listar_enfermedades_grafica',
       type: "GET",
-      data: { obtenerEnfermedadesGrafica: true },
+      data: { obtenerEnfermedadesGrafica: true }, 
       dataType: "json",
       success: function (data) {
         console.log(data)

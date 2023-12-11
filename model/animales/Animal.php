@@ -280,6 +280,45 @@ class Animal extends Conexion
             return false; // Return false to indicate an error
         }
     }
+
+    public function listarVacias(){
+        $query = "SELECT COUNT(*) as cantidad_vacas_vacias
+        FROM Animal
+        WHERE NOT EXISTS (
+            SELECT 1
+            FROM Vaca_Prenada
+            WHERE Vaca_Prenada.id_servicio = Animal.id_animal
+        );";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;
+            return json_encode($error);
+        }
+    }
+    public function listarPrenadas(){
+        $query = "SELECT COUNT(DISTINCT Vaca_Prenada.id_servicio) as cantidad_vacas_prenadas
+        FROM Vaca_Prenada
+        INNER JOIN Servicio ON Vaca_Prenada.id_servicio = Servicio.id_servicio
+        INNER JOIN Animal ON Servicio.id_animal = Animal.id_animal";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;
+            return json_encode($error);
+        }
+    }
+
+    
+
 }
 
 

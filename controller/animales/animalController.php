@@ -39,17 +39,27 @@ switch ($_GET['op']) {
             echo json_encode($animales);
         }
         break;
-        case 'insert':
-            $nombre = isset($_POST["nombre"]) ? trim($_POST["nombre"]) : "";
-            $fecha_nacimiento = isset($_POST["fecha_nacimiento"]) ? trim($_POST["fecha_nacimiento"]) : "";
-            $raza = isset($_POST["raza"]) ? trim($_POST["raza"]) : "";
-            $peso = isset($_POST["peso"]) ? trim($_POST["peso"]) : "";
-            $numero_arete = isset($_POST["numero_arete"]) ? trim($_POST["numero_arete"]) : "";
-            $colores_caracteristicas = isset($_POST["colores_caracteristicas"]) ? trim($_POST["colores_caracteristicas"]) : "";
-            $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";
-    
-            $ingresarAnimal = new Animal();
-            
+    case 'insert':
+        $nombre = isset($_POST["nombre"]) ? trim($_POST["nombre"]) : "";
+        $fecha_nacimiento = isset($_POST["fecha_nacimiento"]) ? trim($_POST["fecha_nacimiento"]) : "";
+        $raza = isset($_POST["raza"]) ? trim($_POST["raza"]) : "";
+        $peso = isset($_POST["peso"]) ? trim($_POST["peso"]) : "";
+        $numero_arete = isset($_POST["numero_arete"]) ? trim($_POST["numero_arete"]) : "";
+        $colores_caracteristicas = isset($_POST["colores_caracteristicas"]) ? trim($_POST["colores_caracteristicas"]) : "";
+        $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";
+
+        $ingresarAnimal = new Animal();
+
+        $ingresarAnimal->setNombre($nombre);
+        $ingresarAnimal->setFecha_nacimiento($fecha_nacimiento);
+        $ingresarAnimal->setRaza($raza);
+        $ingresarAnimal->setPeso($peso);
+        $ingresarAnimal->setNumero_arete($numero_arete);
+        $ingresarAnimal->setColores_caracteristicas($observaciones);
+
+        $encontrado = $ingresarAnimal->verificarExistenciaDb();
+        if ($encontrado == false) {
+
             $ingresarAnimal->setNombre($nombre);
             $ingresarAnimal->setFecha_nacimiento($fecha_nacimiento);
             $ingresarAnimal->setRaza($raza);
@@ -57,70 +67,84 @@ switch ($_GET['op']) {
             $ingresarAnimal->setNumero_arete($numero_arete);
             $ingresarAnimal->setColores_caracteristicas($observaciones);
 
-            $encontrado = $ingresarAnimal->verificarExistenciaDb();
-            if ($encontrado == false) {
-                
-                $ingresarAnimal->setNombre($nombre);
-                $ingresarAnimal->setFecha_nacimiento($fecha_nacimiento);
-                $ingresarAnimal->setRaza($raza);
-                $ingresarAnimal->setPeso($peso);
-                $ingresarAnimal->setNumero_arete($numero_arete);
-                $ingresarAnimal->setColores_caracteristicas($observaciones);
-
-                $ingresarAnimal->guardarEnDb();
-                if ($ingresarAnimal->verificarExistenciaDb()) {
-                    echo 1; // se guardo exitosamente
-                } else {
-                    echo 3; //problema con guardar
-                }
+            $ingresarAnimal->guardarEnDb();
+            if ($ingresarAnimal->verificarExistenciaDb()) {
+                echo 1; // se guardo exitosamente
             } else {
-    
-                echo 2; // ya existte
+                echo 3; //problema con guardar
             }
-            break;
-    
-        case "eliminar":
-            $animal = new Animal();
-            $animal -> setIdAnimal(trim($_POST["id_animal"]));
-            $respuesta = $animal->eliminar();
-            echo $respuesta;
-            break;
-    
-        case 'modificar':
-            $nombre = isset($_POST["nombre"]) ? trim($_POST["nombre"]) : "";
-            $fecha_nacimiento = isset($_POST["fecha_nacimiento"]) ? trim($_POST["fecha_nacimiento"]) : "";
-            $raza = isset($_POST["raza"]) ? trim($_POST["raza"]) : "";
-            $peso = isset($_POST["peso"]) ? trim($_POST["peso"]) : "";
-            $numero_arete = isset($_POST["numero_arete"]) ? trim($_POST["numero_arete"]) : "";
-            $colores_caracteristicas = isset($_POST["colores_caracteristicas"]) ? trim($_POST["colores_caracteristicas"]) : "";
-            $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";
-    
-            $ingresarAnimal = new Animal();
-            
-            $ingresarAnimal->setNombre($nombre);
-            $ingresarAnimal->setFecha_nacimiento($fecha_nacimiento);
-            $ingresarAnimal->setRaza($raza);
-            $ingresarAnimal->setPeso($peso);
+        } else {
+
+            echo 2; // ya existte
+        }
+        break;
+
+    case "eliminar":
+        $animal = new Animal();
+        $animal->setIdAnimal(trim($_POST["id_animal"]));
+        $respuesta = $animal->eliminar();
+        echo $respuesta;
+        break;
+
+    case 'modificar':
+        $nombre = isset($_POST["nombre"]) ? trim($_POST["nombre"]) : "";
+        $fecha_nacimiento = isset($_POST["fecha_nacimiento"]) ? trim($_POST["fecha_nacimiento"]) : "";
+        $raza = isset($_POST["raza"]) ? trim($_POST["raza"]) : "";
+        $peso = isset($_POST["peso"]) ? trim($_POST["peso"]) : "";
+        $numero_arete = isset($_POST["numero_arete"]) ? trim($_POST["numero_arete"]) : "";
+        $colores_caracteristicas = isset($_POST["colores_caracteristicas"]) ? trim($_POST["colores_caracteristicas"]) : "";
+        $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";
+
+        $ingresarAnimal = new Animal();
+
+        $ingresarAnimal->setNombre($nombre);
+        $ingresarAnimal->setFecha_nacimiento($fecha_nacimiento);
+        $ingresarAnimal->setRaza($raza);
+        $ingresarAnimal->setPeso($peso);
+        $ingresarAnimal->setNumero_arete($numero_arete);
+        $ingresarAnimal->setColores_caracteristicas($colores_caracteristicas);
+        $encontrado = $ingresarAnimal->verificarExistenciaDb();
+        if ($encontrado == 1) {
+
+            //$usuario->llenarCampos($id); 
+            //$modulo->setNombre($nombreModif);
             $ingresarAnimal->setNumero_arete($numero_arete);
             $ingresarAnimal->setColores_caracteristicas($colores_caracteristicas);
-            $encontrado = $ingresarAnimal->verificarExistenciaDb();
-            if ($encontrado == 1) {
-    
-                //$usuario->llenarCampos($id); 
-                //$modulo->setNombre($nombreModif);
-                $ingresarAnimal->setNumero_arete($numero_arete);
-                $ingresarAnimal->setColores_caracteristicas($colores_caracteristicas);
-                $ingresarAnimal->setObservaciones($observaciones);
-                $modificados = $ingresarAnimal->actualizarAnimal();
-                if ($modificados > 0) {
-                    echo 1;
-                } else {
-                    echo 0;
-                }
+            $ingresarAnimal->setObservaciones($observaciones);
+            $modificados = $ingresarAnimal->actualizarAnimal();
+            if ($modificados > 0) {
+                echo 1;
             } else {
-                echo 2;
+                echo 0;
             }
-            break;
+        } else {
+            echo 2;
+        }
+        break;
+
+    case 'listar_vacas_vacias':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacasVacias'])) {
+            $animalModel = new Animal();
+            $animales = $animalModel->listarVacias();
+            $cantidad = 0;
+            foreach ($animales as $row) {
+                $cantidad = $row['cantidad_vacas_vacias'];
+            }
+            echo ($cantidad);
+        }
+        break;
+
+    case 'listar_vacas_prenadas':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacasPrenadas'])) {
+            $animalModel = new Animal();
+            $animales = $animalModel->listarPrenadas();
+            $cantidad = 0;
+            foreach ($animales as $row) {
+                $cantidad = $row['cantidad_vacas_prenadas'];
+            }
+            echo ($cantidad);
+        }
+        break;
 }
 
 ?>

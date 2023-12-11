@@ -98,13 +98,52 @@ class Aborto extends Conexion
     public function listarAbortos(){
         $query = "SELECT id_vaca, estado_vaca FROM aborto";
         try {
-            self::getConexion();
+            self::getConexion(); 
             $resultado = self::$conexion->prepare($query);
             $resultado->execute();
             return $resultado->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $Exception) {
             self::desconectar();
             $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;
+            return json_encode($error);
+        }
+    }
+
+    public function listarAbortosGrafica()
+    {
+        $query = "SELECT MONTH(fecha_aborto) AS mes, COUNT(*) AS cantidad_abortos
+        FROM aborto
+        GROUP BY MONTH(fecha_aborto)";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
+    }
+
+    public function obtenerAbortos()
+    {
+        $query = "SELECT *
+                  FROM aborto 
+                  INNER JOIN Animal ON aborto.id_vaca = Animal.id_animal";
+
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
             return json_encode($error);
         }
     }

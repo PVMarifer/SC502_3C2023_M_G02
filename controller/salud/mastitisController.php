@@ -97,11 +97,12 @@ switch ($_GET['op']) {
             }
             echo ($contador);
         }
+        break;
 
     case 'listar_mastitis_grafica':
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerMastitisGrafica'])) {
             $mastitisModel = new Mastitis();
-            $mastitis = $mastitisModel->listarMastitisGrafica();
+            $mastitis = $mastitisModel->listarMastitisGrafica(); 
 
             $year = [];
             $meses = [];
@@ -126,7 +127,7 @@ switch ($_GET['op']) {
                         $mes = 'Mayo';
                         break;
                     case 6:
-                        $mes = '';
+                        $mes = 'Junio';
                         break;
                     case 7:
                         $mes = 'Julio';
@@ -194,6 +195,7 @@ switch ($_GET['op']) {
             $mastitis = $mastitisModel->listarMastitisInyeccion();
             echo ($mastitis);
         }
+        break;
 
     case 'listar_mastitis_directo':
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerMastitisDirecto'])) {
@@ -201,6 +203,7 @@ switch ($_GET['op']) {
             $mastitis = $mastitisModel->listarMastitisDirecto();
             echo ($mastitis);
         }
+        break;
 
 
 

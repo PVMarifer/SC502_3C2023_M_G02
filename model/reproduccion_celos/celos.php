@@ -243,6 +243,72 @@ class celos extends Conexion
 
     }
 
+    public function listarCelosGrafica()
+    {
+        $query = "SELECT MONTH(fecha_celo) AS mes, COUNT(*) AS cantidad_celos
+        FROM celo
+        GROUP BY MONTH(fecha_celo)";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
+    }
+
+    public function listarcelos()
+    {
+        $query = "SELECT Celo.*, Animal.numero_arete
+        FROM Celo
+        INNER JOIN Animal ON Celo.id_animal = Animal.id_animal
+        WHERE Celo.fecha_celo >= CURDATE() - INTERVAL 1 MONTH";
+                $lista = array();
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            foreach ($resultado->fetchAll() as $encontrado) {
+                $celos = new celos();
+                $celos->setAreteAnimal($encontrado["numero_arete"]);
+                $celos->setFechaDiagnostico($encontrado["fecha_celo"]);
+                $celos->setDetallesCelo($encontrado["detalles_celo"]);
+                $lista[] = $celos;
+            }
+            return $lista;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
+    }
+
+    public function obtenerCelos(){
+        $query = "SELECT *
+                  FROM celo 
+                  INNER JOIN Animal ON Celo.id_animal = Animal.id_animal";
+ 
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
+    }
+
 
     
 

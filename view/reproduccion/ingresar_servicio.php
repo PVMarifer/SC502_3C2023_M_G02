@@ -60,9 +60,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-left">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Reproduccio</a></li>
-                                <li class="breadcrumb-item active">Celos</li>
-                                <li class="breadcrumb-item active">tabla-servicio</li>
+                                <li class="breadcrumb-item"><a href="#">Reproduccion</a></li>
+                                <li class="breadcrumb-item active">Servicios</li>
 
                             </ol>
                         </div>
@@ -84,7 +83,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="col-10">
                             <div class="card " style="background-color: grey;">
                                 <div class="card-header text-center">
-                                    <h3 class="card-title text-white">Nuevo Animal servicio</h3>
+                                    <h3 class="card-title text-white">Nuevo Servicio</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
@@ -93,12 +92,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <label for="">Numero vaca</label>
+                                                    <label for="">Numero de Arete</label>
                                                     <select id="selectAnimales" name="id_animal"
                                                         class="form-control select2" style="width: 100%; padding: 15px;"
                                                         required>
-                                                        <option selected="selected">Seleccione un número de arete
-                                                        </option>
+        
                                                     </select>
                                                 </div>
                                                 <!-- /.form-group -->
@@ -113,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label>Estado de Celo</label>
+                                                    <label>Tipo de Servicio</label>
                                                     <select class="form-control select2" id="tipo_servicio"
                                                         name="tipo_servicio" style="width: 100%;">
                                                         <option selected="selected">Tipo de servicio</option>
@@ -169,10 +167,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <table id="tablalistado" class="table table-striped table-bordered table-hover">
                                         <thead>
                                             <th>Id</th>
-                                            <th>Numero de Arete Madre</th>
+                                            <th>Numero de Arete </th>
                                             <th>Fecha de Servicio</th>
-                                            <th>ID Selo</th>
+                                            <th>Tipo de Servicio</th>
                                             <th>Observaciones</th>
+ 
+
                                         </thead>
                                         <tbody>
                                         </tbody>

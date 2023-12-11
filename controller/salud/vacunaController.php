@@ -100,12 +100,11 @@ switch ($_GET['op']) {
         break;
 
     case 'obtener_vacunas':
-
-        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacunas'])) {
-            $vacunaModel = new Vacuna();
-            $vacunas = $vacunaModel->listarVacunas();
-            echo json_encode($vacunas);
-        }
+            if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacunas'])) {
+                $vacunaModel = new Vacuna();
+                $vacunas = $vacunaModel->listarVacunas();
+                echo json_encode($vacunas);
+            }
 
     case 'listar_vacunas':
         $vacuna_db = new Vacuna();
