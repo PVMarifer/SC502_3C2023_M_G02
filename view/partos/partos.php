@@ -60,21 +60,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row">
             <div class="col-lg-7">
               <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                   <!-- small box -->
                   <div class="small-box text-center text-white " style="background-color:#4CAF50;">
                     <div class="inner">
-                      <p>Partos realizados</p>
+                      <p>Crías Vivas</p>
                       <h3>45</h3>
                     </div>
                   </div>
                 </div>
                 <!-- ./col -->
-                <div class="col-6">
+                <div class="col-4">
                   <!-- small box -->
                   <div class="small-box text-center text-white" style="background-color:#4CAF50;">
                     <div class="inner">
-                      <p>Vacas que han dado a luz</p>
+                      <p>Crías Perdidas</p>
+                      <h3>5</h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-4">
+                  <!-- small box -->
+                  <div class="small-box text-center text-white" style="background-color:#4CAF50;">
+                    <div class="inner">
+                      <p>Crías Muertas</p>
                       <h3>5</h3>
                     </div>
                   </div>
@@ -85,43 +95,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="col-lg-12">
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">Registro de Animales con partos realizados</h3>
+                    <h3 class="card-title">Registro de Partos en el último mes</h3>
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
                     <table id="example2" class="table table-bordered table-hover">
                       <thead>
                         <tr>
-                          <th>Número de Arete</th>
-                          <th>Nombre</th>
-                          <th>Edad</th>
+                          <th>ID de la vaca</th>
+                          <th>Estado</th>
                           <th>Fecha del parto</th>
+                      
 
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>512</td>
-                          <td>Lucia</td>
-                          <td>3 años</td>
-                          <td>16/10/23</td>
+                          <td>2</td>
+                          <td>Viva</td>
+                          <td>13/12/2023 </td>
+                         
 
 
                         </tr>
                         <tr>
-                          <td>245</td>
-                          <td>Ruby</td>
-                          <td>4 años</td>
-                          <td>10/09/23</td>
-
+                          <td>2</td>
+                          <td>Viva</td>
+                          <td>13/12/2023 </td>
+                         
 
                         </tr>
                         <tr>
-                          <td>323</td>
-                          <td>Bluey</td>
-                          <td>2 años</td>
-                          <td>1/02/24</td>
-
+                          <td>2</td>
+                          <td>Viva</td>
+                          <td>13/12/2023 </td>
 
                         </tr>
 
@@ -134,53 +141,53 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- /.card -->
               </div>
             </div>
-
-            <div class="col-lg-5 col-6">
-              <div class="card">
+            <div class="card ">
                 <div class="card-header border-0">
-                  <h3 class="card-title">Partos Registrados</h3>
+                  <h3 class="card-title">
+                    Gráfico de partos
+                  </h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
                 </div>
-                <div class="card-body table-responsive p-0">
-                  <table class="table table-striped table-valign-middle">
-                    <thead>
-                      <tr>
-                        <th>Número de Arete</th>
-                        <th>Nombre Vaca</th>
-                        <th>Número Arete cría</th>
-                        <th>Fecha Nacimiento</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          289
-                        </td>
-                        <td>Arenita</td>
-                        <td>
-                          492
-                        </td>
-                        <td>
-                          15/09/23
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          222
-                        </td>
-                        <td>Arlequina</td>
-                        <td>
-                          555
-                        </td>
-                        <td>
-                          12/08/23
-                        </td>
-                      </tr>
+                <div class="card-body">
+                  <canvas class="chart" id="line-chart"
+                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer bg-transparent">
+                  <div class="row">
+                    <div class="col-4 text-center">
+                      <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
+                        data-fgColor="#39CCCC">
 
-                    </tbody>
-                  </table>
+                      <div class="text-white">Mail-Orders</div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-4 text-center">
+                      <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
+                        data-fgColor="#39CCCC">
+
+                      <div class="text-white">Online</div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-4 text-center">
+                      <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
+                        data-fgColor="#39CCCC">
+
+                      <div class="text-white">In-Store</div>
+                    </div>
+                    <!-- ./col -->
+                  </div>
+                  <!-- /.row -->
                 </div>
+                <!-- /.card-footer -->
               </div>
-            </div>
+              <!-- /.card -->
+  
+<!--                    ---------------------------------------------------------------------------------------------------                                  -->
             <!-- ./col -->
           </div>
           <!-- /.row -->
@@ -189,7 +196,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-12">
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">Registro de Animales que han parido</h3>
+                  <h3 class="card-title">Registro de Partos</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -262,6 +269,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="../dist/js/adminlte.min.js"></script>
 </body>
 <!-- CSS styles -->
-<link rel="stylesheet" href="../assets/css/index.css">="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../assets/css/index.css">
 
 </html>

@@ -85,7 +85,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="col-lg-12">
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">Registro de Abortos</h3>
+                    <h3 class="card-title">Registro de Abortos en el último mes</h3>
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
@@ -136,49 +136,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
 
             <div class="col-lg-5 col-6">
-              <div class="card">
+            <div class="card ">
                 <div class="card-header border-0">
-                  <h3 class="card-title">Abortos Registrados</h3>
+                  <h3 class="card-title">
+                    Gráfico de Abortos
+                  </h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
                 </div>
-                <div class="card-body table-responsive p-0">
-                  <table class="table table-striped table-valign-middle">
-                    <thead>
-                      <tr>
-                        <th>Número de Arete</th>
-                        <th>Nombre Vaca</th>
-                        <th>Número Arete cría</th>
-                        <th>Fecha del Aborto</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          289
-                        </td>
-                        <td>Arenita</td>
-                        <td>
-                          492
-                        </td>
-                        <td>
-                          15/09/23
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          222
-                        </td>
-                        <td>Arlequina</td>
-                        <td>
-                          555
-                        </td>
-                        <td>
-                          12/08/23
-                        </td>
-                      </tr>
+                <div class="card-body">
+                  <canvas class="chart" id="line-chart"
+                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer bg-transparent">
+                  <div class="row">
+                    <div class="col-4 text-center">
+                      <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
+                        data-fgColor="#39CCCC">
 
-                    </tbody>
-                  </table>
+                      <div class="text-white">Mail-Orders</div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-4 text-center">
+                      <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
+                        data-fgColor="#39CCCC">
+
+                      <div class="text-white">Online</div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-4 text-center">
+                      <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
+                        data-fgColor="#39CCCC">
+
+                      <div class="text-white">In-Store</div>
+                    </div>
+                    <!-- ./col -->
+                  </div>
+                  <!-- /.row -->
                 </div>
+                <!-- /.card-footer -->
+              </div>
               </div>
             </div>
             <!-- ./col -->
@@ -189,7 +190,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-12">
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">Registro de Abortos</h3>
+                  <h3 class="card-title">Registro de Abortos </h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -262,6 +263,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="../dist/js/adminlte.min.js"></script>
 </body>
 <!-- CSS styles -->
-<link rel="stylesheet" href="../assets/css/index.css">="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../assets/css/index.css">
 
 </html>
