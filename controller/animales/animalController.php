@@ -41,6 +41,7 @@ switch ($_GET['op']) {
         break;
         case 'insert':
             $nombre = isset($_POST["nombre"]) ? trim($_POST["nombre"]) : "";
+            $image = isset($_POST["images"]) ? trim($_POST["images"]) : "";
             $fecha_nacimiento = isset($_POST["fecha_nacimiento"]) ? trim($_POST["fecha_nacimiento"]) : "";
             $raza = isset($_POST["raza"]) ? trim($_POST["raza"]) : "";
             $peso = isset($_POST["peso"]) ? trim($_POST["peso"]) : "";
@@ -51,21 +52,25 @@ switch ($_GET['op']) {
             $ingresarAnimal = new Animal();
             
             $ingresarAnimal->setNombre($nombre);
+            $ingresarAnimal->setImages($image);
             $ingresarAnimal->setFecha_nacimiento($fecha_nacimiento);
             $ingresarAnimal->setRaza($raza);
             $ingresarAnimal->setPeso($peso);
             $ingresarAnimal->setNumero_arete($numero_arete);
-            $ingresarAnimal->setColores_caracteristicas($observaciones);
+            $ingresarAnimal->setColores_caracteristicas($colores_caracteristicas);
+            $ingresarAnimal ->setObservaciones($observaciones);
 
             $encontrado = $ingresarAnimal->verificarExistenciaDb();
             if ($encontrado == false) {
                 
                 $ingresarAnimal->setNombre($nombre);
+                $ingresarAnimal->setImages($image);
                 $ingresarAnimal->setFecha_nacimiento($fecha_nacimiento);
                 $ingresarAnimal->setRaza($raza);
                 $ingresarAnimal->setPeso($peso);
                 $ingresarAnimal->setNumero_arete($numero_arete);
-                $ingresarAnimal->setColores_caracteristicas($observaciones);
+                $ingresarAnimal->setColores_caracteristicas($colores_caracteristicas);
+                $ingresarAnimal ->setObservaciones($observaciones);
 
                 $ingresarAnimal->guardarEnDb();
                 if ($ingresarAnimal->verificarExistenciaDb()) {
@@ -80,8 +85,24 @@ switch ($_GET['op']) {
             break;
     
         case "eliminar":
+            $nombre = isset($_POST["nombre"]) ? trim($_POST["nombre"]) : "";
+            $image = isset($_POST["images"]) ? trim($_POST["images"]) : "";
+            $fecha_nacimiento = isset($_POST["fecha_nacimiento"]) ? trim($_POST["fecha_nacimiento"]) : "";
+            $raza = isset($_POST["raza"]) ? trim($_POST["raza"]) : "";
+            $peso = isset($_POST["peso"]) ? trim($_POST["peso"]) : "";
+            $numero_arete = isset($_POST["numero_arete"]) ? trim($_POST["numero_arete"]) : "";
+            $colores_caracteristicas = isset($_POST["colores_caracteristicas"]) ? trim($_POST["colores_caracteristicas"]) : "";
+            $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";
+    
             $animal = new Animal();
-            $animal -> setIdAnimal(trim($_POST["id_animal"]));
+            $animal->setNombre($nombre);
+            $animal ->setImages($image);
+            $animal->setFecha_nacimiento($fecha_nacimiento);
+            $animal->setRaza($raza);
+            $animal->setPeso($peso);
+            $animal->setNumero_arete($numero_arete);
+            $animal->setColores_caracteristicas($observaciones);
+            $animal -> setIdAnimal(trim($_POST["idRegistro"]));
             $respuesta = $animal->eliminar();
             echo $respuesta;
             break;
@@ -103,6 +124,7 @@ switch ($_GET['op']) {
             $ingresarAnimal->setPeso($peso);
             $ingresarAnimal->setNumero_arete($numero_arete);
             $ingresarAnimal->setColores_caracteristicas($colores_caracteristicas);
+            $ingresarAnimal->setObservaciones($observaciones);
             $encontrado = $ingresarAnimal->verificarExistenciaDb();
             if ($encontrado == 1) {
     
@@ -121,6 +143,116 @@ switch ($_GET['op']) {
                 echo 2;
             }
             break;
+        
+            case 'listar_animales_grafica':
+                if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerAnimalesGrafica'])) {
+                    $animalModel = new Animal();
+                    $animales = $animalModel->listarAnimalesGrafica();
+                    
+                    $meses = [];
+                    $cantidadanimales = [];
+                    $data = null;
+                    foreach ($animales as $row) {
+                        $mes = '';
+                        switch ($row['mes']) {
+                            case 1:
+                                $mes = 'Enero';
+                                break;
+                            case 2:
+                                $mes = 'Febrero';
+                                break;
+                            case 3:
+                                $mes = 'Marzo';
+                                break;
+                            case 4:
+                                $mes = 'Abril';
+                                break;
+                            case 5:
+                                $mes = 'Mayo';
+                                break;
+                            case 6:
+                                $mes = '';
+                                break;
+                            case 7:
+                                $mes = 'Julio';
+                                break;
+                            case 8:
+                                $mes = 'Agosto';
+                                break;
+                            case 9:
+                                $mes = 'Septiembre';
+                                break;
+                            case 10:
+                                $mes = 'Octubre';
+                                break;
+                            case 11:
+                                $mes = 'Noviembre';
+                                break;
+                            case 12:
+                                $mes = 'Diciembre';
+                                break;
+                        }
+        
+                        $meses[] = $mes;
+                        $cantidadanimales[] = $row['cantidad_animales'];
+                    }
+                    $data_json = json_encode(
+                        array(
+                            'meses' => $meses,
+                            'cantidadAnimales' => $cantidadanimales
+                        )
+                    );
+        
+                    echo ($data_json);
+                }
+                break;
+            case 'listarAnimales':
+                    $animal_me_db = new Animal();
+                    $registros = $animal_me_db->listarDb();
+                    $datos = array();
+                    foreach ($registros as $registro) {
+                        $datos[] = array(
+                            "0" => $registro->getIdAnimal(),
+                            "1" => $registro->getNumero_arete(),
+                            "2" => $registro->getNombre(),
+                            "3" => $registro->getFecha_nacimiento(),
+                            "4" => $registro->getRaza(),
+                            "5" => $registro->getPeso(),
+                            "6" => $registro->getColores_caracteristicas(),
+                            "7" => $registro->getObservaciones(),
+                        );
+                    }
+                    $resultados = array(
+                        "sEcho" => 1,
+                        ##informacion para datatables
+                        "iTotalRecords" => count($datos),
+                        ## total de registros al datatable
+                        "iTotalDisplayRecords" => count($datos),
+                        ## enviamos el total de registros a visualizar
+                        "aaData" => $datos
+                    );
+                    echo json_encode($resultados);
+                    break;
+            case 'listarImage':
+                    $animal_me_db = new Animal();
+                    $registros = $animal_me_db->listarImage();
+                    $datos = array();
+                    foreach ($registros as $registro) {
+                        $datos[] = array(
+                            "0" => $registro->getImages(),
+                        );
+                    }
+                    $resultados = array(
+                        "sEcho" => 1,
+                        ##informacion para datatables
+                        "iTotalRecords" => count($datos),
+                        ## total de registros al datatable
+                        "iTotalDisplayRecords" => count($datos),
+                        ## enviamos el total de registros a visualizar
+                        "aaData" => $datos
+                    );
+                    echo json_encode($resultados);
+                    break;
 }
 
 ?>
