@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <title>Registro</title>
+  <title>Inicio de sesión</title>
 
 
   <!-- Google Font: Source Sans Pro -->
@@ -22,21 +22,62 @@
 <script nonce="9e457cd5-28a6-48c9-a0f6-e5739ff2cec8">(function(w,d){!function(j,k,l,m){j[l]=j[l]||{};j[l].executed=[];j.zaraz={deferred:[],listeners:[]};j.zaraz.q=[];j.zaraz._f=function(n){return async function(){var o=Array.prototype.slice.call(arguments);j.zaraz.q.push({m:n,a:o})}};for(const p of["track","set","debug"])j.zaraz[p]=j.zaraz._f(p);j.zaraz.init=()=>{var q=k.getElementsByTagName(m)[0],r=k.createElement(m),s=k.getElementsByTagName("title")[0];s&&(j[l].t=k.getElementsByTagName("title")[0].text);j[l].x=Math.random();j[l].w=j.screen.width;j[l].h=j.screen.height;j[l].j=j.innerHeight;j[l].e=j.innerWidth;j[l].l=j.location.href;j[l].r=k.referrer;j[l].k=j.screen.colorDepth;j[l].n=k.characterSet;j[l].o=(new Date).getTimezoneOffset();if(j.dataLayer)for(const w of Object.entries(Object.entries(dataLayer).reduce(((x,y)=>({...x[1],...y[1]})),{})))zaraz.set(w[0],w[1],{scope:"page"});j[l].q=[];for(;j.zaraz.q.length;){const z=j.zaraz.q.shift();j[l].q.push(z)}r.defer=!0;for(const A of[localStorage,sessionStorage])Object.keys(A||{}).filter((C=>C.startsWith("_zaraz_"))).forEach((B=>{try{j[l]["z_"+B.slice(7)]=JSON.parse(A.getItem(B))}catch{j[l]["z_"+B.slice(7)]=A.getItem(B)}}));r.referrerPolicy="origin";r.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(j[l])));q.parentNode.insertBefore(r,q)};["complete","interactive"].includes(k.readyState)?zaraz.init():j.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);
 </script>
 </head>
-<body class="login-page" style="min-height: 496.781px;">
-<div class="login-box">
+<div class="container text-center">
+  <div class="row g-2">
+    <div class="col-6">
+      <div class="p-3"></div>
+    </div>
+    <div class="col-6">
+      <div class="p-3"></div>
+    </div>
+    <div class="col-6">
+      <div class="p-3"></div>
+    </div>
+    <div class="col-6">
+      <div class="p-3"></div>
+    </div>
+    <div class="col-6">
+      <div class="p-3"></div>
+    </div>
+    <div class="p-3"></div>
+    </div>
+    <div class="col-6">
+      <div class="p-3"></div>
+    </div>
+<div class="row ">
+  <div class="row ">
+  <div class="row ">
+<div class="container text-center">
+  <div class="row ">
+  <div class="row ">
+  <div class="row ">
+  <div class="row ">
+  <div class="row ">
+  <div class="row ">
+    <div class="col">
+      
+    </div>
+    <div class="col">
+     
+<div class="card" style="width: 50rem;">
+  <div class="card-body">
+  
+
+
+<div style= "background-color:#28a745;" >
 <div class="login-logo"> 
-<a href="index.php"><b>SG GANADERIA</b></a>  
+<a style="color: #f3f1ff;" href="LandPage.php"><b>SG GANADERIA</b></a>  
 </div>
 
 <div class="card">
-<div class="card-body register-card-body">
-<p class="login-box-msg">Registrate</p>
+<div  style= "background-color:#28a745;" class="card-body login-card-body">
+<p style="color: #f3f1ff;" class="login-box-msg">Registrate</p>
 <form action="index.php" method="post">
 <div class="input-group mb-3">
 <input type="text" class="form-control" placeholder="Nombre">
 <div class="input-group-append">
 <div class="input-group-text">
-<span class="fas fa-user"></span>
+<span style="color: #f3f1ff;" class="fas fa-user"></span>
 </div>
 </div>
 </div>
@@ -44,7 +85,7 @@
 <input type="email" class="form-control" placeholder="Correo">
 <div class="input-group-append">
 <div class="input-group-text">
-<span class="fas fa-envelope"></span>
+<span style="color: #f3f1ff;" class="fas fa-envelope"></span>
 </div>
 </div>
 </div>
@@ -52,7 +93,7 @@
 <input type="password" class="form-control" placeholder="Contraseña">
 <div class="input-group-append">
 <div class="input-group-text">
-<span class="fas fa-lock"></span>
+<span style="color: #f3f1ff;" class="fas fa-lock"></span>
 </div>
 </div>
 </div>
@@ -60,16 +101,16 @@
 <input type="password" class="form-control" placeholder="Confirmar Contraseña">
 <div class="input-group-append">
 <div class="input-group-text">
-<span class="fas fa-lock"></span>
+<span style="color: #f3f1ff;" class="fas fa-lock"></span>
 </div>
 </div>
 </div>
 <div class="row">
-<div class="col-10">
+<div class="col-7">
 <div class="icheck-primary">
 <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-<label for="agreeTerms">
-Estoy de acuerdo con los <a href="#">terminos de privacidad</a>
+<label style="color: #f3f1ff;" for="agreeTerms">
+Estoy de acuerdo con los <a style="color: #f3f1ff;" href="#">terminos de privacidad</a>
 </label>
 </div>
 </div>
@@ -86,8 +127,19 @@ Estoy de acuerdo con los <a href="#">terminos de privacidad</a>
 Inscribirse con Google
 </a>
 </div>
-<a href="login.php" class="text-center">Tengo una cuenta activa ¡Inicia Sesion!</a>
+  
+<a style="color: #f3f1ff;" href="login.php" class="text-center">Tengo una cuenta activa ¡Inicia Sesion!</a>
 </div>
+
+    <div class="col">
+   
+    </div>
+  </div>
+</div>
+
+<body >
+
+</body>
 
 <script src="../../plugins/jquery/jquery.min.js"></script>
 
@@ -95,7 +147,4 @@ Inscribirse con Google
 
 <script src="../../dist/js/adminlte.min.js?v=3.2.0"></script>
 
-
-</body>
-</body>
 </html>
