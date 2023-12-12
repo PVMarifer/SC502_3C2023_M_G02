@@ -90,7 +90,7 @@ $(document).ready(function() {
       processData: false,
       success: function (datos) 
       {
-        console.log("wed");
+
         switch (datos) {
           case '1':
             toastr.success(
