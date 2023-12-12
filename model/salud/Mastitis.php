@@ -8,13 +8,13 @@ class Mastitis extends Conexion
     //Atributos de la clase
     protected static $conexion;
 
-    private $idMastitis =null;
+    private $idMastitis = null;
 
-    private $idPrefijo =null;
+    private $idPrefijo = null;
 
     private $idAnimal = null;
 
-    private $numeroArete =null;
+    private $numeroArete = null;
 
     private $tipoTratamiento = null;
 
@@ -132,7 +132,7 @@ class Mastitis extends Conexion
             self::desconectar();
             foreach ($resultado->fetchAll() as $encontrado) {
                 $Mastitis = new Mastitis();
-                $prefijo ="MA";
+                $prefijo = "MA";
                 $Mastitis->setIdMastitis($encontrado["id_mastitis"]);
                 $id_personalizado = $prefijo . str_pad($Mastitis->getIdMastitis(), 2, '0', STR_PAD_LEFT);
                 $Mastitis->setIdPrefijo($id_personalizado);
@@ -179,54 +179,55 @@ class Mastitis extends Conexion
         }
     }
 
-    public function verificarExistenciaDb(){
-            $query = "SELECT * FROM mastitis where id_animal=:id_animal and fecha_diagnostico=:fecha_diagnostico";
-            
-            try {
-             self::getConexion();
-                $resultado = self::$conexion->prepare($query);		
-                $id_animal= $this->getIdAnimal();	
-                $fecha= $this->getFechaDiagnostico();	
-                $resultado->bindParam(":id_animal",$id_animal,PDO::PARAM_STR);
-                $resultado->bindParam(":fecha_diagnostico",$fecha,PDO::PARAM_STR);
-                $resultado->execute();
-                self::desconectar();
-                $encontrado = false;
-                foreach ($resultado->fetchAll() as $reg) {
-                    echo 'lllwga';
-                    $encontrado = true;
-                }
-                return $encontrado;
-               } catch (PDOException $Exception) {
-                   self::desconectar();
-                   $error = "Error ".$Exception->getCode().": ".$Exception->getMessage();
-                 return $error;
-               } 
-        }
+    public function verificarExistenciaDb()
+    {
+        $query = "SELECT * FROM mastitis where id_animal=:id_animal and fecha_diagnostico=:fecha_diagnostico";
 
-        public function verificarExistenciaModificar(){
-            $query = "SELECT * FROM mastitis where mastitis.id_animal = ( SELECT id_animal FROM animal WHERE numero_arete = :id_animal) and fecha_diagnostico=:fecha_diagnostico";
-            
-            try {
-             self::getConexion();
-                $resultado = self::$conexion->prepare($query);		
-                $id_animal= $this->getIdAnimal();	
-                $fecha= $this->getFechaDiagnostico();	
-                $resultado->bindParam(":id_animal",$id_animal,PDO::PARAM_STR);
-                $resultado->bindParam(":fecha_diagnostico",$fecha,PDO::PARAM_STR);
-                $resultado->execute();
-                self::desconectar();
-                $encontrado = false;
-                foreach ($resultado->fetchAll() as $reg) {
-                    $encontrado = true;
-                }
-                return $encontrado;
-               } catch (PDOException $Exception) {
-                   self::desconectar();
-                   $error = "Error ".$Exception->getCode().": ".$Exception->getMessage();
-                 return $error;
-               } 
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $id_animal = $this->getIdAnimal();
+            $fecha = $this->getFechaDiagnostico();
+            $resultado->bindParam(":id_animal", $id_animal, PDO::PARAM_STR);
+            $resultado->bindParam(":fecha_diagnostico", $fecha, PDO::PARAM_STR);
+            $resultado->execute();
+            self::desconectar();
+            $encontrado = false;
+            foreach ($resultado->fetchAll() as $reg) {
+                $encontrado = true;
+            }
+            return $encontrado;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            return $error;
         }
+    }
+
+    public function verificarExistenciaModificar()
+    {
+        $query = "SELECT * FROM mastitis where mastitis.id_animal = ( SELECT id_animal FROM animal WHERE numero_arete = :id_animal) and fecha_diagnostico=:fecha_diagnostico";
+
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $id_animal = $this->getIdAnimal();
+            $fecha = $this->getFechaDiagnostico();
+            $resultado->bindParam(":id_animal", $id_animal, PDO::PARAM_STR);
+            $resultado->bindParam(":fecha_diagnostico", $fecha, PDO::PARAM_STR);
+            $resultado->execute();
+            self::desconectar();
+            $encontrado = false;
+            foreach ($resultado->fetchAll() as $reg) {
+                $encontrado = true;
+            }
+            return $encontrado;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            return $error;
+        }
+    }
 
     public function eliminar()
     {
@@ -252,7 +253,8 @@ class Mastitis extends Conexion
     }
 
 
-    public function actualizarMastitis(){
+    public function actualizarMastitis()
+    {
         $query = "update mastitis set tipo_tratamiento=:tipo_tratamiento,cuartos_afectados=:cuartos_afectados 
         WHERE mastitis.id_animal = (
             SELECT id_animal
@@ -265,23 +267,127 @@ class Mastitis extends Conexion
             $tipo_tratamiento = $this->getTipoTratamiento();
             $cuartos_afectados = $this->getCuartosAfectados();
             $fecha_diagnostico = $this->getFechaDiagnostico();
-         
+
             $resultado = self::$conexion->prepare($query);
             $resultado->bindParam(":id_animal", $id_animal, PDO::PARAM_STR);
             $resultado->bindParam(":tipo_tratamiento", $tipo_tratamiento, PDO::PARAM_STR);
             $resultado->bindParam(":cuartos_afectados", $cuartos_afectados, PDO::PARAM_STR);
             $resultado->bindParam(":fecha_diagnostico", $fecha_diagnostico, PDO::PARAM_STR);
-            self::$conexion->beginTransaction();//desactiva el autocommit
+            self::$conexion->beginTransaction(); //desactiva el autocommit
             $resultado->execute();
-            self::$conexion->commit();//realiza el commit y vuelve al modo autocommit
+            self::$conexion->commit(); //realiza el commit y vuelve al modo autocommit
             self::desconectar();
             return $resultado->rowCount();
         } catch (PDOException $Exception) {
             self::$conexion->rollBack();
             self::desconectar();
-            $error = "Error ".$Exception->getCode().": ".$Exception->getMessage();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
             echo $error;
         }
+    }
+
+    public function listarMastitisGrafica()
+    {
+        $query = "SELECT YEAR(fecha_diagnostico) AS ano, MONTH(fecha_diagnostico) AS mes, COUNT(*) AS total_mastitis
+        FROM Mastitis
+        GROUP BY YEAR(fecha_diagnostico), MONTH(fecha_diagnostico)
+        ORDER BY YEAR(fecha_diagnostico), MONTH(fecha_diagnostico)";
+
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+            ;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
+
+    }
+
+
+    public function listarMastitis()
+    {
+        $query = "SELECT * FROM mastitis
+        INNER JOIN animal ON mastitis.id_animal = animal.id_animal";
+        $lista = array();
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            foreach ($resultado->fetchAll() as $encontrado) {
+                $Mastitis = new Mastitis();
+                $prefijo = "MA";
+                $Mastitis->setIdMastitis($encontrado["id_mastitis"]);
+                $id_personalizado = $prefijo . str_pad($Mastitis->getIdMastitis(), 2, '0', STR_PAD_LEFT);
+                $Mastitis->setIdPrefijo($id_personalizado);
+                $Mastitis->setIdAnimal($encontrado["id_animal"]);
+                $Mastitis->setNumeroArete($encontrado["numero_arete"]);
+                $Mastitis->setTipoTratamiento($encontrado["tipo_tratamiento"]);
+                $Mastitis->setCuartosAfectados($encontrado["cuartos_afectados"]);
+                $Mastitis->setFechaDiagnostico($encontrado["fecha_diagnostico"]);
+                $lista[] = $Mastitis;
+            }
+            return $lista;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
+    }
+
+    public function listarMastitisInyeccion()
+    {
+        $query = "SELECT COUNT(*) AS cantidad_total
+        FROM Mastitis
+        WHERE tipo_tratamiento = 'inyeccion'";
+         try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            $row = $resultado->fetch();
+            $totalMastitis = $row['cantidad_total'];
+            return $totalMastitis;
+
+            
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            echo $error;
+            return json_encode($error);
+        }
+
+    }
+
+    public function listarMastitisDirecto()
+    {
+        $query = "SELECT COUNT(*) AS cantidad_total
+        FROM Mastitis
+        WHERE tipo_tratamiento = 'antibiotico directo en la teta'";
+         try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            $row = $resultado->fetch();
+            $totalMastitis = $row['cantidad_total'];
+            return $totalMastitis;
+
+            
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            echo $error;
+            return json_encode($error);
+        }
+
     }
 
 

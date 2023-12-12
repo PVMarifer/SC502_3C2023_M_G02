@@ -24,7 +24,7 @@
                with font-awesome or any other icon font library -->
      
       <li class="nav-item ">
-        <a href="./tratamientos.php" class="nav-link links-sidebar-nav">
+        <a href="./secados.php" class="nav-link links-sidebar-nav">
           <p>
             Vacas Secas
           </p>

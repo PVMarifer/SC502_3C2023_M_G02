@@ -8,10 +8,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Starter</title>
+  <title>SG GANADERIA| MASTITIS</title>
 
- <!-- Google Font: Source Sans Pro -->
- <link rel="stylesheet"
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
@@ -30,17 +30,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
 
-  <?php
-      include '../fragments/nav_menu.php'
-    ?>
+    <?php
+    include '../fragments/nav_menu.php'
+      ?>
 
 
 
-   <!--  Main Sidebar  -->
-   <aside class="main-sidebar  elevation-4">    
-        <?php
-        include '../fragments/main_aside_enfermedades.php'
-          ?>
+    <!--  Main Sidebar  -->
+    <aside class="main-sidebar  elevation-4">
+      <?php
+      include '../fragments/main_aside_enfermedades.php'
+        ?>
     </aside><!--  Main Sidebar  -->
 
 
@@ -69,82 +69,56 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
               <div class="row">
-                <div class="col-lg-6 col-6">
+                <div class="col-lg-4 col-6">
                   <!-- small box -->
                   <div class="small-box text-center text-white " style="background-color:#4CAF50;">
                     <div class="inner">
                       <p>Vacas con Mastitis</p>
-                      <h3>3</h3>
+                      <h3 id="card-vacas-mastitis"></h3>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6 col-6">
+                <div class="col-lg-4 col-6">
                   <!-- small box -->
                   <div class="small-box text-center text-white " style="background-color:#4CAF50;">
                     <div class="inner">
-                      <p>Vacas con Antibiótico</p>
-                      <h3>2</h3>
+                      <p>Vacas con Antibiótico Inyectado</p>
+                      <h3 id="card-mastitis-inyeccion"></h3>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6 col-6">
+                <div class="col-lg-4 col-12">
                   <!-- small box -->
                   <div class="small-box text-center text-white " style="background-color:#4CAF50;">
                     <div class="inner">
-                      <p>Vacas con Mastitis Parcial</p>
-                      <h3>2</h3>
+                      <p>Vacas con Antibiotico directo en la teta</p>
+                      <h3 id="card-mastitis-directo"></h3>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6 col-6">
-                  <!-- small box -->
-                  <div class="small-box text-center text-white " style="background-color:#4CAF50;">
-                    <div class="inner">
-                      <p>Vacas con Mastitis Total</p>
-                      <h3>1</h3>
-                    </div>
-                  </div>
-                </div>
+
               </div>
 
             </div>
-            <div class="col-lg-4">
-              <div class="card">
+            <div class="col-lg-12">
+              <div class="card p-2" style="overflow-x: scroll;">
                 <div class="card-header border-0">
                   <h3 class="card-title">Vacas con Mastitis el Ultimo mes</h3>
                 </div>
 
-                <div class="card-body table-responsive p-0">
-                  <table class="table table-striped table-valign-middle">
+                <div class="card-body  p-0">
+                  <table class="table table-striped table-valign-middle" id="tablamastitis">
                     <thead>
                       <tr>
                         <th>Arete</th>
                         <th>Fecha Diagnóstico</th>
-                        <th>Antibiótico Aplicado</th>
+                        <th>Tipo Tratamiento</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>
-                          199
-                        </td>
-                        <td>04/10/23</td>
-                        <td>
-                          Mastijet
-                        </td>
 
-                      </tr>
-                      <tr>
-                        <td>
-                          233
-                        </td>
-                        <td>10/10/23</td>
-                        <td>
-                          Penicilina
-                        </td>
-                      </tr>
 
                     </tbody>
                   </table>
@@ -167,126 +141,68 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </div>
                 </div>
                 <div class="card-body">
-                  <canvas class="chart" id="line-chart"
+                  <canvas class="chart" id="grafico-mastitis"
                     style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer bg-transparent">
-                  <div class="row">
-                    <div class="col-4 text-center">
-                      <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
-                        data-fgColor="#39CCCC">
 
-                      <div class="text-white">Mail-Orders</div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-4 text-center">
-                      <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
-                        data-fgColor="#39CCCC">
-
-                      <div class="text-white">Online</div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-4 text-center">
-                      <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
-                        data-fgColor="#39CCCC">
-
-                      <div class="text-white">In-Store</div>
-                    </div>
-                    <!-- ./col -->
-                  </div>
-                  <!-- /.row -->
-                </div>
-                <!-- /.card-footer -->
               </div>
             </div>
 
           </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">Registro de Mastitis</h3>
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <table id="example2" class="table table-bordered table-hover">
-                    <thead>
-                      <tr>
-                        <th>Número de Arete</th>
-                        <th>Nombre</th>
-                        <th>Fecha Último Mastitis</th>
-                        <th>Cantidad de mastitis el último mes</th>
-                        <th>Cantidad de mastitis el último año</th>
-                        <th>Cuarto(s) más afectados</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>200</td>
-                        <td>3 años</td>
-                        <td>12/10/23</td>
-                        <td>2</td>
-                        <td>12</td>
-                        <td>Trasero Derecho</td>
 
-                      </tr>
-                      <tr>
-                        <td>230</td>
-                        <td>2 años</td>
-                        <td>12/10/23</td>
-                        <td>4</td>
-                        <td>7</td>
-                        <td>Traseros</td>
-
-                      </tr>
-                    <tfoot>
-                      <tr>
-                        <th>Número de Arete</th>
-                        <th>Nombre</th>
-                        <th>Fecha Último Mastitis</th>
-                        <th>Cantidad de mastitis el último mes</th>
-                        <th>Cantidad de mastitis el último año</th>
-                        <th>Cuarto(s) más afectados</th>
-
-                      </tr>
-                    </tfoot>
-                  </table>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.card -->
-            </div>
-
-          </div>
         </div>
-    </div>
-    </section>
+
+      </section>
 
 
-  </div><!-- ./Content Wrapper-->
+    </div><!-- ./Content Wrapper-->
 
 
 
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <?php
-    include '../fragments/footer.php'
-      ?>
-  </footer>
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <?php
+      include '../fragments/footer.php'
+        ?>
+    </footer>
 
   </div><!-- ./wrapper -->
 
-  <!-- REQUIRED SCRIPTS -->
 
-  <!-- jQuery -->
-  <script src="../plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="../dist/js/adminlte.min.js"></script>
 </body>
+<!-- REQUIRED SCRIPTS -->
+
+<!--   JQUERY -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../plugins/jszip/jszip.min.js"></script>
+<script src="../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- Bootbox -->
+<script src="../plugins/bootbox/bootbox.min.js"></script>
+
+<!-- toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
+<!-- Chart js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../assets/js/mastitis_main.js"></script>
 
 </html>

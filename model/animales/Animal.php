@@ -11,19 +11,17 @@ class Animal extends Conexion
 
     private $nombre = null;
 
-    private $numeroArete = null;
+    private $numero_arete = null;
 
-    private $fechaNacimiento = null;
+    private $fecha_nacimiento = null;
 
     private $raza = null;
 
     private $peso = null;
 
-    private $caracteristicas = null;
+    private $colores_caracteristicas = null;
 
-    private $areteMadre = null;
-
-    private $aretePadre = null;
+    private $observaciones = null;
 
     private $estado = null;
 
@@ -51,21 +49,21 @@ class Animal extends Conexion
     {
         $this->nombre = $nombre;
     }
-    public function getNumeroArete()
+    public function getNumero_arete()
     {
-        return $this-> numeroArete;
+        return $this-> numero_arete;
     }
-    public function setNumeroArete($numeroArete)
+    public function setNumero_arete($numero_arete)
     {
-        $this->numeroArete = $numeroArete;
+        $this->numero_arete = $numero_arete;
     }
-    public function getFechaNacimiento()
+    public function getFecha_nacimiento()
     {
-        return $this->fechaNacimiento;
+        return $this->fecha_nacimiento;
     }
-    public function setFechaNacimiento($fechaNacimiento)
+    public function setFecha_nacimiento($fecha_nacimiento)
     {
-        $this->fechaNacimiento = $fechaNacimiento;
+        $this->fecha_nacimiento = $fecha_nacimiento;
     }
     public function getRaza()
     {
@@ -83,30 +81,23 @@ class Animal extends Conexion
     {
         $this->peso = $peso;
     }
-    public function getCaracteristicas()
+    public function getColores_caracteristicas()
     {
-        return $this->caracteristicas;
+        return $this->colores_caracteristicas;
     }
-    public function setCaracteristicas($caracteristicas)
+    public function setColores_caracteristicas($colores_caracteristicas)
     {
-        $this->caracteristicas = $caracteristicas;
+        $this->colores_caracteristicas = $colores_caracteristicas;
     }
-    public function getAreteMadre()
+    public function getObservaciones()
     {
-        return $this->areteMadre;
+        return $this->observaciones;
     }
-    public function setAreteMadre($areteMadre)
+    public function setObservaciones($observaciones)
     {
-        $this->areteMadre = $areteMadre;
+        $this->observaciones = $observaciones;
     }
-    public function getAretePadre()
-    {
-        return $this->aretePadre;
-    }
-    public function setAretepadre($aretePadre)
-    {
-        $this->aretePadre = $aretePadre;
-    }
+    
     public function getEstado()
     {
         return $this->estado;
@@ -130,7 +121,9 @@ class Animal extends Conexion
     {
         self::$conexion = null;
     }
-
+    public function concatenarID(){
+     
+    }
 
     //funcion para sacar a todos los de la db
     public function listarDB(){
@@ -143,15 +136,14 @@ class Animal extends Conexion
             self::desconectar();
             foreach ($resultado->fetchAll() as $encontrado) {
                 $animal = new Animal();
-
-                $animal ->setNumeroArete($encontrado["numero_arete"]);
+                $animal ->setIdAnimal($encontrado["id_animal"]);
+                $animal ->setNumero_arete($encontrado["numero_arete"]);
                 $animal ->setNombre($encontrado["nombre"]);
-                $animal ->setFechaNacimiento($encontrado["fecha_nacimiento"]);
+                $animal ->setFecha_nacimiento($encontrado["fecha_nacimiento"]);
                 $animal ->setRaza($encontrado["raza"]);
                 $animal ->setPeso($encontrado["peso"]);
-                $animal ->setCaracteristicas($encontrado["colores_caracteristicas"]);
-                $animal ->setAreteMadre($encontrado["id_madre"]);
-                $animal ->setAretePadre($encontrado["id_padre"]);
+                $animal ->setColores_caracteristicas($encontrado["colores_caracteristicas"]);
+                $animal ->setObservaciones($encontrado["observaciones"]);
                 $lista[] = $animal;
             }
             return $lista;
@@ -160,6 +152,60 @@ class Animal extends Conexion
             $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;
             return json_encode($error);
         }
+    }
+    
+    public function guardarEnDb() {
+            $query = "INSERT INTO `animal` ( `nombre`, `fecha_nacimiento`, `raza`, `peso`, `numero_arete`, `colores_caracteristicas`, `observaciones`) VALUES (:nombre,:fecha_nacimiento,:raza,:peso,:numero_arete, :colores_caracteristicas, :observaciones)";
+            try {
+                self::getConexion();
+                $nombre = $this->getNombre();
+                $fechaNacimiento = $this->getFecha_nacimiento();
+                $raza = $this->getRaza();
+                $peso = $this->getPeso();
+                $numeroArete = $this->getNumero_arete();
+                $coloresCaracteristicas = $this->getColores_caracteristicas();
+                $observaciones = $this->getObservaciones();
+
+
+                
+                $resultado = self::$conexion->prepare($query);
+                $resultado->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+                $resultado->bindParam(':fecha_nacimiento', $fechaNacimiento, PDO::PARAM_STR);
+                $resultado->bindParam(':raza', $raza, PDO::PARAM_STR);
+                $resultado->bindParam(':peso', $peso, PDO::PARAM_STR);
+                $resultado->bindParam(':numero_arete', $numeroArete, PDO::PARAM_STR);
+                $resultado->bindParam(':colores_caracteristicas', $coloresCaracteristicas, PDO::PARAM_STR);
+                $resultado->bindParam(':observaciones', $observaciones, PDO::PARAM_STR);
+                
+            $resultado->execute();
+            self::desconectar();
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            return json_encode($error);
+        }
+    }
+
+    public function verificarExistenciaDb(){
+        $query = "SELECT * FROM animal where numero_arete=:numero_arete";
+        
+        try {
+         self::getConexion();
+            $resultado = self::$conexion->prepare($query);		
+            $numero= $this->getNumero_arete();
+            $resultado->bindParam(":numero_arete",$numero,PDO::PARAM_STR);
+            $resultado->execute();
+            self::desconectar();
+            $encontrado = false;
+            foreach ($resultado->fetchAll() as $reg) {
+                $encontrado = true;
+            }
+            return $encontrado;
+           } catch (PDOException $Exception) {
+               self::desconectar();
+               $error = "Error ".$Exception->getCode().": ".$Exception->getMessage();
+             return $error;
+           } 
     }
     public function listarAnimales(){
         $query = "SELECT id_animal, numero_arete FROM animal";
@@ -174,6 +220,68 @@ class Animal extends Conexion
             return json_encode($error);
         }
     }
+    public function eliminar()
+    {
+        $id_animal = $this->getIdAnimal();
+        $query = "DELETE FROM animal WHERE `animal`.`id_animal` = :id_animal";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->bindParam(":id_celo", $id_celo, PDO::PARAM_STR);
+            $resultado->execute();
+            self::desconectar();
+            if (!(self::verificarExistenciaDb())) {
+                return 0;
+            } else {
+                return 1;
+            }
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            return $error;
+        }
+
+    }
+
+    public function actualizarAnimal()
+    {
+        $query = "UPDATE tu_tabla SET 
+            nombre = :nombre,
+            fecha_nacimiento = :fecha_nacimiento,
+            raza = :raza,
+            peso = :peso,
+            numero_arete = :numero_arete,
+            colores_caracteristicas = :colores_caracteristicas,
+            observaciones = :observaciones
+        WHERE id_animal = :id_animal";
+
+        try {
+            $this->getConexion(); // Assuming you have a method to establish a database connection
+            $resultado = $this->conexion->prepare($query);
+            $resultado->bindParam(":nombre", $nombre, PDO::PARAM_STR);
+            $resultado->bindParam(":fecha_nacimiento", $fecha_nacimiento, PDO::PARAM_STR);
+            $resultado->bindParam(":raza", $raza, PDO::PARAM_STR);
+            $resultado->bindParam(":peso", $peso, PDO::PARAM_STR);
+            $resultado->bindParam(":numero_arete", $numero_arete, PDO::PARAM_STR);
+            $resultado->bindParam(":colores_caracteristicas", $colores_caracteristicas, PDO::PARAM_STR);
+            $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
+
+            $this->conexion->beginTransaction();
+            $resultado->execute();
+            $this->conexion->commit();
+            $this->desconectar();
+            
+            return $resultado->rowCount(); // Return the number of affected rows
+        } catch (PDOException $Exception) {
+            $this->conexion->rollBack();
+            $this->desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            echo $error;
+            return false; // Return false to indicate an error
+        }
+    }
 }
+
+
 
 ?>

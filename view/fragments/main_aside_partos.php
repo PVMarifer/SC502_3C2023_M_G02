@@ -1,7 +1,7 @@
-<a href="index3.html" class="brand-link">
+<a href="LandPage.php" class="brand-link">
   <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
     style="opacity: .8">
-  <span class="brand-text font-weight-light text-white">Software Ganadero</span>
+  <span class="brand-text font-weight-light text-white">SG Ganaderia</span>
 </a>
 
 <!-- Sidebar -->
@@ -25,13 +25,58 @@
       <li class="nav-item ">
         <a href="#" class="nav-link links-sidebar-nav">
           <p>
+            Partos
+            <i class="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="./partos.php" class="nav-link bg-white">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Vacas con Partos</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./parto_nuevo_registro.php" class="nav-link bg-white">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Añadir Parto</p>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item ">
+        <a href="./abortos.php" class="nav-link links-sidebar-nav">
+          <p>
+            Abortos
+            <i class="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="./abortos.php" class="nav-link bg-white">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Control de Abortos</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./aborto_nuevo.php" class="nav-link bg-white">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Nuevo Registro de Aborto</p>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item ">
+        <a href="#" class="nav-link links-sidebar-nav">
+          <p>
             Preños
             <i class="right fas fa-angle-left"></i>
           </p>
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="./enfermedades_animales.php" class="nav-link bg-white">
+            <a href="./prenadas.php" class="nav-link bg-white">
               <i class="far fa-circle nav-icon"></i>
               <p>Vacas Preñadas</p>
             </a>
@@ -45,27 +90,5 @@
         </ul>
       </li>
 
-      <li class="nav-item ">
-        <a href="./vacunacion.php" class="nav-link links-sidebar-nav">
-          <p>
-            Abortos
-            <i class="right fas fa-angle-left"></i>
-          </p>
-        </a>
-        <ul class="nav nav-treeview">
-          <li class="nav-item">
-            <a href="./vacunacion.php" class="nav-link bg-white">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Control de Abortos</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="./vacunacion_animales.php" class="nav-link bg-white">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Nuevo Registro de Aborto</p>
-            </a>
-          </li>
-        </ul>
-      </li>
     </ul>
   </nav>

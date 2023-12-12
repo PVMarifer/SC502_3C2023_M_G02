@@ -2,7 +2,7 @@
 require_once '../../config/conexion.php';
 
 class Resu extends Conexion
-{
+
     protected static $conexion;
 
     private $idUsuario = null;
@@ -13,6 +13,10 @@ class Resu extends Conexion
     private $password = null;
 
     private $terms = null;
+
+
+
+    private $password = null;
 
 
     // Getter and Setter methods...
@@ -31,7 +35,6 @@ class Resu extends Conexion
     public function setNombre($nombre) {
         $this->nombre = $nombre;
     }
-
     public function getConfirmarPassword() {
         return $this->confirmPassword;
     }
@@ -39,6 +42,8 @@ class Resu extends Conexion
     public function setConfirmarPassword($confirmPassword) {
         $this->confirmPassword = $confirmPassword;
     }
+
+
 
     public function getEmail() {
         return $this->email;
@@ -56,6 +61,7 @@ class Resu extends Conexion
         $this->password = $password;
     }
 
+
     public function getTerms() {
         return $this->terms;
     }
@@ -65,7 +71,8 @@ class Resu extends Conexion
     }
   
     
-    public function __construct()
+
+
     {
     }
     //conexion a base de datos
@@ -83,19 +90,31 @@ class Resu extends Conexion
     }
     public function guardarDb()
     {
+
         $query = "INSERT INTO `users` (`name`, `email`, `password_hash`, `temrs`) VALUES (:nombre, :email, :password_hash, :terms)";
+
+        $query = "INSERT INTO `users` (`nombre`, `email`, `password_hash`) VALUES (:nombre, :email, :password_hash)";
+
 
         try {
             self::getConexion();
             $nombre = $this->getNombre();
             $email = $this->getEmail();
             $password_hash = $this->getPassword();
+
             $terms = $this->getTerms();
+
+
+
             $resultado = self::$conexion->prepare($query);
             $resultado->bindParam(':nombre', $nombre, PDO::PARAM_STR);
             $resultado->bindParam(':email', $email, PDO::PARAM_STR);
             $resultado->bindParam(':password_hash', $password_hash, PDO::PARAM_STR);
+
             $resultado->bindParam(':terms', $terms, PDO::PARAM_STR);
+
+
+
             $resultado->execute();
             self::desconectar();
         } catch (PDOException $Exception) {
@@ -106,6 +125,7 @@ class Resu extends Conexion
     }
     public function usuarioExiste()
     {
+
         $query = "SELECT * FROM `users` WHERE `email` = :email";
 
         try {
@@ -113,6 +133,14 @@ class Resu extends Conexion
             $resultado = self::$conexion->prepare($query);
 
             $email = $this->getEmail();
+
+        $query = "SELECT * FROM `users` WHERE `email` = :email LIMIT 1";
+
+        try {
+            self::getConexion();
+            $email = $this->getEmail();
+
+
             $resultado = self::$conexion->prepare($query);
             $resultado->bindParam(':email', $email, PDO::PARAM_STR);
             $resultado->execute();
@@ -129,4 +157,3 @@ class Resu extends Conexion
         }
     }
 }
-?>

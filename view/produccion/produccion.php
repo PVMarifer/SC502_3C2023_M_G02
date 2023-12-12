@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Starter</title>
+  <title>SG GANADERIA | PRODUCCION</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -39,7 +39,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a href="index3.html" class="brand-link">
           <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-          <span class="text-white font-weight-bold">Software Ganadero</span>
+          <span class="text-white font-weight-bold">SG GANADERIA</span>
         </a>
 
         <!-- Sidebar -->
@@ -50,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block text-white">Juanito Mora</a>
+            <a href="#" class="d-block text-white">Juanito Mena Mora</a>
           </div>
         </div>
 
@@ -259,12 +259,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>Vacas en producción</p>
                   <h3>30</h3>
                 </div>
-
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box text-center text-white " style="background-color:#4CAF50;">
+                <div class="inner">
+                  <p>Porcentaje de grasa</p>
+                  <h3>15.5</h3>
+                </div>
               </div>
             </div>
             <!-- ./col -->
           </div>
-          <!-- /.row -->
+          </div>
+              </div>
+            </div>
+         <!-- Small boxes (Stat box) -->
+            <!-- ./col -->
         </div> <!-- /.content-fluid -->
       </section><!-- /section -->
 
@@ -415,5 +427,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- JD Scripts -->
 <script src="../assets/js/produccion.js"></script>
+
+</body>
+<!-- CSS styles -->
+
+<!--   JQUERY -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../plugins/jszip/jszip.min.js"></script>
+<script src="../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- Bootbox -->
+<script src="../plugins/bootbox/bootbox.min.js"></script>
+
+<!-- toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<!-- CSS styles -->
+<link rel="stylesheet" href="../assets/css/index.css">
+
 
 </html>

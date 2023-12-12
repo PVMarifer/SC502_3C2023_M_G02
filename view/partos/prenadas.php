@@ -45,7 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="partos.php">Home</a></li>
-                <li class="breadcrumb-item active">Control de Partos</li>
+                <li class="breadcrumb-item active">Control de Preños</li>
               </ol>
             </div>
             <div class="col-sm-6">
@@ -64,8 +64,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- small box -->
                   <div class="small-box text-center text-white " style="background-color:#4CAF50;">
                     <div class="inner">
-                      <p>Partos realizados</p>
-                      <h3>45</h3>
+                      <p>Preños realizados</p>
+                      <h3>5</h3>
                     </div>
                   </div>
                 </div>
@@ -138,7 +138,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-lg-5 col-6">
               <div class="card">
                 <div class="card-header border-0">
-                  <h3 class="card-title">Partos Registrados</h3>
+                  <h3 class="card-title">Preños Registrados</h3>
                 </div>
                 <div class="card-body table-responsive p-0">
                   <table class="table table-striped table-valign-middle">
@@ -147,7 +147,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <th>Número de Arete</th>
                         <th>Nombre Vaca</th>
                         <th>Número Arete cría</th>
-                        <th>Fecha Nacimiento</th>
+                        <th>Fecha preño</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -199,7 +199,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <th>Número de Arete</th>
                           <th>Nombre</th>
                           <th>Edad</th>
-                          <th>Fecha del parto</th>
+                          <th>Fecha del preño</th>
 
                         </tr>
                       </thead>

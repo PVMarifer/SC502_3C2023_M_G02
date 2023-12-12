@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <title>Document</title>
+  <title>Inicio de sesión</title>
 
 
   <!-- Google Font: Source Sans Pro -->
@@ -25,7 +25,7 @@
 <body class="login-page" style="min-height: 496.781px;">
 <div class="login-box">
 <div class="login-logo"> 
-<a href="../../index.html"><b>SG GANADERIA</b></a>  
+<a href="index.php"><b>SG GANADERIA</b></a>  
 </div>
 
 <div class="card">
@@ -59,7 +59,7 @@ Recuerdame
 </div>
 
 <div class="col-12">
-<button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+<button type="submit" class="btn btn-primary btn-block" >Iniciar Sesión</button>
 </div>
 
 </div>
@@ -71,10 +71,10 @@ Recuerdame
 </div>
 
 <p class="mb-1">
-<a href="forgot-password.html">Olvidé mi contraseña</a>
+<a href="contrasenaOlv.php">Olvidé mi contraseña</a>
 </p>
 <p class="mb-0">
-<a href="register.html" class="text-center">¿Eres nuevo por aquí? ¡Regístrate! </a>
+<a href="Registrarse.php" class="text-center">¿Eres nuevo por aquí? ¡Regístrate! </a>
 </p>
 </div>
 

@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Starter</title>
+  <title>SG GANADERIA | PRODUCCION</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -39,7 +39,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a href="index3.html" class="brand-link">
           <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-          <span class="text-white font-weight-bold">Software Ganadero</span>
+          <span class="text-white font-weight-bold">SG GANADERIA</span>
         </a>
 
         <!-- Sidebar -->
@@ -50,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block text-white">Juanito Mora</a>
+            <a href="#" class="d-block text-white">Juanito Mena Mora</a>
           </div>
         </div>
 
@@ -88,8 +88,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Producción</a></li>
-                <li class="breadcrumb-item active">Añadir Producción Semanal</li>
-              </ol>
+                <li class="breadcrumb-item"><a href="#">Añadir Producción Semanal</a></li>
             </div>
             <div class="col-sm-6">
               <h1 class="m-0"></h1>
@@ -144,7 +143,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-md-1"></div>
 
             <div class="col-10">
-              <div class="card " style="background-color: grey;">
+              <div class="card " style="background-color:#4CAF50;">
                 <div class="card-header text-center">
                   <h3 class="card-title text-white">Nueva Produccion Semanal </h3>
                 </div>
@@ -154,27 +153,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="card-body text-white ">
                     <div class="row">
                      
-                      <div class="col-10">
+                      <div class="col-12">
                         <div class="form-group">
                           <label for="">Fecha de Produccion</label>
                           <input type="date" class="form-control" id="Fecha" name="Fecha" required>
                         </div>
 
                     
-                      <div class="col-10">
+                      <div class="col-12">
                         <div class="form-group">
                           <label for="">Litros</label>
                           <input type="text" class="form-control" id="litros" name="litros"
                             placeholder="Ingrese aquí los Litros Producidos" required>
                         </div>
-                        <div class="col-13">
+
+                        <div class="col-12">
                         <div class="form-group">
                           <label for="">Calidad Bacteriologica</label>
                           <input type="text" class="form-control" id="calidad bacteriologica" name="calidad bacteriologica"
                             placeholder="Ingrese la Calidad Bacteriologica" required>
                         </div>
                       </div>
-                      <div class="col-13">
+                      <div class="col-12">
                       <div class="form-group">
                           <label for="">Celulas Somaticas</label>
                           <input type="text" class="form-control" id="celulas somaticas" name="celulas somaticas"
@@ -187,21 +187,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             placeholder="Ingrese el procentaje de Grasa" required>
                         </div>
                       </div>
-                      <div class="col-10">
+                      <div class="col-12">
                       <div class="form-group">
                           <label for="">Porcentaje Proteina</label>
                           <input type="text" class="form-control" id="porcentaje proteina" name="porcentaje proteina"
                             placeholder="Ingrese el procentaje de Proteina" required>
                         </div>
                       </div>
-                      <div class="col-10">
+                      <div class="col-12">
                       <div class="form-group">
                           <label for="">Punto Crioscopico</label>
                           <input type="text" class="form-control" id="punto crioscopico" name="punto crioscopico"
                             placeholder="Ingrese el punto crioscopico" required>
                         </div>
                       </div>
-                      <div class="col-10">
+                      <div class="col-12">
                       <div class="form-group">
                           <label for="">Presencia Inhibidores</label>
                           <input type="text" class="form-control" id="presencia inhibidores" name="presencia inhibidores"
@@ -256,6 +256,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div><!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPTS -->
+
   <script src="../plugins/jquery/jquery.min.js"></script>
 <!-- DataTables  & Plugins -->
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
@@ -274,5 +275,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- JD Scripts -->
 <script src="../assets/js/produccionSem.js"></script>
+
+
+
+</body>
+<!-- CSS styles -->
+
+<!--   JQUERY -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../plugins/jszip/jszip.min.js"></script>
+<script src="../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- Bootbox -->
+<script src="../plugins/bootbox/bootbox.min.js"></script>
+
+<!-- toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<!-- CSS styles -->
+<link rel="stylesheet" href="../assets/css/index.css">
 
 </html>
