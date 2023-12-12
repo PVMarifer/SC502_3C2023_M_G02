@@ -13,7 +13,7 @@ switch ($_GET['op']) {
                 "1" => $registro->getAreteAnimal(),
                 "2" => $registro->getFechaSecado(),
                 "3" => $registro->getObservaciones(),
-                "4" => '<button class="btn btn-success" id="modificarDato">Modificar</button>' . '<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdSecado() . '\')">Eliminar</button>'
+                "4" =>'<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdSecado() . '\')">Eliminar</button>'
             );
         }
         $resultados = array(

@@ -121,7 +121,7 @@ switch ($_GET['op']) {
             echo ($contador);
         }
 
-    case 'listar_mastitis_grafica':
+    case 'listar_enfermedades_grafica':
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerEnfermedadesGrafica'])) {
             $enfermedadesModel = new EnfermedadAnimal();
             $enfermedades = $enfermedadesModel->listarEnfermedadesGrafica();

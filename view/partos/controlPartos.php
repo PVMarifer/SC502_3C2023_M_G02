@@ -17,6 +17,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- Datatable CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+  <!-- Toastr -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
 
 </head>
@@ -64,67 +68,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container-fluid">
 
           <!-- Small boxes (Stat box) -->
+
           <div class="row">
+            <div class="col-1"></div>
             
-
-            <div class="col-lg-4 col-6">
-              <!-- small box -->
-              <div class="small-box text-center text-white " style="background-color:#4CAF50;">
-                <div class="inner">
-                  <p>Vacas con partos</p>
-                  <h3>5</h3>
-
-
-                </div>
-
-                <a href="./partos.php" class="small-box-footer">More info <i
-                    class="fas fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <!-- ./col -->
-
-
-            <div class="col-lg-4 col-6">
-              <!-- small box -->
-              <div class="small-box text-center text-white" style="background-color:#4CAF50;">
-                <div class="inner">
-                  <p>Vacas Preñadas</p>
-                  <h3>33</h3>
-                </div>
-
-                <a href="./prenadas.php" class="small-box-footer">More info <i
-                    class="fas fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <!-- ./col -->
-
-            <div class="col-lg-4 col-6">
-              <!-- small box -->
-              <div class="small-box text-center text-white" style="background-color:#4CAF50;">
-                <div class="inner">
-                  <p>Vacas con Abortos</p>
-                  <h3>33</h3>
-                </div>
-
-                <a href="./abortos.php" class="small-box-footer">More info <i
-                    class="fas fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <!-- ./col -->
-          </div>
-          <!-- /.row -->
-        </div> <!-- /.content-fluid -->
-      </section><!-- /section -->
-
-      <section class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-7">
-              <!-- grafico de vacas enfermas  -->
+            <div class="col-sm-10">
+              <!-- grafico   -->
               <div class="card ">
                 <div class="card-header border-0">
                   <h3 class="card-title">
-                    Gráfico de partos
+                    Abortos por mes
                   </h3>
                   <div class="card-tools">
                     <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
@@ -133,93 +86,72 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </div>
                 </div>
                 <div class="card-body">
-                  <canvas class="chart" id="line-chart"
+                  <canvas class="chart" id="graficoAbortos"
                     style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer bg-transparent">
-                  <div class="row">
-                    <div class="col-4 text-center">
-                      <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
-                        data-fgColor="#39CCCC">
-
-                      <div class="text-white">Mail-Orders</div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-4 text-center">
-                      <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
-                        data-fgColor="#39CCCC">
-
-                      <div class="text-white">Online</div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-4 text-center">
-                      <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
-                        data-fgColor="#39CCCC">
-
-                      <div class="text-white">In-Store</div>
-                    </div>
-                    <!-- ./col -->
-                  </div>
-                  <!-- /.row -->
-                </div>
-                <!-- /.card-footer -->
               </div>
               <!-- /.card -->
             </div>
+              <!-- /.col-7 -->
+              <div class="col-1"></div>
+
+
+            
+          </div>
+          <!-- /.row -->
+
+          <div class="row">
             <!-- tabla de vacas Preñadas -->
             <div class="col-sm-5">
-              <div class="card">
+              <div class="card p-2" style="height: 345px;">
                 <div class="card-header border-0">
                   <h3 class="card-title">Vacas Preñadas</h3>
                 </div>
 
                 <div class="card-body table-responsive p-0">
-                  <table class="table table-striped table-valign-middle">
+                  <table class="table table-striped table-valign-middle" id="tablaprenos">
                     <thead>
                       <tr>
-                        <th>Arete</th>
-                        <th>Tipo de Parto</th>
-                        <th>Fecha de Parto</th>
-                        <th>Fecha de Parto</th>
+                        <th>Numero de Arete</th>
+                        <th>Fecha de Servicio</th>
+                        <th>Tipo de Servicio</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>
-                          245
-                        </td>
-                        <td>Inseminación</td>
-                        <td>
-                         17/10/2023
-                        </td>
-                        <td>
-                          24/02/2024
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          293
-                        </td>
-                        <td>Natural</td>
-                        <td>
-                         10/11/2023
-                        </td>
-                        <td>
-                          27/03/2024
-                        </td>
-                      </tr>
+                     
 
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
+            <div class="col-sm-7">
+              <!-- grafico de vacas enfermas  -->
+              <div class="card ">
+                <div class="card-header border-0">
+                  <h3 class="card-title">
+                    Partos por mes
+                  </h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <canvas class="chart" id="graficoPartos"
+                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+            
           </div>
-
-        </div>
-
-      </section>
+          <!-- /.row -->
+        </div> <!-- /.content-fluid -->
+      </section><!-- /section -->
 
 
 
@@ -236,16 +168,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   </div><!-- ./wrapper -->
 
-  <!-- REQUIRED SCRIPTS -->
 
-  <!-- jQuery -->
-  <script src="../plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="../dist/js/adminlte.min.js"></script>
 </body>
+<!-- REQUIRED SCRIPTS -->
+
+<!--   JQUERY -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- Bootbox -->
+<script src="../plugins/bootbox/bootbox.min.js"></script>
+<!-- toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
+<!-- Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<!-- Chart js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="../assets/js/controlPartos.js"></script>
 
 </html>

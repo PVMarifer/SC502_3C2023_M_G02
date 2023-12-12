@@ -15,7 +15,7 @@ $(document).ready(function() {
                     });
                 } else {
                     console.log("No se encontraron animales.");
-                }
+                }  
             },
             error: function(xhr, status, error) {
                 console.error(error);
@@ -37,14 +37,7 @@ $(document).ready(function() {
     }
   
   
-    //cancelar formulario de modificacion
-  
-    function cancelarForm() {
-      limpiarForms();
-      $('#form-agregar').show();
-      $('#form-modificar').hide();
-  
-    }
+
   
     /*Funcion para cargar el listado en el Datatable*/
     function listarAnimaleServicio() {
@@ -114,88 +107,5 @@ $(document).ready(function() {
         },
       });
     });
-  
-    // funcion para boton modificar
-    $('#tablalistado tbody').on(
-      'click',
-      'button[id="modificarDato"]',
-  
-      function () {
-        var data = $('#tablalistado').DataTable().row($(this).parents('tr')).data();
-        limpiarForms();
-        $('#form-agregar').hide();
-        $('#form-modificar').show();
-        console.log(data)
-        $('#XnumeroArete').val(data[1]);
-        $('#XfechaDiagnostico').val(data[2]);
-        $('#XestadoCelos').val(data[3]);
-        $('#Xservicio').val(data[4]);
-        $('#Xobservaciones').val(data[5]);
-        return false;
-      }
-    );
-  
-    /*Funcion para modificacion de datos de usuario*/
-    $('#formulario-modificar').on('submit', function (event) {
-      event.preventDefault();
-      bootbox.confirm('¿Desea modificar los datos?', function (result) {
-        if (result) {
-          var formData = new FormData($('#formulario-modificar')[0]);
-          $.ajax({
-            url: '../../controller/reproduccion_celos/servicioController.php?op=modificar',
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function (datos) {
-              //alert(datos);
-              switch (datos) {
-                case '0':
-                  toastr.error('Error: No se pudieron actualizar los datos');
-                  break;
-                case '1':
-                  toastr.success('Registro actualizado exitosamente');
-                  tabla.api().ajax.reload();
-                  limpiarForms();
-                  $('#form-modificar').hide();
-                  $('#form-agregar').show();
-                  break;
-                case '2':
-                  toastr.error('Error: No hay datos pertenecientes.');
-                  break;
-              }
-            },
-          });
-        }
-      });
-    });
-  
-    /*Funcion para eliminar datos*/
-    function eliminar(id) {
-      bootbox.confirm('¿Esta seguro de eliminar el celo?', function (result) {
-        if (result) {
-          $.post(
-            '../../controller/reproduccion_celos/servicioController.php?op=eliminar',
-            { id_servicio: id },
-            function (data, textStatus, xhr) {
-              switch (data) {
-                case '0':
-                  toastr.success('Registro eliminado');
-                  tabla.api().ajax.reload();
-                  break;
-  
-                case '1':
-                  toastr.error(
-                    'Error: El dato no se ha podido eliminar..'
-                  );
-                  break;
-  
-                default:
-                  toastr.error(data);
-                  break;
-              }
-            }
-          );
-        }
-      });
-    }
+ 
+   

@@ -31,7 +31,7 @@ $(document).ready(function () {
         console.log(data)
         if (data) {
 
-          const ctx = document.getElementById('grafico-mastitis');
+          const ctx = document.getElementById('grafico-mastitis'); 
           new Chart(ctx, {
             type: 'line',
             data: {

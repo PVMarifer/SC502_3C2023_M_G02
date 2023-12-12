@@ -175,11 +175,12 @@ $('#medicamento').on('click', function(event) {
       success: function (datos) {
         switch (datos) {
           case '1':
+            $('#tablalistadoantibiotico').DataTable().ajax.reload();
             toastr.success(
               'Registro Exitoso'
             );
             $('#formulario-agregar-antibiotico')[0].reset();
-            tabla.api().ajax.reload();
+            
             break;
 
           case '2':
@@ -215,8 +216,7 @@ $('#medicamento').on('click', function(event) {
         switch (datos) {
           case '1':
             toastr.success(
-              'Registro Exitoso'
-            );
+              'Registro Exitoso');
             $('#formulario-agregar-medicamento')[0].reset();
             tabla.api().ajax.reload();
             break;

@@ -253,38 +253,7 @@ class Mastitis extends Conexion
     }
 
 
-    public function actualizarMastitis()
-    {
-        $query = "update mastitis set tipo_tratamiento=:tipo_tratamiento,cuartos_afectados=:cuartos_afectados 
-        WHERE mastitis.id_animal = (
-            SELECT id_animal
-            FROM animal 
-            WHERE numero_arete = :id_animal
-        )  and fecha_diagnostico=:fecha_diagnostico";
-        try {
-            self::getConexion();
-            $id_animal = $this->getIdAnimal();
-            $tipo_tratamiento = $this->getTipoTratamiento();
-            $cuartos_afectados = $this->getCuartosAfectados();
-            $fecha_diagnostico = $this->getFechaDiagnostico();
-
-            $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":id_animal", $id_animal, PDO::PARAM_STR);
-            $resultado->bindParam(":tipo_tratamiento", $tipo_tratamiento, PDO::PARAM_STR);
-            $resultado->bindParam(":cuartos_afectados", $cuartos_afectados, PDO::PARAM_STR);
-            $resultado->bindParam(":fecha_diagnostico", $fecha_diagnostico, PDO::PARAM_STR);
-            self::$conexion->beginTransaction(); //desactiva el autocommit
-            $resultado->execute();
-            self::$conexion->commit(); //realiza el commit y vuelve al modo autocommit
-            self::desconectar();
-            return $resultado->rowCount();
-        } catch (PDOException $Exception) {
-            self::$conexion->rollBack();
-            self::desconectar();
-            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
-            echo $error;
-        }
-    }
+   
 
     public function listarMastitisGrafica()
     {

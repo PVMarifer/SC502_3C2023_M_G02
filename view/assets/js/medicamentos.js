@@ -94,9 +94,9 @@ $('#formulario-agregar-medicamento').on('submit', function (event) {
     success: function (datos) {
       switch (datos) {
         case '1':
-          tabla.api().ajax.reload();
+          $('#tablalistadomedicamento').DataTable().ajax.reload();
           toastr.success(
-            'Medicamento registrado'
+            'Antibiotico registrado'
           );
           $('#formulario-agregar-medicamento')[0].reset();
           

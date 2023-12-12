@@ -2,39 +2,28 @@ main{
     background-color: #f3f1ff;
 }
 /*estilos para el nav bar principal*/
+
 #main-navbar{
     height: 100px;
-    background-color: #eee;
+    background-color: #28a745;
 }
 
 .nav-main-menu{
     height: 100%;
-    text-align: center;
+    
 }
 .nav-item-menu{
     height: 100%;
+    text-align: center;
 }
 .nav-link-menu{
     height: 100%;
     padding: 15px 10px;
 
+
 }
 
 
-/*aside*/
-aside{
-    background-color: #52AA5E;
-    
-}
-
-.option-nav{
-    background-color:#e3e63a ;
-    color:#e3e63a  ;
-}
-
-.links-sidebar-nav{
-    background-color:#eee ;
-}
 
 /*contenido principal*/
 
@@ -46,9 +35,3 @@ aside{
 .texto-inicio{
     font-size: larger;
 }
-
-
-.select2-selection__arrow {
-    color: #999; /* Color del indicador deseado */
-  }
-

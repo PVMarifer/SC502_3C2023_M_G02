@@ -1,3 +1,37 @@
+$(document).ready(function () {
+  $('#calendario').fullCalendar({
+    initialView: 'dayGridMonth',
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month'
+    },
+    events:'../../controller/partos/abortoController.php?op=obtener_abortos',
+    editable: false, 
+    eventRender: function (event, element) {
+        element.css('background-color', '#52AA5E'); 
+
+    }
+  
+  });
+
+});
+function obtener() {
+  $.ajax({
+    url: '../../controller/partos/abortoController.php?op=obtener_abortos',
+    type: "GET",
+    dataType: "json",
+    success: function (data) {
+
+      console.log(data)
+    },
+    error: function (xhr, status, error) {
+      console.error(error);
+    }
+  });
+}
+obtener()
+
 /*Funcion para cargar el listado en el Datatable*/
 function listarAbortos() {
     tabla = $('#tablalistado').dataTable({

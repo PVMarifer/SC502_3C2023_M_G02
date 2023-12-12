@@ -7,13 +7,10 @@ class servicio extends Conexion
 
     //Atributos de la clase
     protected static $conexion;
-    private $idServicio =null;
-    private $idAnimalVaca =null;
-    private $idAnimalToro =null;
+    private $idServicio = null;
+    private $idAnimalVaca = null;
 
     private $idPrefijo = null;
-
-    private $id_celo = null;
 
     private $areteAnimal = null;
     private $tipoServicio = null;
@@ -51,15 +48,7 @@ class servicio extends Conexion
         return $this->idAnimalVaca;
     }
 
-    public function setIdAnimalToro($idAnimalToro)
-    {
-        $this->idAnimalToro = $idAnimalToro;
-    }
 
-    public function getIdAnimalToro()
-    {
-        return $this->idAnimalToro;
-    }
 
     public function setIdPrefijo($idPrefijo)
     {
@@ -71,15 +60,7 @@ class servicio extends Conexion
         return $this->idPrefijo;
     }
 
-    public function setIdCelo($idCelo)
-    {
-        $this->id_celo = $idCelo;
-    }
 
-    public function getIdCelo()
-    {
-        return $this->id_celo;
-    }
 
     public function setAreteAnimal($areteAnimal)
     {
@@ -140,9 +121,8 @@ class servicio extends Conexion
     public function listarDB()
     {
         $query = "SELECT * FROM servicio 
-        INNER JOIN animal ON servicio.id_animal = animal.id_animal
-        INNER JOIN celo on servicio.id_animal = celo.id_celo";
-                $lista = array();
+        INNER JOIN animal ON servicio.id_animal = animal.id_animal";
+        $lista = array();
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
@@ -150,14 +130,14 @@ class servicio extends Conexion
             self::desconectar();
             foreach ($resultado->fetchAll() as $encontrado) {
                 $servicio = new servicio();
-                $prefijo = "S";
+                $prefijo = "SE";
                 $servicio->setIdservicio($encontrado["id_servicio"]);
                 $id_personalizado = $prefijo . str_pad($servicio->getIdservicio(), 2, '0', STR_PAD_LEFT);
                 $servicio->setIdPrefijo($id_personalizado);
+                $servicio->setAreteAnimal($encontrado["numero_arete"]);
                 $servicio->setIdAnimalVaca($encontrado["id_animal"]);
                 $servicio->setFechaDiagnostico($encontrado["fecha_servicio"]);
                 $servicio->setTipoServicio($encontrado["tipo_servicio"]);
-                $servicio->setIdCelo($encontrado["id_celo"]);
                 $servicio->setObservaciones($encontrado["observaciones"]);
                 $lista[] = $servicio;
             }
@@ -172,25 +152,36 @@ class servicio extends Conexion
 
     public function guardarEnDb()
     {
-        $query = "INSERT INTO `servicio` (`id_servicio`,`id_animal`, `id_animal`, `fecha_servicio`, `tipo_servicio`, `id_celo`, `observaciones`) VALUES (:id_celo,:id_vaca, :id_toro, :fecha_servicio, :tipo_servicio, :id_celo, :observaciones)";
-    
-    try {
-        self::getConexion();
-        $id_vaca = $this->getIdAnimalVaca();
-        $fecha_servicio = $this->getFechaDiagnostico();
-        $tipo_servicio = $this->getTipoServicio();
-        $id_celo = $this->getIdCelo();
-        $observaciones = $this->getObservaciones();
+        $query = "INSERT INTO `servicio` ( `id_animal`, `fecha_servicio`, `tipo_servicio`,`observaciones`) VALUES (:id_vaca,:fecha_servicio, :tipo_servicio,:observaciones)";
 
-        $resultado = self::$conexion->prepare($query);
-        $resultado->bindParam(":id_celo", $id_vaca, PDO::PARAM_STR);
-        $resultado->bindParam(":id_animal", $id_vaca, PDO::PARAM_STR);
-        $resultado->bindParam(":fecha_servicio", $fecha_servicio, PDO::PARAM_STR);
-        $resultado->bindParam(":tipo_servicio", $tipo_servicio, PDO::PARAM_STR);
-        $resultado->bindParam(":id_celo", $id_celo, PDO::PARAM_STR);
-        $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
+        try {
+            self::getConexion();
+            $id_vaca = $this->getIdAnimalVaca();
+            $fecha_servicio = $this->getFechaDiagnostico();
+            $tipo_servicio = $this->getTipoServicio();
+            $observaciones = $this->getObservaciones();
 
-            self::desconectar();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->bindParam(":id_vaca", $id_vaca, PDO::PARAM_STR);
+            $resultado->bindParam(":fecha_servicio", $fecha_servicio, PDO::PARAM_STR);
+            $resultado->bindParam(":tipo_servicio", $tipo_servicio, PDO::PARAM_STR);
+            $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
+            $resultado->execute();
+            $id_servicio = self::$conexion->lastInsertId();
+            if ($this->verificarExistenciaServicio($id_servicio)) {
+            
+                // Insertar el registro en Vaca_Prenada
+                $queryVacaPrenada = "INSERT INTO `Vaca_Prenada` (`id_servicio`) VALUES (:id_servicio)";
+                $resultadoVacaPrenada = self::$conexion->prepare($queryVacaPrenada);
+                $resultadoVacaPrenada->bindParam(":id_servicio", $id_servicio, PDO::PARAM_STR);
+                $resultadoVacaPrenada->execute();
+                self::desconectar();
+            } else {
+                echo "El servicio no existe.";
+            }
+            
+
+            
         } catch (PDOException $Exception) {
             self::desconectar();
             $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
@@ -198,6 +189,20 @@ class servicio extends Conexion
             return json_encode($error);
         }
     }
+
+
+// Función para verificar la existencia de un servicio
+private function verificarExistenciaServicio($id_servicio)
+{
+    $query = "SELECT COUNT(*) FROM `servicio` WHERE `id_servicio` = :id_servicio";
+    $resultado = self::$conexion->prepare($query);
+    $resultado->bindParam(":id_servicio", $id_servicio, PDO::PARAM_STR);
+    $resultado->execute();
+
+    $count = $resultado->fetchColumn();
+
+    return $count > 0;
+}
 
     public function verificarExistenciaDb()
     {
@@ -208,7 +213,6 @@ class servicio extends Conexion
             $idAnimalVaca = $this->getIdAnimalVaca();
             $fechaDiagnostico = $this->getFechaDiagnostico();
             $resultado->bindParam(":id_animal", $idAnimalVaca, PDO::PARAM_STR);
-            $resultado->bindParam(":id_animal", $idAnimalToro, PDO::PARAM_STR);
             $resultado->bindParam(":fecha_servicio", $fechaDiagnostico, PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
@@ -247,28 +251,37 @@ class servicio extends Conexion
         }
     }
 
-    public function eliminar()
+  
+
+    public function listarServicios()
     {
-        $id_celo = $this->getIdCelo(); 
-        $query = "DELETE FROM servicio WHERE `servicio`.`id_servicio` = :id_servicio";
+        $query = "SELECT Servicio.*, Animal.numero_arete
+        FROM Servicio
+        INNER JOIN Animal ON Servicio.id_animal = Animal.id_animal
+        WHERE Servicio.fecha_servicio >= CURDATE() - INTERVAL 1 MONTH;";
+        $lista = array();
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":id_servicio", $id_celo, PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
-            if (!(self::verificarExistenciaId())) {
-                return 0;
-            } else {
-                return 1;
+            foreach ($resultado->fetchAll() as $encontrado) {
+                $servicio = new servicio();
+                $servicio->setAreteAnimal($encontrado["numero_arete"]);
+                $servicio->setFechaDiagnostico($encontrado["fecha_servicio"]);
+                $servicio->setTipoServicio($encontrado["tipo_servicio"]);
+                $lista[] = $servicio;
             }
+            return $lista;
         } catch (PDOException $Exception) {
             self::desconectar();
             $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
-            return $error;
+            ;
+            return json_encode($error);
         }
-
     }
+
+    
 
     public function obtenerCantidadServicio() {
         $query = "SELECT COUNT(*) as cantidad FROM servicio";
@@ -288,8 +301,29 @@ class servicio extends Conexion
         }
     }
 
+    public function obtenerServicios()
+    {
+        $query = "SELECT *
+                  FROM servicio 
+                  INNER JOIN Animal ON Servicio.id_animal = Animal.id_animal";
 
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
+    }
     
+
+
+
 
 
 }

@@ -198,7 +198,7 @@ CREATE TABLE Aborto (
 	fecha_aborto date not null,
     estado_vaca varchar(80) not null,
     observaciones text not null,
-    foreign key fk_aborto_vaca (id_vaca) references Vaca(id_vaca)
+    foreign key fk_aborto_vaca (id_vaca) references  Animal(id_animal)
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
@@ -206,12 +206,10 @@ DEFAULT CHARACTER SET = utf8mb4;
 CREATE TABLE Parto (
     id_parto INT AUTO_INCREMENT PRIMARY KEY not null,
     id_vaca int not null,
-    numero_arete int not null,
 	fecha_parto date not null,
-    estado_vaca varchar(80) not null,
-    tipo_parto enum ('natural','intervenido','cesarea'),
+    tipo_parto varchar(30),
     observaciones text not null,
-    foreign key fk_parto_vaca (id_vaca) references Vaca(id_vaca)
+    foreign key fk_parto_vaca (id_vaca) references Animal(id_animal)
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
@@ -221,11 +219,12 @@ CREATE TABLE Celo (
     id_animal int not null,
 	fecha_celo date not null,
     detalles_celo varchar(80) not null,
-    observaciones text not null,
     foreign key fk_celo_animal (id_animal) references animal(id_animal)
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
+
+
 
 CREATE TABLE Servicio (
     id_servicio INT AUTO_INCREMENT PRIMARY KEY not null,
@@ -249,9 +248,8 @@ DEFAULT CHARACTER SET = utf8mb4;
 
 CREATE TABLE Vaca_Prenada (
     id_vaca_prenada INT AUTO_INCREMENT PRIMARY KEY not null,
-    detalles_gestacion varchar(80) not null,
     id_servicio int not null,
-    observaciones text not null
+    foreign key fk_vaca_prenada_servicio (id_servicio) references Servicio(id_servicio)
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
@@ -280,3 +278,11 @@ add foreign key (id_animal) references Animal(id_animal);
 alter table Vaca_Prenada 
 add foreign key (id_servicio) references Servicio(id_servicio);
 
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    temrs boolean NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

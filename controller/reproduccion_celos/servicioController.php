@@ -1,6 +1,7 @@
 <?php
 
 require_once '../../model/reproduccion_celos/servicio.php';
+require_once '../../model/reproduccion_celos/celos.php';
 
 switch ($_GET['op']) {
     case 'listar_tabla':
@@ -10,12 +11,11 @@ switch ($_GET['op']) {
         foreach ($registros as $registro) {
             $datos[] = array(
                 "0" => $registro->getIdPrefijo(),
-                "1" => $registro->getIdAnimalVaca(),
+                "1" => $registro->getAreteAnimal(),
                 "2" => $registro->getFechaDiagnostico(),
                 "3" => $registro->getTipoServicio(),
-                "4" => $registro->getIdCelo(),
-                "5" => $registro->getObservaciones(),
-                "6" =>'<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdServicio() . '\')">Eliminar</button>'
+                "4" => $registro->getObservaciones(),
+               
             );
         }
         $resultados = array(
@@ -34,22 +34,20 @@ switch ($_GET['op']) {
         $idAnimalVaca = isset($_POST["id_animal"]) ? trim($_POST["id_animal"]) : "";
         $fechaDiagnostico = isset($_POST["fecha_servicio"]) ? trim($_POST["fecha_servicio"]) : "";
         $tipoServicio = isset($_POST["tipo_servicio"]) ? trim($_POST["tipo_servicio"]) : "";
-        $idCelo = isset($_POST["id_celo"]) ? trim($_POST["id_celo"]) : "";
         $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";
 
-        $servio = new servicio();
+        $servicio = new servicio();
         $servicio->setIdAnimalVaca($idAnimalVaca);
         $servicio->setFechaDiagnostico($fechaDiagnostico);
         $encontrado = $servicio->verificarExistenciaDb();
         if ($encontrado == false) {
             $servicio->setTipoServicio($tipoServicio);
-            $servicio->setIdCelo($idCelo);
             $servicio->setObservaciones($observaciones);
             $servicio->guardarEnDb();
             if ($servicio->verificarExistenciaDb()) {
                 echo 1; // se guardo exitosamente
             } else {
-                echo 3; //problema con guardar
+                echo 3; //problema con guardar  
             }
         } else {
 
@@ -57,12 +55,72 @@ switch ($_GET['op']) {
         }
         break;
 
-    case "eliminar":
-        $servicio = new servicio();
-        $servicio -> setIdservicio(trim($_POST["id_servicio"]));
-        $respuesta = $servicio->eliminar();
-        echo $respuesta;
+
+
+    case 'listar_servicios':
+        $serviciodb = new servicio();
+        $registros = $serviciodb->listarServicios(); 
+        $datos = array();
+        foreach ($registros as $registro) {
+            $datos[] = array(
+                "0" => $registro->getAreteAnimal(),
+                "1" => $registro->getFechaDiagnostico(),
+                "2" => $registro->getTipoServicio(),);
+        }
+        $resultados = array(
+            "sEcho" => 1,
+            ##informacion para datatables
+            "iTotalRecords" => count($datos),
+            ## total de registros al datatable
+            "iTotalDisplayRecords" => count($datos),
+            ## enviamos el total de registros a visualizar
+            "aaData" => $datos
+        );
+        echo json_encode($resultados);
         break;
+
+      
+
+    case 'obtener_servicios':
+        $servicioModel = new servicio();
+        $servicios = $servicioModel->obtenerServicios();
+
+        $celoModel = new celos();
+        $celos = $celoModel->obtenerCelos();
+
+
+        $eventos = array();
+        $lista1 = array();
+        $lista2 = array();
+
+        foreach($servicios as $row){
+            $arete = $row['numero_arete'];
+            $servicio=[
+                "title" =>  "Servicio de $arete",
+                "start" =>  $row["fecha_servicio"],
+                "end" =>  $row["fecha_servicio"],
+                "tipo" => 'servicio'
+
+            ];
+            $lista1[] = $servicio;
+        }
+        foreach($celos as $row){
+            $arete = $row['numero_arete'];
+            $servicio=[
+                "title" =>  "Celo de $arete",
+                "start" =>  $row["fecha_celo"],
+                "end" =>  $row["fecha_celo"],
+                "tipo" => 'celo'
+
+            ];
+            $lista1[] = $servicio;
+        }
+
+        $eventos = array_merge($lista1,$lista2);
+
+        echo json_encode($eventos);
+        
+        break; 
     case 'obtenerCantidadServicio':
                     $servicio = new servicio();
                     $cantidadServicio = $servicio->obtenerCantidadServicio();

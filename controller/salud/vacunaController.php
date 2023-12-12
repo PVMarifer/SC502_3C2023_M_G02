@@ -16,7 +16,7 @@ switch ($_GET['op']) {
                 "4" => $vacuna->getLote(),
                 "5" => $vacuna->getFechaVencimiento(),
                 "6" => $vacuna->getObservaciones(),
-                "7" => '<button class="btn btn-success" id="modificarDato">Modificar</button>' . '<button class="btn btn-danger" onclick="eliminar(\'' . $vacuna->getIdVacuna() . '\')">Eliminar</button>'
+                "7" => '<button class="btn btn-danger" onclick="eliminar(\'' . $vacuna->getIdVacuna() . '\')">Eliminar</button>'
             );
         }
         $resultados = array(
@@ -66,46 +66,23 @@ switch ($_GET['op']) {
         echo $respuesta;
         break;
 
-    case 'modificar':
-        $idVacuna = isset($_POST["idVacuna"]) ? trim($_POST["idVacuna"]) : "";
-        $nombreVacuna = isset($_POST["nombreVacuna"]) ? trim($_POST["nombreVacuna"]) : "";
-        $descripcion = isset($_POST["descripcion"]) ? trim($_POST["descripcion"]) : "";
-        $fechaVencimiento = isset($_POST["fechaVencimiento"]) ? trim($_POST["fechaVencimiento"]) : "";
-        $lote = isset($_POST["lote"]) ? trim($_POST["lote"]) : "";
-        $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";
-        $casaDistribuidora = isset($_POST["casaDistribuidora"]) ? trim($_POST["casaDistribuidora"]) : "";
-        $vacuna = new Vacuna();
-        $vacuna->setNombreVacuna($nombreVacuna);
-        $vacuna->setCasaDistribuidora($casaDistribuidora);
-        $encontrado = $vacuna->verificarExistenciaDb();
-        if ($encontrado == true) {
 
-            //$usuario->llenarCampos($id); 
-            //$modulo->setNombre($nombreModif);
-            $vacuna->setNombreVacuna($nombreVacuna);
-            $vacuna->setDescripcion($descripcion);
-            $vacuna->setFechaVencimiento($fechaVencimiento);
-            $vacuna->setLote($lote);
-            $vacuna->setObservaciones($observaciones);
-            $vacuna->setCasaDistribuidora($casaDistribuidora);
-            $modificados = $vacuna->actualizarVacuna();
-            if ($modificados > 0) {
-                echo 1;
-            } else {
-                echo 0;
-            }
-        } else {
-            echo 2;
-        }
-        break;
 
     case 'obtener_vacunas':
-
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacunas'])) {
-            $vacunaModel = new Vacuna();
-            $vacunas = $vacunaModel->listarVacunas();
-            echo json_encode($vacunas);
+            $Model = new Vacuna();
+            $vacunas = $Model->listarVacunas();
+            $data = array();
+            foreach ($vacunas as $row) {
+                $data[]=[
+                    'id' => $row['id_vacuna'],
+                    'nombre' => $row['nombre_vacuna']
+                ];
+            }
+
+            echo json_encode($data);
         }
+        break;
 
     case 'listar_vacunas':
         $vacuna_db = new Vacuna();
@@ -117,7 +94,7 @@ switch ($_GET['op']) {
                 "1" => $vacuna->getNombrevacuna(),
                 "2" => $vacuna->getDescripcion(),
                 "3" => $vacuna->getFechaVencimiento(),
-          );
+            );
         }
         $resultados = array(
             "sEcho" => 1,

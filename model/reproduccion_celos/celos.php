@@ -131,7 +131,7 @@ class celos extends Conexion
                 $celo->setAreteAnimal($encontrado["numero_arete"]);
                 $celo->setFechaDiagnostico($encontrado["fecha_celo"]);
                 $celo->setDetallesCelo($encontrado["detalles_celo"]);
-                $celo->setObservaciones($encontrado["observaciones"]);
+           
                 $lista[] = $celo;
             }
             return $lista;
@@ -153,7 +153,7 @@ class celos extends Conexion
            
             $fecha_diagnostico = $this->getFechaDiagnostico();
             $detalles_celo = $this->getDetallesCelos();
-            $observaciones = $this->getObservaciones();
+         
 
 
             $resultado = self::$conexion->prepare($query);
@@ -161,7 +161,7 @@ class celos extends Conexion
             $resultado->bindParam(":id_animal", $id_animal, PDO::PARAM_STR);
             $resultado->bindParam(":fecha_celo", $fecha_diagnostico, PDO::PARAM_STR);
             $resultado->bindParam(":detalles_celo", $detalles_celo, PDO::PARAM_STR);
-            $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
+ 
 
             $resultado->execute();
             self::desconectar();
@@ -241,6 +241,72 @@ class celos extends Conexion
             return $error;
         }
 
+    }
+
+    public function listarCelosGrafica()
+    {
+        $query = "SELECT MONTH(fecha_celo) AS mes, COUNT(*) AS cantidad_celos
+        FROM celo
+        GROUP BY MONTH(fecha_celo)";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
+    }
+
+    public function listarcelos()
+    {
+        $query = "SELECT Celo.*, Animal.numero_arete
+        FROM Celo
+        INNER JOIN Animal ON Celo.id_animal = Animal.id_animal
+        WHERE Celo.fecha_celo >= CURDATE() - INTERVAL 1 MONTH";
+                $lista = array();
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            foreach ($resultado->fetchAll() as $encontrado) {
+                $celos = new celos();
+                $celos->setAreteAnimal($encontrado["numero_arete"]);
+                $celos->setFechaDiagnostico($encontrado["fecha_celo"]);
+                $celos->setDetallesCelo($encontrado["detalles_celo"]);
+                $lista[] = $celos;
+            }
+            return $lista;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
+    }
+
+    public function obtenerCelos(){
+        $query = "SELECT *
+                  FROM celo 
+                  INNER JOIN Animal ON Celo.id_animal = Animal.id_animal";
+ 
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
     }
 
     public function obtenerCantidadCelos() {

@@ -6,14 +6,7 @@ function limpiarForms() {
 }
 
 
-//cancelar formulario de modificacion
 
-function cancelarForm() {
-  limpiarForms();
-  $('#form-agregar').show();
-  $('#form-modificar').hide();
-
-}
 
 /*Funcion para cargar el listado en el Datatable*/
 function listarVacunas() {
@@ -38,7 +31,7 @@ function listarVacunas() {
 // Funcion principal
 
 $(function () {
-  $('#form-modificar').hide();
+  
   listarVacunas();
 });
 
@@ -82,66 +75,7 @@ $('#formulario-agregar').on('submit', function (event) {
   });
 });
 
-// funcion para boton modificar
-$('#tablalistado tbody').on(
-  'click',
-  'button[id="modificarDato"]',
 
-  function () {
-    var data = $('#tablalistado').DataTable().row($(this).parents('tr')).data();
-    limpiarForms();
-    $('#form-agregar').hide();
-    $('#form-modificar').show();
-    $('#XidVacuna').val(data[0]);
-    $('#XnombreVacuna').val(data[1]);
-    $('#XcasaDistribuidora').val(data[2]);
-    $('#Xdescripcion').val(data[3]);
-    $('#Xlote').val(data[4]);
-    $('#XfechaVencimiento').val(data[5]);
-    $('#Xobservaciones').val(data[6]);
-    return false;
-  }
-);
-
-/*Funcion para modificacion de datos de la vacuna*/
-$('#formulario-modificar').on('submit', function (event) {
-  event.preventDefault();
-  bootbox.confirm('¿Desea modificar los datos?', function (result) {
-    if (result) {
-      var formData = new FormData($('#formulario-modificar')[0]);
-
-      $.ajax({
-        url: '../../controller/salud/vacunaController.php?op=modificar',
-        type: 'POST',
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function (datos) {
-          //alert(datos);
-          switch (datos) {
-            case '0':
-              toastr.error('Error: No se pudieron actualizar los datos');
-              break;
-            case '1':
-              toastr.success('Vacuna actualizada exitosamente');
-              tabla.api().ajax.reload();
-              limpiarForms();
-              $('#form-modificar').hide();
-              $('#form-agregar').show();
-              break;
-            case '2':
-              toastr.error('Error: no coincide la informacion en la base de datos');
-              break;
-
-            default:
-              toastr.error(datos);
-
-          }
-        },
-      });
-    }
-  });
-});
 
 /*Funcion para eliminar datos*/
 function eliminar(id) {

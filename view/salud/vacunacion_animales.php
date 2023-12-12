@@ -85,11 +85,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="card-body">
                     <div class="row">
                       <div class="col-4">
-                        <div class="form-group">
+                        <div class="form-group"> 
                           <label for="">Vacuna</label>
 
-                          <select id="selectVacunas" name="idVacuna" class="form-control select2 select2-selection"
-                            style="width: 100%; padding: 15px;" required>
+                          <select id="selectVacunas" name="idVacuna" class="form-control select2"
+                            style="width: 100%; padding: 15px;" >
                           </select>
                         </div>
 

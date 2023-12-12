@@ -39,14 +39,7 @@ function limpiarForms() {
 }
 
 
-//cancelar formulario de modificacion
 
-function cancelarForm() {
-  limpiarForms();
-  $('#form-agregar').show();
-  $('#form-modificar').hide();
-
-}
 
 /*Funcion para cargar el listado en el Datatable*/
 function listarMastitis() {
@@ -71,7 +64,7 @@ function listarMastitis() {
 // Funcion principal
 
 $(function () {
-  $('#form-modificar').hide();
+ 
   listarMastitis();
 });
 
@@ -115,62 +108,6 @@ $('#formulario-agregar').on('submit', function (event) {
   });
 });
 
-// funcion para boton modificar
-$('#tablalistado tbody').on(
-  'click',
-  'button[id="modificarDato"]',
-
-      function () {
-        var data = $('#tablalistado').DataTable().row($(this).parents('tr')).data();
-        limpiarForms();
-        console.log(data)
-        $('#form-agregar').hide();
-        $('#form-modificar').show();
-        $('#XidAnimal').val(data[1]);
-        $('#XtipoTratamiento').val(data[2]);
-        $('#XcuartosAfectados').val(data[3]);
-        $('#XfechaDiagnostico').val(data[4]);
-        return false;
-      }
-);
-
- /*Funcion para modificacion de datos de usuario*/
- $('#formulario-modificar').on('submit', function (event) {
-  event.preventDefault();
-  bootbox.confirm('¿Desea modificar los datos?', function (result) {
-    if (result) {
-      var formData = new FormData($('#formulario-modificar')[0]);
-      $.ajax({
-        url: '../../controller/salud/mastitisController.php?op=modificar',
-        type: 'POST',
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function (datos) {
-          //alert(datos);
-          switch (datos) {
-            case '0':
-              toastr.error('Error: No se pudieron actualizar los datos');
-              break;
-            case '1':
-              toastr.success('Mastitis actualizada exitosamente');
-              tabla.api().ajax.reload();
-              limpiarForms();
-              $('#form-modificar').hide();
-              $('#form-agregar').show();
-              break;
-            case '2':
-              toastr.error('Error al guardar los datos');
-              break;
-
-            default:
-              console.log(datos)
-          }
-        },
-      });
-    }
-  });
-});
 
 /*Funcion para eliminar datos*/
 function eliminar(id) {

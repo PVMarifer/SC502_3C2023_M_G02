@@ -17,6 +17,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+      <!-- Datatable CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+  <!-- FullCalendar CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+
+
+
+
+
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -45,9 +55,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="row mb-2">
                         <div class="col-sm-3">
                             <ol class="breadcrumb float-sm-left">
-                                <li class="breadcrumb-item"><a href="#" style="color: #0799b6;">Reproduccion</a></li>
-
-
+                                <li class="breadcrumb-item"><a href="#" style="color: #0799b6;">Reproduccion y Control
+                                        de Celos</a></li>
                             </ol>
                         </div><!-- /.col -->
                         <div class="col-sm-9">
@@ -61,56 +70,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <!-- carrusel  vacas  -->
-                            <div class="card ">
-                                <div class="card-header border-0">
-                                    <h3 class="card-title">
-                                        Carrusel vacas
-                                    </h3>
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            <div class="card card-primary card-outline mb-5">
+                                <div class="card-header">
+                                    <div class="card-title">Servicios Y Celos</div>
                                     <div class="card-tools">
-                                        <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>
                                         </button>
+
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carouselExampleIndicators" data-slide-to="0"
-                                                class="active"></li>
-                                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                                        </ol>
-                                        <div class="carousel-inner">
+                                <div id="calendario"></div>
 
-                                        </div>
-                                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                                            data-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                                            data-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Next</span>
-                                        </a>
-                                    </div>
                                 </div>
                                 <!-- /.card-body -->
+
                             </div>
-
-                            <!-- /.card -->
                         </div>
+                        <div class="col-1"></div>
 
 
-                        <!-- tabla de Animales -->
-                        <div class="col-sm-6">
-                            <!-- grafico de Animales ingreados  -->
-                            <div class="card card-info">
+                        <!-- grafico de Animales ingreados  -->
+                        <div class="col-sm-9">
+
+                            <div class="card card-primary card-outline">
                                 <div class="card-header">
-                                    <h3 class="card-title">Vacas Ingresados por Mes</h3>
-
+                                    <h3 class="card-title">
+                                        <i class="far fa-chart-bar"></i>
+                                        Grafico Animales
+                                    </h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>
@@ -120,62 +111,82 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <div class="card-body">
                                     <div class="chart">
-                                        <canvas id="graficoAnimal"
+                                        <canvas id="graficoReproduccion"
                                             style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
+
                             </div>
                         </div>
 
-                    </div>
-
-            </section>
-            <section class="content">
-                <div class="container-fluid">
-
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row">
-
+                        <!-- cards -->
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
                             <div class="small-box text-center text-white " style="background-color:#4CAF50;">
                                 <div class="inner">
-                                    <p>Animales Servicio</p>
-                                    <h3 id="cantidadServicio">Calculando...</h3>
+                                    <p>Vacas Vacias</p>
+                                    <h3 id="card-vacas-vacias"></h3>
                                 </div>
                             </div>
+                            <!-- small box -->
+                            <div class="small-box text-center text-white " style="background-color:#4CAF50;">
+                                <div class="inner">
+                                    <p>Vacas Preñadas</p>
+                                    <h3 id="card-vacas-prenadas"></h3>
+                                </div>
+                            </div>
+                 
+                      
+
                         </div>
                         <!-- ./col -->
 
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box text-center text-white" style="background-color:#4CAF50;">
-                                <div class="inner">
-                                    <p>Promedio de Reproduccion</p>
-                                    <h3 id="promedioReproduccion"></h3>
+                        <!-- tabla de vacas con servicio el ultimo mes -->
+                        <div class="col-sm-6">
+                            <div class="card" style="height: 400px">
+                                <div class="card-header border-0">
+                                    <h3 class="card-title">Servicios del Ultimo Mes</h3>
+                                </div>
+                                <div class="card-body table-responsive p-0">
+                                    <table class="table table-striped " id="tablaservicios">
+                                        <thead>
+                                            <th>Número de Arete</th>
+                                            <th>Fecha Servicio</th>
+                                            <th>Tipo de Servicio</th>
+                    
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box text-center text-white" style="background-color:#4CAF50;">
-                                <div class="inner">
-                                    <p>Vacas en celos</p>
-                                    <h3 id="cantidadCelos"></h3>
-                                </div>
 
+                        <!-- tabla de vacas con servicio el ultimo mes -->
+                        <div class="col-sm-6">
+                            <div class="card" style="height: 400px">
+                                <div class="card-header border-0">
+                                    <h3 class="card-title">Celos del Ultimo Mes</h3>
+                                </div>
+                                <div class="card-body table-responsive p-0">
+                                    <table class="table table-striped " id="tablacelos">
+                                        <thead>
+                                            <th>Número de Arete</th>
+                                            <th>Fecha del Celo</th>
+                                            <th>Detalles del Celo</th>
+                    
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                        <!-- ./col -->
+                        
                     </div>
-                    <!-- /.row -->
-                </div> <!-- /.content-fluid -->
-            </section><!-- /section -->
-
-
-
+                </div>
+            </section>
 
 
 
@@ -200,20 +211,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!--   JQUERY -->
 <script src="../plugins/jquery/jquery.min.js"></script>
+<!--  FullCalendar JS y dependencias -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
 <!-- DataTables  & Plugins -->
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
-<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="../plugins/jszip/jszip.min.js"></script>
-<script src="../plugins/pdfmake/pdfmake.min.js"></script>
-<script src="../plugins/pdfmake/vfs_fonts.js"></script>
-<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
 
 <!-- Bootstrap 4 -->
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -226,8 +231,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
+<!-- Chart js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script src="../assets/js/estadoReproduccion.js"></script>
 
+
+
+<script src="../assets/js/reproduccion_celo.js"></script>
 
 </html>

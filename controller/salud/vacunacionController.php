@@ -90,7 +90,7 @@ switch ($_GET['op']) {
             $vacunacion = new Vacunacion();
             $vacunaciones = $vacunacion->listarVacunasPuestas();
            
-         
+          
             echo ($vacunaciones);
         }
 

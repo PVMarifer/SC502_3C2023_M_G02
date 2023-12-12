@@ -377,7 +377,7 @@ class EnfermedadAnimal extends Conexion
             $resultado = self::$conexion->prepare($query);
             $resultado->execute();
             self::desconectar();
-            return $resultado->fetchAll(PDO::FETCH_ASSOC);;
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $Exception) {
             self::desconectar();
             $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
