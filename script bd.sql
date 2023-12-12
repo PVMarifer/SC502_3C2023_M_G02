@@ -280,3 +280,11 @@ add foreign key (id_animal) references Animal(id_animal);
 alter table Vaca_Prenada 
 add foreign key (id_servicio) references Servicio(id_servicio);
 
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    temrs boolean NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
