@@ -246,31 +246,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <!-- ./col -->
 
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box text-center text-white" style="background-color:#4CAF50;">
-                                <div class="inner">
-                                    <p>Promedio de Producción por Vaca</p>
-                                    <h3>20 kilos</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box text-center text-white" style="background-color:#4CAF50;">
-                                <div class="inner">
-                                    <p>Vacas en producción</p>
-                                    <h3>30</h3>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                    </div>
-                    <!-- /.row -->
-                </div> <!-- /.content-fluid -->
-            </section><!-- /section -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box text-center text-white" style="background-color:#4CAF50;">
+                <div class="inner">
+                  <p>Promedio de Producción por Vaca</p>
+                  <h3>20 kilos</h3>
+                </div>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box text-center text-white" style="background-color:#4CAF50;">
+                <div class="inner">
+                  <p>Vacas en producción</p>
+                  <h3>30</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box text-center text-white " style="background-color:#4CAF50;">
+                <div class="inner">
+                  <p>Porcentaje de grasa</p>
+                  <h3>15.5</h3>
+                </div>
+              </div>
+            </div>
+            <!-- ./col -->
+          </div>
+          </div>
+              </div>
+            </div>
+         <!-- Small boxes (Stat box) -->
+            <!-- ./col -->
+        </div> <!-- /.content-fluid -->
+      </section><!-- /section -->
 
             <section class="content">
                 <div class="container-fluid">
@@ -399,6 +411,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- REQUIRED SCRIPTS -->
 
+  <!-- jQuery -->
+
+ <script src="../plugins/jquery/jquery.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- Bootbox -->
+<script src="../plugins/bootbox/bootbox.min.js"></script>
+<!-- toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<!-- CSS styles -->
+<link rel="stylesheet" href="../assets/css/index.css">
+<!-- Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+
+<!-- JD Scripts -->
+<script src="../assets/js/produccion.js"></script>
+
 </body>
 <!-- CSS styles -->
 
@@ -430,5 +465,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
+
 
 </html>

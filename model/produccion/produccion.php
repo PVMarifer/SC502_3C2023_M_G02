@@ -10,13 +10,15 @@ class produccion extends Conexion
 
     private $areteAnimal = null;
 
+    private $idProduccion = null;
+
+    private $idAnimal= null;
+
     private $fechaProduccion = null;
 
     private $kilosProducidos = null;
 
     private $idPrefijo = null;
-
-    private $estadoleche = null;
 
     private $observaciones = null;
 
@@ -25,38 +27,47 @@ class produccion extends Conexion
 
     public function __construct()
     {
+
     }
 
     //getters y setters
 
-    public function getfechaProduccion ()
+    public function getId_Animal ()
     {
-        return $this->fechaProduccion ;
+        return $this->id_animal ;
     }
 
-    public function setfechaProduccion ($fechaProduccion )
+    public function setId_animal ($id_animal)
     {
-        $this->fechaProduccion  = $fechaProduccion ;
+        $this->idAnimal  = $idAnimal ;
+    } 
+    
+    public function getIdProduccion ()
+    {
+        return $this->getIdProduccion; 
+    
     }
 
-    public function kilosProducidos ()
+    public function setIdProduccion ($idProduccion )
+    {  
+        $this->getIdProduccion  = $IdProduccion ;
+    } 
+
+
+    public function getFechaProduccion ()
     {
-        return $this->kilosProducidos ;
+        return $this->setFechaProduccion;
     }
 
-    public function setkilosProducidos ($kilosProducidos )
+    public function setFechaProduccion ($fechaProduccion )
     {
-        $this->kilosProducidos  = $kilosProducidos ;
+        $this->getFechaProduccion  = $fecha_Produccion;
     }
 
-    public function getAreteAnimal()
+     
+    public function getLitros ()
     {
-        return $this->areteAnimal;
-    }
-
-    public function setAreteAnimal($areteAnimal)
-    {
-        $this->areteAnimal = $areteAnimal;
+        return $this->litros ;
     }
 
     public function getIdPrefijo()
@@ -67,17 +78,6 @@ class produccion extends Conexion
     public function setIdPrefijo($idPrefijo)
     {
         $this->idPrefijo = $idPrefijo;
-    }
-
-
-    public function getestadoleche ()
-    {
-        return $this->estadoleche ;
-    }
-
-    public function setestadoleche ($estadoleche )
-    {
-        $this->estadoleche  = $estadoleche ;
     }
 
     public function getObservaciones()
@@ -111,7 +111,7 @@ class produccion extends Conexion
     public function listarDB()
     {
         $query = "SELECT * FROM produccion
-        INNER JOIN animal ON areteanimal = animal.areteanimal";
+       INNER JOIN animal ON produccion.id_vaca = animal.id_animal";
         $lista = array();
         try {
             self::getConexion();
@@ -119,15 +119,17 @@ class produccion extends Conexion
             $resultado->execute();
             self::desconectar();
             foreach ($resultado->fetchAll() as $encontrado) {
-                $Secado = new produccion();
-                $prefijo = "SE";
-                $Secado->setIdSecado($encontrado["id_secado"]);
-                $id_personalizado = $prefijo . str_pad($Secado->getIdSecado(), 2, '0', STR_PAD_LEFT);
-                $Secado->setIdPrefijo($id_personalizado);
-                $Secado->setAreteAnimal($encontrado["numero_arete"]);
-                $Secado->setFechaSecado($encontrado["fecha_secado"]);
-                $Secado->setObservaciones($encontrado["observaciones"]);
-                $lista[] = $Secado;
+                $Produccion = new produccion();
+                $prefijo = "PR";
+                $Produccion->setIdProduccion($encontrado["idProduccion"]);
+                $id_personalizado = $prefijo . str_pad($Produccion->getIdProduccion(), 2, '0', STR_PAD_LEFT);
+                $Produccion->setIdPrefijo($id_personalizado);
+                $Produccion->setAreteAnimal($encontrado["numero_arete"]);
+                $Produccion->setIdAnimal($encontrado["id_vaca"]);
+                $Produccion->setFechaProduccion($encontrado["fecha"]);
+                $Produccion->setKilosProducidos($encontrado["litros"]);
+                $Produccion->setObservaciones($encontrado["observaciones"]);
+                $lista[] = $Produccion;
             }
             return $lista;
         } catch (PDOException $Exception) {
@@ -140,18 +142,20 @@ class produccion extends Conexion
 
     public function guardarEnDb()
     {
-        $query = "INSERT INTO `secado` (`id_animal`,`fecha_secado`, `observaciones`) VALUES (:id_animal, :fecha_secado, :observaciones)";
+        $query = "INSERT INTO `Produccion` (`id_animal`,`fecha_Produccion`, `observaciones`, `litros`) VALUES (:id_animal, :fecha_Produccion, :observaciones, :litros)";
         try {
             self::getConexion();
           
             $id_animal = $this->getIdAnimal();
-            $fecha_secado = $this->getFechaSecado();
+            $fecha_Produccion = $this->getFechaProduccion();
             $observaciones = $this->getObservaciones();
+            $kilosProducidos = $this->getKilosProducidos();
 
             $resultado = self::$conexion->prepare($query);
             $resultado->bindParam(":id_animal", $id_animal, PDO::PARAM_STR);
-            $resultado->bindParam(":fecha_secado", $fecha_secado, PDO::PARAM_STR);
+            $resultado->bindParam(":fecha_Produccion", $fecha_Produccion, PDO::PARAM_STR);
             $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
+            $resultado->bindParam(":litros", $kilosProducidos, PDO::PARAM_STR);
 
             $resultado->execute();
             self::desconectar();
@@ -165,18 +169,19 @@ class produccion extends Conexion
 
     public function verificarExistenciaDb()
     {
-        $query = "SELECT * FROM secado where secado.id_animal=:id_animal  and fecha_secado =:fecha_secado";
+        $query = "SELECT * FROM produccion where produccion.id_animal=:id_animal  and fecha_produccion =:fecha_produccion";
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
             $idAnimal = $this->getIdAnimal();
-            $fechaSecado = $this->getFechaSecado();
+            $fechaProduccion = $this->getFechaProduccion();
             $resultado->bindParam(":id_animal", $idAnimal, PDO::PARAM_STR);
-            $resultado->bindParam(":fecha_secado", $fechaSecado, PDO::PARAM_STR);
+            $resultado->bindParam(":fecha_produccion", $fechaProduccion, PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
             $encontrado = false;
             foreach ($resultado->fetchAll() as $reg) {
+                echo("we");
                 $encontrado = true;
             }
             return $encontrado;
@@ -190,12 +195,12 @@ class produccion extends Conexion
     public function verificarExistenciaModificar()
     {
 
-         $idSecado = $this->getIdSecado();
-        $query = "DELETE FROM secado WHERE `secado`.`id_secado` = :id_secado";
+         $idProduccion = $this->getIdProduccion();
+        $query = "DELETE FROM Produccion WHERE `Produccion`.`id_Produccion` = :id_Produccion";
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":id_secado", $idSecado, PDO::PARAM_STR);
+            $resultado->bindParam(":id_Produccion", $idProduccion, PDO::PARAM_STR);
          
             $resultado->execute();
             self::desconectar();
@@ -203,22 +208,22 @@ class produccion extends Conexion
             foreach ($resultado->fetchAll() as $reg) {
                 $encontrado = true;
             }
-            return $encontrado;
+          return $encontrado;
         } catch (PDOException $Exception) {
             self::desconectar();
-            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
-            return $error;
-        }
-    }
+          $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+           return $error;
+       }
+   } 
 
     public function eliminar()
     {
-        $idSecado = $this->getIdSecado();
-        $query = "DELETE FROM secado WHERE `secado`.`id_secado` = :id_secado";
+        $idProduccion = $this->getIdProduccion();
+        $query = "DELETE FROM produccion WHERE `produccion`.`idProduccion` = :idProduccion";
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":id_secado", $idSecado, PDO::PARAM_STR);
+            $resultado->bindParam(":idProduccion", $idProduccion, PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
             if (!(self::verificarExistenciaModificar())) {
@@ -235,9 +240,9 @@ class produccion extends Conexion
     }
 
 
-    public function actualizarSecado()
+    public function actualizarProduccion()
     {
-        $query = "UPDATE secado
+        $query = "UPDATE Produccion
         SET sintomas_animal = :sintomas_animal,
             estado_animal = :estado_animal,
             observaciones = :observaciones

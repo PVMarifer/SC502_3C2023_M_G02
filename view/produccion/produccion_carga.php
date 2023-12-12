@@ -88,8 +88,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Producción</a></li>
-                <li class="breadcrumb-item active">Añadir Producción Semanal</li>
-              </ol>
+                <li class="breadcrumb-item"><a href="#">Añadir Producción Semanal</a></li>
             </div>
             <div class="col-sm-6">
               <h1 class="m-0"></h1>
@@ -103,80 +102,149 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <div class="col-md-12">
 
-            <!-- general form elements -->
-            <div class="card " style="background-color: #3f3ae6;">
-              <div class="card-header text-center">
-                <h3 class="card-title text-white">Nueva Produccion Semanal</h3>
+ <!-- Main content -->
+ <section class="content">
+        <div class="container-fluid">
+
+         <!-- Tabla -->
+         <div class="row mb-5" id="tabla-vacas-enfermas">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="card card-dark" style="overflow-x:scroll;">
+                <div class="card-body p-3">
+                  <table id="tablalistado" class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <th>Id</th>
+                    <th>Fecha Semana</th>
+                    <th>Litros Semanales</th>
+                    <th>Calidad Bacteriologica</th>
+                    <th>Celulas Somaticas</th>
+                    <th>Porcentaje Grasa</th>
+                    <th>Porcentaje Proteina</th>
+                      <th>Punto Crioscopico</th>                 
+                      <th>Presencia inhibidores</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form>
-                <div class="card-body text-white ">
-                  <div class="form-group">
-                    <label for="">Fecha de Inicio de Semana</label>
-                    <input type="date" class="form-control" id="" placeholder="">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Kilos Producidos</label>
-                    <input type="number" class="form-control" id="" placeholder="Ingrese la cantidad producida">
-                  </div>
-                  <div class="form-group">
-                    <label>Estado de la Leche</label>
-                    <select class="form-control select2" style="width: 100%;">
-                      <option selected="selected">Normal</option>
-                      <option>Contaminada</option>   
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Calidad bacteriológica de la leche</label>
-                    <input type="text" class="form-control" id="" placeholder="">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Recuento de celulas somaticas</label>
-                    <input type="text" class="form-control" id="" placeholder="">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Porcentaje de grasa</label>
-                    <input type="text" class="form-control" id="" placeholder="">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Porcentaje de proteina</label>
-                    <input type="text" class="form-control" id="" placeholder="">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Punto crioscopico de la leche</label>
-                    <input type="text" class="form-control" id="" placeholder="">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Precencia de inhibidores(antibiotico)</label>
-                    <input type="text" class="form-control" id="" placeholder="">
-                  </div>
-
-                </div>
-                <!-- /.card-body -->
-
-                <div class="card-footer text-center">
-                  <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-              </form>
+              <!-- /.card -->
             </div>
-            <!-- /.card -->
+            <div class="col-md-1"></div>
 
+          </div>
+          <!-- /.row -->
+
+
+
+          <!-- Formulario Agregar-->
+          <div class="row mb-5" IdProduccion="form-agregar">
+            <div class="col-md-1"></div>
+
+            <div class="col-10">
+              <div class="card " style="background-color:#4CAF50;">
+                <div class="card-header text-center">
+                  <h3 class="card-title text-white">Nueva Produccion Semanal </h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form id="formulario-agregar" method="POST">
+                  <div class="card-body text-white ">
+                    <div class="row">
+                     
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Fecha de Produccion</label>
+                          <input type="date" class="form-control" id="Fecha" name="Fecha" required>
+                        </div>
+
+                    
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Litros</label>
+                          <input type="text" class="form-control" id="litros" name="litros"
+                            placeholder="Ingrese aquí los Litros Producidos" required>
+                        </div>
+
+                        <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Calidad Bacteriologica</label>
+                          <input type="text" class="form-control" id="calidad bacteriologica" name="calidad bacteriologica"
+                            placeholder="Ingrese la Calidad Bacteriologica" required>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                      <div class="form-group">
+                          <label for="">Celulas Somaticas</label>
+                          <input type="text" class="form-control" id="celulas somaticas" name="celulas somaticas"
+                            placeholder="Ingrese las celulas Somaticas" required>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="">Porcentaje Grasa</label>
+                          <input type="text" class="form-control" id="porcentaje grasa" name="porcentaje grasa"
+                            placeholder="Ingrese el procentaje de Grasa" required>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                      <div class="form-group">
+                          <label for="">Porcentaje Proteina</label>
+                          <input type="text" class="form-control" id="porcentaje proteina" name="porcentaje proteina"
+                            placeholder="Ingrese el procentaje de Proteina" required>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                      <div class="form-group">
+                          <label for="">Punto Crioscopico</label>
+                          <input type="text" class="form-control" id="punto crioscopico" name="punto crioscopico"
+                            placeholder="Ingrese el punto crioscopico" required>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                      <div class="form-group">
+                          <label for="">Presencia Inhibidores</label>
+                          <input type="text" class="form-control" id="presencia inhibidores" name="presencia inhibidores"
+                            placeholder="Ingrese la presencia inhibidores" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+
+                  <div class="card-footer text-center">
+                    <div class="row">
+                      <div class="col-6"><button type="submit" class="btn btn-primary btnRegistrar">Guardar</button>
+                      </div>
+                      <div class="col-6"><input type="reset" class=" btn btn-info" value="Limpiar datos"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-1"></div>
 
 
           </div>
 
+          <!-- /.row -->
 
+          <!-- /.row -->
+
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+        
+ <!-- Formulario Agregar-->
+ <div class="row mb-5" id="form-agregar ">
+            <div class="col-md-1"></div>
+          </div>
 
         </div>
       </section>
 
-
-
-
     </div><!-- ./Content Wrapper-->
-
-
 
     <!-- Main Footer -->
     <footer class="main-footer">
@@ -188,6 +256,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div><!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPTS -->
+
+  <script src="../plugins/jquery/jquery.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- Bootbox -->
+<script src="../plugins/bootbox/bootbox.min.js"></script>
+<!-- toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<!-- CSS styles -->
+<link rel="stylesheet" href="../assets/css/index.css">
+<!-- Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<!-- JD Scripts -->
+<script src="../assets/js/produccionSem.js"></script>
+
 
 
 </body>
