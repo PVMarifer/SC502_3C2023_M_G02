@@ -63,5 +63,15 @@ switch ($_GET['op']) {
         $respuesta = $servicio->eliminar();
         echo $respuesta;
         break;
+    case 'obtenerCantidadServicio':
+                    $servicio = new servicio();
+                    $cantidadServicio = $servicio->obtenerCantidadServicio();
+                        
+                        if (!is_string($cantidadServicio)) {
+                            echo $cantidadServicio; // Devuelve la cantidad como respuesta
+                        } else {
+                            echo $cantidadServicio; // Maneja el error si es una cadena JSON de error
+                        }
+                    break;
 }
 ?>

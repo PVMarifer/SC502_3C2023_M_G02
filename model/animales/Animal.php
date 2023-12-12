@@ -13,6 +13,8 @@ class Animal extends Conexion
 
     private $images = null;
 
+    private $base64Image = null;
+
     private $numero_arete = null;
 
     private $fecha_nacimiento = null;
@@ -41,6 +43,15 @@ class Animal extends Conexion
     public function setIdAnimal($idAnimal)
     {
         $this->idAnimal = $idAnimal;
+    }
+
+    public function getBase64Image()
+    {
+        return $this->base64Image;
+    }
+    public function setBase64Image($base64Image)
+    {
+        $this->base64Image = $base64Image;
     }
 
     public function getNombre()
@@ -154,6 +165,12 @@ class Animal extends Conexion
                 $animal ->setPeso($encontrado["peso"]);
                 $animal ->setColores_caracteristicas($encontrado["colores_caracteristicas"]);
                 $animal ->setObservaciones($encontrado["observaciones"]);
+                if (!empty($encontrado['images'])) {
+                    $base64Image = base64_encode($encontrado['images']);
+                    $animal->setBase64Image($base64Image);
+                } else {
+                    $animal->setBase64Image(null);
+                }
                 $lista[] = $animal;
             }
             return $lista;
@@ -185,7 +202,7 @@ class Animal extends Conexion
                 $resultado->bindParam(':numero_arete', $numeroArete, PDO::PARAM_STR);
                 $resultado->bindParam(':colores_caracteristicas', $coloresCaracteristicas, PDO::PARAM_STR);
                 $resultado->bindParam(':observaciones', $observaciones, PDO::PARAM_STR);
-                $resultado->bindParam(':images', $image, PDO::PARAM_STR);
+                $resultado->bindParam(':images', $image, PDO::PARAM_LOB);
                 
             $resultado->execute();
             self::desconectar();
@@ -319,21 +336,64 @@ class Animal extends Conexion
         }
     }
 
-    public function listarImage()
-    {
-        $query = "SELECT images
-        FROM animal";
+    public function listarImagenes() {
+        $query = "SELECT nombre, images FROM animal";
+        $lista = array();
+
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
             $resultado->execute();
             self::desconectar();
-            return $resultado->fetchAll(PDO::FETCH_ASSOC);;
+
+            foreach ($resultado->fetchAll() as $encontrado) {
+                $animal = new Animal();
+                $animal->setNombre($encontrado['nombre']);
+                $animal->setImages($encontrado['images']);
+                $lista[] = $animal;
+            }
+
+            return $lista;
         } catch (PDOException $Exception) {
             self::desconectar();
             $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
-            ;
-            return json_encode($error);
+            return json_encode(['error' => $error]);
+        }
+    }
+
+    public function obtenerCantidadAnimales() {
+        $query = "SELECT COUNT(*) as cantidad FROM animal";
+
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            $cantidad = $resultado->fetchColumn();
+            self::desconectar();
+
+            return $cantidad;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            return json_encode(['error' => $error]);
+        }
+    }
+
+    public function obtenerSumaIngresos() {
+        $query = "SELECT SUM() as suma FROM animal";
+
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            $suma = $resultado->fetchColumn();
+            self::desconectar();
+
+            return $suma;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            return json_encode(['error' => $error]);
         }
     }
 }

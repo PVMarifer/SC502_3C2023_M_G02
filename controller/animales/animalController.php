@@ -8,6 +8,13 @@ switch ($_GET['op']) {
         $registros = $animal->listarDb();
         $datos = array();
         foreach ($registros as $registro) {
+            $imagenHTML = '';
+        // Verificar si hay datos de imagen antes de intentar mostrarla
+        if (!empty($registro->getBase64Image())) {
+            $imagenHTML = '<img src="data:image/jpeg;base64,' . $registro->getBase64Image() . '" alt="Imagen" style="max-width: 50px; max-height: 50px;">';
+        } else {
+            $imagenHTML = 'Sin imagen';
+        }
             $datos[] = array(
                 "0" => $registro->getIdAnimal(),
                 "1" => $registro->getNumero_arete(),
@@ -17,7 +24,8 @@ switch ($_GET['op']) {
                 "5" => $registro->getPeso(),
                 "6" => $registro->getColores_caracteristicas(),
                 "7" => $registro->getObservaciones(),
-                "8" => '<button class="btn btn-success" id="modificarDato">Modificar</button>' . '<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdAnimal() . '\')">Eliminar</button>'
+                "8" => $imagenHTML,
+                "9" => '<button class="btn btn-success" id="modificarDato">Modificar</button>' . '<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdAnimal() . '\')">Eliminar</button>'
             );
         }
         $resultados = array(
@@ -41,7 +49,7 @@ switch ($_GET['op']) {
         break;
         case 'insert':
             $nombre = isset($_POST["nombre"]) ? trim($_POST["nombre"]) : "";
-            $image = isset($_POST["images"]) ? trim($_POST["images"]) : "";
+            $imagen = isset($_FILES["images"]) ? $_FILES["images"] : null; // Asegúrate de que el formulario tenga un campo de tipo 'file' llamado 'imagen'
             $fecha_nacimiento = isset($_POST["fecha_nacimiento"]) ? trim($_POST["fecha_nacimiento"]) : "";
             $raza = isset($_POST["raza"]) ? trim($_POST["raza"]) : "";
             $peso = isset($_POST["peso"]) ? trim($_POST["peso"]) : "";
@@ -52,26 +60,30 @@ switch ($_GET['op']) {
             $ingresarAnimal = new Animal();
             
             $ingresarAnimal->setNombre($nombre);
-            $ingresarAnimal->setImages($image);
             $ingresarAnimal->setFecha_nacimiento($fecha_nacimiento);
             $ingresarAnimal->setRaza($raza);
             $ingresarAnimal->setPeso($peso);
             $ingresarAnimal->setNumero_arete($numero_arete);
             $ingresarAnimal->setColores_caracteristicas($colores_caracteristicas);
             $ingresarAnimal ->setObservaciones($observaciones);
-
+            if ($imagen) {
+                $imagenContenido = file_get_contents($imagen["tmp_name"]);
+                $ingresarAnimal->setImages($imagenContenido);
+            }
             $encontrado = $ingresarAnimal->verificarExistenciaDb();
             if ($encontrado == false) {
                 
                 $ingresarAnimal->setNombre($nombre);
-                $ingresarAnimal->setImages($image);
                 $ingresarAnimal->setFecha_nacimiento($fecha_nacimiento);
                 $ingresarAnimal->setRaza($raza);
                 $ingresarAnimal->setPeso($peso);
                 $ingresarAnimal->setNumero_arete($numero_arete);
                 $ingresarAnimal->setColores_caracteristicas($colores_caracteristicas);
                 $ingresarAnimal ->setObservaciones($observaciones);
-
+                if ($imagen) {
+                    $imagenContenido = file_get_contents($imagen["tmp_name"]);
+                    $ingresarAnimal->setImages($imagenContenido);
+                }
                 $ingresarAnimal->guardarEnDb();
                 if ($ingresarAnimal->verificarExistenciaDb()) {
                     echo 1; // se guardo exitosamente
@@ -233,26 +245,38 @@ switch ($_GET['op']) {
                     );
                     echo json_encode($resultados);
                     break;
-            case 'listarImage':
-                    $animal_me_db = new Animal();
-                    $registros = $animal_me_db->listarImage();
-                    $datos = array();
-                    foreach ($registros as $registro) {
-                        $datos[] = array(
-                            "0" => $registro->getImages(),
-                        );
+            case 'listarImagen':
+                $animalModel = new Animal();
+                $registros = $animalModel->listarImagenes();
+                
+                $datos = array();
+        
+                foreach ($registros as $registro) {
+                    $imagenHTML = '';
+        
+                    if (!empty($registro->getImages())) {
+                        $base64Image = base64_encode($registro->getImages());
+                        $imagenHTML = '<div class="carousel-item">' .
+                                      '<img class="d-block w-100" src="data:image/jpeg;base64,' . $base64Image . '" alt="' . $registro->getNombre() . '">' . 
+                                      '</div>';
                     }
-                    $resultados = array(
-                        "sEcho" => 1,
-                        ##informacion para datatables
-                        "iTotalRecords" => count($datos),
-                        ## total de registros al datatable
-                        "iTotalDisplayRecords" => count($datos),
-                        ## enviamos el total de registros a visualizar
-                        "aaData" => $datos
-                    );
-                    echo json_encode($resultados);
+        
+                    $datos[] = $imagenHTML;
+                }
+        
+                echo json_encode($datos);
+                        break;
+            case 'obtenerCantidadAnimales':
+                    $animal = new Animal();
+                    $cantidadAnimales = $animal->obtenerCantidadAnimales();
+                        
+                        if (!is_string($cantidadAnimales)) {
+                            echo $cantidadAnimales; // Devuelve la cantidad como respuesta
+                        } else {
+                            echo $cantidadAnimales; // Maneja el error si es una cadena JSON de error
+                        }
                     break;
+                    
 }
 
 ?>

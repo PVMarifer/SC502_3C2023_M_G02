@@ -151,86 +151,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <!-- tabla de Animales -->
                         <div class="col-sm-6">
-                            <div class="card p-2">
-                                <div class="card-header border-0">
-                                    <h3 class="card-title">Animales</h3>
-                                </div>
-
-                                <div class="card-body table-responsive p-0" style="height: 280px;">
-                                    <table class="table table-striped table-valign-middle" id="tablaAnimal">
-                                        <thead>
-                                            <th>ID</th>
-                                            <th>Número de Arete</th>
-                                            <th>Nombre del Animal</th>
-                                            <th>Fecha Nacimiento</th>
-                                            <th>Raza</th>
-                                            <th>Peso</th>
-                                            <th>Características</th>
-                                            <th>Observaciones</th>
-                                        </thead>
-                                        <tbody>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </section>
-
-
-
-
-            <section class="content">
-                <div class="container-fluid">
-
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row">
-
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box text-center text-white " style="background-color:#4CAF50;">
-                                <div class="inner">
-                                    <p>Promedio de Animales Ingresados</p>
-                                    <h3>20</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box text-center text-white" style="background-color:#4CAF50;">
-                                <div class="inner">
-                                    <p>Promedio de Producción</p>
-                                    <h3>20 kilos</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box text-center text-white" style="background-color:#4CAF50;">
-                                <div class="inner">
-                                    <p>Vacas en producción</p>
-                                    <h3>30</h3>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                    </div>
-                    <!-- /.row -->
-                </div> <!-- /.content-fluid -->
-            </section><!-- /section -->
-
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6">
                             <!-- grafico de Animales ingreados  -->
                             <div class="card card-info">
                                 <div class="card-header">
@@ -251,20 +171,53 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <!-- /.card-body -->
                             </div>
-                        </div><!-- ./Content Wrapper-->
+                    </div>
 
+                </div>
 
+            </section>
+            <section class="content">
+                <div class="container-fluid">
 
-                        <!-- Main Footer -->
-                        <footer class="main-footer">
-                            <?php
-      include '../fragments/footer.php'
-        ?>
-                        </footer>
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
 
-                    </div><!-- ./wrapper -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box text-center text-white " style="background-color:#4CAF50;">
+                                <div class="inner">
+                                    <p>Animales Ingresados</p>
+                                    <h3 id="promedioAnimales">Calculando...</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
 
-                    <!-- REQUIRED SCRIPTS -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box text-center text-white" style="background-color:#4CAF50;">
+                                <div class="inner">
+                                    <p>Promedio de Producción</p>
+                                    <h3 id="promedioProduccion"></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box text-center text-white" style="background-color:#4CAF50;">
+                                <div class="inner">
+                                    <p>Vacas en producción</p>
+                                    <h3 id="produccion"></h3>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                    <!-- /.row -->
+                </div> <!-- /.content-fluid -->
+            </section><!-- /section -->
 
 </body>
 <!-- CSS styles -->

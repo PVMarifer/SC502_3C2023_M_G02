@@ -58,6 +58,7 @@ switch ($_GET['op']) {
         $respuesta = $secado->eliminar();
         echo $respuesta;
         break;
+    
 
 }
 ?>

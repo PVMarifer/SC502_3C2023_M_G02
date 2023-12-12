@@ -281,6 +281,41 @@ class Secado extends Conexion
         }
     }
 
+    public function obtenerCantidadProduccion() {
+        $query = "SELECT COUNT(*) as cantidad FROM produccion";
+
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            $cantidad = $resultado->fetchColumn();
+            self::desconectar();
+
+            return $cantidad;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            return json_encode(['error' => $error]);
+        }
+    }
+    public function obtenerSumaIngresos() {
+        $query = "SELECT SUM(litros) as suma FROM produccion";
+
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            $suma = $resultado->fetchColumn();
+            self::desconectar();
+
+            return $suma;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            return json_encode(['error' => $error]);
+        }
+    }
+
 
 }
 

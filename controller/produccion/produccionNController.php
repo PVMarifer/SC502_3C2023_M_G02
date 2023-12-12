@@ -58,6 +58,26 @@ switch ($_GET['op']) {
         $respuesta = $secado->eliminar();
         echo $respuesta;
         break;
-
+    case 'obtenerCantidadProduccion':
+            $produccion = new Secado();
+            $cantidadProduccion = $produccion->obtenerCantidadProduccion();
+                       
+                if (!is_string($cantidadProduccion)) {
+                    echo $cantidadProduccion; // Devuelve la cantidad como respuesta
+                } else {
+                    echo $cantidadProduccion; // Maneja el error si es una cadena JSON de error
+                    }
+                    break;
+    case 'obtenerPromedioProduccion':
+                $produccion = new Secado();
+                $cantidadProduccion = $produccion->obtenerCantidadProduccion();
+                $sumaProduccion = $produccion->obtenerSumaIngresos();
+                if ($cantidadProduccion > 0) {
+                        $promedio =  $sumaProduccion / $cantidadProduccion;
+                        echo $promedio; // Devuelve la cantidad como respuesta
+                    } else {
+                        echo $promedio; // Maneja el error si es una cadena JSON de error
+                    }
+                    break;
 }
 ?>

@@ -1,3 +1,77 @@
+
+$(document).ready(function () {
+  const smallBox = $('.small-box');
+  const cantidadAnimalesElement = $('#promedioAnimales');
+
+  function mostrarCantidadAnimales(data) {
+      const cantidadAnimales = parseInt(data);
+      if (!isNaN(cantidadAnimales)) {
+          cantidadAnimalesElement.text(cantidadAnimales);
+      } else {
+          console.error('La respuesta del servidor no es un número válido:', data);
+          cantidadAnimalesElement.text('Error al obtener la cantidad de animales');
+      }
+  }
+
+  $.ajax({
+      url: '../../controller/animales/AnimalController.php?op=obtenerCantidadAnimales',
+      method: 'GET',
+      success: mostrarCantidadAnimales,
+      error: function (jqXHR, textStatus, errorThrown) {
+          console.error('Error obteniendo la cantidad de animales:', textStatus, errorThrown);
+          cantidadAnimalesElement.text('Error al obtener la cantidad de animales');
+      }
+  });
+});
+$(document).ready(function () {
+  const smallBox = $('.small-box');
+  const cantidadProduccionElement = $('#produccion');
+
+  function mostrarCantidadProduccion(data) {
+      const cantidadProduccion = parseInt(data);
+      if (!isNaN(cantidadProduccion)) {
+        cantidadProduccionElement.text(cantidadProduccion);
+      } else {
+          console.error('La respuesta del servidor no es un número válido:', data);
+          cantidadProduccionElement.text('Error al obtener la cantidad de animales');
+      }
+  }
+
+  $.ajax({
+      url: '../../controller/produccion/produccionNController.php?op=obtenerCantidadProduccion',
+      method: 'GET',
+      success: mostrarCantidadProduccion,
+      error: function (jqXHR, textStatus, errorThrown) {
+          console.error('Error obteniendo la cantidad de produccion:', textStatus, errorThrown);
+          cantidadProduccionElement.text('Error al obtener la cantidad de produccion');
+      }
+  });
+});
+
+$(document).ready(function () {
+  const smallBox = $('.small-box');
+  const promedioProduccionElement = $('#promedioProduccion');
+
+  function mostrarpromedioProduccion(data) {
+      const promedioProduccion = parseInt(data);
+      if (!isNaN(promedioProduccion)) {
+        promedioProduccionElement.text(promedioProduccion);
+      } else {
+          console.error('La respuesta del servidor no es un número válido:', data);
+          promedioProduccionElement.text('Error al obtener la promedio de produccion');
+      }
+  }
+
+  $.ajax({
+      url: '../../controller/produccion/produccionNController.php?op=obtenerPromedioProduccion',
+      method: 'GET',
+      success: mostrarpromedioProduccion,
+      error: function (jqXHR, textStatus, errorThrown) {
+          console.error('Error obteniendo la cantidad de produccion:', textStatus, errorThrown);
+          promedioProduccionElement.text('Error al obtener la cantidad de produccion');
+      }
+  });
+});
 $(document).ready(function () {
   function obtenerAnimalesGrafica() {
       $.ajax({
@@ -68,29 +142,23 @@ $(document).ready(function () {
 
   $(document).ready(function () {
     $.ajax({
-        url: '../../controller/animales/animalController.php?op=listarImage',
+        url: '../../controller/animales/animalController.php?op=listarImagen',
         method: 'GET',
         dataType: 'json',
         success: function (data) {
-            // Assuming you have an array of image objects with 'image_path' property
-            data.forEach(function (image) {
-                // Create a new carousel item for each image
-                var carouselItem = '<div class="carousel-item">' +
-                    '<img src="' + image.image_path + '" alt="' + image.caption + '">' +
-                    '<div class="carousel-caption d-none d-md-block">' +
-                    '<h5>' + image.caption + '</h5>' +
-                    '</div>' +
-                    '</div>';
+            var carouselInner = $('#carouselExampleIndicators .carousel-inner');
 
-                $('#carouselExampleIndicators .carousel-inner').append(carouselItem);
+            data.forEach(function (imageHTML, index) {
+                carouselInner.append(imageHTML);
             });
 
             $('#carouselExampleIndicators .carousel-inner .carousel-item:first').addClass('active');
         },
-        error: function (error) {
-            console.log('Error loading animal images:', error);
+        error: function (xhr, status, error) {
+          console.error(error);
         }
     });
 });
-
+  
 });
+
