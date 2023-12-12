@@ -29,7 +29,6 @@ $(document).ready(function () {
       data: { obtenerAnimalesAntibiotico: true },
       dataType: "text",
       success: function (data) {
-        console.log(data)
         if (data) {
           // Llenar el select con la cantidad de vacas
           $('#card-animales-antibiotico').text(data);

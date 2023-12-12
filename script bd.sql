@@ -19,24 +19,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
 
-create table Vaca(
-	id_vaca int primary key auto_increment not null,
-    reproducible boolean,
-    id_animal int not null,
-    foreign key fk_vaca_animal (id_animal) references Animal(id_animal)
-    )
-    ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
-    
-create table Toro(
-	id_toro int auto_increment primary key not null,
-    tipo_toro enum('toro_finca', 'catalogo'),
-    cantidad_montas_enseminaciones int not null,
-    id_animal int not null,
-    foreign key fk_toro_animal (id_animal) references Animal(id_animal)
-    )
-    ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
+
     
     
     
@@ -254,17 +237,7 @@ CREATE TABLE Vaca_Prenada (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
-CREATE TABLE Intervencion (
-    id_intervencion INT AUTO_INCREMENT PRIMARY KEY not null,
-    id_animal int not null,
-    tipo_intervencion varchar(80) not null,
-	fecha_intervencion date not null,
-    descripcion text not null,
-    veterinario varchar(80) not null,
-    foreign key fk_intervencion_animal (id_animal) references Animal(id_animal)
-)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
+
 
 
 
@@ -286,3 +259,52 @@ CREATE TABLE IF NOT EXISTS users (
     temrs boolean NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
+-- Inserts para la tabla Animal
+INSERT INTO Animal (nombre, fecha_nacimiento, raza, peso, numero_arete, colores_caracteristicas, observaciones) 
+VALUES 
+('Bella', '2019-05-15', 'Holstein', 450.5, 12345, 'Blanco y negro', 'Vaca lechera de gran tamaño y excelente producción'),
+('Roja', '2020-08-20', 'Jersey', 380.2, 54321, 'Marrón claro', 'Ternero joven con gran vitalidad'),
+('Luna', '2017-12-10', 'Pardo Suizo', 500.0, 98765, 'Marrón oscuro', 'Vaca madura con descendencia exitosa'),
+('Perla', '2021-02-28', 'Angus', 600.7, 24680, 'Negro', 'Toro robusto para reproducción'),
+('Daisy', '2020-04-02', 'Simmental', 480.9, 13579, 'Rojo y blanco', 'Vaca con excelente temperamento');
+
+-- Inserts para la tabla Produccion
+INSERT INTO Produccion (fecha, id_vaca, litros, observaciones) 
+VALUES 
+('2023-01-05', 1, 28.3, 'Producción promedio diaria'),
+('2023-01-06', 2, 25.8, 'Ligero descenso en producción'),
+('2023-01-07', 3, 30.5, 'Aumento significativo en la producción'),
+('2023-01-08', 4, 32.1, 'Buena producción para la época'),
+('2023-01-09', 5, 29.6, 'Estabilidad en la producción lechera');
+
+-- Inserts para la tabla Enfermedad
+INSERT INTO Enfermedad (nombre_enfermedad, descripcion, sintomas, tratamiento) 
+VALUES 
+('Mastitis', 'Inflamación de la ubre', 'Hinchazón, dolor, cambios en la leche', 'Antibióticos y cuidados específicos'),
+('Neumonía', 'Infección respiratoria', 'Tos, dificultad para respirar, fiebre', 'Antibióticos y reposo'),
+('Cetosis', 'Desequilibrio metabólico', 'Letargo, pérdida de apetito, problemas de coordinación', 'Cambios en la dieta y tratamiento veterinario'),
+('Hepatitis', 'Inflamación del hígado', 'Ictericia, pérdida de apetito, letargo', 'Medicación y dieta especial'),
+('Parasitosis', 'Infección por parásitos', 'Diarrea, pérdida de peso, anemia', 'Desparasitación y cuidados sanitarios');
+
+-- Inserts para la tabla Vacuna
+INSERT INTO Vacuna (nombre_vacuna, descripcion, fecha_vencimiento, lote, observaciones, casa_distribuidora) 
+VALUES 
+('Vacuna A', 'Protección contra enfermedades específicas', '2024-06-15', 'ABC123', 'Almacenar a temperatura controlada', 'Veterinaria X'),
+('Vacuna B', 'Inmunización contra patógenos comunes', '2024-09-20', 'DEF456', 'Revisar fecha de caducidad antes de usar', 'Veterinaria Y'),
+('Vacuna C', 'Prevención de enfermedades virales', '2024-04-30', 'GHI789', 'Uso exclusivo en ganado vacuno', 'Veterinaria Z'),
+('Vacuna D', 'Refuerzo de inmunidad para terneros', '2024-08-10', 'JKL012', 'Administrar dosis según protocolo', 'Veterinaria W'),
+('Vacuna E', 'Protección contra agentes infecciosos', '2024-11-25', 'MNO345', 'Consultar con profesional veterinario', 'Veterinaria V');
+
+-- Inserts para la tabla Antibiotico
+INSERT INTO Antibiotico (nombre_antibiotico, tipo, descripcion, fecha_vencimiento, lote, dias_retiro_leche) 
+VALUES 
+('Antibiótico X', 'Amoxicilina', 'Para infecciones bacterianas comunes', '2024-03-12', 'ABCD1234', 5),
+('Antibiótico Y', 'Cefalexina', 'Tratamiento de infecciones respiratorias', '2024-07-18', 'EFGH5678', 3),
+('Antibiótico Z', 'Enrofloxacina', 'Efectivo contra infecciones urinarias', '2024-05-30', 'IJKL9012', 7),
+('Antibiótico W', 'Tetraciclina', 'Para afecciones dérmicas y oculares', '2024-09-25', 'MNOP3456', 4),
+('Antibiótico V', 'Penicilina', 'Amplio espectro antibacteriano', '2024-12-10', 'QRST7890', 6);
+
+
+

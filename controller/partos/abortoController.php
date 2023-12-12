@@ -4,7 +4,7 @@ require_once '../../model/abortos/Aborto.php';
 
 switch ($_GET['op']) {
     case 'listar_tabla':
-        $preno_db = new Preno();
+        $preno_db = new Aborto();
         $Abortos = $preno_db->listarDb();
         $datos = array();
         foreach ($Abortos as $preno) {
@@ -29,7 +29,7 @@ switch ($_GET['op']) {
 
     case 'listar_abortos':
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerAbortos'])) {
-            $prenoModel = new preno();
+            $prenoModel = new Aborto();
             $abortos = $abortoModel->listarAbortos();
             echo json_encode($Abortos);
         }

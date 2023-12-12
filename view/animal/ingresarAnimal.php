@@ -32,18 +32,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="wrapper">
 
         <?php
-    include '../fragments/nav_menu.php'
-      ?>
+        include '../fragments/nav_menu.php'
+            ?>
 
         <!--  Main Sidebar Container -->
         <aside class="main-sidebar  elevation-4">
             <div class="sidebar">
                 <!--  Fragmento que incluye el logo y la foto del usuario usuario -->
                 <!-- Brand Logo -->
-                <a href="index3.html" class="brand-link">
-                    <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-                        class="brand-image img-circle elevation-3" style="opacity: .8">
-                    <span class="text-white font-weight-bold">Software Ganadero</span>
+                <a href="index.php" class="brand-link">
+                    <img src="../assets/imagenes/logo.png" alt=" Logo" height="100px" style="opacity: .8">
+                    <hr>
+
                 </a>
 
                 <!-- Sidebar -->
@@ -57,27 +57,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="#" class="d-block text-white">Juanito Mora</a>
                     </div>
                 </div>
-
-                <!-- SidebarSearch Form -->
-                <div class="form-inline">
-                    <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                            aria-label="Search">
-                        <div class="ml-1 bg-white rounded-right input-group-append">
-                            <button class="btn btn-sidebar">
-                                <i class="fas fa-search fa-fw"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-
                 <!-- /.sidebar -->
 
                 <!-- Sidebar Menu -->
                 <?php
-        include '../fragments/main_aside_Animales.php'
-          ?>
+                include '../fragments/main_aside_Animales.php'
+                    ?>
                 <!-- /.sidebar-menu -->
             </div>
         </aside>
@@ -220,7 +205,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         placeholder="Ingrese el nombre " required>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label for="">Numero Arete</label>
@@ -257,8 +242,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="">Caracteristicas</label>
-                                                    <input type="text" class="form-control" id="xcolores_caracteristicas"
-                                                        name="colores_caracteristicas"
+                                                    <input type="text" class="form-control"
+                                                        id="xcolores_caracteristicas" name="colores_caracteristicas"
                                                         placeholder="Ingrese la caracteristicas" required>
                                                 </div>
                                             </div>
@@ -295,7 +280,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Tabla -->
                     <div class="row mb-5" id="tabla-vacas">
                         <div class="col-md-12">
-                            <div class="card card-dark">
+                            <div class="card card-dark p-2" style="overflow: scroll;">
                                 <div class="card-body p-0">
                                     <table id="tablalistado" class="table table-striped table-bordered table-hover">
                                         <thead>

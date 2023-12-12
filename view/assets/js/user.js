@@ -1,9 +1,10 @@
 $('#formulario-registro').on('submit', function (event) {
   event.preventDefault();
   $('#btnRegistar').prop('disabled', true);
+  console.log('dsdgdfg')
   var formData = new FormData($('#formulario-registro')[0]);
   $.ajax({
-    url: 'controller/resu/resuController.php?op=insert',
+    url: 'controller/user/userController.php?op=insert',
     type: 'POST',
     data: formData,
     contentType: false,

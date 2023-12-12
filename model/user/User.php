@@ -1,7 +1,7 @@
 <?php
 require_once '../../config/conexion.php';
 
-class Resu extends Conexion
+class User extends Conexion{
 
     protected static $conexion;
 
@@ -13,11 +13,6 @@ class Resu extends Conexion
     private $password = null;
 
     private $terms = null;
-
-
-
-    private $password = null;
-
 
     // Getter and Setter methods...
     public function getIdUsuario() {
@@ -73,8 +68,6 @@ class Resu extends Conexion
     
 
 
-    {
-    }
     //conexion a base de datos
     public function getConexion()
     {
@@ -104,8 +97,6 @@ class Resu extends Conexion
 
             $terms = $this->getTerms();
 
-
-
             $resultado = self::$conexion->prepare($query);
             $resultado->bindParam(':nombre', $nombre, PDO::PARAM_STR);
             $resultado->bindParam(':email', $email, PDO::PARAM_STR);
@@ -128,13 +119,6 @@ class Resu extends Conexion
 
         $query = "SELECT * FROM `users` WHERE `email` = :email";
 
-        try {
-            self::getConexion();
-            $resultado = self::$conexion->prepare($query);
-
-            $email = $this->getEmail();
-
-        $query = "SELECT * FROM `users` WHERE `email` = :email LIMIT 1";
 
         try {
             self::getConexion();
@@ -157,3 +141,4 @@ class Resu extends Conexion
         }
     }
 }
+

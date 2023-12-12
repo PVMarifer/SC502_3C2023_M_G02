@@ -29,8 +29,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
         <?php
-      include '../fragments/nav_menu.php'
-    ?>
+        include '../fragments/nav_menu.php'
+            ?>
 
 
 
@@ -39,10 +39,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="sidebar">
                 <!--  Fragmento que incluye el logo y la foto del usuario usuario -->
                 <!-- Brand Logo -->
-                <a href="index3.html" class="brand-link">
-                    <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-                        class="brand-image img-circle elevation-3" style="opacity: .8">
-                    <span class="text-white font-weight-bold">Software Ganadero</span>
+                <a href="index.php" class="brand-link">
+                    <img src="../assets/imagenes/logo.png" alt=" Logo" height="100px" style="opacity: .8">
+                    <hr>
+
                 </a>
 
                 <!-- Sidebar -->
@@ -56,27 +56,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="#" class="d-block text-white">Juanito Mora</a>
                     </div>
                 </div>
-
-                <!-- SidebarSearch Form -->
-                <div class="form-inline">
-                    <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                            aria-label="Search">
-                        <div class="ml-1 bg-white rounded-right input-group-append">
-                            <button class="btn btn-sidebar">
-                                <i class="fas fa-search fa-fw"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-
                 <!-- /.sidebar -->
 
                 <!-- Sidebar Menu -->
                 <?php
-        include '../fragments/main_aside_Animales.php'
-          ?>
+                include '../fragments/main_aside_Animales.php'
+                    ?>
                 <!-- /.sidebar-menu -->
             </div>
         </aside>
@@ -128,7 +113,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                                         </ol>
                                         <div class="carousel-inner">
-                                            
+
                                         </div>
                                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
                                             data-slide="prev">
@@ -258,8 +243,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- Main Footer -->
                         <footer class="main-footer">
                             <?php
-      include '../fragments/footer.php'
-        ?>
+                            include '../fragments/footer.php'
+                                ?>
                         </footer>
 
                     </div><!-- ./wrapper -->
