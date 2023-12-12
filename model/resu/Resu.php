@@ -1,7 +1,7 @@
 <?php
 require_once '../../config/conexion.php';
 
-class Resu extends Conexion
+class Resu extends Conexion{
 
     protected static $conexion;
 
@@ -13,12 +13,6 @@ class Resu extends Conexion
     private $password = null;
 
     private $terms = null;
-
-
-
-    private $password = null;
-
-
     // Getter and Setter methods...
     public function getIdUsuario() {
         return $this->idUsuario;
@@ -68,12 +62,6 @@ class Resu extends Conexion
 
     public function setTerms($terms) {
         $this->terms = $terms;
-    }
-  
-    
-
-
-    {
     }
     //conexion a base de datos
     public function getConexion()
@@ -156,4 +144,5 @@ class Resu extends Conexion
             return $error;
         }
     }
+}
 }
