@@ -78,7 +78,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-md-1"></div>
 
             <div class="col-10">
-              <div style="background-color:#28a745;" class="card ">
+              <div class="card " style="background-color:#4CAF50;">
                 <div class="card-header text-center">
                   <h3 class="card-title text-white">Nuevo Animal Enfermo</h3>
                 </div>

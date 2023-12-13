@@ -76,13 +76,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-1"></div>
             <div class="col-10">
               <form id="formulario-agregar" method="POST">
-<<<<<<< HEAD
-                <div class="card" style="background-color: grey;">
-                  <div style="background-color:#28a745;" class="card-header text-center">
-=======
+
                 <div class="card text-white" style="background-color:#4CAF50;">
                   <div class="card-header text-center">
->>>>>>> c17b6593515dec011e2216a79681e1783f31ba3f
+
                     <h3 class="card-title text-white">Nueva Vacunación</h3>
                   </div>
                   <!-- /.card-header -->

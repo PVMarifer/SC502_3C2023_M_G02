@@ -226,39 +226,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <!-- /.tabla -->
 
-          <!-- Formulario Agregar-->
-          <div class="row mb-5" id="form-agregar">
-            <div class="col-2"></div>
-            <div class="col-8">
-              <div style="background-color:#28a745;" class="card " style="background-color: #28a745;">
-                <div class="card-header text-center">
-                  <h3  class="card-title text-white">Nueva Enfermedad</h3>
-                </div>
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form style="background-color:#28a745;" id="formulario-agregar" method="POST">
-                  <div class="card-body text-white ">
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="form-group">
-                          <label for="">Nombre de la Enfermedad</label>
-                          <input type="text" class="form-control" name="nombreEnfermedad"
-                            placeholder="Ingrese el nombre de la enfermedad" required>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-group">
-                          <label for="">Descripción de la Enfermedad</label>
-                          <input type="text" class="form-control" name="descripcion"
-                            placeholder="Ingrese la descripcion" required>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-group">
-                          <label for="">Síntomas</label>
-                          <input type="text" class="form-control" name="sintomas" placeholder="Ingrese los sintomas" required>
-                        </div>
-                      </div>
 
 
 

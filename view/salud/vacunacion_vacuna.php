@@ -68,15 +68,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- /Fromulario agregar -->
           <div class="row mb-5" id="form-agregar">
             <div class="col-12">
-<<<<<<< HEAD
-              <div class="card " style="background-color: #eee;">
-                <div style="background-color:#28a745;" class="card-header text-center">
-                  <h3 class="card-title text-white">Nueva Vacuna</h3>
-=======
+
               <div class="card text-white" style="background-color:#4CAF50;">
                 <div class="card-header text-center">
                   <h3 class="card-title ">Nueva Vacuna</h3>
->>>>>>> c17b6593515dec011e2216a79681e1783f31ba3f
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
