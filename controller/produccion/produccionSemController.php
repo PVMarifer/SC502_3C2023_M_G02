@@ -47,7 +47,7 @@ switch ($_GET['op']) {
 
        
 
-        $produccion = new ProduccionSem();
+        $produccion = new ProduccionSem(); 
         $produccion->setFechaSemana($fechaSemana);
         $encontrado = $produccion->verificarExistenciaDb();
         if ($encontrado == false) {
@@ -71,6 +71,28 @@ switch ($_GET['op']) {
         }
         break;
 
+        case 'listar_produccion_grafica':
+            if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerGrafica'])) {
+                $Model = new produccionSem();
+                $enfermedades = $Model->listarGrafica();
+    
+                $semanas = [];
+                $kilos = [];
+                $data = null;
+                foreach ($enfermedades as $row) {
+    
+                    $semanas[] = 'Semana '.$row['numero_semana'];
+                    $kilos[] = $row['total_litros_semana'];
+                }
+                $data_json = json_encode(
+                    array(
+                        'semanas' => $semanas,
+                        'kilos' => $kilos
+                    )
+                );
+    
+                echo ($data_json);
+            }
 
 
 }

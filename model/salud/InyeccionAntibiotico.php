@@ -298,6 +298,40 @@ class InyeccionAntibiotico extends Conexion
 
     }
 
+    public function listarRetiro()
+    {
+        $query = "    SELECT *
+        FROM Inyeccion_Antibiotico
+        WHERE fecha_inyeccion >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH);";
+        $lista = array();
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            foreach ($resultado->fetchAll() as $encontrado) {
+                $InyeccionAntibiotico = new InyeccionAntibiotico();
+
+                $InyeccionAntibiotico->setNombreAntibiotico($encontrado["nombre_antibiotico"]);
+
+                $InyeccionAntibiotico->setNumeroArete($encontrado["numero_arete"]);
+        
+                $InyeccionAntibiotico->setFechaAplicacion($encontrado["fecha_inyeccion"]);
+                $InyeccionAntibiotico->setDiasRetiro($encontrado["dias_retiro_leche"]);
+
+
+                $lista[] = $InyeccionAntibiotico;
+            }
+            return $lista;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
+    }
+
+
 
 }
 

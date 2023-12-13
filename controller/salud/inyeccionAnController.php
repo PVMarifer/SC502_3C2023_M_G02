@@ -79,6 +79,31 @@ switch ($_GET['op']) {
             }
             echo ($contador);
         }
+        break;
+
+    case 'listar_retiro':
+        $inyeccion_an_db = new InyeccionAntibiotico();
+        $registros = $inyeccion_an_db->listarRetiro();
+        $datos = array();
+        foreach ($registros as $registro) {
+            $datos[] = array(
+                "0" => $registro->getNumeroArete(),
+                "1" => $registro->getFechaAplicacion(),
+                "2" => $registro->getDiasRetiro(),
+                "3" => $registro->getNombreAntibiotico(),
+            );
+        }
+        $resultados = array(
+            "sEcho" => 1,
+            ##informacion para datatables
+            "iTotalRecords" => count($datos),
+            ## total de registros al datatable
+            "iTotalDisplayRecords" => count($datos),
+            ## enviamos el total de registros a visualizar
+            "aaData" => $datos
+        );
+        echo json_encode($resultados);
+        break;
 
 
 

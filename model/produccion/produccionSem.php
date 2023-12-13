@@ -259,6 +259,26 @@ class produccionSem extends Conexion
              return $error;
            } 
     }
+
+    public function listarGrafica()
+    {
+        $query = "SELECT WEEK(fechaSemana) AS numero_semana, SUM(litros) AS total_litros_semana
+        FROM Produccion_semanal
+        GROUP BY WEEK(fechaSemana)
+        ORDER BY WEEK(fechaSemana)";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
+            return json_encode($error);
+        }
+    }
    
    
 
