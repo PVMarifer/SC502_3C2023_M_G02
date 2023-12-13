@@ -68,49 +68,55 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- /Fromulario agregar -->
           <div class="row mb-5" id="form-agregar">
             <div class="col-12">
+<<<<<<< HEAD
               <div class="card " style="background-color: #eee;">
+                <div style="background-color:#28a745;" class="card-header text-center">
+                  <h3 class="card-title text-white">Nueva Vacuna</h3>
+=======
+              <div class="card text-white" style="background-color:#4CAF50;">
                 <div class="card-header text-center">
                   <h3 class="card-title ">Nueva Vacuna</h3>
+>>>>>>> c17b6593515dec011e2216a79681e1783f31ba3f
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form id="formulario-agregar" method="POST">
+                <form style="background-color:#28a745; " id="formulario-agregar" method="POST">
                   <div class="card-body ">
                     <div class="row ">
                       <div class="col-6">
-                        <div class="form-group">
+                        <div class="form-group text-white ">
                           <label for="">Nombre de la Vacuna</label>
                           <input type="text" class="form-control" name="nombreVacuna" id="nombreVacuna"
                             placeholder="Ingrese el nombre de la vacuna" required>
                         </div>
                       </div>
                       <div class="col-6">
-                        <div class="form-group">
+                        <div class="form-group text-white">
                           <label for="">Fecha de Vencimiento</label>
                           <input type="date" class="form-control" name="fechaVencimiento" id="fechaVencimiento" required>
                         </div>
                       </div>
                       <div class="col-8">
-                        <div class="form-group ">
+                        <div class="form-group text-white ">
                           <label for="">Casa Distribuidora</label>
                           <input type="text" class="form-control" name="casaDistribuidora" id="casaDistribuidora" placeholder="Ingrese la casa de la vacuna" required>
                         </div>
                       </div>
                       <div class="col-4">
-                        <div class="form-group ">
+                        <div class="form-group text-white">
                           <label for="">Lote</label>
                           <input type="text" class="form-control" name="lote" id="lote" placeholder="Ingrese el lote" required>
                         </div>
                       </div>
                       <div class="col-12">
-                        <div class="form-group">
+                        <div class="form-group text-white">
                           <label for="">Descripción</label>
                           <input type="text" class="form-control" name="descripcion" id="descripcion"
                             placeholder="Ingrese la descripcion" required>
                         </div>
                       </div>
                       <div class="col-12">
-                        <div class="form-group">
+                        <div class="form-group text-white">
                           <label for="">Observaciones</label>
                           <input type="text" class="form-control" name="observaciones" id="observaciones"
                             placeholder="Ingrese aquí sus observaciones" required>

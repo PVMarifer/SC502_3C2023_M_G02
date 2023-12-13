@@ -68,7 +68,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row mb-5">
             <div class="col-1"></div>
             <div class="col-10">
-              <div class="card ">
+              <div class="card " style="background-color:#4CAF50;">
                 <div class="card-header text-center">
                   <h3 class="card-title ">Nuevo Tratamiento</h3>
                 </div>
@@ -142,7 +142,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row mb-5">
             <div class="col-1"></div>
             <div class="col-10">
-              <div class="card ">
+              <div class="card "  style="background-color:#4CAF50;">
                 <div class="card-header text-center">
                   <h3 class="card-title ">Nuevo Tratamiento</h3>
                 </div>
@@ -210,7 +210,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- /.Tabla tratamientos-->
           <div class="row mb-5">
             <div class="col-12">
-              <div class="card">
+              <div class="card" style="background-color:#4CAF50;">
                 <div class="card-header border-0">
                   <h3 class="card-title">Animales con Tratamientos</h3>
                 </div>

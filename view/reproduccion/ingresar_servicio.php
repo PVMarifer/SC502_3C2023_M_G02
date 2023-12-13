@@ -81,7 +81,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="col-md-1"></div>
 
                         <div class="col-10">
-                            <div class="card " style="background-color: grey;">
+<<<<<<< HEAD
+                            <div class="card " style="background-color:#28a745;">
+=======
+                            <div class="card " style="background-color:#4CAF50;">
+>>>>>>> c17b6593515dec011e2216a79681e1783f31ba3f
                                 <div class="card-header text-center">
                                     <h3 class="card-title text-white">Nuevo Servicio</h3>
                                 </div>

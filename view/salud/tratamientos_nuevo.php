@@ -61,7 +61,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container-fluid">
           <div class="row">
             <div class="col-12">
-            <div class="card " style="background-color: #3f3ae6;">
+            <div class="card " style="background-color:#4CAF50;">
               <div class="card-header text-center">
                 <h3 class="card-title text-white">Nuevo Tratamiento</h3>
               </div>

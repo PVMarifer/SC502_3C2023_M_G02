@@ -70,6 +70,164 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <section class="content">
         <div class="container-fluid">
 
+          <!-- /.antibiotico -->
+          <!-- /.form agregar -->
+          <div class="row " id="form-agregar-antibiotico">
+            <div class="col-1"></div>
+
+            <div class="col-10">
+<<<<<<< HEAD
+              <div class="card  text-white">
+                <div  style="background-color:#28a745;" class="card-header text-center">
+                  <h3 card-title >Nueva Aplicacion de Antibiotico</h3>
+=======
+              <div class="card" style="background-color:#4CAF50;">
+                <div class="card-header text-center">
+                  <h3 class="card-title ">Nueva Aplicacion de Antibiotico</h3>
+>>>>>>> c17b6593515dec011e2216a79681e1783f31ba3f
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form id="formulario-agregar-antibiotico" method="POST">
+
+                  <div style="background-color:#28a745; " class="card-body  text-white ">
+                    <div class="row">
+                      <div class="col-6">
+                        <label>Antibiotico</label>
+                        <select id="selectAntibioticos" name="idAntibiotico" class="form-control select2"
+                          style="width: 100%; padding: 15px;" required>
+                          <option selected="selected">Seleccione un antibiotico</option>
+                        </select>
+                      </div>
+                      <div class="col-6">
+                        <label>Número de Arete</label>
+                        <select id="selectAnimalesAn" name="idAnimal" class="form-control select2"
+                          style="width: 100%; padding: 15px;" required>
+                          <option selected="selected">Seleccione un número de arete</option>
+
+                        </select>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Fecha de Aplicacion</label>
+                          <input type="date" class="form-control" name="fechaAplicacion" id="fechaAplicacion"
+                            required>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Dosis Aplicada</label>
+                          <input type="text" class="form-control" name="dosisAplicada" id="dosisAplicada" placeholder="Ingrese la dosis" required>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Lugar de Aplicacion</label>
+                          <input type="text" class="form-control" name="lugarAplicacion" id="lugarAplicacion"
+                            placeholder="Ingrese el lugar de aplicacion">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+
+                  <div class="card-footer text-center">
+                    <div class="row">
+                      <div class="col-6"><button type="submit"
+                          class="btn btn-primary btnRegistrarAntibiotico">Guardar</button>
+                      </div>
+                      <div class="col-6"><input type="reset" class=" btn btn-info" value="Limpiar datos"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- /.card -->
+
+            </div>
+            <div class="col-1"></div>
+          </div>
+          <!-- /.row -->
+
+
+          <!-- /.medicamento -->
+          <!-- /.form agregar -->
+          <div class="row " id="form-agregar-medicamento">
+            <div class="col-1"></div>
+
+            <div class="col-10">
+<<<<<<< HEAD
+              <div  style="background-color:#28a745;" class="card">
+=======
+              <div class="card" style="background-color:#4CAF50;">
+>>>>>>> c17b6593515dec011e2216a79681e1783f31ba3f
+                <div class="card-header text-center">
+                  <h3 class="card-title text-white">Nuevo Medicamento</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form id="formulario-agregar-medicamento" method="POST">
+
+                  <div class="card-body  text-white">
+                    <div class="row">
+                      <div class="col-6">
+                        <label> Medicamento</label>
+                        <select id="selectMedicamentos" name="idMedicamento" class="form-control select2"
+                          style="width: 100%; padding: 15px;" required>
+                          <option selected="selected">Seleccione un medicamento</option>
+                        </select>
+                      </div>
+                      <div class="col-6">
+                        <label>Número de Arete</label>
+                        <select id="selectAnimalesMe" name="idAnimal" class="form-control select2"
+                          style="width: 100%; padding: 15px;" required>
+                          <option selected="selected">Seleccione un número de arete</option>
+
+                        </select>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Fecha de Aplicacion</label>
+                          <input type="date" class="form-control" name="fechaAplicacion" id="fechaAplicacion"
+                            required>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="">Dosis Aplicada</label>
+                          <input type="text" class="form-control" name="dosisAplicada" id="dosisAplicada" placeholder="Ingrese la dosis" required>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="">Lugar de Aplicacion</label>
+                          <input type="text" class="form-control" name="lugarAplicacion" id="lugarAplicacion"
+                            placeholder="Ingrese el lugar de aplicacion">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+
+                  <div class="card-footer text-center">
+                    <div class="row">
+                      <div class="col-6"><button type="submit"
+                          class="btn btn-primary btnRegistrarMedicamento">Guardar</button>
+                      </div>
+                      <div class="col-6"><input type="reset" class=" btn btn-info" value="Limpiar datos"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- /.card -->
+
+            </div>
+            <div class="col-1"></div>
+          </div>
+          <!-- /.row -->
+
+
           <!-- Tabla -->
           <div class="row mb-5" id="tabla-medicamentos">
             <div class="col-md-1"></div>
@@ -136,7 +294,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <div class="text-center py-5">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <button type="button" style="background-color:#4CAF50;" class="btn text-white " data-toggle="modal" data-target="#exampleModalCenter">
               Añadir un Registro de Inyectable
             </button>
 
@@ -147,18 +305,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Agregar Aplicacion de Inyectable</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" style="background-color:#4CAF50;" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body text-center mb-3">
                     <h5>Qué desea agregar?</h5>
 
-                    <a href="#" role="button" id="medicamento" class="btn btn-secondary popover-test m-3"
+                    <a href="#" role="button" id="medicamento" style="background-color:#4CAF50;" class="btn text-white popover-test m-3"
                       data-content="Popover body content is set in this attribute." data-dismiss="modal">Aplicacion de
                       Medicamento</a>
 
-                    <a href="#" role="button" id="antibiotico" class="btn btn-secondary popover-test m-3"
+                    <a href="#" role="button" id="antibiotico" style="background-color:#4CAF50;" class="btn text-white popover-test m-3"
                       data-content="Popover body content is set in this attribute." data-dismiss="modal">Aplicacion de
                       Antibiótico</a>
                   </div>
@@ -168,152 +326,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
           </div>
 
-          <!-- /.antibiotico -->
-          <!-- /.form agregar -->
-          <div class="row " id="form-agregar-antibiotico">
-            <div class="col-1"></div>
-
-            <div class="col-10">
-              <div class="card">
-                <div class="card-header text-center">
-                  <h3 class="card-title ">Nueva Aplicacion de Antibiotico</h3>
-                </div>
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form id="formulario-agregar-antibiotico" method="POST">
-
-                  <div class="card-body ">
-                    <div class="row">
-                      <div class="col-6">
-                        <label>Antibiotico</label>
-                        <select id="selectAntibioticos" name="idAntibiotico" class="form-control select2"
-                          style="width: 100%; padding: 15px;" required>
-                          <option selected="selected">Seleccione un antibiotico</option>
-                        </select>
-                      </div>
-                      <div class="col-6">
-                        <label>Número de Arete</label>
-                        <select id="selectAnimalesAn" name="idAnimal" class="form-control select2"
-                          style="width: 100%; padding: 15px;" required>
-                          <option selected="selected">Seleccione un número de arete</option>
-
-                        </select>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <label for="">Fecha de Aplicacion</label>
-                          <input type="date" class="form-control" name="fechaAplicacion" id="fechaAplicacion"
-                            required>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <label for="">Dosis Aplicada</label>
-                          <input type="text" class="form-control" name="dosisAplicada" id="dosisAplicada" placeholder="Ingrese la dosis" required>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-group">
-                          <label for="">Lugar de Aplicacion</label>
-                          <input type="text" class="form-control" name="lugarAplicacion" id="lugarAplicacion"
-                            placeholder="Ingrese el lugar de aplicacion">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /.card-body -->
-
-                  <div class="card-footer text-center">
-                    <div class="row">
-                      <div class="col-6"><button type="submit"
-                          class="btn btn-primary btnRegistrarAntibiotico">Guardar</button>
-                      </div>
-                      <div class="col-6"><input type="reset" class=" btn btn-info" value="Limpiar datos"></div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-
-              <!-- /.card -->
-
-            </div>
-            <div class="col-1"></div>
-          </div>
-          <!-- /.row -->
-
-
-          <!-- /.medicamento -->
-          <!-- /.form agregar -->
-          <div class="row " id="form-agregar-medicamento">
-            <div class="col-1"></div>
-
-            <div class="col-10">
-              <div class="card">
-                <div class="card-header text-center">
-                  <h3 class="card-title ">Nuevo Medicamento</h3>
-                </div>
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form id="formulario-agregar-medicamento" method="POST">
-
-                  <div class="card-body ">
-                    <div class="row">
-                      <div class="col-6">
-                        <label> Medicamento</label>
-                        <select id="selectMedicamentos" name="idMedicamento" class="form-control select2"
-                          style="width: 100%; padding: 15px;" required>
-                          <option selected="selected">Seleccione un medicamento</option>
-                        </select>
-                      </div>
-                      <div class="col-6">
-                        <label>Número de Arete</label>
-                        <select id="selectAnimalesMe" name="idAnimal" class="form-control select2"
-                          style="width: 100%; padding: 15px;" required>
-                          <option selected="selected">Seleccione un número de arete</option>
-
-                        </select>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <label for="">Fecha de Aplicacion</label>
-                          <input type="date" class="form-control" name="fechaAplicacion" id="fechaAplicacion"
-                            required>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <label for="">Dosis Aplicada</label>
-                          <input type="text" class="form-control" name="dosisAplicada" id="dosisAplicada" placeholder="Ingrese la dosis" required>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-group">
-                          <label for="">Lugar de Aplicacion</label>
-                          <input type="text" class="form-control" name="lugarAplicacion" id="lugarAplicacion"
-                            placeholder="Ingrese el lugar de aplicacion">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /.card-body -->
-
-                  <div class="card-footer text-center">
-                    <div class="row">
-                      <div class="col-6"><button type="submit"
-                          class="btn btn-primary btnRegistrarMedicamento">Guardar</button>
-                      </div>
-                      <div class="col-6"><input type="reset" class=" btn btn-info" value="Limpiar datos"></div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-
-              <!-- /.card -->
-
-            </div>
-            <div class="col-1"></div>
-          </div>
-          <!-- /.row -->
+          
 
 
 
