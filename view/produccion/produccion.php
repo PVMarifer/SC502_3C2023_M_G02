@@ -67,6 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
         <!-- Content Wrapper. Contains page content -->
+        
         <div class=" content-wrapper">
             <!-- Content Header (Page header) -->
             <div class="content-header">
@@ -86,74 +87,86 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.container-fluid -->
             </div><!-- /.content-header -->
 
-
             <section class="content">
                 <div class="container-fluid">
+
+                    <!-- Small boxes (Stat box) -->
                     <div class="row">
-                        <div class="col-sm-6">
-                            <!-- carrusel de las mejores productoras  -->
-                            <div class="card ">
-                                <div class="card-header border-0">
-                                    <h3 class="card-title">
-                                        Carrusel de Vacas Productoras
-                                    </h3>
-                                    <div class="card-tools">
-                                        <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                    </div>
+
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box text-center text-white " style="background-color:#4CAF50;">
+                                <div class="inner">
+                                    <p>Promedio de Sólidos en Leche</p>
+                                    <h3>12.4</h3>
                                 </div>
-                                <div class="card-body">
-                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carouselExampleIndicators" data-slide-to="0"
-                                                class="active"></li>
-                                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                                        </ol>
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item">
-                                                <img src="..." alt="...">
-                                                <div class="carousel-caption d-none d-md-block">
-                                                    <h5>Vaca 1</h5>
-                                                    <p>30 kilos diarios</p>
-                                                </div>
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="..." alt="...">
-                                                <div class="carousel-caption d-none d-md-block">
-                                                    <h5>Vaca 2</h5>
-                                                    <p>35 kilos diarios</p>
-                                                </div>
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="..." alt="...">
-                                                <div class="carousel-caption d-none d-md-block">
-                                                    <h5>Vaca 3</h5>
-                                                    <p>39 kilos diarios</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                                            data-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                                            data-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Next</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- /.card-body -->
                             </div>
-                            <!-- /.card -->
                         </div>
+                        <!-- ./col -->
 
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box text-center text-white" style="background-color:#4CAF50;">
+                                <div class="inner">
+                                    <p>Promedio de Producción por Vaca</p>
+                                    <h3>20 kilos</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box text-center text-white" style="background-color:#4CAF50;">
+                                <div class="inner">
+                                    <p>Vacas en producción</p>
+                                    <h3>30</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box text-center text-white " style="background-color:#4CAF50;">
+                                <div class="inner">
+                                    <p>Porcentaje de grasa</p>
+                                    <h3>15.5</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                </div>
 
-                        <!-- tabla de vacas con retiro de leche -->
-                        <div class="col-sm-6">
+                <section class="content">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-lg-12">
+ 
+                    <div class="row mb-2">
+                <div class="col-sm-6">
+                    <!-- grafico de producción por vaca  -->
+                    <div class="card ">
+                        <div class="card-header border-0">
+                            <h3 class="card-title">
+                                Gráfico de produccion por vaca
+                            </h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas class="chart" id="line-chart"
+                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                    
+                </div>
+    
+                <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-header border-0">
                                     <h3 class="card-title">Vacas con Retiro de Leche</h3>
@@ -207,183 +220,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+            </div>
                 </div>
+            </div>
+         
+            <!-- /.row -->
+        </div> <!-- /.content-fluid -->
+    </section><!-- /section -->
 
             </section>
 
-
-
-
-            <section class="content">
-                <div class="container-fluid">
-
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row">
-
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box text-center text-white " style="background-color:#4CAF50;">
-                                <div class="inner">
-                                    <p>Promedio de Sólidos en Leche</p>
-                                    <h3>12.4</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box text-center text-white" style="background-color:#4CAF50;">
-                                <div class="inner">
-                                    <p>Promedio de Producción por Vaca</p>
-                                    <h3>20 kilos</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box text-center text-white" style="background-color:#4CAF50;">
-                                <div class="inner">
-                                    <p>Vacas en producción</p>
-                                    <h3>30</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box text-center text-white " style="background-color:#4CAF50;">
-                                <div class="inner">
-                                    <p>Porcentaje de grasa</p>
-                                    <h3>15.5</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                    </div>
-                </div>
-        </div>
-    </div>
+            
+            </div>
+        
     <!-- Small boxes (Stat box) -->
     <!-- ./col -->
-    </div> <!-- /.content-fluid -->
-    </section><!-- /section -->
+    
 
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row border-top pt-3">
-                <div class="col-lg-12">
-                    <form class=" " style="display: flex;">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-sm-7">
-                    <!-- grafico de vacas enfermas  -->
-                    <div class="card ">
-                        <div class="card-header border-0">
-                            <h3 class="card-title">
-                                Gráfico de produccion por vaca
-                            </h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <canvas class="chart" id="line-chart"
-                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
-                </div>
-                <div class="col-sm-5 mt-5">
-                    <!-- small box -->
-                    <div class="small-box text-center text-white " style="background-color:#4CAF50;">
-                        <div class="inner">
-                            <p>Promedio de Producción de Leche</p>
-                            <h3>22.4 kilos</h3>
-                        </div>
-                    </div>
-                    <div class="small-box text-center text-white " style="background-color:#4CAF50;">
-                        <div class="inner">
-                            <p>Promedio de Sólidos en Leche</p>
-                            <h3>12.4</h3>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.row -->
-        </div> <!-- /.content-fluid -->
-    </section><!-- /section -->
-
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row border-top pt-3">
-                <div class="col-lg-12">
-                    <form class=" " style="display: flex;">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-sm-8">
-                    <!-- grafico de vacas enfermas  -->
-                    <div class="card ">
-                        <div class="card-header border-0">
-                            <h3 class="card-title">
-                                Gráfico de produccion por rebaño semanal
-                            </h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <canvas class="chart" id="line-chart"
-                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
-                </div>
-                <div class="col-sm-4 mt-2">
-                    <div class="card">
-                        <div class="card-header">
-                            Datos de Calidad de Leche
-                        </div>
-                        <div class="card-body">
-                            <Ul>
-                                <li>Células Somáticas:</li>
-                                <li>Bacterias:</li>
-                                <li>Proteína: </li>
-                                <li>Grasa: </li>
-                            </Ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.row -->
-        </div> <!-- /.content-fluid -->
-    </section><!-- /section -->
-
-
-
-
-
-    </div><!-- ./Content Wrapper-->
-
-
+    
 
     <!-- Main Footer -->
     <footer class="main-footer">
@@ -393,6 +247,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </footer>
 
     </div><!-- ./wrapper -->
+
+
+    </div><!-- ./Content Wrapper-->
+
+
 
    
 
