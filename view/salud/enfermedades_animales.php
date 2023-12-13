@@ -74,7 +74,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container-fluid">
 
           <!-- Formulario Agregar-->
-          <div class="row mb-5" id="form-agregar">
+          <div  class="row mb-5" id="form-agregar">
             <div class="col-md-1"></div>
 
             <div class="col-10">
@@ -84,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form id="formulario-agregar" method="POST">
+                <form style="background-color:#28a745;" id="formulario-agregar" method="POST">
                   <div class="card-body text-white ">
                     <div class="row">
                       <div class="col-4">
@@ -167,10 +167,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
           <!-- Formulario Modificar-->
-          <div class="row mb-5" id="form-modificar">
+          <div style="background-color:#28a745;" class="row mb-5" id="form-modificar">
             <div class="col-2"></div>
             <div class="col-8">
-              <div class="card " style="background-color: grey;">
+              <div class="card " >
                 <div class="card-header text-center">
                   <h3 class="card-title text-white">Modificar Animal Enfermo</h3>
                 </div>

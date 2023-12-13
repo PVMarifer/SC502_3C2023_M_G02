@@ -94,11 +94,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="col-10">
                             <div class="card " style="background-color:#4CAF50;">
                                 <div class="card-header text-center">
-                                    <h3 class="card-title text-white">Nueva Animal</h3>
+                                    <h3 class="card-title text-white">Nuevo Animal</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form id="formulario-agregar" method="POST">
+                                <form style= "background-color: #28a745;" id="formulario-agregar" method="POST">
                                     <div class="card-body text-white ">
                                         <div class="row">
                                             <div class="col-4">

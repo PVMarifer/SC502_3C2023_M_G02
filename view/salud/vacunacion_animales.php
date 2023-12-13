@@ -76,16 +76,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-1"></div>
             <div class="col-10">
               <form id="formulario-agregar" method="POST">
+
                 <div class="card text-white" style="background-color:#4CAF50;">
                   <div class="card-header text-center">
+
                     <h3 class="card-title text-white">Nueva Vacunación</h3>
                   </div>
                   <!-- /.card-header -->
 
-                  <div class="card-body">
+                  <div style="background-color:#28a745;" class="card-body">
                     <div class="row">
                       <div class="col-4">
-                        <div class="form-group"> 
+                        <div class="form-group text-white"> 
                           <label for="">Vacuna</label>
 
                           <select id="selectVacunas" name="idVacuna" class="form-control select2"
@@ -95,7 +97,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                       </div>
                       <div class="col-4">
-                        <div class="form-group">
+                        <div class="form-group text-white">
                           <label for="">Lugar de Aplicacion</label>
 
                           <input type="text" id="lugarAplicacion" name="lugarAplicacion" class="form-control"
@@ -104,7 +106,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                       </div>
                       <div class="col-4">
-                        <div class="form-group">
+                        <div class="form-group text-white">
                           <label for="">Fecha de Aplicacion</label>
                           <input type="date" id="fechaAplicacion" name="fechaAplicacion" class="form-control" required>
 
@@ -112,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                       </div>
                       <div class="col-12">
-                        <div class="form-group">
+                        <div class="form-group text-white">
                           <label for="">Dosis</label>
                           <input type="text" id="dosis" name="dosis" class="form-control" required>
 

@@ -172,18 +172,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-1"></div>
 
             <div class="col-10">
-              <div class="card" style="background-color:#4CAF50;">
+
+              <div style="background-color:#28a745;" class="card">
+
+
                 <div class="card-header text-center">
-                  <h3 class="card-title ">Nuevo Antibiotico</h3>
+                  <h3 class="card-title  text-white">Nuevo Antibiotico</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form id="formulario-agregar-antibiotico">
 
-                  <div class="card-body ">
+                  <div class="card-body  text-white">
                     <div class="row">
                       <div class="col-6">
-                        <div class="form-group">
+                        <div class="form-group ">
                           <label for="">Nombre del Antibiotico</label>
                           <input type="text" class="form-control" name="nombreAntibiotico" id="nombreAntibiotico"
                             placeholder="Ingrese el nombre de la vacuna">
@@ -256,15 +259,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-1"></div>
 
             <div class="col-10">
-              <div class="card" style="background-color:#4CAF50;">
+
+              <div class="card " style="background-color:#28a745;">
+
                 <div class="card-header text-center">
-                  <h3 class="card-title ">Nuevo Medicamento</h3>
+                  <h3 class="card-title  text-white">Nuevo Medicamento</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form id="formulario-agregar-medicamento" method="POST">
 
-                  <div class="card-body ">
+                  <div class="card-body  text-white">
                     <div class="row">
                       <div class="col-6">
                         <div class="form-group">
