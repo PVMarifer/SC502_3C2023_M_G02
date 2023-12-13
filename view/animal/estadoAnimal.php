@@ -128,7 +128,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                                         </ol>
                                         <div class="carousel-inner">
-                                            
+
                                         </div>
                                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
                                             data-slide="prev">
@@ -171,9 +171,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <!-- /.card-body -->
                             </div>
-                    </div>
+                        </div>
 
-                </div>
+                    </div>
 
             </section>
             <section class="content">

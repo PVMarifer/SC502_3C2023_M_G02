@@ -86,8 +86,7 @@ function obtenerCantidadVacunas() {
   obtenerAnimalesVacunados();
   listarAnimalesNoVacunados();
   listarVacunas();
-  obtenerCantidadVacunas()
-
+  obtenerCantidadVacunas();
 });
 
 

@@ -83,6 +83,7 @@ switch ($_GET['op']) {
                 $contador += 1;
             }
             echo ($contador);
+            break;
         }
 
     case 'obtener_vacunas_puestas':
@@ -93,10 +94,7 @@ switch ($_GET['op']) {
           
             echo ($vacunaciones);
         }
-
-
-
-
-
-
+        break;
+    
+    
 }
