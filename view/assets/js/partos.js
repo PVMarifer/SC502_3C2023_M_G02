@@ -67,7 +67,7 @@ function cancelarForm() {
 
 /*Funcion para cargar el listado en el Datatable*/
 function listarParto() {
-  tabla = $('#tablalistado').dataTable({
+  tabla = $('#tabla-partos').dataTable({
     aProcessing: true, //activamos el procesamiento de datatables
     aServerSide: true, //paginacion y filtrado del lado del serevr ../controller/animalController.php?op=listar_tabla'
     dom: 'Bfrtip', //definimos los elementos del control de tabla

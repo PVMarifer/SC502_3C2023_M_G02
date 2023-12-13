@@ -23,6 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
   <!--  FullCalendar CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+  
 
 
 </head>
@@ -153,25 +154,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <!-- Tabla -->
 
-          <div class="row mb-5" id="tabla-vacas">
-            <div class="col-md-12">
-              <div class="card card-dark">
-                <div class="card-body p-0">
+          <div class="row mb-5" id="tabla-vacas-enfermas">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="card card-dark" style="overflow-x:scroll;">
+                <div class="card-body p-3">
                   <table id="tablalistado" class="table table-striped table-bordered table-hover">
                     <thead>
-                      <th>ID de la Vaca</th>
-                      <th>fecha del aborto</th>
-                      <th>Estado de la Vaca</th>
+                      <th>Id</th>
+                      <th>Número de Arete</th>
+                      <th>Nombre del Animal</th>
+                      <th>Enfermedad o Padecimiento</th>
+                      <th>Fecha del Diagnóstico</th>
+                      <th>Síntomas</th>
+                      <th>Estado del Animal</th>
+                      <th>Tratamiento Recomendado</th>
                       <th>Observaciones</th>
+                      <th>Opciones</th>
                     </thead>
                     <tbody>
                     </tbody>
-
                   </table>
                 </div>
               </div>
               <!-- /.card -->
             </div>
+            <div class="col-md-1"></div>
+
           </div>
           <!-- /.row -->
         </div>
