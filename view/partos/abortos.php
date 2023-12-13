@@ -101,27 +101,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form>
+                <form id="formulario-agregar" method="POST">
                   <div class="card-body text-white ">
                     <div class="row">
                       <div class="col-12">
                         <div class="form-group">
-                          <label for="">ID de la Vaca</label>
-                          <input type="number" class="form-control" id="" placeholder="Ingrese el id de la vaca">
+                          <label>Número de Arete</label>
+                          <select id="selectAnimales" name="idAnimal" class="form-control select2"
+                            style="width: 100%; padding: 15px;" required>
+                            <option selected="selected">Seleccione un número de arete</option>
+
+                          </select>
                         </div>
-                      </div>
+                      
 
                       <div class="col-12">
                         <div class="form-group">
                           <label for="">Fecha del Aborto</label>
-                          <input type="number" class="form-control" id=""
+                          <input type="date" class="form-control" id=""
                             placeholder="Ingrese la fecha del aborto de la vaca">
                         </div>
                       </div>
-                      <div class="col-6">
+                      <div class="col-12">
                         <div class="form-group">
                           <label for="fecha_nacimiento">Estado de la Vaca</label>
-                          <input type="date" class="form-control" id="" placeholder="Ingrese el estado de la vaca">
+                          <input type="text" class="form-control" id="" placeholder="Ingrese el estado de la vaca">
                         </div>
                       </div>
                       <div class="col-12">
@@ -148,6 +152,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
           <!-- Tabla -->
+
           <div class="row mb-5" id="tabla-vacas">
             <div class="col-md-12">
               <div class="card card-dark">
