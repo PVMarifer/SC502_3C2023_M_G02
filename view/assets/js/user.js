@@ -62,7 +62,7 @@ $('#formulario-login').on('submit', function (event) {
   
   $.ajax({
     type: 'POST',
-    url: './controller/login/login.php',
+    url: './controller/login/login.php', 
     data: formData,
     contentType: false,
     processData: false, 

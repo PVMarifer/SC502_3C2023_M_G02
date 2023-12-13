@@ -11,7 +11,7 @@ switch ($_GET['op']) {
 
         if (!$agreeTerms) {
             echo (4);
-            exit; // Stop 
+            exit; // Stop  
         }
 
         if ($password !== $confirmPassword) {

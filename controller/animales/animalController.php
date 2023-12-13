@@ -246,7 +246,7 @@ switch ($_GET['op']) {
         echo json_encode($resultados);
         break;
 
-    
+
     case 'listarImagen':
         $animalModel = new Animal();
         $registros = $animalModel->listarImagenes();
@@ -276,6 +276,26 @@ switch ($_GET['op']) {
             echo $cantidadAnimales; // Devuelve la cantidad como respuesta
         } else {
             echo $cantidadAnimales; // Maneja el error si es una cadena JSON de error
+        }
+        break;
+
+
+    case 'listar_vacas_vacias':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacasVacias'])) {
+            $animalModel = new Animal();
+            $animales = $animalModel->listarVacias();
+
+            echo ($animales);
+        }
+        break;
+
+
+    case 'listar_vacas_prenadas':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerVacasPrenadas'])) {
+            $animalModel = new Animal();
+            $animales = $animalModel->listarPrenadas();
+
+            echo ($animales);
         }
         break;
 

@@ -4,7 +4,7 @@ session_start();
 require_once '../../model/user/User.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"];
+    $email = $_POST["email"]; 
     $password = $_POST["password"];
 
     $user = new User();

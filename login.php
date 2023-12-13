@@ -64,9 +64,7 @@
                 </div>
               </form>
 
-              <p class="my-2">
-                <a style="color: #f3f1ff;" href="contrasenaOlv.php">Olvidé mi contraseña</a>
-              </p>
+            
               <p class="mb-0">
                 <a style="color: #f3f1ff;" href="Registrarse.php" class="text-center">¿Eres nuevo por
                   aquí? ¡Regístrate! </a>
