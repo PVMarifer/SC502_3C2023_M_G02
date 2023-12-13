@@ -45,7 +45,7 @@
                 <p style="color: #f3f1ff;" class="login-box-msg">Registrate</p>
                 <form method="post" id="formulario-registro">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Nombre">
+                        <input type="text" class="form-control" name="nombre"  placeholder="Nombre">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span style="color: #f3f1ff;" class="fas fa-user"></span>
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Correo">
+                        <input type="email" class="form-control" name="email" placeholder="Correo">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span style="color: #f3f1ff;" class="fas fa-envelope"></span>
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Contraseña">
+                        <input type="password" class="form-control" name="password_hash" placeholder="Contraseña">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span style="color: #f3f1ff;" class="fas fa-lock"></span>
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Confirmar Contraseña">
+                        <input type="password" class="form-control" name="confirm_password" placeholder="Confirmar Contraseña">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span style="color: #f3f1ff;" class="fas fa-lock"></span>
@@ -81,14 +81,14 @@
                             <div class="icheck-primary">
                                 <input type="checkbox" id="agreeTerms" name="terms" value="agree">
                                 <label style="color: #f3f1ff;" for="agreeTerms">
-                                    Estoy de acuerdo con los <a style="color: #f3f1ff;" href="#">terminos de
+                                    Estoy de acuerdo con los <a style="color: #f3f1ff;" href="#">Terminos de
                                         privacidad</a>
                                 </label>
                             </div>
                         </div>
 
 
-                        <div class="col-12">
+                        <div class="col-12 my-2">
                             <button type="submit" id="btnRegistrar" name="btnRegistrar"
                                 class="btn btn-primary btn-block">Regístrame</button>
                         </div>
@@ -134,7 +134,7 @@
 <script src="./view/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
 
 <!-- JS SCRIPTS -->
-<script src="./view/assets/js/Resu.js"></script>
+<script src="./view/assets/js/user.js"></script>
 
 
 </html>

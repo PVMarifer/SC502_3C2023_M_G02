@@ -5,7 +5,7 @@ require_once '../../model/secados/secado.php';
 switch ($_GET['op']) {
     case 'listar_tabla':
         $secado_db = new Secado();
-        $registros = $secado_db->listarDb();
+        $registros = $secado_db->listarDb(); 
         $datos = array();
         foreach ($registros as $registro) {
             $datos[] = array(
@@ -58,6 +58,7 @@ switch ($_GET['op']) {
         $respuesta = $secado->eliminar();
         echo $respuesta;
         break;
+    
 
 }
 ?>

@@ -145,5 +145,16 @@ switch ($_GET['op']) {
         );
         echo json_encode($resultados);
         break;
+    
+     case 'obtenerCantidadCelo':
+                    $celo = new celos();
+                    $cantidadCelo = $celo->obtenerCantidadCelos();
+                        
+                        if (!is_string($cantidadCelo)) {
+                            echo $cantidadCelo; // Devuelve la cantidad como respuesta
+                        } else {
+                            echo $cantidadCelo; // Maneja el error si es una cadena JSON de error
+                        }
+                    break;
 }
 ?>

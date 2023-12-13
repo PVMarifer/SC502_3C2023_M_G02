@@ -17,18 +17,13 @@ create table Animal(
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
-
-
-
-    
-    
     
 CREATE TABLE Produccion (
     idProduccion INT AUTO_INCREMENT PRIMARY KEY,
     fecha DATE not null,
     id_vaca INT not null, 
     litros FLOAT,
-    observaciones TEXT,
+    observacionesPr TEXT,
     foreign key fk_produccion_animal (id_vaca) references Animal(id_animal)                                                   
 )
 ENGINE = InnoDB
@@ -38,14 +33,13 @@ DEFAULT CHARACTER SET = utf8mb4;
 CREATE TABLE Produccion_semanal (
     id_produccion_semanal INT AUTO_INCREMENT PRIMARY KEY not null,
     fechaSemana DATE not null,
-    numero_semana INT not null,
     litros FLOAT not null,
-    calidad_bacteriologica FLOAT not null,
+    calidad_bacteriologica VARCHAR(30) not null,
     celulas_somaticas FLOAT not null,
     porcentaje_grasa FLOAT not null,
     porcentaje_proteina FLOAT not null,
     punto_crioscopico FLOAT not null,
-    presencia_inhibidores FLOAT not null
+    presencia_inhibidores VARCHAR(30) not null
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;

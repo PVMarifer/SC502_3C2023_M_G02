@@ -1,25 +1,24 @@
 <?php
 
-require_once '../../model/produccion/produccion.php';
+require_once '../../model/produccion/produccionSem.php';
 
 switch ($_GET['op']) {
     case 'listar_tabla':
-        $produccion_db = new Produccion();
+        $produccion_db = new produccionSem();
         $registros = $produccion_db->listarDb();
         $datos = array();
         foreach ($registros as $registro) {
             $datos[] = array(
                 "0" => $registro->getIdPrefijo(),  
                 "1" => $registro->getFechaSemana(),
-                "2" => $registro->getNumero_Semana(),
-                "3" => $registro->getKilosProducidos(),
-                "4" => $registro->getCalidad_Bacteriologica(),
-                "5" => $registro->getCelulas_Somaticas(),
-                "6" => $registro->getPorcentaje_Grasa(),
-                "7" => $registro->getPorcentaje_Proteina(),
-                "8" => $registro->getPunto_Crioscopico(),
-                "9" => $registro->getPresencia_inhibidores(),
-                "10" => '<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getid_Produccion_Semanal() . '\')">Eliminar</button>'
+                "2" => $registro->getKilosProducidos(),
+                "3" => $registro->getCalidadBacteriologica(),
+                "4" => $registro->getCelulasSomaticas(),
+                "5" => $registro->getPorcentajeGrasa(),
+                "6" => $registro->getPorcentajeProteina(),
+                "7" => $registro->getPuntoCrioscopico(),
+                "8" => $registro->getPresenciaInhibidores(),
+                "9" => '<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdProduccionSemanal() . '\')">Eliminar</button>'
             );
         }
         $resultados = array(
@@ -37,32 +36,29 @@ switch ($_GET['op']) {
     case 'insert':
 
         
-        $fechaSemana = isset($_POST["FechaSemana"]) ? trim($_POST["FechaSemana"]) : "";
+        $fechaSemana = isset($_POST["Fecha"]) ? trim($_POST["Fecha"]) : "";
          $litros = isset($_POST["litros"]) ? trim($_POST["litros"]) : "";
-        $calidad_bacteriologica = isset($_POST["calidad_bacteriologica"]) ? trim($_POST["calidad_bacteriologica"]) : "";
-        $porcentaje_grasa = isset($_POST["porcentaje_grasa "]) ? trim($_POST["porcentaje_grasa"]) : "";
-        $porcentaje_proteina = isset($_POST["porcentaje_proteina "]) ? trim($_POST["porcentaje_proteina"]) : "";
-        $punto_crioscopico = isset($_POST["punto_crioscopico "]) ? trim($_POST["punto_crioscopico"]) : "";
-        $presencia_inhibidores = isset($_POST["presencia_inhibidores"]) ? trim($_POST["presencia_inhibidores"]) : "";
+        $calidad_bacteriologica = isset($_POST["calidadbacteriologica"]) ? trim($_POST["calidadbacteriologica"]) : "";
+        $porcentaje_grasa = isset($_POST["porcentajegrasa"]) ? trim($_POST["porcentajegrasa"]) : "";
+        $porcentaje_proteina = isset($_POST["porcentajeproteina"]) ? trim($_POST["porcentajeproteina"]) : "";
+        $punto_crioscopico = isset($_POST["puntocrioscopico"]) ? trim($_POST["puntocrioscopico"]) : "";
+        $presencia_inhibidores = isset($_POST["presenciainhibidores"]) ? trim($_POST["presenciainhibidores"]) : "";
+        $celulas_somaticas = isset($_POST["celulassomaticas"]) ? trim($_POST["celulassomaticas"]) : "";
+
        
 
         $produccion = new ProduccionSem();
-        $produccion->setFechaProduccion($fechaproduccion);
-        $produccion->setKilosProducidos($litros);
-        $produccion->setCalidad_Bacteriologica($calidad_bacteriologica);
-        $produccion->setPorcentaje_Grasa($porcentaje_grasa);
-        $produccion->setPorcentaje_Proteina($porcentaje_proteina);
-        $produccion->setPunto_Crioscopico($punto_crioscopico);
-        $produccion->setPresencia_inhibidores($presencia_inhibidores);
+        $produccion->setFechaSemana($fechaSemana);
         $encontrado = $produccion->verificarExistenciaDb();
         if ($encontrado == false) {
-            $produccion->setFechaProduccion($fechaproduccion);
+            $produccion->setFechaSemana($fechaSemana);
             $produccion->setKilosProducidos($litros);
-            $produccion->setCalidad_Bacteriologica($calidad_bacteriologica);
-            $produccion->setPorcentaje_Grasa($porcentaje_grasa);
-            $produccion->setPorcentaje_Proteina($porcentaje_proteina);
-            $produccion->setPunto_Crioscopico($punto_crioscopico);
-            $produccion->setPresencia_inhibidores($presencia_inhibidores);
+            $produccion->setCalidadBacteriologica($calidad_bacteriologica);
+            $produccion->setPorcentajeGrasa($porcentaje_grasa);
+            $produccion->setPorcentajeProteina($porcentaje_proteina);
+            $produccion->setPuntoCrioscopico($punto_crioscopico);
+            $produccion->setPresenciaInhibidores($presencia_inhibidores);
+            $produccion->setCelulasSomaticas($celulas_somaticas);
             $produccion->guardarEnDb();
             if ($produccion->verificarExistenciaDb()) {
                 echo 1; // se guardo exitosamente
@@ -75,12 +71,7 @@ switch ($_GET['op']) {
         }
         break;
 
-    case "eliminar":
-        $produccion = new produccionSem();
-        $produccion -> setid_Produccion_Semanal(trim($_POST["idRegistro"]));
-        $respuesta = $produccion->eliminar();
-        echo $respuesta;
-        break;
+
 
 }
 ?>

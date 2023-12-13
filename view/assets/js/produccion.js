@@ -12,8 +12,8 @@ $(document).ready(function() {
           success: function(data)
           
           {
-            console.log("wedne");
-              if (data) {
+          
+              if (data) { 
                   // Llenar el select con las vacas obtenidas
                   $.each(data, function(index, animal) {
                       $('#selectAnimales').append('<option value="' + animal.id_animal + '">' + animal.numero_arete + '</option>');
@@ -41,14 +41,7 @@ $(document).ready(function() {
   }
 
 
-  //cancelar formulario de modificacion
 
-  function cancelarForm() {
-    limpiarForms();
-    $('#form-agregar').show();
-    $('#form-modificar').hide();
-
-  }
 
   /*Funcion para cargar el listado en el Datatable*/
   function listarProduccion() {
@@ -58,7 +51,7 @@ $(document).ready(function() {
       dom: 'Bfrtip', //definimos los elementos del control de tabla
       buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdf'],
       ajax: {
-        url: '../../controller/produccion/produccionController.php?op=listar_tabla',
+        url: '../../controller/produccion/produccionNController.php?op=listar_tabla',
         type: 'get',
         dataType: 'json',
         error: function (e) {
@@ -83,14 +76,13 @@ $(document).ready(function() {
     $('#btnRegistar').prop('disabled', true);
     var formData = new FormData($('#formulario-agregar')[0]);
     $.ajax({
-      url: '../../controller/produccion/produccionController.php?op=insert',
+      url: '../../controller/produccion/produccionNController.php?op=insert',
       type: 'POST',
       data: formData,
       contentType: false,
       processData: false,
       success: function (datos) 
       {
-        console.log("wed");
         switch (datos) {
           case '1':
             toastr.success(
@@ -123,7 +115,7 @@ $(document).ready(function() {
     bootbox.confirm('¿Esta seguro de eliminar esta produccion?', function (result) {
       if (result) {
         $.post(
-          '../../controller/produccion/produccionController.php?op=eliminar',
+          '../../controller/produccion/produccionNController.php?op=eliminar',
           { idRegistro: id },
           function (data, textStatus, xhr) {
             switch (data) {
@@ -148,5 +140,29 @@ $(document).ready(function() {
     });
   }
 
+
+  $('#logoutButton').on('click', function(e) {
+    e.preventDefault(); 
+  
+    $.ajax({
+      url: '../../controller/login/logout.php', 
+      type: 'GET',
+      success: function(response) {
+        if(response==1)
+        {
+          window.location.href = '../../landingPage.php';
+  
+        }
+        else
+        {
+          console.log("no tiene una sesion iniciada")
+        }
+      },
+      error: function(error) {
+        console.log('Error al cerrar sesión:', error);
+       
+      }
+    });
+  });
 
 

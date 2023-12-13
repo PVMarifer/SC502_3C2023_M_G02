@@ -121,5 +121,15 @@ switch ($_GET['op']) {
         echo json_encode($eventos);
         
         break; 
+    case 'obtenerCantidadServicio':
+                    $servicio = new servicio();
+                    $cantidadServicio = $servicio->obtenerCantidadServicio();
+                        
+                        if (!is_string($cantidadServicio)) {
+                            echo $cantidadServicio; // Devuelve la cantidad como respuesta
+                        } else {
+                            echo $cantidadServicio; // Maneja el error si es una cadena JSON de error
+                        }
+                    break;
 }
 ?>

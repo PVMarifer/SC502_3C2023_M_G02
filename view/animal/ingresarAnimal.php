@@ -292,6 +292,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <th>Peso</th>
                                             <th>Características</th>
                                             <th>Observaciones</th>
+                                            <th>Imagen</th>
                                             <th>Opciones</th>
                                         </thead>
                                         <tbody>

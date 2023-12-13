@@ -17,6 +17,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- Datatable CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <!-- Toastr -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
 
 </head>
@@ -142,64 +148,75 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="card-body text-white ">
                           <div class="row">
 
-                            <div class="col-12">
+                            <div class="col-4">
                               <div class="form-group">
                                 <label for="">Fecha de Produccion</label>
                                 <input type="date" class="form-control" id="Fecha" name="Fecha" required>
                               </div>
+                            </div>
 
-
-                              <div class="col-12">
-                                <div class="form-group">
-                                  <label for="">Litros</label>
-                                  <input type="text" class="form-control" id="litros" name="litros"
-                                    placeholder="Ingrese aquí los Litros Producidos" required>
-                                </div>
-
-                                <div class="col-12">
-                                  <div class="form-group">
-                                    <label for="">Calidad Bacteriologica</label>
-                                    <input type="text" class="form-control" id="calidad bacteriologica"
-                                      name="calidad bacteriologica" placeholder="Ingrese la Calidad Bacteriologica"
-                                      required>
-                                  </div>
-                                </div>
-                                <div class="col-12">
-                                  <div class="form-group">
-                                    <label for="">Celulas Somaticas</label>
-                                    <input type="text" class="form-control" id="celulas somaticas"
-                                      name="celulas somaticas" placeholder="Ingrese las celulas Somaticas" required>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label for="">Porcentaje Grasa</label>
-                                  <input type="text" class="form-control" id="porcentaje grasa" name="porcentaje grasa"
-                                    placeholder="Ingrese el procentaje de Grasa" required>
-                                </div>
-                              </div>
-                              <div class="col-12">
-                                <div class="form-group">
-                                  <label for="">Porcentaje Proteina</label>
-                                  <input type="text" class="form-control" id="porcentaje proteina"
-                                    name="porcentaje proteina" placeholder="Ingrese el procentaje de Proteina" required>
-                                </div>
-                              </div>
-                              <div class="col-12">
-                                <div class="form-group">
-                                  <label for="">Punto Crioscopico</label>
-                                  <input type="text" class="form-control" id="punto crioscopico"
-                                    name="punto crioscopico" placeholder="Ingrese el punto crioscopico" required>
-                                </div>
-                              </div>
-                              <div class="col-12">
-                                <div class="form-group">
-                                  <label for="">Presencia Inhibidores</label>
-                                  <input type="text" class="form-control" id="presencia inhibidores"
-                                    name="presencia inhibidores" placeholder="Ingrese la presencia inhibidores"
-                                    required>
-                                </div>
+                            <div class="col-4">
+                              <div class="form-group">
+                                <label for="">Litros</label>
+                                <input type="text" class="form-control" id="litros" name="litros"
+                                  placeholder="Ingrese aquí los Litros Producidos" required>
                               </div>
                             </div>
+                            <div class="col-4">
+                              <div class="form-group">
+                                <label for="">Celulas Somaticas</label>
+                                <input type="text" class="form-control" id="celulassomaticas" name="celulassomaticas"
+                                  placeholder="Ingrese las celulas Somaticas" required>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="form-group">
+                                <label for="">Presencia Inhibidores</label>
+                                <select class="form-control select2" name="presenciainhibidores"
+                                  id="presenciainhibidores">
+                                  <option value="Positivo">Positivo</option>
+                                  <option value="Negativo">Negativo</option>
+
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="form-group">
+                                <label for="">Calidad Bacteriologica</label>
+                                <select class="form-control select2" name="calidadbacteriologica"
+                                  id="calidadbacteriologica">
+                                  <option value="Excelente">Excelente</option>
+                                  <option value="Buena">Buena</option>
+                                  <option value="Intermedia">Intermedia</option>
+                                  <option value="Mala">Mala</option>
+
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-4">
+                              <div class="form-group">
+                                <label for="">Porcentaje Grasa</label>
+                                <input type="text" class="form-control" id="porcentajegrasa" name="porcentajegrasa"
+                                  placeholder="Ingrese el procentaje de Grasa" required>
+                              </div>
+                            </div>
+                            <div class="col-4">
+                              <div class="form-group">
+                                <label for="">Porcentaje Proteina</label>
+                                <input type="text" class="form-control" id="porcentajeproteina"
+                                  name="porcentajeproteina" placeholder="Ingrese el procentaje de Proteina" required>
+                              </div>
+                            </div>
+                            <div class="col-4">
+                              <div class="form-group">
+                                <label for="">Punto Crioscopico</label>
+                                <input type="text" class="form-control" id="puntocrioscopico" name="puntocrioscopico"
+                                  placeholder="Ingrese el punto crioscopico" required>
+                              </div>
+                            </div>
+
+
                           </div>
                           <!-- /.card-body -->
 
@@ -247,59 +264,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   </div><!-- ./wrapper -->
 
-  <!-- REQUIRED SCRIPTS -->
-
-  <script src="../plugins/jquery/jquery.min.js"></script>
-  <!-- DataTables  & Plugins -->
-  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="../dist/js/adminlte.min.js"></script>
-  <!-- Bootbox -->
-  <script src="../plugins/bootbox/bootbox.min.js"></script>
-  <!-- toastr -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-  <!-- CSS styles -->
-  <link rel="stylesheet" href="../assets/css/index.css">
-  <!-- Select2 -->
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-  <!-- JD Scripts -->
-  <script src="../assets/js/produccionSem.js"></script>
 
 
 
 </body>
 <!-- CSS styles -->
-
 <!--   JQUERY -->
 <script src="../plugins/jquery/jquery.min.js"></script>
 <!-- DataTables  & Plugins -->
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
-<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="../plugins/jszip/jszip.min.js"></script>
-<script src="../plugins/pdfmake/pdfmake.min.js"></script>
-<script src="../plugins/pdfmake/vfs_fonts.js"></script>
-<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-
 <!-- Bootstrap 4 -->
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
+
 <script src="../dist/js/adminlte.min.js"></script>
 <!-- Bootbox -->
 <script src="../plugins/bootbox/bootbox.min.js"></script>
-
 <!-- toastr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- CSS styles -->
 <link rel="stylesheet" href="../assets/css/index.css">
+<!-- Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script src="../assets/js/produccionSem.js"></script>
+
 
 </html>

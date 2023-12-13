@@ -281,6 +281,26 @@ private function verificarExistenciaServicio($id_servicio)
         }
     }
 
+    
+
+    public function obtenerCantidadServicio() {
+        $query = "SELECT COUNT(*) as cantidad FROM servicio";
+
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            $cantidad = $resultado->fetchColumn();
+            self::desconectar();
+
+            return $cantidad;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            return json_encode(['error' => $error]);
+        }
+    }
+
     public function obtenerServicios()
     {
         $query = "SELECT *
@@ -300,7 +320,6 @@ private function verificarExistenciaServicio($id_servicio)
             return json_encode($error);
         }
     }
-
     
 
 
