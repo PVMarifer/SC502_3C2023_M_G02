@@ -23,8 +23,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
   <!--  FullCalendar CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
-    <!-- Select2 -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 
 </head>
@@ -93,42 +93,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-1"></div>
           </div>
 
-
-
-          <!-- Tabla -->
-          <div class="row mb-5" id="tabla-enfermedades">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-              <div class="card card-dark">
-                <div class="card-body p-3">
-                  <table id="tablalistado" class="table table-striped table-bordered table-hover">
-                    <thead>
-                      <th>Id</th>
-                      <th>Número de Arete</th>
-                      <th>Fecha del parto</th>
-                      <th>Tipo de parto</th>
-                      <th>Observaciones</th>
-                      <th>Opciones</th>
-
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
-                <!-- /.card-footer -->
-              </div>
-              <!-- /.card -->
-            </div>
-
-            <div class="col-md-1"></div>
-          </div>
-          <!-- /.tabla -->
-
           <!-- Formulario Agregar-->
           <div class="row mb-5" id="form-agregar">
             <div class="col-2"></div>
             <div class="col-8">
-              <div class="card " style="background-color: #28a745;">
+              <div class="card " style="background-color:#4CAF50;">
                 <div class="card-header text-center">
                   <h3 class="card-title text-white">Nuevo Parto</h3>
                 </div>
@@ -146,7 +115,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                           </select>
                         </div>
-                      
+
                         <!-- /.form-group -->
                       </div>
                       <div class="col-6">
@@ -191,6 +160,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-2"></div>
           </div>
           <!-- /.fromulario -->
+
+          <!-- Tabla -->
+          <div class="row mb-5" id="tabla-enfermedades">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="card card-dark">
+                <div class="card-body p-3">
+                  <table id="tablalistado" class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <th>Id</th>
+                      <th>Número de Arete</th>
+                      <th>Fecha del parto</th>
+                      <th>Tipo de parto</th>
+                      <th>Observaciones</th>
+                      <th>Opciones</th>
+
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.card-footer -->
+              </div>
+              <!-- /.card -->
+            </div>
+
+            <div class="col-md-1"></div>
+          </div>
+          <!-- /.tabla -->
+
+
 
         </div>
         <!-- /.container-fluid -->

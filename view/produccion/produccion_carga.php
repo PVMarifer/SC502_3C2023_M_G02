@@ -101,38 +101,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <section class="content">
               <div class="container-fluid">
 
-                <!-- Tabla -->
-                <div class="row mb-5" id="tabla-vacas-enfermas">
-                  <div class="col-md-1"></div>
-                  <div class="col-md-10">
-                    <div class="card card-dark" style="overflow-x:scroll;">
-                      <div class="card-body p-3">
-                        <table id="tablalistado" class="table table-striped table-bordered table-hover">
-                          <thead>
-                            <th>Id</th>
-                            <th>Fecha Semana</th>
-                            <th>Litros Semanales</th>
-                            <th>Calidad Bacteriologica</th>
-                            <th>Celulas Somaticas</th>
-                            <th>Porcentaje Grasa</th>
-                            <th>Porcentaje Proteina</th>
-                            <th>Punto Crioscopico</th>
-                            <th>Presencia inhibidores</th>
-                          </thead>
-                          <tbody>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- /.card -->
-                  </div>
-                  <div class="col-md-1"></div>
-
-                </div>
-                <!-- /.row -->
-
-
-
                 <!-- Formulario Agregar-->
                 <div class="row mb-5" IdProduccion="form-agregar">
                   <div class="col-md-1"></div>
@@ -237,6 +205,41 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
 
                 <!-- /.row -->
+
+
+                <!-- Tabla -->
+                <div class="row mb-5" id="tabla-vacas-enfermas">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-10">
+                    <div class="card card-dark" style="overflow-x:scroll;">
+                      <div class="card-body p-3">
+                        <table id="tablalistado" class="table table-striped table-bordered table-hover">
+                          <thead>
+                            <th>Id</th>
+                            <th>Fecha Semana</th>
+                            <th>Litros Semanales</th>
+                            <th>Calidad Bacteriologica</th>
+                            <th>Celulas Somaticas</th>
+                            <th>Porcentaje Grasa</th>
+                            <th>Porcentaje Proteina</th>
+                            <th>Punto Crioscopico</th>
+                            <th>Presencia inhibidores</th>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- /.card -->
+                  </div>
+                  <div class="col-md-1"></div>
+
+                </div>
+                <!-- /.row -->
+
+
+
+
 
                 <!-- /.row -->
 

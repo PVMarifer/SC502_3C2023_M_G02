@@ -19,8 +19,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   <!-- Datatable CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
- <!-- Select2 -->
- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   <!-- Toastr -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
@@ -99,34 +99,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <section class="content">
         <div class="container-fluid">
 
-          <!-- Tabla -->
-          <div class="row mb-5" id="tabla-vacas-enfermas">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-              <div class="card card-dark" style="overflow-x:scroll;">
-                <div class="card-body p-3">
-                  <table id="tablalistado" class="table table-striped table-bordered table-hover">
-                    <thead>
-                      <th>Id</th>
-                      <th>Numero Arete</th>
-                      <th>Fecha</th>
-                      <th>Litros Producidos</th>
-                      <th>Observaciones</th>
-                      <th>Opciones</th>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <!-- /.card -->
-            </div>
-            <div class="col-md-1"></div>
-
-          </div>
-          <!-- /.row -->
-
-
 
           <!-- Formulario Agregar-->
           <div class="row mb-5" IdProduccion="form-agregar">
@@ -192,6 +164,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
           <!-- /.row -->
+
+
+
+
+          <!-- Tabla -->
+          <div class="row mb-5" id="tabla-vacas-enfermas">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="card card-dark" style="overflow-x:scroll;">
+                <div class="card-body p-3">
+                  <table id="tablalistado" class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <th>Id</th>
+                      <th>Numero Arete</th>
+                      <th>Fecha</th>
+                      <th>Litros Producidos</th>
+                      <th>Observaciones</th>
+                      <th>Opciones</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+            <div class="col-md-1"></div>
+
+          </div>
+          <!-- /.row -->
+
+
+
+
 
           <!-- /.row -->
 

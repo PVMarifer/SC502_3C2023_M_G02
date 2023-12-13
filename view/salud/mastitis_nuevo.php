@@ -72,38 +72,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <section class="content">
         <div class="container-fluid">
-          <!-- Tabla -->
-          <div class="row mb-5" id="tabla-mastitis">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-              <div class="card card-dark">
-                <div class="card-body p-3">
-                  <table id="tablalistado" class="table table-striped table-bordered table-hover">
-                    <thead>
-                      <th>Id</th>
-                      <th>Numero Arete</th>
-                      <th>Tipo Tratamiento</th>
-                      <th>Cuartos Afectados</th>
-                      <th>Fecha Diagnóstico</th>
-                      <th>Opciones</th>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <!-- /.card -->
-            </div>
-
-            <div class="col-md-1"></div>
-          </div>
-          <!-- /.tabla -->
-
           <!-- Formulario Agregar-->
           <div class="row mb-5" id="form-agregar">
             <div class="col-2"></div>
             <div class="col-8">
-              <div class="card " style="background-color: grey;">
+              <div class="card " style="background-color:#4CAF50;">
                 <div class="card-header text-center">
                   <h3 class="card-title text-white">Nueva Mastitis</h3>
                 </div>
@@ -164,6 +137,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-2"></div>
           </div>
           <!-- /.fromulario -->
+          
+          <!-- Tabla -->
+          <div class="row mb-5" id="tabla-mastitis">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="card card-dark">
+                <div class="card-body p-3">
+                  <table id="tablalistado" class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <th>Id</th>
+                      <th>Numero Arete</th>
+                      <th>Tipo Tratamiento</th>
+                      <th>Cuartos Afectados</th>
+                      <th>Fecha Diagnóstico</th>
+                      <th>Opciones</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+
+            <div class="col-md-1"></div>
+          </div>
+          <!-- /.tabla -->
+
+          
 
           
         </div>

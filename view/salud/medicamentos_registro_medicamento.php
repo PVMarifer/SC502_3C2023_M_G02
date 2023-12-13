@@ -70,111 +70,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <section class="content">
         <div class="container-fluid">
 
-          <!-- Tabla -->
-          <div class="row mb-5" id="tabla-medicamentos">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-              <div class="card " style="overflow-y: scroll;">
-                <div class="card-header text-center">
-                  <h3 class="card-title ">Aplicaciones de Medicamentos</h3>
-                </div>
-                <div class="card-body p-3">
-                  <table id="tablalistadomedicamento" class="table table-striped table-bordered table-hover">
-                    <thead>
-                      <th>Id</th>
-                      <th>Nombre Medicamento</th>
-                      <th>Número de Arete</th>
-                      <th>Lugar de la Aplicacion</th>
-                      <th>Dosis Aplicada</th>
-                      <th>Fecha Aplicacion</th>
-                      <th>Opciones</th>
-
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <!-- /.card -->
-            </div>
-
-            <div class="col-md-1"></div>
-          </div>
-          <!-- /.tabla -->
-
-          <!-- Tabla -->
-          <div class="row mb-5" id="tabla-antibioticos">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-              <div class="card " style="overflow-y: scroll;">
-                <div class="card-header text-center">
-                  <h3 class="card-title ">Aplicacion de Antibioticos</h3>
-                </div>
-                <div class="card-body p-3">
-                  <table id="tablalistadoantibiotico" class="table table-striped table-bordered table-hover">
-                    <thead>
-                      <th>Id</th>
-                      <th>Nombre Antibiotico</th>
-                      <th>Número de Arete</th>
-                      <th>Lugar de la Aplicacion</th>
-                      <th>Dosis Aplicada</th>
-                      <th>Fecha Aplicacion</th>
-                      <th>Dias de Retiro de Leche</th>
-                      <th>Opciones</th>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <!-- /.card -->
-            </div>
-
-            <div class="col-md-1"></div>
-          </div>
-          <!-- /.tabla -->
-
-          <div class="text-center py-5">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-              Añadir un Registro de Inyectable
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Agregar Aplicacion de Inyectable</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body text-center mb-3">
-                    <h5>Qué desea agregar?</h5>
-
-                    <a href="#" role="button" id="medicamento" class="btn btn-secondary popover-test m-3"
-                      data-content="Popover body content is set in this attribute." data-dismiss="modal">Aplicacion de
-                      Medicamento</a>
-
-                    <a href="#" role="button" id="antibiotico" class="btn btn-secondary popover-test m-3"
-                      data-content="Popover body content is set in this attribute." data-dismiss="modal">Aplicacion de
-                      Antibiótico</a>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
           <!-- /.antibiotico -->
           <!-- /.form agregar -->
           <div class="row " id="form-agregar-antibiotico">
             <div class="col-1"></div>
 
             <div class="col-10">
-              <div class="card">
+              <div class="card" style="background-color:#4CAF50;">
                 <div class="card-header text-center">
                   <h3 class="card-title ">Nueva Aplicacion de Antibiotico</h3>
                 </div>
@@ -248,7 +150,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-1"></div>
 
             <div class="col-10">
-              <div class="card">
+              <div class="card" style="background-color:#4CAF50;">
                 <div class="card-header text-center">
                   <h3 class="card-title ">Nuevo Medicamento</h3>
                 </div>
@@ -314,6 +216,107 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-1"></div>
           </div>
           <!-- /.row -->
+
+
+          <!-- Tabla -->
+          <div class="row mb-5" id="tabla-medicamentos">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="card " style="overflow-y: scroll;">
+                <div class="card-header text-center">
+                  <h3 class="card-title ">Aplicaciones de Medicamentos</h3>
+                </div>
+                <div class="card-body p-3">
+                  <table id="tablalistadomedicamento" class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <th>Id</th>
+                      <th>Nombre Medicamento</th>
+                      <th>Número de Arete</th>
+                      <th>Lugar de la Aplicacion</th>
+                      <th>Dosis Aplicada</th>
+                      <th>Fecha Aplicacion</th>
+                      <th>Opciones</th>
+
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+
+            <div class="col-md-1"></div>
+          </div>
+          <!-- /.tabla -->
+
+          <!-- Tabla -->
+          <div class="row mb-5" id="tabla-antibioticos">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div class="card " style="overflow-y: scroll;">
+                <div class="card-header text-center">
+                  <h3 class="card-title ">Aplicacion de Antibioticos</h3>
+                </div>
+                <div class="card-body p-3">
+                  <table id="tablalistadoantibiotico" class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <th>Id</th>
+                      <th>Nombre Antibiotico</th>
+                      <th>Número de Arete</th>
+                      <th>Lugar de la Aplicacion</th>
+                      <th>Dosis Aplicada</th>
+                      <th>Fecha Aplicacion</th>
+                      <th>Dias de Retiro de Leche</th>
+                      <th>Opciones</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+
+            <div class="col-md-1"></div>
+          </div>
+          <!-- /.tabla -->
+
+          <div class="text-center py-5">
+            <!-- Button trigger modal -->
+            <button type="button" style="background-color:#4CAF50;" class="btn text-white " data-toggle="modal" data-target="#exampleModalCenter">
+              Añadir un Registro de Inyectable
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Agregar Aplicacion de Inyectable</h5>
+                    <button type="button" style="background-color:#4CAF50;" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-center mb-3">
+                    <h5>Qué desea agregar?</h5>
+
+                    <a href="#" role="button" id="medicamento" style="background-color:#4CAF50;" class="btn text-white popover-test m-3"
+                      data-content="Popover body content is set in this attribute." data-dismiss="modal">Aplicacion de
+                      Medicamento</a>
+
+                    <a href="#" role="button" id="antibiotico" style="background-color:#4CAF50;" class="btn text-white popover-test m-3"
+                      data-content="Popover body content is set in this attribute." data-dismiss="modal">Aplicacion de
+                      Antibiótico</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
 
 
 
