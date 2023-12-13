@@ -159,18 +159,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-md-10">
               <div class="card card-dark" style="overflow-x:scroll;">
                 <div class="card-body p-3">
+                  <div class="card-title">Palabra</div>
                   <table id="tablalistado" class="table table-striped table-bordered table-hover">
                     <thead>
-                      <th>Id</th>
-                      <th>Número de Arete</th>
-                      <th>Nombre del Animal</th>
-                      <th>Enfermedad o Padecimiento</th>
-                      <th>Fecha del Diagnóstico</th>
-                      <th>Síntomas</th>
-                      <th>Estado del Animal</th>
-                      <th>Tratamiento Recomendado</th>
+                    <th>ID de la Vaca</th>
+                      <th>fecha del aborto</th>
+                      <th>Estado de la Vaca</th>
                       <th>Observaciones</th>
-                      <th>Opciones</th>
                     </thead>
                     <tbody>
                     </tbody>
