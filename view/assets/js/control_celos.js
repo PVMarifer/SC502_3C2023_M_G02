@@ -93,7 +93,7 @@ $(document).ready(function() {
             case '1':
               toastr.success(
                 'Registro Exitoso'
-              );
+              ); 
               $('#formulario-agregar')[0].reset();
               tabla.api().ajax.reload();
               break;

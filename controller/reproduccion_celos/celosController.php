@@ -30,7 +30,6 @@ switch ($_GET['op']) {
 
     case 'insert':
         $idAnimal = isset($_POST["id_animal"]) ? trim($_POST["id_animal"]) : "";
-
         $fechaDiagnostico = isset($_POST["fecha_celo"]) ? trim($_POST["fecha_celo"]) : "";
         $detalles = isset($_POST["detalles_celos"]) ? trim($_POST["detalles_celos"]) : "";
      
