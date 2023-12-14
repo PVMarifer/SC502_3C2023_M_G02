@@ -145,7 +145,7 @@ class celos extends Conexion
 
     public function guardarEnDb()
     {
-        $query = "INSERT INTO `celo` (`id_celo`, `id_animal`, `fecha_celo`, `detalles_celo`, `observaciones`) VALUES (:id_celo, :id_animal, :fecha_celo, :detalles_celo, :observaciones)";
+        $query = "INSERT INTO `celo` (`id_celo`, `id_animal`, `fecha_celo`, `detalles_celo`) VALUES (:id_celo, :id_animal, :fecha_celo, :detalles_celo)";
         try {
             self::getConexion();
             $id_celo = $this->getIdCelo();

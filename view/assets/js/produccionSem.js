@@ -2,36 +2,10 @@
 //funcion para insertar la produccion
 $(document).ready(function() {
   $('.select2').select2();
-  // Función para obtener la produccion y llenar el select
-  function obtenerAnimales() {
-      $.ajax({ 
-          url: '../../controller/animales/AnimalController.php?op=listar_animales',
-          type: "GET",
-          data: { obtenerAnimales: true },
-          dataType: "json",
-          success: function(data)
-          
-          {
-            console.log("wedne");
-              if (data) {
-                  // Llenar el select con las vacas obtenidas
-                  $.each(data, function(index, animal) {
-                      $('#selectAnimales').append('<option value="' + animal.id_animal + '">' + animal.numero_arete + '</option>');
-                  });
-              } else {
-                  console.log("No se encontraron animales.");
-              }
-          },
-          error: function(xhr, status, error) {
-              console.error(error);
-          }
-      });
-  }
+  
 
 
 
-  // Llamar a la función para obtener las vacas cuando el documento esté listo
-  obtenerAnimales();
 });
 
   //funcion para limpiar forms
@@ -41,14 +15,7 @@ $(document).ready(function() {
   }
 
 
-  //cancelar formulario de modificacion
 
-  function cancelarForm() {
-    limpiarForms();
-    $('#form-agregar').show();
-    $('#form-modificar').hide();
-
-  }
 
   /*Funcion para cargar el listado en el Datatable*/
   function listarProduccion() {
@@ -148,5 +115,27 @@ $(document).ready(function() {
     });
   }
 
-
+  $('#logoutButton').on('click', function(e) {
+    e.preventDefault(); 
+  
+    $.ajax({
+      url: '../../controller/login/logout.php', 
+      type: 'GET',
+      success: function(response) {
+        if(response==1)
+        {
+          window.location.href = '../../landingPage.php';
+  
+        }
+        else
+        {
+          console.log("no tiene una sesion iniciada")
+        }
+      },
+      error: function(error) {
+        console.log('Error al cerrar sesión:', error);
+       
+      }
+    });
+  });
 

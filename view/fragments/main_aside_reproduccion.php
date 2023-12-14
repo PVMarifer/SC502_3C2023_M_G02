@@ -1,11 +1,14 @@
-<a href="LandPage.php" class="brand-link">
-  <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-    style="opacity: .8">
-  <span class="brand-text font-weight-light text-white">SG Ganaderia</span>
-</a>
-
-<!-- Sidebar -->
 <div class="sidebar">
+
+<a href="index.php" class="brand-link">
+    <img src="../assets/imagenes/logo.png" alt=" Logo" height="100px" 
+      style="opacity: .8">
+      <hr>
+ 
+  </a>
+
+  <!-- Sidebar -->
+
   <!-- Sidebar user panel (optional) -->
   <div class="user-panel mt-3 pb-3 mb-3 d-flex">
     <div class="image">
@@ -16,29 +19,31 @@
     </div>
   </div>
   <!-- /.sidebar -->
-<!-- /.sidebar menu -->
-<nav class="mt-2">
+  <!-- /.sidebar menu -->
+  <nav class="mt-2">
     <ul class=" nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <!-- Add icons to the links using the .nav-icon class
+      <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-        <li class="nav-item">
-            <a href="./estado_reproduccion.php" class="nav-link bg-white">
-                <p>Control de Reproduccion</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="./ingresar_servicio.php" class="nav-link bg-white">
-                <p>Control de Servicios</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="./control_celos.php" class="nav-link bg-white">
+      <li class="nav-item">
+        <a href="./estado_reproduccion.php" class="nav-link bg-white">
+          <p>Control de Reproduccion</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./ingresar_servicio.php" class="nav-link bg-white">
+          <p>Control de Servicios</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./control_celos.php" class="nav-link bg-white">
 
-                <p>Control de celos</p>
-            </a>
-        </li>
+          <p>Control de celos</p>
+        </a>
+      </li>
 
 
 
     </ul>
-</nav>
+  </nav>
+
+</div>

@@ -111,8 +111,9 @@ class Secado extends Conexion
 
     public function listarDB()
     {
-        $query = "SELECT * FROM secado
-        INNER JOIN animal ON secado.id_animal = animal.id_animal";
+        $query = "SELECT se.id_secado,se.fecha_secado, se.observaciones, numero_arete
+        FROM secado as se
+        INNER JOIN animal ON se.id_animal = animal.id_animal";
         $lista = array();
         try {
             self::getConexion();

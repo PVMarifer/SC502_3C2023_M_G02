@@ -283,6 +283,25 @@ class Vacunacion extends Conexion
         }
     }
 
+    public function listarVacunasPuestas()
+    {
+        $query = "SELECT SUM(cantidad_animales) AS total_vacunas_puestas FROM Vacunacion";
+        try {
+            self::getConexion();
+            $resultado = self::$conexion->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            $row = $resultado->fetch();
+            $totalVacunas = $row['total_vacunas_puestas'];
+            return $totalVacunas;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            echo $error;
+            return json_encode($error);
+        }
+    }
+
     
 
 

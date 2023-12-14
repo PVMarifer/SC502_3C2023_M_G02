@@ -4,15 +4,15 @@ require_once '../../model/abortos/Aborto.php';
 
 switch ($_GET['op']) {
     case 'listar_tabla':
-        $preno_db = new Preno();
-        $Abortos = $preno_db->listarDb();
+        $aborto_db = new Aborto();
+        $Aborto = $aborto_db->listarDb();
         $datos = array();
-        foreach ($Abortos as $preno) {
+        foreach ($Aborto as $aborto) {
             $datos[] = array(
-                "0" => $preno->getIdVaca(),
-                "1" => $preno->getFechaAborto(),
-                "2" => $preno->getEstadoVaca(),
-                "3" => $preno->getObservaciones()
+                "0" => $aborto->getIdVaca(),
+                "1" => $aborto->getFechaAborto(),
+                "2" => $aborto->getEstadoVaca(),
+                "3" => $aborto->getObservaciones()
             );
         }
         $resultados = array(
@@ -29,20 +29,20 @@ switch ($_GET['op']) {
 
     case 'listar_abortos':
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerAbortos'])) {
-            $prenoModel = new preno();
-            $abortos = $abortoModel->listarAbortos();
-            echo json_encode($Abortos);
+            $abortoModel = new aborto();
+            $aborto = $abortoModel->listarAbortos();
+            echo json_encode($Aborto);
         }
         break;
     case 'listar_abortos_grafica':
         if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtenerAbortosGrafica'])) {
-            $AbortosModel = new Aborto();
-            $Abortos = $AbortosModel->listarAbortosGrafica();
+            $AbortoModel = new Aborto();
+            $Aborto = $AbortoModel->listarAbortosGrafica();
 
             $meses = [];
             $cantidadAbortos = [];
             $data = null;
-            foreach ($Abortos as $row) {
+            foreach ($Aborto as $row) {
                 $mes = '';
                 switch ($row['mes']) {
                     case 1:
@@ -99,10 +99,10 @@ switch ($_GET['op']) {
 
     case 'obtener_abortos':
 
-        $abortosModel = new Aborto();
-        $abortos = $abortosModel->obtenerAbortos();
+        $abortoModel = new Aborto();
+        $aborto = $abortoModel->obtenerAbortos();
         $eventos = array();
-        foreach ($abortos as $row) {
+        foreach ($aborto as $row) {
             $arete = $row['numero_arete'];
             $aborto = [
                 "title" => "Aborto de $arete",

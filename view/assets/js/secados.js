@@ -18,39 +18,18 @@ $(document).ready(function() {
               } else {
                   console.log("No se encontraron animales.");
               }
-          },
+          }, 
           error: function(xhr, status, error) {
               console.error(error);
           }
       });
   }
 
-  // Función para obtener las enfermedades y llenar el select
-  function obtenerEnfermedades() {
-    $.ajax({ 
-        url: '../../controller/salud/enfermedadController.php?op=obtener_enfermedades',
-        type: "GET",
-        data: { obtenerEnfermedades: true },
-        dataType: "json",
-        success: function(data) {
-            if (data) {
-                // Llenar el select con las enfermedades obtenidas
-                $.each(data, function(index, enfermedad) {
-                    $('#selectEnfermedades').append('<option value="' + enfermedad.id_enfermedad + '">' + enfermedad.nombre_enfermedad + '.' + enfermedad.id_enfermedad + '</option>');
-                });
-            } else {
-                console.log("No se encontraron enfermedades.");
-            }
-        },
-        error: function(xhr, status, error) {
-            console.error(error);
-        }
-    });
-}
+
 
   // Llamar a la función para obtener las vacas cuando el documento esté listo
   obtenerAnimales();
-  obtenerEnfermedades();
+ 
 });
 
   //funcion para limpiar forms
@@ -60,14 +39,7 @@ $(document).ready(function() {
   }
 
 
-  //cancelar formulario de modificacion
 
-  function cancelarForm() {
-    limpiarForms();
-    $('#form-agregar').show();
-    $('#form-modificar').hide();
-
-  }
 
   /*Funcion para cargar el listado en el Datatable*/
   function listarSecados() {
@@ -168,5 +140,27 @@ $(document).ready(function() {
     });
   }
 
-
+  $('#logoutButton').on('click', function(e) {
+    e.preventDefault(); 
+  
+    $.ajax({
+      url: '../../controller/login/logout.php', 
+      type: 'GET',
+      success: function(response) {
+        if(response==1)
+        {
+          window.location.href = '../../landingPage.php';
+  
+        }
+        else
+        {
+          console.log("no tiene una sesion iniciada")
+        }
+      },
+      error: function(error) {
+        console.log('Error al cerrar sesión:', error);
+       
+      }
+    });
+  });
 

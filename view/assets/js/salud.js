@@ -29,7 +29,6 @@ $(document).ready(function () {
       data: { obtenerAnimalesAntibiotico: true },
       dataType: "text",
       success: function (data) {
-        console.log(data)
         if (data) {
           // Llenar el select con la cantidad de vacas
           $('#card-animales-antibiotico').text(data);
@@ -139,7 +138,29 @@ function listarInyecciones() {
 
 });
 
+$('#logoutButton').on('click', function(e) {
+  e.preventDefault(); 
 
+  $.ajax({
+    url: '../../controller/login/logout.php', 
+    type: 'GET',
+    success: function(response) {
+      if(response==1)
+      {
+        window.location.href = '../../landingPage.php';
+
+      }
+      else
+      {
+        console.log("no tiene una sesion iniciada")
+      }
+    },
+    error: function(error) {
+      console.log('Error al cerrar sesión:', error);
+     
+    }
+  });
+});
 
 
 

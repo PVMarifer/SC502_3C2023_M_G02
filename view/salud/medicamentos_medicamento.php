@@ -136,7 +136,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <div class="text-center py-5">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <button type="button" style="background-color:#4CAF50;" class="btn text-white" data-toggle="modal" data-target="#exampleModalCenter">
               Añadir un Medicamento
             </button>
 
@@ -147,17 +147,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Agregar Medicamentos</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" style="background-color:#4CAF50;" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body text-center mb-3">
                     <h5>Qué desea agregar?</h5>
 
-                    <a href="#" role="button" id="medicina" class="btn btn-secondary popover-test m-3"
+                    <a href="#" role="button" id="medicina" style="background-color:#4CAF50;" class="btn text-white popover-test m-3"
                       data-content="Popover body content is set in this attribute." data-dismiss="modal">Medicamento</a>
 
-                    <a href="#" role="button" id="antibiotico" class="btn btn-secondary popover-test m-3"
+                    <a href="#" role="button" id="antibiotico" style="background-color:#4CAF50;" class="btn text-white popover-test m-3"
                       data-content="Popover body content is set in this attribute." data-dismiss="modal">Antibiótico</a>
                   </div>
 
@@ -172,18 +172,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-1"></div>
 
             <div class="col-10">
-              <div class="card">
+
+              <div style="background-color:#28a745;" class="card">
+
+
                 <div class="card-header text-center">
-                  <h3 class="card-title ">Nuevo Antibiotico</h3>
+                  <h3 class="card-title  text-white">Nuevo Antibiotico</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form id="formulario-agregar-antibiotico">
 
-                  <div class="card-body ">
+                  <div class="card-body  text-white">
                     <div class="row">
                       <div class="col-6">
-                        <div class="form-group">
+                        <div class="form-group ">
                           <label for="">Nombre del Antibiotico</label>
                           <input type="text" class="form-control" name="nombreAntibiotico" id="nombreAntibiotico"
                             placeholder="Ingrese el nombre de la vacuna">
@@ -256,15 +259,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-1"></div>
 
             <div class="col-10">
-              <div class="card">
+
+              <div class="card " style="background-color:#28a745;">
+
                 <div class="card-header text-center">
-                  <h3 class="card-title ">Nuevo Medicamento</h3>
+                  <h3 class="card-title  text-white">Nuevo Medicamento</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form id="formulario-agregar-medicamento" method="POST">
 
-                  <div class="card-body ">
+                  <div class="card-body  text-white">
                     <div class="row">
                       <div class="col-6">
                         <div class="form-group">

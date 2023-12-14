@@ -1,19 +1,20 @@
 <?php
 
-require_once '../../model/secados/secado.php';
+require_once '../../model/produccion/produccion.php';
 
 switch ($_GET['op']) {
     case 'listar_tabla':
-        $secado_db = new Secado();
-        $registros = $secado_db->listarDb();
+        $produccion_db = new produccion();
+        $registros = $produccion_db->listarDb();
         $datos = array();
         foreach ($registros as $registro) {
             $datos[] = array(
-                "0" => $registro->getIdPrefijo(),
+                "0" => $registro->getIdPrefijo(),  
                 "1" => $registro->getAreteAnimal(),
-                "2" => $registro->getFechaSecado(),
-                "3" => $registro->getObservaciones(),
-                "4" => '<button class="btn btn-success" id="modificarDato">Modificar</button>' . '<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdSecado() . '\')">Eliminar</button>'
+                "2" => $registro->getFechaProduccion(),
+                "3" => $registro->getKilosProducidos(),
+                "4" => $registro->getObservaciones(),  
+                "5" => '<button class="btn btn-danger" onclick="eliminar(\'' . $registro->getIdProduccion() . '\')">Eliminar</button>'
             );
         }
         $resultados = array(
@@ -30,18 +31,20 @@ switch ($_GET['op']) {
 
     case 'insert':
 
-        $idAnimal = isset($_POST["idAnimal"]) ? trim($_POST["idAnimal"]) : "";
-        $fechaSecado = isset($_POST["fechaSecado"]) ? trim($_POST["fechaSecado"]) : "";
+        $idAnimal = isset($_POST["IdAnimal"]) ? trim($_POST["IdAnimal"]) : "";
+        $fechaproduccion = isset($_POST["Fecha"]) ? trim($_POST["Fecha"]) : "";
         $observaciones = isset($_POST["observaciones"]) ? trim($_POST["observaciones"]) : "";
+        $kilosProducidos = isset($_POST["Litros"]) ? trim($_POST["Litros"]) : "";
 
-        $secado = new Secado();
-        $secado->setIdAnimal($idAnimal);
-        $secado->setFechaSecado($fechaSecado);
-        $encontrado = $secado->verificarExistenciaDb();
+        $produccion = new produccion();
+        $produccion->setIdAnimal($idAnimal);
+        $produccion->setFechaProduccion($fechaproduccion);
+        $encontrado = $produccion->verificarExistenciaDb();
         if ($encontrado == false) {
-            $secado->setObservaciones($observaciones);
-            $secado->guardarEnDb();
-            if ($secado->verificarExistenciaDb()) {
+            $produccion->setObservaciones($observaciones);
+            $produccion->setKilosProducidos($kilosProducidos);
+            $produccion->guardarEnDb();
+            if ($produccion->verificarExistenciaDb()) {
                 echo 1; // se guardo exitosamente
             } else {
                 echo 3; //problema con guardar
@@ -53,13 +56,14 @@ switch ($_GET['op']) {
         break;
 
     case "eliminar":
-        $secado = new Secado();
-        $secado -> setIdsecado(trim($_POST["idRegistro"]));
-        $respuesta = $secado->eliminar();
+        $produccion = new produccion();
+        $produccion -> setIdProduccion(trim($_POST["idRegistro"]));
+        $respuesta = $produccion->eliminar();
         echo $respuesta;
         break;
+
     case 'obtenerCantidadProduccion':
-            $produccion = new Secado();
+            $produccion = new produccion();
             $cantidadProduccion = $produccion->obtenerCantidadProduccion();
                        
                 if (!is_string($cantidadProduccion)) {
@@ -69,7 +73,7 @@ switch ($_GET['op']) {
                     }
                     break;
     case 'obtenerPromedioProduccion':
-                $produccion = new Secado();
+                $produccion = new produccion();
                 $cantidadProduccion = $produccion->obtenerCantidadProduccion();
                 $sumaProduccion = $produccion->obtenerSumaIngresos();
                 if ($cantidadProduccion > 0) {

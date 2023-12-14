@@ -80,7 +80,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="col-md-1"></div>
 
                         <div class="col-10">
-                            <div class="card " style="background-color: grey;">
+
+                            <div class="card " style="background-color:#4CAF50;">
+
                                 <div class="card-header text-center">
                                     <h3 class="card-title text-white">Nuevo Animal Celo</h3>
                                 </div>
@@ -102,7 +104,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <!-- /.form-group -->
                                             </div>
                                             <div class="col-6">
-                                                <div class="form-group">
+                                                <div class="form-group"> 
                                                     <label for="">Fecha del Diagnóstico</label>
                                                     <input type="date" class="form-control" id="fecha_celo"
                                                         name="fecha_celo" required>

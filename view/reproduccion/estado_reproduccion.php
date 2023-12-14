@@ -17,10 +17,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-      <!-- Datatable CSS -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
-  <!-- FullCalendar CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
 
 
 
@@ -41,9 +41,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!--  Main Sidebar  -->
         <aside class="main-sidebar  elevation-4">
-            <?php
-            include '../fragments/main_aside_reproduccion.php'
-                ?>
+            
+                <?php
+                include '../fragments/main_aside_reproduccion.php'
+                    ?>
+           
         </aside><!--  Main Sidebar  -->
 
 
@@ -83,7 +85,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                <div id="calendario"></div>
+                                    <div id="calendario"></div>
 
                                 </div>
                                 <!-- /.card-body -->
@@ -136,8 +138,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <h3 id="card-vacas-prenadas"></h3>
                                 </div>
                             </div>
-                 
-                      
+
+
 
                         </div>
                         <!-- ./col -->
@@ -154,7 +156,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <th>Número de Arete</th>
                                             <th>Fecha Servicio</th>
                                             <th>Tipo de Servicio</th>
-                    
+
                                         </thead>
                                         <tbody>
                                         </tbody>
@@ -175,7 +177,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <th>Número de Arete</th>
                                             <th>Fecha del Celo</th>
                                             <th>Detalles del Celo</th>
-                    
+
                                         </thead>
                                         <tbody>
                                         </tbody>
@@ -183,7 +185,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </section>

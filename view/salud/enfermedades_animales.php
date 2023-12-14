@@ -20,12 +20,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Datatable CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
   <!-- Select2 -->
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> 
   <!-- Toastr -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
 
-
+ 
 
 
 
@@ -74,17 +74,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container-fluid">
 
           <!-- Formulario Agregar-->
-          <div class="row mb-5" id="form-agregar">
+          <div  class="row mb-5" id="form-agregar">
             <div class="col-md-1"></div>
 
             <div class="col-10">
-              <div class="card " style="background-color: grey;">
+              <div class="card " style="background-color:#4CAF50;">
                 <div class="card-header text-center">
                   <h3 class="card-title text-white">Nuevo Animal Enfermo</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form id="formulario-agregar" method="POST">
+                <form style="background-color:#28a745;" id="formulario-agregar" method="POST">
                   <div class="card-body text-white ">
                     <div class="row">
                       <div class="col-4">
@@ -167,10 +167,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
           <!-- Formulario Modificar-->
-          <div class="row mb-5" id="form-modificar">
+          <div style="background-color:#28a745;" class="row mb-5" id="form-modificar">
             <div class="col-2"></div>
             <div class="col-8">
-              <div class="card " style="background-color: grey;">
+              <div class="card " >
                 <div class="card-header text-center">
                   <h3 class="card-title text-white">Modificar Animal Enfermo</h3>
                 </div>

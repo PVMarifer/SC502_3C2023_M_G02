@@ -1,11 +1,13 @@
-<a href="LandPage.php" class="brand-link">
-  <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-    style="opacity: .8">
-  <span class="brand-text font-weight-light text-white">SG Ganaderia</span>
-</a>
-
-<!-- Sidebar -->
 <div class="sidebar">
+<a href="index.php" class="brand-link">
+    <img src="../assets/imagenes/logo.png" alt=" Logo" height="100px" 
+      style="opacity: .8">
+      <hr>
+ 
+  </a>
+
+  <!-- Sidebar -->
+
   <!-- Sidebar user panel (optional) -->
   <div class="user-panel mt-3 pb-3 mb-3 d-flex">
     <div class="image">
@@ -120,3 +122,4 @@
 
     </ul>
   </nav>
+</div>

@@ -66,7 +66,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-5">
+                        <div class="col-lg-12">
                             <div class="row">
                                 <div class="col-6">
                                     <!-- small box -->
@@ -116,30 +116,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
                         </div>
 
-                        <div class="col-lg-7 col-6">
-
-                            <div class="card" style="height: 500px; overflow-y:scroll ;">
-                                <div class="card-header">
-                                    <h3 class="card-title">Registro de Aninales sin Vacunar</h3>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <table id="tablasinvacunar" class="table table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>Número de Arete</th>
-                                                <th>Nombre</th>
-                                                <th>Peso</th>
-                                                <th>Fecha Nacimiento</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                    </table>
-                                </div>
-                                <!-- /.card-body -->
-                            </div>
-                        </div>
-                        <!-- ./col -->
+                        
                     </div>
                     <!-- /.row -->
             </section>

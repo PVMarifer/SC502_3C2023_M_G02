@@ -32,42 +32,56 @@ class produccion extends Conexion
 
     //getters y setters
 
-    public function getId_Animal ()
+    public function getIdAnimal ()
     {
-        return $this->id_animal ;
+        return $this->idAnimal ;
     }
 
-    public function setId_animal ($id_animal)
+    public function setIdAnimal ($idAnimal)
     {
         $this->idAnimal  = $idAnimal ;
+    } 
+
+    public function getAreteAnimal ()
+    {
+        return $this->areteAnimal ;
+    }
+
+    public function setAreteAnimal ($areteAnimal)
+    {
+        $this->areteAnimal  = $areteAnimal ;
     } 
     
     public function getIdProduccion ()
     {
-        return $this->getIdProduccion; 
+        return $this->idProduccion; 
     
     }
 
-    public function setIdProduccion ($idProduccion )
-    {  
-        $this->getIdProduccion  = $IdProduccion ;
-    } 
+    public function setIdProduccion($idProduccion)
+{  
+    $this->idProduccion = $idProduccion;
+}
 
 
     public function getFechaProduccion ()
     {
-        return $this->setFechaProduccion;
+        return $this->fechaProduccion;
     }
 
     public function setFechaProduccion ($fechaProduccion )
     {
-        $this->getFechaProduccion  = $fecha_Produccion;
+        $this->fechaProduccion  = $fechaProduccion;
     }
 
      
-    public function getLitros ()
+    public function getKilosProducidos ()
     {
-        return $this->litros ;
+        return $this->kilosProducidos ;
+    }
+    public function setKilosProducidos ($kilosProducidos )
+    {
+        $this->kilosProducidos  = $kilosProducidos;
     }
 
     public function getIdPrefijo()
@@ -110,7 +124,8 @@ class produccion extends Conexion
 
     public function listarDB()
     {
-        $query = "SELECT * FROM produccion
+        $query = "SELECT *
+        FROM produccion 
        INNER JOIN animal ON produccion.id_vaca = animal.id_animal";
         $lista = array();
         try {
@@ -128,7 +143,7 @@ class produccion extends Conexion
                 $Produccion->setIdAnimal($encontrado["id_vaca"]);
                 $Produccion->setFechaProduccion($encontrado["fecha"]);
                 $Produccion->setKilosProducidos($encontrado["litros"]);
-                $Produccion->setObservaciones($encontrado["observaciones"]);
+                $Produccion->setObservaciones($encontrado["observacionesPr"]);
                 $lista[] = $Produccion;
             }
             return $lista;
@@ -142,7 +157,7 @@ class produccion extends Conexion
 
     public function guardarEnDb()
     {
-        $query = "INSERT INTO `Produccion` (`id_animal`,`fecha_Produccion`, `observaciones`, `litros`) VALUES (:id_animal, :fecha_Produccion, :observaciones, :litros)";
+        $query = "INSERT INTO `produccion` (`fecha`, `id_vaca`, `litros`, `observacionesPr`) VALUES (:fecha, :id_vaca, :litros, :observacionesPr);";
         try {
             self::getConexion();
           
@@ -152,9 +167,9 @@ class produccion extends Conexion
             $kilosProducidos = $this->getKilosProducidos();
 
             $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":id_animal", $id_animal, PDO::PARAM_STR);
-            $resultado->bindParam(":fecha_Produccion", $fecha_Produccion, PDO::PARAM_STR);
-            $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
+            $resultado->bindParam(":id_vaca", $id_animal, PDO::PARAM_STR);
+            $resultado->bindParam(":fecha", $fecha_Produccion, PDO::PARAM_STR);
+            $resultado->bindParam(":observacionesPr", $observaciones, PDO::PARAM_STR);
             $resultado->bindParam(":litros", $kilosProducidos, PDO::PARAM_STR);
 
             $resultado->execute();
@@ -169,19 +184,19 @@ class produccion extends Conexion
 
     public function verificarExistenciaDb()
     {
-        $query = "SELECT * FROM produccion where produccion.id_animal=:id_animal  and fecha_produccion =:fecha_produccion";
+        $query = "SELECT * FROM produccion where produccion.id_vaca=:id_vaca  and fecha =:fecha_produccion";
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
             $idAnimal = $this->getIdAnimal();
             $fechaProduccion = $this->getFechaProduccion();
-            $resultado->bindParam(":id_animal", $idAnimal, PDO::PARAM_STR);
+            $resultado->bindParam(":id_vaca", $idAnimal, PDO::PARAM_STR);
             $resultado->bindParam(":fecha_produccion", $fechaProduccion, PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
             $encontrado = false;
             foreach ($resultado->fetchAll() as $reg) {
-                echo("we");
+         
                 $encontrado = true;
             }
             return $encontrado;
@@ -227,9 +242,9 @@ class produccion extends Conexion
             $resultado->execute();
             self::desconectar();
             if (!(self::verificarExistenciaModificar())) {
-                return 0;
-            } else {
                 return 1;
+            } else {
+                return 0;
             }
         } catch (PDOException $Exception) {
             self::desconectar();
@@ -240,50 +255,7 @@ class produccion extends Conexion
     }
 
 
-    public function actualizarProduccion()
-    {
-        $query = "UPDATE Produccion
-        SET sintomas_animal = :sintomas_animal,
-            estado_animal = :estado_animal,
-            observaciones = :observaciones
-        WHERE enfermedad_animal.id_enfermedad = (
-                SELECT id_enfermedad 
-                FROM enfermedad 
-                WHERE nombre_enfermedad = :nombre_enfermedad
-            ) 
-            AND enfermedad_animal.id_animal = (
-                SELECT id_animal 
-                FROM animal 
-                WHERE numero_arete = :numero_arete
-            ) 
-            AND fecha_diagnostico = :fecha_diagnostico";
-        try {
-            self::getConexion();
-            $sintomas = $this->getSintomasAnimal();
-            $estadoAnimal = $this->getEstadoAnimal();
-            $observaciones = $this->getObservaciones();
-            $nombreEnfermedad = $this->getNombreEnfermedad();
-            $areteAnimal = $this->getAreteAnimal();
-            $fechaDiagnostico = $this->getFechaDiagnostico();
-            $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":estado_animal", $estadoAnimal, PDO::PARAM_STR);
-            $resultado->bindParam(":sintomas_animal", $sintomas, PDO::PARAM_STR);
-            $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
-            $resultado->bindParam(":nombre_enfermedad", $nombreEnfermedad, PDO::PARAM_STR);
-            $resultado->bindParam(":numero_arete", $areteAnimal, PDO::PARAM_STR);
-            $resultado->bindParam(":fecha_diagnostico", $fechaDiagnostico, PDO::PARAM_STR);
-            self::$conexion->beginTransaction(); //desactiva el autocommit
-            $resultado->execute();
-            self::$conexion->commit(); //realiza el commit y vuelve al modo autocommit
-            self::desconectar();
-            return $resultado->rowCount();
-        } catch (PDOException $Exception) {
-            self::$conexion->rollBack();
-            self::desconectar();
-            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
-            echo $error;
-        }
-    }
+    
 
     public function obtenerCantidadProduccion() {
         $query = "SELECT COUNT(*) as cantidad FROM produccion";

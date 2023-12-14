@@ -6,30 +6,29 @@ class produccionSem extends Conexion
 {
 
     //Atributos de la clase 
-    
+
 
 
     protected static $conexion;
 
-    private $id_produccion_semanal = null;
+    private $idProduccionSemanal = null;
 
     private $fechaSemana = null;
 
-    private $numero_semana = null;
 
     private $kilosProducidos = null;
 
-    private $calidad_bacteorologica = null;
+    private $calidadBacteriologica = null;
 
-    private $celulas_somaticas = null;
+    private $celulasSomaticas = null;
 
-    private $porcentaje_grasa= null;
+    private $porcentajeGrasa = null;
 
-    private $porcentaje_proteina= null;
+    private $porcentajeProteina = null;
 
-    private $punto_crioscopico= null;
+    private $puntoCrioscopico = null;
 
-    private $presencia_inhibidores = null;
+    private $presenciaInhibidores = null;
 
     private $idPrefijo = null;
 
@@ -42,115 +41,106 @@ class produccionSem extends Conexion
 
     //getters y setters
 
-    public function getId_Animal ()
+    public function getIdProduccionSemanal()
     {
-        return $this->id_animal ;
+        return $this->idProduccionSemanal;
     }
 
-    public function setId_animal ($id_animal)
+    public function setIdProduccionSemanal($idProduccionSemanal)
     {
-        $this->idAnimal  = $idAnimal ;
-    } 
-    
-    public function getid_Produccion_Semanal ()
-    {
-        return $this->id_produccion_semanal ;
+        $this->idProduccionSemanal = $idProduccionSemanal;
     }
 
-    public function setid_Produccion_Semanal ($id_produccion_semanal )
+    public function getIdPrefijo()
     {
-        $this->id_produccion_semanal  = $id_produccion_semanal ;
-
-  }
-     public function getFechaSemana ()
-        {
-            return $this->getfechasemana ;
-        }
-    
-        public function setFechaSemana ($fechasemana )
-        {
-            $this->fechasemana  = $fechaSemana ;
-        }
-
-        public function getNumero_Semana ()
-        {
-            return $this->getnumero_semana ;
-        }
-    
-        public function setNumero_Semana ($numero_semana )
-        {
-            $this->numero_semana  = $numero_Semana ;
-        }
-        public function getKilosProducidos ()
-       {
-         return $this->kilosProducidos ;
-       }
-
-         public function setKilosProducidos ($kilosProducidos )
-       {
-        $this->kilosProducidos  = $kilosProducidos ;
-       }
-  
-
-    public function getCalidad_Bacteriologica ()
-    {
-        return $this->calidad_Bacteriologica ;
+        return $this->idPrefijo;
     }
 
-    public function setCalidad_Bacteriologica ($calidad_Bacteriologica )
+    public function setIdPrefijo($idPrefijo)
     {
-        $this->calidad_Bacteriologica  = $calidad_Bacteriologica ;
+        $this->idPrefijo = $idPrefijo;
+    }
+
+    public function getFechaSemana()
+    {
+        return $this->fechaSemana;
+    }
+
+    public function setFechaSemana($fechaSemana)
+    {
+        $this->fechaSemana = $fechaSemana;
+    }
+
+    public function getKilosProducidos()
+    {
+        return $this->kilosProducidos;
+    }
+
+    public function setKilosProducidos($kilosProducidos)
+    {
+        $this->kilosProducidos = $kilosProducidos;
     }
 
 
-    public function getCelulas_Somaticas ()
+    public function getCalidadBacteriologica()
     {
-        return $this->celulas_Somaticas ;
+        return $this->calidadBacteriologica;
     }
 
-    public function setCelulas_Somaticas ($celulas_Somaticas )
+    public function setCalidadBacteriologica($calidadBacteriologica)
     {
-        $this->celulas_Somaticas = $celulas_Somaticas ;
+        $this->calidadBacteriologica = $calidadBacteriologica;
     }
 
-    public function getPorcentaje_Grasa()
+
+    public function getCelulasSomaticas()
     {
-        return $this->porcentaje_Grasa;
+        return $this->celulasSomaticas;
     }
 
-    public function setPorcentaje_Grasa($porcentaje_Grasa)
+    public function setCelulasSomaticas($celulasSomaticas)
     {
-        $this->porcentaje_Grasa = $porcentaje_Grasa;
+        $this->celulasSomaticas = $celulasSomaticas;
     }
 
-    public function getPorcentaje_Proteina()
+    public function getPorcentajeGrasa()
     {
-        return $this->porcentaje_Proteina;
+        return $this->porcentajeGrasa;
     }
 
-    public function setPorcentaje_Proteina($porcentaje_Proteina)
+    public function setPorcentajeGrasa($porcentajeGrasa)
     {
-        $this->porcentaje_Proteina = $porcentaje_Proteina;
+        $this->porcentajeGrasa = $porcentajeGrasa;
     }
 
-    public function getPunto_Crioscopico()
+    public function getPorcentajeProteina()
     {
-        return $this->punto_Crioscopico;
+        return $this->porcentajeProteina;
     }
 
-    public function setPunto_Crioscopico($punto_Crioscopico)
+    public function setPorcentajeProteina($porcentajeProteina)
     {
-        $this->punto_Crioscopico = $punto_Crioscopico;
+        $this->porcentajeProteina = $porcentajeProteina;
     }
 
-    public function getPresencia_inhibidores()
+    public function getPuntoCrioscopico()
     {
-        return $this->presencia_inhibidores;
+        return $this->puntoCrioscopico;
     }
 
-    public function setPresencia_inhibidores($presencia_Inhibidores)
+    public function setPuntoCrioscopico($puntoCrioscopico)
     {
-        $this->presencia_Inhibidores = $presencia_Inhibidores;
+        $this->puntoCrioscopico = $puntoCrioscopico;
+    }
+
+    public function getPresenciaInhibidores()
+    {
+        return $this->presenciaInhibidores;
+    }
+
+    public function setPresenciaInhibidores($presenciaInhibidores)
+    {
+        $this->presenciaInhibidores = $presenciaInhibidores;
     }
 
 
@@ -173,8 +163,7 @@ class produccionSem extends Conexion
 
     public function listarDB()
     {
-        $query = "SELECT * FROM produccion
-       INNER JOIN animal ON produccion.id_vaca = animal.id_animal";
+        $query = "SELECT * FROM produccion_semanal";
         $lista = array();
         try {
             self::getConexion();
@@ -184,19 +173,18 @@ class produccionSem extends Conexion
             foreach ($resultado->fetchAll() as $encontrado) {
                 $Produccion = new produccionSem();
                 $prefijo = "PRSEM";
-                $Produccion->setid_produccion_semanal($encontrado["id_produccion_semanal"]);
-                $Produccion->setFechaSemana($encontrado["fecha_semana"]);
-                $Produccion->setNumero_Semana($encontrado["numero_semana"]);
-                $Produccion->setKilosProducidos($encontrado["litros"]);
-                $Produccion->setCalidad_Bacteriologica($encontrado["calidad_Bacteriologica"]);
-                $id_personalizado = $prefijo . str_pad($Produccion->getCalidad_Bacteriologica(), 2, '0', STR_PAD_LEFT);
+                $Produccion->setIdProduccionSemanal($encontrado["id_produccion_semanal"]);
+                $id_personalizado = $prefijo . str_pad($Produccion->getIdProduccionSemanal(), 4, '0', STR_PAD_LEFT);
                 $Produccion->setIdPrefijo($id_personalizado);
-                $Produccion->setCelulas_Somaticas($encontrado["celulas_somaticas"]);
-                $Produccion->setPorcentaje_Grasa($encontrado["porcentaje_grasa"]);
-                $Produccion->setPorcentaje_Proteina($encontrado["porcentaje_proteina"]);
-                $Produccion->setPunto_Crioscopico($encontrado["punto_crioscopico"]);
-                $Produccion->setPresencia_inhibidores($encontrado["presencia_inhibidores"]);
-                $lista[] = $ProduccionSem;
+                $Produccion->setKilosProducidos($encontrado["litros"]);
+                $Produccion->setFechaSemana($encontrado["fechaSemana"]);
+                $Produccion->setCalidadBacteriologica($encontrado["calidad_bacteriologica"]);
+                $Produccion->setCelulasSomaticas($encontrado["celulas_somaticas"]);
+                $Produccion->setPorcentajeGrasa($encontrado["porcentaje_grasa"]);
+                $Produccion->setPorcentajeProteina($encontrado["porcentaje_proteina"]);
+                $Produccion->setPuntoCrioscopico($encontrado["punto_crioscopico"]);
+                $Produccion->setPresenciaInhibidores($encontrado["presencia_inhibidores"]);
+                $lista[] = $Produccion;
             }
             return $lista;
         } catch (PDOException $Exception) {
@@ -209,38 +197,37 @@ class produccionSem extends Conexion
 
     public function guardarEnDb()
     {
-        $query = "INSERT INTO `ProduccionSem` (`id_produccion_semanal`,`fecha_semana`, `numero_semana`, `litros`,`calidad_Bacteriologica`,`celulas_sematicas`,`porcentaje_grasa`,`porcentaje_proteina`,`punto_crioscopico`,`presencia_inhibidores` ) VALUES (:id_produccion_semanal,:fecha_semana, :numero_semana, :litros,:calidad_Bacteriologica,:celulas_sematicas,:porcentaje_grasa,:porcentaje_proteina,:punto_crioscopico,:presencia_inhibidores)";
+        $query = "INSERT INTO `produccion_semanal` (`fechaSemana`, `litros`, `calidad_bacteriologica`, `celulas_somaticas`, `porcentaje_grasa`, `porcentaje_proteina`, `punto_crioscopico`, `presencia_inhibidores`) 
+        VALUES (:fechaSemana, :litros, :calidad_bacteriologica, :celulas_somaticas, :porcentaje_grasa, :porcentaje_proteina, :punto_crioscopico, :presencia_inhibidores);";
         try {
             self::getConexion();
-          
-            $id_animal = $this->getId_Animal();
+
             $fechaSemana = $this->getFechaSemana();
-            $numero_Semana = $this->getNumero_Semana();
             $kilosProducidos = $this->getKilosProducidos();
-            $calidad_Bacteriologica = $this->getCalidad_Bacteriologica();
-            $celulas_Somaticas = $this->getCelulas_Somaticas();
-            $porcentaje_Grasa = $this->getPorcentaje_Grasa();
-            $porcentaje_Proteina = $this->getPorcentaje_Proteina();
-            $punto_Crioscopico = $this->getPunto_Crioscopico();
-            $presencia_Inhibidores = $this->getPresencia_inhibidores();
-           
+            $calidad_Bacteriologica = $this->getCalidadBacteriologica();
+            $celulas_Somaticas = $this->getCelulasSomaticas();
+            $porcentaje_Grasa = $this->getPorcentajeGrasa();
+            $porcentaje_Proteina = $this->getPorcentajeProteina();
+            $punto_Crioscopico = $this->getPuntoCrioscopico();
+            $presencia_Inhibidores = $this->getPresenciaInhibidores();
+            $celulas_Somaticas = $this->getCelulasSomaticas();
+
+
 
             $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":id_animal", $id_animal, PDO::PARAM_STR);    
-            $resultado->bindParam(":fecha_semana", $fecha_Semana, PDO::PARAM_STR);
-            $resultado->bindParam(":numero_semana", $numero_Semana, PDO::PARAM_STR);
-            $resultado->bindParam(":id_animal", $id_animal, PDO::PARAM_STR);
+
+            $resultado->bindParam(":fechaSemana", $fechaSemana, PDO::PARAM_STR);
             $resultado->bindParam(":litros", $kilosProducidos, PDO::PARAM_STR);
-            $resultado->bindParam(":calidad_bacteriologica", $calidad_bacteorologica, PDO::PARAM_STR);
-            $resultado->bindParam(":celulas_somaticas", $celulas_somaticas, PDO::PARAM_STR);
-            $resultado->bindParam(":porcentaje_grasa", $porcentaje_grasa, PDO::PARAM_STR);
-            $resultado->bindParam(":porcentaje_proteina", $porcentaje_proteina, PDO::PARAM_STR);
-            $resultado->bindParam(":punto_crioscopico", $punto_crioscopico, PDO::PARAM_STR);
-            $resultado->bindParam(":presencia_inhibidores", $presencia_inhibidores, PDO::PARAM_STR);
-            
-            
-           
-           
+            $resultado->bindParam(":calidad_bacteriologica", $calidad_Bacteriologica, PDO::PARAM_STR);
+            $resultado->bindParam(":celulas_somaticas", $celulas_Somaticas, PDO::PARAM_STR);
+            $resultado->bindParam(":porcentaje_grasa", $porcentaje_Grasa, PDO::PARAM_STR);
+            $resultado->bindParam(":porcentaje_proteina", $porcentaje_Proteina, PDO::PARAM_STR);
+            $resultado->bindParam(":punto_crioscopico", $punto_Crioscopico, PDO::PARAM_STR);
+            $resultado->bindParam(":presencia_inhibidores", $presencia_Inhibidores, PDO::PARAM_STR);
+
+
+
+
 
             $resultado->execute();
             self::desconectar();
@@ -251,75 +238,49 @@ class produccionSem extends Conexion
             return json_encode($error);
         }
     }
-
-    public function eliminar()
-    {
-        $idProduccion = $this->getId_Animal();
-        $query = "DELETE FROM produccion WHERE `produccion`.`idProduccion` = :idProduccion";
+    public function verificarExistenciaDb(){
+        $query = "SELECT * FROM produccion_semanal where fechaSemana=:fechaSemana";
+        
         try {
-            self::getConexion();
-            $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":idProduccion", $idProduccion, PDO::PARAM_STR);
+         self::getConexion();
+            $resultado = self::$conexion->prepare($query);		
+            $fecha= $this->getFechaSemana();	
+            $resultado->bindParam(":fechaSemana",$fecha,PDO::PARAM_STR);
             $resultado->execute();
             self::desconectar();
-            if (!(self::verificarExistenciaModificar())) {
-                return 0;
-            } else {
-                return 1;
+            $encontrado = false;
+            foreach ($resultado->fetchAll() as $reg) {
+                $encontrado = true;
             }
-        } catch (PDOException $Exception) {
-            self::desconectar();
-            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
-            return $error;
-        }
-
+            return $encontrado;
+           } catch (PDOException $Exception) {
+               self::desconectar();
+               $error = "Error ".$Exception->getCode().": ".$Exception->getMessage();
+             return $error;
+           } 
     }
 
-
-    public function actualizarProduccion()
+    public function listarGrafica()
     {
-        $query = "UPDATE Produccion
-        SET sintomas_animal = :sintomas_animal,
-            estado_animal = :estado_animal,
-            observaciones = :observaciones
-        WHERE enfermedad_animal.id_enfermedad = (
-                SELECT id_enfermedad 
-                FROM enfermedad 
-                WHERE nombre_enfermedad = :nombre_enfermedad
-            ) 
-            AND enfermedad_animal.id_animal = (
-                SELECT id_animal 
-                FROM animal 
-                WHERE numero_arete = :numero_arete
-            ) 
-            AND fecha_diagnostico = :fecha_diagnostico";
+        $query = "SELECT WEEK(fechaSemana) AS numero_semana, SUM(litros) AS total_litros_semana
+        FROM Produccion_semanal
+        GROUP BY WEEK(fechaSemana)
+        ORDER BY WEEK(fechaSemana)";
         try {
             self::getConexion();
-            $sintomas = $this->getSintomasAnimal();
-            $estadoAnimal = $this->getEstadoAnimal();
-            $observaciones = $this->getObservaciones();
-            $nombreEnfermedad = $this->getNombreEnfermedad();
-            $areteAnimal = $this->getPorcenaje_Grasa();
-            $fechaDiagnostico = $this->getFechaDiagnostico();
             $resultado = self::$conexion->prepare($query);
-            $resultado->bindParam(":estado_animal", $estadoAnimal, PDO::PARAM_STR);
-            $resultado->bindParam(":sintomas_animal", $sintomas, PDO::PARAM_STR);
-            $resultado->bindParam(":observaciones", $observaciones, PDO::PARAM_STR);
-            $resultado->bindParam(":nombre_enfermedad", $nombreEnfermedad, PDO::PARAM_STR);
-            $resultado->bindParam(":numero_arete", $areteAnimal, PDO::PARAM_STR);
-            $resultado->bindParam(":fecha_diagnostico", $fechaDiagnostico, PDO::PARAM_STR);
-            self::$conexion->beginTransaction(); //desactiva el autocommit
             $resultado->execute();
-            self::$conexion->commit(); //realiza el commit y vuelve al modo autocommit
             self::desconectar();
-            return $resultado->rowCount();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $Exception) {
-            self::$conexion->rollBack();
             self::desconectar();
             $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
-            echo $error;
+            ;
+            return json_encode($error);
         }
     }
+   
+   
 
 
 }

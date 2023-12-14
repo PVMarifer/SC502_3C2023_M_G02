@@ -404,12 +404,12 @@ class Animal extends Conexion
             SELECT 1
             FROM Vaca_Prenada
             WHERE Vaca_Prenada.id_servicio = Animal.id_animal
-        );";
+        )";
         try {
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
             $resultado->execute();
-            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+             return $resultado->fetchColumn();
         } catch (PDOException $Exception) {
             self::desconectar();
             $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;
@@ -425,7 +425,7 @@ class Animal extends Conexion
             self::getConexion();
             $resultado = self::$conexion->prepare($query);
             $resultado->execute();
-            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado->fetchColumn();
         } catch (PDOException $Exception) {
             self::desconectar();
             $error = "Error ".$Exception->getCode( ).": ".$Exception->getMessage( );;
